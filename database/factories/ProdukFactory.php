@@ -29,6 +29,16 @@ class ProdukFactory extends Factory
         */
         return [
             'nama' => fake()->word(),
+            'harga' => fake()->numberBetween(500, 100000),
+            'deskripsi' => fake()->sentence(),
+            'foto' => fake()->imageUrl(),
+            'status' => fake()->numberBetween(0, 4),
         ];
+        /*
+        0 => Dibatalkan
+        1 => Diproses
+        2 => Dikirim
+        3 => Diterima
+        */ 
     }
 }
