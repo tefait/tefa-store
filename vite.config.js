@@ -8,8 +8,11 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/js/app.js',
             ],
-            publicDirectory: 'public',
             refresh: true,
+
         }),
     ],
+server:{
+host: '10.111.4.35',
+}
 });

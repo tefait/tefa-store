@@ -17,18 +17,18 @@ class ProdukFactory extends Factory
     public function definition(): array
     {
         /*
-    Schema::create('produks', function (Blueprint $table) {
+   'produks => fake()->, function (Blueprint $table) {
         $table->id();
-        $table->string('nama');
-        $table->integer('harga');
-        $table->string('deskripsi');
-        $table->string('foto');
-        $table->tinyInteger('status');
+
         $table->timestamps();
     });
         */
         return [
-            'nama' => fake()->word(),
+            'nama' => fake()->name(),
+            'harga' => fake()->randomFloat(2, 10, 100),
+            'deskripsi' => fake()->text(),
+            'foto' => fake()->imageUrl(),
+            'status' => fake()->numberBetween(0, 2),
         ];
     }
 }

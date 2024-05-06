@@ -20,8 +20,12 @@ return new class extends Migration
             $table->string('password');
             $table->integer('peran');
             $table->string('foto');
+            $table->text('alamat');
+            $table->string('kota');
+            $table->string('provinsi');
+            $table->string('kecamatan');
+            $table->string('kodepos');
             $table->rememberToken();
-            $table->foreignIdFor(Userinfo::class)->nullable();
             $table->timestamps();
         });
 
