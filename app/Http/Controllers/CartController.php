@@ -23,36 +23,36 @@ class CartController extends Controller
     /**
      * Menambahkan produk ke cart
      */
-    public function addToCart(Produk $product, Request $request)
+    public function addToCart(Produk $produk, Request $request)
     {
         // Tampung id user dan id product
         $user_id = Auth::id();
-        $product_id = $product->id;
+        $produk_id = $produk->id;
 
         /*
         Cari cart dengan id product yang sudah di kirimkan dan
          cek apakah cart tersebut sudah ada
          bila belum maka validasi terlebih dahulu jumlahnya
          */
-        $existing_cart = Cart::where('product_id', $product_id)
+        $existing_cart = Cart::where('product_id', $produk_id)
             ->where('user_id', $user_id)
             ->first();
 
         if ($existing_cart === null) {
             $request->validate([
-                'amount' => 'required|gte:1|lte:'.$product->stock,
+                'amount' => 'required|gte:1|lte:'.$produk->stock,
             ]);
 
             // Buat cart baru dengan id user dan id product yang beserta amount yang sudah disesuaikan
             Cart::create([
                 'user_id' => $user_id,
-                'product_id' => $product_id,
+                'product_id' => $produk_id,
                 'amount' => $request->amount,
             ]);
         } else {
             // Validasi amount dan pastikan tidak lebih dari stok
             $request->validate([
-                'amount' => 'required|gte:1|lte:'.($product->stock -
+                'amount' => 'required|gte:1|lte:'.($produk->stock -
                     $existing_cart->amount),
             ]);
             // ubah amount cart yang sudah ada

@@ -56,10 +56,10 @@ class PesananController extends Controller
         // Ulang semua keranjang yang dipunya user
         foreach ($carts as $cart) {
             // Cari nama product
-            $product = Produk::find($cart->product_id);
+            $produk = Produk::find($cart->product_id);
             // Kurangin stock product
-            $product->update([
-                'stock' => $product->stock - $cart->amount,
+            $produk->update([
+                'stock' => $produk->stock - $cart->amount,
             ]);
             // Buat transaksi baru
             Transaksi::create([
