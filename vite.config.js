@@ -13,6 +13,6 @@ export default defineConfig({
         }),
     ],
 server:{
-host: '10.111.4.35',
+host: 'localhost',
 }
 });

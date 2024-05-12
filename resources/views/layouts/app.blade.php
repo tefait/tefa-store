@@ -11,7 +11,7 @@
 <body class="h-screen">
 
     @include('partials.navbar')
-    <div class="p-4 lg:py-8 lg:px-12">
+    <div class="flex justify-center p-4 lg:py-8 lg:px-12">
         @yield('container')
     </div>
 
