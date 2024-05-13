@@ -73,8 +73,8 @@
 </nav>
 
 <header class="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-white text-sm py-2 sm:py-0 dark:bg-neutral-900">
-    <nav class="relative w-full sm:flex sm:items-center sm:justify-between px-6 sm:px-0 lg:px-10" aria-label="Global">
-      <div class="flex items-center justify-between">
+    <nav class="relative w-full sm:flex sm:items-center sm:justify-between px-6" aria-label="Global">
+      <div class="flex items-center justify-between w-full">
         <a class="flex-none text-xl font-semibold dark:text-white hidden lg:block" href="#" aria-label="Logo"><img src="{{ asset('assets/logo2.png') }}" class="lg:h-12" alt=""></a>
 
         <div class="hidden sm:flex hs-dropdown group [--strategy:static] md:[--strategy:absolute] [--adaptive:none] md:[--trigger:hover] cursor-pointer py-3 md:py-6 ml-5">
@@ -88,8 +88,8 @@
                 <div class="max-w-[85rem] py-2 px-2 lg:px-4 lg:py-4 mx-auto">
                   <div class="max-w-4xl mx-auto">
                     <!-- Grid -->
-                    <div class="grid md:grid-cols-2">
-                      <div class="space-y-0">
+                    <div class="grid grid-cols-2 gap-1">
+                      <div class="space-y-1">
                         <!-- Icon Block -->
                         <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
                             <img src="{{ asset('assets/shirt.gif') }}" alt="" class="flex-shrink-0 size-8">
@@ -125,7 +125,7 @@
                       </div>
                       <!-- End Col -->
 
-                      <div class="space-y-0">
+                      <div class="space-y-1">
                         <!-- Icon Block -->
                         <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
                             <img src="{{ asset('assets/mug.gif') }}" alt="" class="flex-shrink-0 size-8">
@@ -173,19 +173,19 @@
             </div>
           </div>
 
-        <div class="flex flex-col gap-y-4 gap-x-0 sm:flex-row sm:items-center sm:justify-between sm:gap-y-0 sm:gap-x-5 sm:mx-5 sm:w-[45vw]">
+        <div class="flex flex-col gap-y-4 gap-x-0 sm:flex-row sm:items-center sm:justify-between sm:gap-y-0 sm:gap-x-5 sm:mx-5 w-full">
           <!-- SearchBox -->
-          <div class="relative">
+          <div class="relative w-full">
             <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3.5">
               <i class="bx bx-search text-xl text-gray-500"></i>
             </div>
-            <input class="block py-3 ps-10 pe-4 w-[100%] sm:w-[45vw] h-8 lg:h-10 border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 cursor-pointer disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" type="text" placeholder="Cari di Tefa Store" value="" data-hs-overlay="#json-example-with-tab-filter-using-modal-popup-with-shortcut-call-trigger" readonly>
+            <input class="block py-3 ps-10 pe-4 w-[100%] h-8 lg:h-10 border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 cursor-pointer disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" type="text" placeholder="Cari di Tefa Store" value="" data-hs-overlay="#json-example-with-tab-filter-using-modal-popup-with-shortcut-call-trigger" readonly>
           </div>
         </div>
 
-        <div class="flex items-center gap-3 sm:gap-4 ml-6">
+        <div class="flex items-center gap-3 sm:gap-4 ml-6 lg:mr-6">
           <!-- Notification -->
-          <button type="button" class="flex items-center z-50" data-hs-overlay="#hs-overlay-top">
+          <button type="button" class="flex items-center z-50" data-hs-overlay="#hs-scroll-inside-body-modal">
             <i class="bx bx-bell text-2xl text-gray-500 hover:text-black duration-300"></i>
           </button>
           <!-- Cart -->
@@ -195,10 +195,62 @@
         </div>
 
         <!-- Off canvas Notification -->
-        <div id="hs-overlay-top" class="hs-overlay hs-overlay-open:translate-y-0 -translate-y-full fixed top-0 inset-x-0 transition-all duration-300 transform max-h-40 size-full z-[80] bg-white border-b dark:bg-neutral-800 dark:border-neutral-700 hidden" tabindex="-1">
+        <div id="hs-scroll-inside-body-modal" class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
+            <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto h-[calc(100%-3.5rem)]">
+              <div class="max-h-full overflow-hidden flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
+                <div class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-700">
+                  <h3 class="text-base font-bold text-gray-800 dark:text-white">
+                    Notifikasi
+                  </h3>
+                  <button type="button" class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700" data-hs-overlay="#hs-scroll-inside-body-modal">
+                    <span class="sr-only">Close</span>
+                    <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 6 6 18"></path>
+                      <path d="m6 6 12 12"></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="p-0 overflow-y-auto divide-y">
+                <!-- Card -->
+                <div class="group flex items-center gap-y-6 gap-x-4 p-4 size-full transition-all dark:bg-neutral-800 dark:focus:outline-none dark:focus:bg-neutral-800" href="#">
+                    <div class="inline-flex justify-center items-center py-1 px-2 rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
+                        <i class="bx bx-envelope flex-shrink-0 text-2xl text-gray-800 dark:text-neutral-200"></i>
+                    </div>
+                    <div class="w-full">
+                        <p class="block font-bold text-gray-800 dark:text-white text-sm">Judul notifikasi</p>
+                        <p class="text-gray-600 dark:text-neutral-400 truncate-[6rem] text-[14px]">Ini adalah pesan dari notifikasi</p>
+                    </div>
+                    <span class="size-2 inline-block bg-red-500 rounded-full me-2 p-1"></span>
+                </div>
+                <!-- End Card -->
+                <!-- Card -->
+                <div class="group flex items-center gap-y-6 gap-x-4 p-4 size-full transition-all dark:bg-neutral-800 dark:focus:outline-none dark:focus:bg-neutral-800" href="#">
+                    <div class="inline-flex justify-center items-center py-1 px-2 rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
+                        <i class="bx bx-envelope flex-shrink-0 text-2xl text-gray-800 dark:text-neutral-200"></i>
+                    </div>
+                    <div class="w-full">
+                        <p class="block font-bold text-gray-800 dark:text-white text-sm">Judul notifikasi</p>
+                        <p class="text-gray-600 dark:text-neutral-400 truncate-[6rem] text-[14px]">Ini adalah pesan dari notifikasi</p>
+                    </div>
+                    <span class="size-2 inline-block bg-red-500 rounded-full me-2 p-1"></span>
+                </div>
+                <!-- End Card -->
+                </div>
+                <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t dark:border-neutral-700">
+                  <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-overlay="#hs-scroll-inside-body-modal">
+                    Tutup
+                  </button>
+                  {{-- <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                    Save changes
+                  </button> --}}
+                </div>
+              </div>
+            </div>
+          </div>
+        {{-- <div id="hs-overlay-top" class="hs-overlay hs-overlay-open:translate-y-0 -translate-y-full fixed top-0 inset-x-0 transition-all duration-300 transform max-h-40 size-full z-[80] bg-white border-b dark:bg-neutral-800 dark:border-neutral-700 hidden" tabindex="-1">
           <div class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-700">
             <h3 class="font-bold text-gray-800 dark:text-white">
-              Offcanvas title
+              Notifikasi
             </h3>
             <button type="button" class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700" data-hs-overlay="#hs-overlay-top">
               <span class="sr-only">Close modal</span>
@@ -213,7 +265,7 @@
               Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
             </p>
           </div>
-        </div>
+        </div> --}}
         <!-- End Off canvas Notification -->
 
         <!-- Off canvas Cart -->
@@ -232,7 +284,7 @@
           </div>
           <div class="">
               <!-- Card -->
-              <div class="group flex gap-y-6 p-4 size-full hover:bg-gray-100 rounded-lg transition-all dark:hover:bg-neutral-800 dark:focus:outline-none dark:focus:bg-neutral-800" href="#">
+              <div class="group flex gap-y-6 p-4 size-full bg-gray-100 transition-all dark:bg-neutral-800 dark:focus:outline-none dark:focus:bg-neutral-800" href="#">
                 {{-- <svg class="flex-shrink-0 size-8 text-gray-800 mt-0.5 me-6 dark:text-neutral-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg> --}}
                 <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                 <div class="w-full">
@@ -279,7 +331,7 @@
         </div>
       </div>
 
-      <div id="navbar-collapse-with-animation" class="lg:flex lg:justify-center sm:my-4 sm:px-4 hs-collapse hidden overflow-hidden transition-all duration-300">
+      <div id="navbar-collapse-with-animation" class="lg:flex lg:justify-center lg:my-4 lg:ml-6 lg:px-4 hs-collapse hidden overflow-hidden transition-all duration-300">
         <div class="flex justify-center gap-2">
           <a class="inline-flex justify-center items-center h-9 gap-x-3 text-center bg-transparent hover:bg-neutral-10 duration-300 border border-secondary text-secondary text-sm font-medium rounded-3xl py-3 px-4" href="#">
             Masuk
