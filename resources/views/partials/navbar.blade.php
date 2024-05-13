@@ -211,66 +211,44 @@
                   </button>
                 </div>
                 <div class="p-0 overflow-y-auto divide-y">
-                <!-- Card -->
-                <div class="group flex items-center gap-y-6 gap-x-4 p-4 size-full transition-all dark:bg-neutral-800 dark:focus:outline-none dark:focus:bg-neutral-800" href="#">
+                  <!-- Card -->
+                  <a href="#" class="group flex items-center gap-y-6 gap-x-4 p-4 size-full hover:bg-gray-100 duration-300 transition-all dark:bg-neutral-800 dark:focus:outline-none dark:focus:bg-neutral-800">
+                      <div class="inline-flex justify-center items-center py-1 px-2 rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
+                          <i class="bx bx-envelope flex-shrink-0 text-2xl text-gray-800 dark:text-neutral-200"></i>
+                      </div>
+                      <div class="w-full">
+                          <p class="block font-bold text-gray-800 dark:text-white text-sm max-w-[14rem] sm:max-w-[22rem] truncate">Judul notifikasi</p>
+                          <p class="text-gray-600 dark:text-neutral-400 truncate-[6rem] text-[14px] max-w-[14rem] sm:max-w-[22rem] truncate">Ini adalah pesan dari notifikasi</p>
+                      </div>
+                      {{-- <span class="size-2 inline-block bg-red-500 rounded-full me-2 p-1"></span> --}}
+                      <div class="relative flex justify-center items-center me-2">
+                        <span class="animate-ping absolute inline-flex size-full rounded-full bg-red-400 opacity-75 dark:bg-red-600"></span>
+                        <span class="relative inline-flex rounded-full size-3 bg-red-500"></span>
+                      </div>                      
+                  </a>
+                  <!-- End Card -->
+                  <!-- Card -->
+                  <a href="#" class="group flex items-center gap-y-6 gap-x-4 p-4 size-full hover:bg-gray-100 duration-300 transition-all dark:bg-neutral-800 dark:focus:outline-none dark:focus:bg-neutral-800">
                     <div class="inline-flex justify-center items-center py-1 px-2 rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
                         <i class="bx bx-envelope flex-shrink-0 text-2xl text-gray-800 dark:text-neutral-200"></i>
                     </div>
                     <div class="w-full">
-                        <p class="block font-bold text-gray-800 dark:text-white text-sm">Judul notifikasi</p>
-                        <p class="text-gray-600 dark:text-neutral-400 truncate-[6rem] text-[14px]">Ini adalah pesan dari notifikasi</p>
+                        <p class="block font-bold text-gray-800 dark:text-white text-sm max-w-[14rem] sm:max-w-[22rem] truncate">UTBK/SNBT</p>
+                        <p class="text-gray-600 dark:text-neutral-400 truncate-[6rem] text-[14px] max-w-[14rem] sm:max-w-[22rem] truncate">Selamat anda dinyatakan lulus!</p>
                     </div>
-                    <span class="size-2 inline-block bg-red-500 rounded-full me-2 p-1"></span>
+                    <span class="text-end w-20 text-xs text-gray-500">13 Jun</span>
+                  </a>
+                  <!-- End Card -->
                 </div>
-                <!-- End Card -->
-                <!-- Card -->
-                <div class="group flex items-center gap-y-6 gap-x-4 p-4 size-full transition-all dark:bg-neutral-800 dark:focus:outline-none dark:focus:bg-neutral-800" href="#">
-                    <div class="inline-flex justify-center items-center py-1 px-2 rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-900 dark:bg-blue-800">
-                        <i class="bx bx-envelope flex-shrink-0 text-2xl text-gray-800 dark:text-neutral-200"></i>
-                    </div>
-                    <div class="w-full">
-                        <p class="block font-bold text-gray-800 dark:text-white text-sm">Judul notifikasi</p>
-                        <p class="text-gray-600 dark:text-neutral-400 truncate-[6rem] text-[14px]">Ini adalah pesan dari notifikasi</p>
-                    </div>
-                    <span class="size-2 inline-block bg-red-500 rounded-full me-2 p-1"></span>
-                </div>
-                <!-- End Card -->
-                </div>
-                <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t dark:border-neutral-700">
-                  <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-overlay="#hs-scroll-inside-body-modal">
-                    Tutup
-                  </button>
-                  {{-- <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
-                    Save changes
-                  </button> --}}
-                </div>
+                <div class="pt-1.5"></div>
               </div>
             </div>
           </div>
-        {{-- <div id="hs-overlay-top" class="hs-overlay hs-overlay-open:translate-y-0 -translate-y-full fixed top-0 inset-x-0 transition-all duration-300 transform max-h-40 size-full z-[80] bg-white border-b dark:bg-neutral-800 dark:border-neutral-700 hidden" tabindex="-1">
-          <div class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-700">
-            <h3 class="font-bold text-gray-800 dark:text-white">
-              Notifikasi
-            </h3>
-            <button type="button" class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700" data-hs-overlay="#hs-overlay-top">
-              <span class="sr-only">Close modal</span>
-              <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 6 6 18"></path>
-                <path d="m6 6 12 12"></path>
-              </svg>
-            </button>
-          </div>
-          <div class="p-4">
-            <p class="text-gray-800 dark:text-neutral-400">
-              Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-            </p>
-          </div>
-        </div> --}}
         <!-- End Off canvas Notification -->
 
         <!-- Off canvas Cart -->
-        <div id="hs-overlay-right" class="hs-overlay hs-overlay-open:translate-x-0 hidden translate-x-full fixed top-0 end-0 transition-all duration-300 transform h-full max-w-sm w-full z-[80] bg-white border-s dark:bg-neutral-800 dark:border-neutral-700" tabindex="-1">
-          <div class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-700">
+        <div id="hs-overlay-right" class="hs-overlay hs-overlay-open:translate-x-0 hidden translate-x-full fixed top-0 end-0 transition-all duration-300 transform h-full max-w-full sm:max-w-sm w-full z-[80] bg-white border-s dark:bg-neutral-800 dark:border-neutral-700" tabindex="-1">
+          <div class="flex justify-between items-center py-3 px-4 shadow-md dark:border-neutral-700">
             <h3 class="text-base font-bold text-gray-800 dark:text-white">
               Keranjang
             </h3>
@@ -282,46 +260,184 @@
               </svg>
             </button>
           </div>
-          <div class="">
-              <!-- Card -->
-              <div class="group flex gap-y-6 p-4 size-full bg-gray-100 transition-all dark:bg-neutral-800 dark:focus:outline-none dark:focus:bg-neutral-800" href="#">
-                {{-- <svg class="flex-shrink-0 size-8 text-gray-800 mt-0.5 me-6 dark:text-neutral-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg> --}}
-                <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
-                <div class="w-full">
-                  <div>
-                    <p class="text-gray-600 dark:text-neutral-400 truncate-[6rem] text-[14px]">Kaos pendek cotton combed 30s</p>
-                    <p class="block font-bold text-gray-800 dark:text-white text-sm">Rp50.000</p>
-                  </div>
+          <div class="flex items-center justify-between border-b max-w-full px-4 mb-4 h-9">
+            <p class="inline-flex items-center gap-x-2 text-xs text-gray-600">
+              2 produk
+            </p>
+            <button type="submit" class="inline-flex items-center gap-x-2 text-xs font-semibold text-red-600 hover:text-opacity-60 duration-300" data-hs-overlay="#hs-vertically-centered-modal"
+            data-hs-overlay-options='{
+              "isClosePrev": false
+            }'>Hapus
+            </button>
+          </div>
+          
+          <div class="flex items-center justify-between max-w-full px-4 mx-4 rounded-lg bg-gradient-to-br from-purple-200 h-9">
+            <span class="inline-flex items-center gap-x-2 text-sm text-purple-700">
+              <i class="bx bxs-package text-xl"></i>
+              Ayo checkout belanjaanmu sekarang!
+            </span>
+          </div>
+          <div class="divide-y-8 divide-gray-100">
+            <!-- Card -->
+            <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-neutral-800 dark:focus:outline-none dark:focus:bg-neutral-800" href="#">
+              {{-- <svg class="flex-shrink-0 size-8 text-gray-800 mt-0.5 me-6 dark:text-neutral-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg> --}}
+              <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+              <div class="w-full">
+                <div>
+                  <p class="text-gray-600 dark:text-neutral-400 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
+                  <p class="block font-bold text-gray-800 dark:text-white text-sm">Rp50.000</p>
+                </div>
 
-                  <div class="flex justify-between">
-                    <!-- Input Number -->
-                    <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
-                      <div class="flex items-center gap-x-1.5">
-                        <button type="button" class="size-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-decrement="">
-                          <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14"></path>
-                          </svg>
-                        </button>
-                        <input class="text-sm p-0 w-8 bg-transparent border-0 text-gray-800 text-center focus:ring-0 dark:text-white" type="text" value="1" data-hs-input-number-input="">
-                        <button type="button" class="size-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-increment="">
-                          <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14"></path>
-                            <path d="M12 5v14"></path>
-                          </svg>
-                        </button>
-                      </div>
+                <div class="flex justify-between">
+                  <!-- Input Number -->
+                  <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
+                    <div class="flex items-center gap-x-1.5">
+                      <button type="button" class="size-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-decrement="">
+                        <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M5 12h14"></path>
+                        </svg>
+                      </button>
+                      <input class="text-sm p-0 w-8 bg-transparent border-0 text-gray-800 text-center focus:ring-0 dark:text-white" type="text" value="1" data-hs-input-number-input="">
+                      <button type="button" class="size-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-increment="">
+                        <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M5 12h14"></path>
+                          <path d="M12 5v14"></path>
+                        </svg>
+                      </button>
                     </div>
-                    <!-- End Input Number -->
-                    <button class="flex items-center mt-2">
-                      <i class="bx bx-trash text-xl text-red-600 hover:text-opacity-70 duration-300"></i>
-                    </button>
                   </div>
+                  <!-- End Input Number -->
+                  <button class="flex items-center mt-2">
+                    <i class="bx bx-trash text-xl text-red-600 hover:text-opacity-60 duration-300"></i>
+                  </button>
                 </div>
               </div>
-              <!-- End Card -->
+            </div>
+            <!-- End Card -->
+            <!-- Card -->
+            <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-neutral-800 dark:focus:outline-none dark:focus:bg-neutral-800" href="#">
+              {{-- <svg class="flex-shrink-0 size-8 text-gray-800 mt-0.5 me-6 dark:text-neutral-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg> --}}
+              <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+              <div class="w-full">
+                <div>
+                  <p class="text-gray-600 dark:text-neutral-400 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
+                  <p class="block font-bold text-gray-800 dark:text-white text-sm">Rp50.000</p>
+                </div>
+
+                <div class="flex justify-between">
+                  <!-- Input Number -->
+                  <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
+                    <div class="flex items-center gap-x-1.5">
+                      <button type="button" class="size-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-decrement="">
+                        <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M5 12h14"></path>
+                        </svg>
+                      </button>
+                      <input class="text-sm p-0 w-8 bg-transparent border-0 text-gray-800 text-center focus:ring-0 dark:text-white" type="text" value="1" data-hs-input-number-input="">
+                      <button type="button" class="size-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-increment="">
+                        <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M5 12h14"></path>
+                          <path d="M12 5v14"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- End Input Number -->
+                  <button class="flex items-center mt-2">
+                    <i class="bx bx-trash text-xl text-red-600 hover:text-opacity-60 duration-300"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- End Card -->
           </div>
+          <nav class="border-gray-200 fixed w-full z-20 bottom-0 start-0">
+            <div class="flex items-center justify-between py-2 px-4">
+            <h4 class="text-sm">Total <span class="text-base font-bold">Rp100.000</span></h4>
+              <form action="#" method="">
+                  @csrf
+                  <button type="submit" class="inline-flex justify-center items-center h-9 gap-x-3 text-center bg-gradient-to-r from-secondary to-primary hover:from-primary hover:to-secondary duration-300 text-white text-sm font-semibold rounded-3xl py-5 px-7">
+                    Beli (2)
+                  </button>
+              </form>
+            </div>
+          </nav>
         </div>
         <!-- End Off canvas Cart -->
+
+        <div id="hs-vertically-centered-modal" class="hs-overlay hidden size-full fixed -top-4 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
+          <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
+            <div class="relative flex flex-col bg-white shadow-lg rounded-xl dark:bg-neutral-900">
+              <div class="absolute top-2 end-2">
+                <button type="button" class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700" data-hs-overlay="#hs-vertically-centered-modal">
+                  <span class="sr-only">Close</span>
+                  <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 12 12"></path>
+                  </svg>
+                </button>
+              </div>
+        
+              <div class="p-4 sm:p-10 text-center overflow-y-auto">
+                <!-- Icon -->
+                <span class="mb-4 inline-flex justify-center items-center size-[62px] rounded-full border-4 border-yellow-50 bg-yellow-100 text-yellow-500 dark:bg-yellow-700 dark:border-yellow-600 dark:text-yellow-100">
+                  <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                  </svg>
+                </span>
+                <!-- End Icon -->
+        
+                <h3 class="mb-2 text-2xl font-bold text-gray-800 dark:text-neutral-200">
+                  Sign out
+                </h3>
+                <p class="text-gray-500 dark:text-neutral-500">
+                  Are you sure you would like to sign out of your Preline account?
+                </p>
+        
+                <div class="mt-6 flex justify-center gap-x-4">
+                  <a class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-800 dark:text-white dark:hover:bg-neutral-800" href="#">
+                    Sign out
+                  </a>
+                  <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" data-hs-overlay="#hs-sign-out-alert">
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {{-- <div id="hs-vertically-centered-modal" class="hs-overlay hs-overlay-backdrop-open:bg-gray-900/70 hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
+          <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto min-h-[calc(100%-3.5rem)] flex items-center">
+            <div class="w-full flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
+              <div class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-700">
+                <h3 class="font-bold text-gray-800 dark:text-white">
+                  Modal title
+                </h3>
+                <button type="button" class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700" data-hs-overlay="#hs-vertically-centered-modal">
+                  <span class="sr-only">Close</span>
+                  <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 12 12"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="p-4 overflow-y-auto">
+                <p class="text-gray-800 dark:text-neutral-400">
+                  This is a wider card with supporting text below as a natural lead-in to additional content.
+                </p>
+              </div>
+              <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t dark:border-neutral-700">
+                <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-overlay="#hs-vertically-centered-modal">
+                  Close
+                </button>
+                <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                  Save changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div> --}}
 
         <!-- Hamburger -->
         <div class="lg:hidden flex justify-end gap-2 ml-2">
