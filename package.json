@@ -17,7 +17,11 @@
         "vite": "^5.0"
     },
     "dependencies": {
+        "@preline/carousel": "^2.1.0",
         "@preline/theme-switch": "^2.1.0",
-        "boxicons": "^2.1.4"
+        "apexcharts": "^3.49.1",
+        "boxicons": "^2.1.4",
+        "lodash": "^4.17.21",
+        "swiper": "^11.1.3"
     }
 }

@@ -8,16 +8,20 @@ use App\Models\Produk;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('layouts/app');
+    return view('home');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
 });
 
 Route::get('/api/products', function () {
     return response()->json(Produk::all()) ;
 })->name('product.api');
 
-Route::get('/dashboard', function () {
-    return view('development.dashboard', ['produks' => Produk::where('id', 1)->get()]);
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('development.dashboard', ['produks' => Produk::where('id', 1)->get()]);
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
