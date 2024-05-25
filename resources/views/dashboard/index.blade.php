@@ -6,19 +6,12 @@
 <!-- Breadcrumb -->
 <div class="sticky top-0 inset-x-0 z-20 bg-white border-y px-4 sm:px-6 md:px-8 lg:hidden dark:bg-neutral-800 dark:border-neutral-700">
   <div class="flex justify-between items-center py-2">
-    <!-- Breadcrumb -->
-    <ol class="ms-3 flex items-center whitespace-nowrap">
-      <li class="flex items-center text-sm text-gray-800 dark:text-neutral-400">
-        Application Layout
-        <svg class="flex-shrink-0 mx-3 overflow-visible size-2.5 text-gray-400 dark:text-neutral-500" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5 1L10.6869 7.16086C10.8637 7.35239 10.8637 7.64761 10.6869 7.83914L5 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </li>
-      <li class="text-sm font-semibold text-gray-800 truncate dark:text-neutral-400" aria-current="page">
-        Dashboard
-      </li>
-    </ol>
-    <!-- End Breadcrumb -->
+    <div class="sm:hidden flex items-center gap-1">
+      <h3 class="text-lg font-bold italic text-primary dark:text-blue-300">
+        Semangat bekerja
+      </h3>
+      <img src="{{ asset('assets/api.gif') }}" alt="" class="h-6">
+    </div>
 
     <!-- Sidebar -->
     <button type="button" class="py-2 px-3 flex justify-center items-center gap-x-1.5 text-xs rounded-lg border border-gray-200 text-gray-500 hover:text-gray-600 dark:border-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200" data-hs-overlay="#application-sidebar" aria-controls="application-sidebar" aria-label="Sidebar">
@@ -37,31 +30,71 @@
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
       <!-- Card -->
       <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
-        <div class="p-4 md:p-5">
-          <div class="flex items-center gap-x-2">
+        <div class="p-4 md:p-5 flex justify-between gap-x-3">
+          <div>
             <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-500">
-              Total users
+              Total Pengguna
             </p>
-            <div class="hs-tooltip">
-              <div class="hs-tooltip-toggle">
-                <svg class="flex-shrink-0 size-4 text-gray-500 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700" role="tooltip">
-                  The number of daily users
+            <div class="mt-1 flex items-center gap-x-2">
+              <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-neutral-200">
+                102,604
+              </h3>
+              <span class="flex items-center gap-x-1 text-red-600">
+                <svg class="inline-block size-4 self-center" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg>
+                <span class="inline-block text-sm">
+                  1.7%
                 </span>
-              </div>
+              </span>
             </div>
           </div>
+          <div class="flex-shrink-0 flex justify-center items-center size-[46px] bg-primary text-white rounded-full dark:bg-blue-900 dark:text-blue-200">
+            <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+        </div>
+      </div>
+      <!-- End Card -->
 
-          <div class="mt-1 flex items-center gap-x-2">
-            <h3 class="text-xl sm:text-2xl font-medium text-gray-800 dark:text-neutral-200">
-              72,540
-            </h3>
-            <span class="flex items-center gap-x-1 text-green-600">
-              <svg class="inline-block size-4 self-center" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-              <span class="inline-block text-sm">
-                1.7%
+      <!-- Card -->
+      <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
+        <div class="p-4 md:p-5 flex justify-between gap-x-3">
+          <div>
+            <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-500">
+              Total Produk
+            </p>
+            <div class="mt-1 flex items-center gap-x-2">
+              <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-neutral-200">
+                12
+              </h3>
+            </div>
+          </div>
+          <div class="flex-shrink-0 flex justify-center items-center size-[46px] bg-primary text-white rounded-full dark:bg-blue-900 dark:text-blue-200">
+            <i class="bx bx-package text-2xl text-white dark:text-gray-800"></i>
+          </div>
+        </div>
+      </div>
+      <!-- End Card -->
+
+      <!-- Card -->
+      <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
+        <div class="p-4 md:p-5 flex justify-between gap-x-3">
+          <div>
+            <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-500">
+              Total Pesanan
+            </p>
+            <div class="mt-1 flex items-center gap-x-2">
+              <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-neutral-200">
+                75,020
+              </h3>
+              <span class="flex items-center gap-x-1 text-green-600">
+                <svg class="inline-block size-4 self-center" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                <span class="inline-block text-sm">
+                  1.7%
+                </span>
               </span>
-            </span>
+            </div>
+          </div>
+          <div class="flex-shrink-0 flex justify-center items-center size-[46px] bg-primary text-white rounded-full dark:bg-blue-900 dark:text-blue-200">
+            <i class="bx bx-notepad text-2xl text-white dark:text-gray-800"></i>
           </div>
         </div>
       </div>
@@ -69,59 +102,25 @@
 
       <!-- Card -->
       <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
-        <div class="p-4 md:p-5">
-          <div class="flex items-center gap-x-2">
+        <div class="p-4 md:p-5 flex justify-between gap-x-3">
+          <div>
             <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-500">
-              Sessions
+              Total Penjualan
             </p>
-          </div>
-
-          <div class="mt-1 flex items-center gap-x-2">
-            <h3 class="text-xl sm:text-2xl font-medium text-gray-800 dark:text-neutral-200">
-              29.4%
-            </h3>
-          </div>
-        </div>
-      </div>
-      <!-- End Card -->
-
-      <!-- Card -->
-      <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
-        <div class="p-4 md:p-5">
-          <div class="flex items-center gap-x-2">
-            <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-500">
-              Avg. Click Rate
-            </p>
-          </div>
-
-          <div class="mt-1 flex items-center gap-x-2">
-            <h3 class="text-xl sm:text-2xl font-medium text-gray-800 dark:text-neutral-200">
-              56.8%
-            </h3>
-            <span class="flex items-center gap-x-1 text-red-600">
-              <svg class="inline-block size-4 self-center" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg>
-              <span class="inline-block text-sm">
-                1.7%
+            <div class="mt-1 flex items-center gap-x-2">
+              <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-neutral-200">
+                72,540
+              </h3>
+              <span class="flex items-center gap-x-1 text-green-600">
+                <svg class="inline-block size-4 self-center" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                <span class="inline-block text-sm">
+                  1.7%
+                </span>
               </span>
-            </span>
+            </div>
           </div>
-        </div>
-      </div>
-      <!-- End Card -->
-
-      <!-- Card -->
-      <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
-        <div class="p-4 md:p-5">
-          <div class="flex items-center gap-x-2">
-            <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-500">
-              Pageviews
-            </p>
-          </div>
-
-          <div class="mt-1 flex items-center gap-x-2">
-            <h3 class="text-xl sm:text-2xl font-medium text-gray-800 dark:text-neutral-200">
-              92,913
-            </h3>
+          <div class="flex-shrink-0 flex justify-center items-center size-[46px] bg-primary text-white rounded-full dark:bg-blue-900 dark:text-blue-200">
+            <i class="bx bx-store text-2xl text-white dark:text-gray-800"></i>
           </div>
         </div>
       </div>
@@ -129,59 +128,29 @@
     </div>
     <!-- End Grid -->
 
-    <div class="grid lg:grid-cols-2 gap-4 sm:gap-6">
-      <!-- Card -->
-      <div class="p-4 md:p-5 min-h-[410px] flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
-        <!-- Header -->
-        <div class="flex justify-between items-center">
-          <div>
-            <h2 class="text-sm text-gray-500 dark:text-neutral-500">
-              Income
-            </h2>
-            <p class="text-xl sm:text-2xl font-medium text-gray-800 dark:text-neutral-200">
-              $126,238.49
-            </p>
-          </div>
-
-          <div>
-            <span class="py-[5px] px-1.5 inline-flex items-center gap-x-1 text-xs font-medium rounded-md bg-teal-100 text-teal-800 dark:bg-teal-500/10 dark:text-teal-500">
-              <svg class="inline-block size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
-              25%
-            </span>
-          </div>
+    <!-- Card -->
+    <div class="bg-white border border-gray-200 p-2 pt-1 rounded-xl shadow-sm overflow-hidden dark:bg-neutral-800 dark:border-neutral-700">
+      <div class="flex justify-between items-center mt-2 px-4">
+        <div class="inline-flex items-center">
+          <p class="text-lg font-semibold text-gray-800 dark:text-white">
+            Penjualan
+          </p>
         </div>
-        <!-- End Header -->
-
-        <div id="hs-multiple-bar-charts"></div>
-      </div>
-      <!-- End Card -->
-
-      <!-- Card -->
-      <div class="p-4 md:p-5 min-h-[410px] flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
-        <!-- Header -->
-        <div class="flex justify-between items-center">
-          <div>
-            <h2 class="text-sm text-gray-500 dark:text-neutral-500">
-              Visitors
-            </h2>
-            <p class="text-xl sm:text-2xl font-medium text-gray-800 dark:text-neutral-200">
-              80.3k
-            </p>
-          </div>
-
-          <div>
-            <span class="py-[5px] px-1.5 inline-flex items-center gap-x-1 text-xs font-medium rounded-md bg-red-100 text-red-800 dark:bg-red-500/10 dark:text-red-500">
-              <svg class="inline-block size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
-              2%
-            </span>
-          </div>
+        <div>
+          <select id="filter" class="py-2 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm cursor-pointer dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 duration-100">
+            <option value="pekan">Per pekan</option>
+            <option value="bulan">Per bulan</option>
+            <option value="tahun">Per tahun</option>
+          </select>
         </div>
-        <!-- End Header -->
-
-        <div id="hs-single-area-chart"></div>
       </div>
-      <!-- End Card -->
+
+      <hr class="mt-3 border-1 border-gray-200 dark:border-neutral-800">
+      
+      <div id="hs-curved-area-charts"></div>
+      <div id="chart-info" class="flex items-center justify-center text-sm text-gray-600 dark:text-gray-300"></div>
     </div>
+    <!-- End Card -->
 
     <!-- Card -->
     <div class="flex flex-col">
@@ -191,24 +160,20 @@
             <!-- Header -->
             <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-neutral-700">
               <div>
-                <h2 class="text-xl font-semibold text-gray-800 dark:text-neutral-200">
-                  Users
+                <h2 class="text-lg font-semibold text-gray-800 dark:text-neutral-200">
+                  Produk terlaris
                 </h2>
-                <p class="text-sm text-gray-600 dark:text-neutral-400">
-                  Add users, edit and more.
-                </p>
               </div>
 
               <div>
-                <div class="inline-flex gap-x-2">
-                  <a class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" href="#">
-                    View all
-                  </a>
-
-                  <a class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" href="#">
-                    <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
-                    Add user
-                  </a>
+                <div class="hidden sm:block">
+                  <label for="icon" class="sr-only">Search</label>
+                  <div class="relative min-w-72 md:min-w-80">
+                    <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-4">
+                      <svg class="flex-shrink-0 size-4 text-gray-400 dark:text-neutral-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    </div>
+                    <input type="text" id="icon" name="icon" class="py-2 px-4 ps-11 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Cari produk terlaris">
+                  </div>
                 </div>
               </div>
             </div>
@@ -1038,363 +1003,186 @@
 
 <script>
   window.addEventListener('load', () => {
-    (function () {
-      buildChart('#hs-multiple-bar-charts', (mode) => ({
-        chart: {
-          type: 'bar',
-          height: 300,
-          toolbar: {
-            show: false
-          },
-          zoom: {
-            enabled: false
-          }
-        },
-        series: [
-          {
-            name: 'Chosen Period',
-            data: [23000, 44000, 55000, 57000, 56000, 61000, 58000, 63000, 60000, 66000, 34000, 78000]
-          }, {
-            name: 'Last Period',
-            data: [17000, 76000, 85000, 101000, 98000, 87000, 105000, 91000, 114000, 94000, 67000, 66000]
-          }
-        ],
-        plotOptions: {
-          bar: {
-            horizontal: false,
-            columnWidth: '16px',
-            borderRadius: 0
-          }
-        },
-        legend: {
+    const data = {
+      pekan: [120, 150, 130, 140, 160, 170, 180], // Contoh data penjualan mingguan
+      bulan: [700, 750, 730, 800], // Contoh data penjualan bulanan
+      tahun: [6000, 6500, 7000, 7500, 8000, 8500, 9000, 9500, 10000, 10500, 11000, 11500] // Contoh data penjualan tahunan
+    };
+
+    const categories = {
+      pekan: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'],
+      bulan: ['Pekan 1', 'Pekan 2', 'Pekan 3', 'Pekan 4'],
+      tahun: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des']
+    };
+
+    const getCurrentDateInfo = () => {
+      const now = new Date();
+      const options = { month: 'long', year: 'numeric' };
+      const currentMonth = new Intl.DateTimeFormat('id-ID', options).format(now);
+      const currentYear = now.getFullYear();
+      const currentWeek = Math.ceil(now.getDate() / 7);
+      return { currentWeek, currentMonth, currentYear };
+    };
+
+    const { currentWeek, currentMonth, currentYear } = getCurrentDateInfo();
+
+    const updateChartInfo = (filter) => {
+      const chartInfo = document.querySelector('#chart-info');
+      let infoText = '';
+      switch (filter) {
+        case 'pekan':
+          infoText = `Pekan ke-${currentWeek}, ${currentMonth}`;
+          break;
+        case 'bulan':
+          infoText = `${currentMonth}`;
+          break;
+        case 'tahun':
+          infoText = `Tahun ${currentYear}`;
+          break;
+      }
+      chartInfo.textContent = infoText;
+    };
+
+    const buildChart = (filter) => ({
+      chart: {
+        height: 300,
+        type: 'area',
+        toolbar: {
           show: false
         },
-        dataLabels: {
+        zoom: {
           enabled: false
+        }
+      },
+      series: [
+        {
+          name: 'Terjual',
+          data: data[filter]
+        }
+      ],
+      legend: {
+        show: false
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        curve: 'smooth',
+        width: 2
+      },
+      grid: {
+        strokeDashArray: 2
+      },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          type: 'vertical',
+          shadeIntensity: 1,
+          opacityFrom: 0.1,
+          opacityTo: 0.8
+        }
+      },
+      xaxis: {
+        type: 'category',
+        tickPlacement: 'on',
+        categories: categories[filter],
+        axisBorder: {
+          show: false
         },
-        stroke: {
-          show: true,
-          width: 8,
-          colors: ['transparent']
+        axisTicks: {
+          show: false
         },
-        xaxis: {
-          categories: [
-            'January',
-            'February',
-            'March',
-            'April',
-            'May',
-            'June',
-            'July',
-            'August',
-            'September',
-            'October',
-            'November',
-            'December'
-          ],
-          axisBorder: {
-            show: false
+        crosshairs: {
+          stroke: {
+            dashArray: 0
           },
-          axisTicks: {
+          dropShadow: {
             show: false
-          },
-          crosshairs: {
-            show: false
-          },
-          labels: {
-            style: {
-              colors: '#9ca3af',
-              fontSize: '13px',
-              fontFamily: 'Inter, ui-sans-serif',
-              fontWeight: 400
-            },
-            offsetX: -2,
-            formatter: (title) => title.slice(0, 3)
-          }
-        },
-        yaxis: {
-          labels: {
-            align: 'left',
-            minWidth: 0,
-            maxWidth: 140,
-            style: {
-              colors: '#9ca3af',
-              fontSize: '13px',
-              fontFamily: 'Inter, ui-sans-serif',
-              fontWeight: 400
-            },
-            formatter: (value) => value >= 1000 ? `${value / 1000}k` : value
-          }
-        },
-        states: {
-          hover: {
-            filter: {
-              type: 'darken',
-              value: 0.9
-            }
           }
         },
         tooltip: {
-          y: {
-            formatter: (value) => `$${value >= 1000 ? `${value / 1000}k` : value}`
-          },
-          custom: function (props) {
-            const { categories } = props.ctx.opts.xaxis;
-            const { dataPointIndex } = props;
-            const title = categories[dataPointIndex];
-            const newTitle = `${title}`;
-
-            return buildTooltip(props, {
-              title: newTitle,
-              mode,
-              hasTextLabel: true,
-              wrapperExtClasses: 'min-w-28',
-              labelDivider: ':',
-              labelExtClasses: 'ms-2'
-            });
-          }
+          enabled: false
         },
-        responsive: [{
-          breakpoint: 568,
-          options: {
-            chart: {
-              height: 300
+        labels: {
+          style: {
+            colors: '#9ca3af',
+            fontSize: '13px',
+            fontFamily: 'Inter, ui-sans-serif',
+            fontWeight: 400
+          }
+        }
+      },
+      yaxis: {
+        labels: {
+          align: 'left',
+          minWidth: 0,
+          maxWidth: 140,
+          style: {
+            colors: '#9ca3af',
+            fontSize: '13px',
+            fontFamily: 'Inter, ui-sans-serif',
+            fontWeight: 400
+          },
+          formatter: (value) => value >= 1000 ? `${value / 1000}k` : value
+        }
+      },
+      tooltip: {
+        x: {
+          format: 'MMMM yyyy'
+        },
+        y: {
+          formatter: (value) => `${value} pcs`
+        }
+      },
+      responsive: [{
+        breakpoint: 568,
+        options: {
+          chart: {
+            height: 300
+          },
+          labels: {
+            style: {
+              colors: '#9ca3af',
+              fontSize: '11px',
+              fontFamily: 'Inter, ui-sans-serif',
+              fontWeight: 400
             },
-            plotOptions: {
-              bar: {
-                columnWidth: '14px'
-              }
-            },
-            stroke: {
-              width: 8
-            },
+            offsetX: -2
+          },
+          yaxis: {
             labels: {
+              align: 'left',
+              minWidth: 0,
+              maxWidth: 140,
               style: {
                 colors: '#9ca3af',
                 fontSize: '11px',
                 fontFamily: 'Inter, ui-sans-serif',
                 fontWeight: 400
               },
-              offsetX: -2,
-              formatter: (title) => title.slice(0, 3)
-            },
-            yaxis: {
-              labels: {
-                align: 'left',
-                minWidth: 0,
-                maxWidth: 140,
-                style: {
-                  colors: '#9ca3af',
-                  fontSize: '11px',
-                  fontFamily: 'Inter, ui-sans-serif',
-                  fontWeight: 400
-                },
-                formatter: (value) => value >= 1000 ? `${value / 1000}k` : value
-              }
-            },
-          },
-        }]
-      }), {
-        colors: ['#2563eb', '#d1d5db'],
-        grid: {
-          borderColor: '#e5e7eb'
-        }
-      }, {
-        colors: ['#6b7280', '#2563eb'],
-        grid: {
-          borderColor: '#374151'
-        }
-      });
-    })();
-  });
-</script>
-
-<script>
-  window.addEventListener('load', () => {
-    (function () {
-      buildChart('#hs-single-area-chart', (mode) => ({
-        chart: {
-          height: 300,
-          type: 'area',
-          toolbar: {
-            show: false
-          },
-          zoom: {
-            enabled: false
-          }
-        },
-        series: [
-          {
-            name: 'Visitors',
-            data: [180, 51, 60, 38, 88, 50, 40, 52, 88, 80, 60, 70]
-          }
-        ],
-        legend: {
-          show: false
-        },
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          curve: 'straight',
-          width: 2
-        },
-        grid: {
-          strokeDashArray: 2
-        },
-        fill: {
-          type: 'gradient',
-          gradient: {
-            type: 'vertical',
-            shadeIntensity: 1,
-            opacityFrom: 0.1,
-            opacityTo: 0.8
-          }
-        },
-        xaxis: {
-          type: 'category',
-          tickPlacement: 'on',
-          categories: [
-            '25 January 2023',
-            '26 January 2023',
-            '27 January 2023',
-            '28 January 2023',
-            '29 January 2023',
-            '30 January 2023',
-            '31 January 2023',
-            '1 February 2023',
-            '2 February 2023',
-            '3 February 2023',
-            '4 February 2023',
-            '5 February 2023'
-          ],
-          axisBorder: {
-            show: false
-          },
-          axisTicks: {
-            show: false
-          },
-          crosshairs: {
-            stroke: {
-              dashArray: 0
-            },
-            dropShadow: {
-              show: false
+              formatter: (value) => value >= 1000 ? `${value / 1000}k` : value
             }
           },
-          tooltip: {
-            enabled: false
-          },
-          labels: {
-            style: {
-              colors: '#9ca3af',
-              fontSize: '13px',
-              fontFamily: 'Inter, ui-sans-serif',
-              fontWeight: 400
-            },
-            formatter: (title) => {
-              let t = title;
+        },
+      }]
+    });
 
-              if (t) {
-                const newT = t.split(' ');
-                t = `${newT[0]} ${newT[1].slice(0, 3)}`;
-              }
+    const renderChart = (filter) => {
+      const options = buildChart(filter);
+      const chartContainer = document.querySelector('#hs-curved-area-charts');
+      chartContainer.innerHTML = ''; // Clear the chart container
+      const chart = new ApexCharts(chartContainer, options);
+      chart.render();
+      updateChartInfo(filter);
+    };
 
-              return t;
-            }
-          }
-        },
-        yaxis: {
-          labels: {
-            align: 'left',
-            minWidth: 0,
-            maxWidth: 140,
-            style: {
-              colors: '#9ca3af',
-              fontSize: '13px',
-              fontFamily: 'Inter, ui-sans-serif',
-              fontWeight: 400
-            },
-            formatter: (value) => value >= 1000 ? `${value / 1000}k` : value
-          }
-        },
-        tooltip: {
-          x: {
-            format: 'MMMM yyyy'
-          },
-          y: {
-            formatter: (value) => `${value >= 1000 ? `${value / 1000}k` : value}`
-          },
-          custom: function (props) {
-            const { categories } = props.ctx.opts.xaxis;
-            const { dataPointIndex } = props;
-            const title = categories[dataPointIndex].split(' ');
-            const newTitle = `${title[0]} ${title[1]}`;
+    document.querySelector('#filter').addEventListener('change', (event) => {
+      const filter = event.target.value;
+      renderChart(filter);
+    });
 
-            return buildTooltip(props, {
-              title: newTitle,
-              mode,
-              valuePrefix: '',
-              hasTextLabel: true,
-              markerExtClasses: '!rounded-sm',
-              wrapperExtClasses: 'min-w-28'
-            });
-          }
-        },
-        responsive: [{
-          breakpoint: 568,
-          options: {
-            chart: {
-              height: 300
-            },
-            labels: {
-              style: {
-                colors: '#9ca3af',
-                fontSize: '11px',
-                fontFamily: 'Inter, ui-sans-serif',
-                fontWeight: 400
-              },
-              offsetX: -2,
-              formatter: (title) => title.slice(0, 3)
-            },
-            yaxis: {
-              labels: {
-                align: 'left',
-                minWidth: 0,
-                maxWidth: 140,
-                style: {
-                  colors: '#9ca3af',
-                  fontSize: '11px',
-                  fontFamily: 'Inter, ui-sans-serif',
-                  fontWeight: 400
-                },
-                formatter: (value) => value >= 1000 ? `${value / 1000}k` : value
-              }
-            },
-          },
-        }]
-      }), {
-        colors: ['#2563eb', '#9333ea'],
-        fill: {
-          gradient: {
-            stops: [0, 90, 100]
-          }
-        },
-        grid: {
-          borderColor: '#e5e7eb'
-        }
-      }, {
-        colors: ['#3b82f6', '#a855f7'],
-        fill: {
-          gradient: {
-            stops: [100, 90, 0]
-          }
-        },
-        grid: {
-          borderColor: '#374151'
-        }
-      });
-    })();
+    // Initial render
+    renderChart('pekan');
   });
 </script>
 

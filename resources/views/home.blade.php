@@ -20,27 +20,27 @@
 </div>
 
 <!-- Carousel -->
-<div class="flex justify-center">
-  <div class="w-full lg:w-[90vw] lg:rounded-xl">
+<div class="flex justify-center px-4 lg:px-16">
+  <div class="w-full rounded-xl">
     <div data-hs-carousel='{
         "loadingClasses": "opacity-0",
         "isAutoPlay": true
       }' class="relative">
-      <div class="hs-carousel relative overflow-hidden w-full h-32 sm:h-60 lg:h-[300px] lg:rounded-xl">
+      <div class="hs-carousel relative overflow-hidden w-full h-32 sm:h-60 lg:h-[300px] rounded-xl">
         <div class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
           <div class="hs-carousel-slide">
             <div class="flex justify-center items-center h-full w-full">
-              <img src="{{ asset('assets/carousel/carousel1.jpg') }}" alt="First slide" class="flex items-stretch h-full w-full" />
+              <img src="{{ asset('assets/carousel/carousel1.jpg') }}" alt="First slide" class="h-full w-full" />
             </div>
           </div>
           <div class="hs-carousel-slide">
             <div class="flex justify-center items-center h-full w-full">
-              <img src="{{ asset('assets/carousel/carousel2.jpg') }}" alt="Second slide" class="flex items-stretch h-full w-full" />
+              <img src="{{ asset('assets/carousel/carousel2.jpg') }}" alt="Second slide" class="h-full w-full" />
             </div>
           </div>
           <div class="hs-carousel-slide">
             <div class="flex justify-center items-center h-full w-full">
-              <img src="{{ asset('assets/carousel/carousel3.jpg') }}" alt="Third slide" class="flex items-stretch h-full w-full" />
+              <img src="{{ asset('assets/carousel/carousel3.jpg') }}" alt="Third slide" class="h-full w-full" />
             </div>
           </div>
         </div>

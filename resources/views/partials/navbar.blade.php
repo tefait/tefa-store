@@ -35,7 +35,7 @@
 </div>
 <!-- End SearchBox -->
 
-<nav class="hidden sm:flex items-center justify-between h-7 max-w-full px-6 sm:px-8 lg:px-10 bg-primary dark:bg-secondary">
+<nav class="hidden lg:flex items-center justify-between h-7 max-w-full px-6 sm:px-8 lg:px-10 bg-primary dark:bg-secondary">
     <div class="flex flex-row py-2 sm:justify-end gap-y-0 gap-x-2 sm:py-0">
         <a class="text-xs text-white text-opacity-80 hover:text-white duration-300" href="#">Hubungi Kami</a>
             <span class="text-xs text-white text-opacity-80">|</span>
@@ -77,7 +77,7 @@
         <div class="flex items-center justify-between w-full">
             <a class="flex-none text-xl font-semibold dark:text-white hidden lg:block" href="#" aria-label="Logo"><img src="{{ asset('assets/logo2.png') }}" class="lg:h-12" alt=""></a>
 
-            <div class="hidden sm:flex hs-dropdown group [--strategy:static] md:[--strategy:absolute] [--adaptive:none] md:[--trigger:hover] cursor-pointer py-3 md:py-6 ml-5">
+            <div class="hidden sm:flex hs-dropdown group [--strategy:static] md:[--strategy:absolute] [--adaptive:none] md:[--trigger:hover] cursor-pointer py-3 ml-5">
                 <button class="hidden sm:flex items-center w-full text-sm text-gray-800 hover:text-black hover:bg-gray-100 group-hover:bg-gray-100 duration-300 rounded-xl p-2 font-medium dark:text-white dark:group-hover:text-gray-800">
                     Kategori
                     <i class="bx bx-chevron-down ms-1 text-2xl group-hover:rotate-180 duration-300"></i>
@@ -205,8 +205,8 @@
                 </button>
             </div>
 
-            <div class="hidden lg:flex justify-center mx-2">
-                <span class="h-8 border border-gray-100"></span>
+            <div class="hidden lg:flex justify-center mx-4">
+                <span class="h-8 border border-gray-100 dark:border-gray-800"></span>
             </div>
 
             <div class="">
@@ -222,14 +222,32 @@
                 </div>
             </div>
 
-            {{-- <div class="lg:flex w-[30rem] lg:my-4 lg:ml-3 hs-collapse hidden overflow-hidden transition-all duration-300">
-                <div class="relative inline-block min-w-10">
-                    <img class="inline-block h-10 w-full rounded-full" src="{{ asset('assets/team/hafiz.jpg') }}" alt="Profile Image">
-                    <span class="absolute bottom-0 end-0 block size-3 rounded-full ring-2 ring-white bg-green-500 dark:ring-neutral-900"></span>
-                </div>
-                <div class="ms-3">
-                    <h3 class="font-semibold text-gray-800 dark:text-white max-w-[11rem] truncate">Prof. H. Hafiz Haekal</h3>
-                    <p class="text-xs text-gray-400 dark:text-neutral-500 max-w-[11rem] truncate">hafizhaekal03@gmail.com</p>
+            {{-- <div class="hs-dropdown [--placement:bottom-right] hidden relative lg:inline-flex ms-2">
+                <button id="hs-dropdown-with-header" type="button" class="w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700">
+                  <img class="inline-block size-[38px] rounded-full ring-2 ring-white dark:ring-neutral-800" src="{{ asset('assets/team/hafiz.jpg') }}" alt="Profile Image">
+                  <span class="absolute bottom-0 end-0 block size-3 rounded-full ring-2 ring-white bg-green-500 dark:ring-neutral-900"></span>
+                </button>
+      
+                <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden z-50 min-w-60 bg-white shadow-md rounded-lg p-2 dark:bg-neutral-900 dark:border dark:border-neutral-700" aria-labelledby="hs-dropdown-with-header">
+                    <div class="py-3 px-5 -m-2 bg-gray-100 rounded-t-lg dark:bg-neutral-800">
+                        <h3 class="text-base font-bold text-gray-800 dark:text-white">Prof. H. Hafiz Haekal</h3>
+                        <p class="text-sm text-gray-600 dark:text-neutral-400">hafizhaekal03@gmail.com</p>
+                    </div>
+                    <div class="mt-2 py-2 first:pt-0 last:pb-0">
+                        <a href="#" class="flex items-center gap-x-2 py-1.5 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 duration-300 dark:text-white dark:hover:bg-neutral-800">
+                            <i class="bx bx-user text-xl"></i>
+                            Akun Saya
+                        </a>
+                        <a href="#" class="flex items-center gap-x-2 py-1.5 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 duration-300 dark:text-white dark:hover:bg-neutral-800">
+                            <i class="bx bx-shopping-bag text-xl"></i>
+                            Pembelian
+                        </a>
+                        <hr class="my-2">
+                        <a href="#" class="flex items-center gap-x-2 py-1.5 px-3 rounded-lg text-sm dark:font-bold text-red-600 hover:bg-gray-100 duration-300 dark:text-red-500 dark:hover:bg-neutral-800">
+                            <i class="bx bx-log-out-circle text-xl"></i>
+                            Logout
+                        </a>
+                    </div>
                 </div>
             </div> --}}
 
@@ -441,11 +459,9 @@
             </div> --}}
 
             <!-- Hamburger -->
-            <div class="lg:hidden flex justify-end gap-2">
-                <button type="button" class="hs-collapse-toggle size-9 flex justify-center items-center text-sm font-semibold text-gray-800 hover:text-black hover:bg-gray-100 py-1 px-2 rounded-full dark:text-white dark:hover:bg-neutral-700 duration-[400ms]" data-hs-overlay="#hs-overlay-bottom" aria-label="Toggle navigation">
-                    <i class="bx bx-menu-alt-right text-2xl"></i>
-                </button>
-            </div>
+            <button type="button" class="lg:hidden ms-1 relative inline-flex items-center text-sm font-medium" data-hs-overlay="#hs-overlay-bottom" aria-label="Toggle Menu">
+                <i class="bx bx-menu-alt-right text-2xl text-gray-800 dark:text-white hover:text-black py-1 px-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-700 duration-300"></i>
+            </button>
         </div>
 
         <div id="hs-overlay-bottom" class="hs-overlay hs-overlay-open:translate-y-0 translate-y-full fixed bottom-0 inset-x-0 transition-all duration-[400ms] transform size-full z-[80] bg-white border-b dark:bg-black dark:border-neutral-800 hidden">
@@ -491,10 +507,10 @@
                         </div> --}}
 
                         <div class="text-sm mt-4">
-                            <a href="#" class="flex items-center justify-between py-2 px-4 mt-2 hover:bg-gray-100 dark:hover:bg-neutral-900 duration-300">
+                            <a href="#" class="flex items-center justify-between py-1.5 px-4 mt-2 hover:bg-gray-100 dark:hover:bg-neutral-900 duration-300">
                                 <span class="flex items-center gap-3 text-gray-800 dark:text-white">
                                     <i class="bx bx-notepad text-2xl"></i>
-                                    <p class="text-base">
+                                    <p class="text-sm">
                                         Pesanan Saya
                                     </p>
                                 </span>
@@ -505,19 +521,19 @@
                                     <i class="bx bx-chevron-right text-2xl text-gray-400 dark:text-white"></i>
                                 </span>
                             </a>
-                            <a href="#" class="flex items-center justify-between py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-900 duration-300">
+                            <a href="#" class="flex items-center justify-between py-1.5 px-4 hover:bg-gray-100 dark:hover:bg-neutral-900 duration-300">
                                 <span class="flex items-center gap-3 text-gray-800 dark:text-white">
                                     <i class="bx bx-history text-2xl"></i>
-                                    <p class="text-base">
+                                    <p class="text-sm">
                                         Riwayat Transaksi
                                     </p>
                                 </span>
                                 <i class="bx bx-chevron-right text-2xl text-gray-400 dark:text-white"></i>
                             </a>
-                            <a href="#" class="flex items-center justify-between py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-900 duration-300">
+                            <a href="#" class="flex items-center justify-between py-1.5 px-4 hover:bg-gray-100 dark:hover:bg-neutral-900 duration-300">
                                 <span class="flex items-center gap-3 text-gray-800 dark:text-white">
                                     <i class="bx bx-star text-2xl"></i>
-                                    <p class="text-base">
+                                    <p class="text-sm">
                                         Penilaian
                                     </p>
                                 </span>
@@ -527,10 +543,10 @@
                                     <i class="bx bx-chevron-right text-2xl text-gray-400 dark:text-white"></i>
                                 </span>
                             </a>
-                            <a href="#" class="flex items-center justify-between py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-900 duration-300">
+                            <a href="#" class="flex items-center justify-between py-1.5 px-4 hover:bg-gray-100 dark:hover:bg-neutral-900 duration-300">
                                 <span class="flex items-center gap-3 text-gray-800 dark:text-white">
                                     <i class="bx bx-heart text-2xl"></i>
-                                    <p class="text-base">
+                                    <p class="text-sm">
                                         Favorit
                                     </p>
                                 </span>
@@ -541,10 +557,10 @@
                                     <i class="bx bx-chevron-right text-2xl text-gray-400 dark:text-white"></i>
                                 </span>
                             </a>
-                            <a href="#" class="flex items-center justify-between py-2 px-4 mb-2 hover:bg-gray-100 dark:hover:bg-neutral-900 duration-300">
+                            <a href="#" class="flex items-center justify-between py-1.5 px-4 mb-2 hover:bg-gray-100 dark:hover:bg-neutral-900 duration-300">
                                 <span class="flex items-center gap-3 text-gray-800 dark:text-white">
                                     <i class="bx bx-cog text-2xl"></i>
-                                    <p class="text-base">
+                                    <p class="text-sm">
                                         Pengaturan
                                     </p>
                                 </span>
@@ -552,28 +568,28 @@
                             </a>
                         </div>
                         <div class="text-sm">
-                            <a href="#" class="flex items-center justify-between py-2 px-4 mt-2 hover:bg-gray-100 dark:hover:bg-neutral-900 duration-300">
+                            <a href="#" class="flex items-center justify-between py-1.5 px-4 mt-2 hover:bg-gray-100 dark:hover:bg-neutral-900 duration-300">
                                 <span class="flex items-center gap-3 text-gray-800 dark:text-white">
                                     <i class="bx bx-phone-call text-2xl"></i>
-                                    <p class="text-base">
+                                    <p class="text-sm">
                                         Hubungi Kami
                                     </p>
                                 </span>
                                 <span class="flex items-center text-green-500 dark:text-green-400 text-xs">WhatsApp<i class="bx bx-chevron-right text-2xl text-gray-400 dark:text-white"></i></span>
                             </a>
-                            <a href="#" class="flex items-center justify-between py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-900 duration-300">
+                            <a href="#" class="flex items-center justify-between py-1.5 px-4 hover:bg-gray-100 dark:hover:bg-neutral-900 duration-300">
                                 <span class="flex items-center gap-3 text-gray-800 dark:text-white">
                                     <i class="bx bx-package text-2xl"></i>
-                                    <p class="text-base">
+                                    <p class="text-sm">
                                         Cara Order
                                     </p>
                                 </span>
                                 <i class="bx bx-chevron-right text-2xl text-gray-400 dark:text-white"></i>
                             </a>
-                            <a href="#" class="flex items-center justify-between py-2 px-4 mb-2 hover:bg-gray-100 dark:hover:bg-neutral-900 duration-300">
+                            <a href="#" class="flex items-center justify-between py-1.5 px-4 mb-2 hover:bg-gray-100 dark:hover:bg-neutral-900 duration-300">
                                 <span class="flex items-center gap-3 text-gray-800 dark:text-white">
                                     <i class="bx bx-message-rounded text-2xl"></i>
-                                    <p class="text-base">
+                                    <p class="text-sm">
                                         FAQ
                                     </p>
                                 </span>
