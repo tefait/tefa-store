@@ -9,11 +9,11 @@ export default defineConfig({
                 'resources/js/app.js',
             ],
             refresh: true,
-
         }),
     ],
-server:{
-host: '192.168.220.215',
-// host: '10.111.4.35',
-}
+    server: {
+        // host: '192.168.220.215',
+        host: '10.111.4.35',
+        // host: 'localhost',
+    }
 });

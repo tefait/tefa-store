@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('container')
+@section('dashboard')
 
 <!-- ========== MAIN CONTENT ========== -->
 <!-- Breadcrumb -->
 <div class="sticky top-0 inset-x-0 z-20 bg-white border-y px-4 sm:px-6 md:px-8 lg:hidden dark:bg-neutral-800 dark:border-neutral-700">
   <div class="flex justify-between items-center py-2">
-    <div class="sm:hidden flex items-center gap-1">
+    <div class="lg:hidden flex items-center gap-1">
       <h3 class="text-lg font-bold italic text-primary dark:text-blue-300">
         Semangat bekerja
       </h3>
@@ -88,7 +88,7 @@
               <span class="flex items-center gap-x-1 text-green-600 dark:text-green-500">
                 <svg class="inline-block size-4 self-center" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
                 <span class="inline-block text-sm">
-                  1.7%
+                  3.4%
                 </span>
               </span>
             </div>
@@ -146,7 +146,7 @@
       </div>
 
       <hr class="mt-3 border-1 border-gray-200 dark:border-neutral-700">
-      
+
       <div id="hs-curved-area-charts"></div>
       <div id="chart-info" class="flex items-center justify-center text-sm text-gray-600 dark:text-gray-300"></div>
     </div>
@@ -183,7 +183,7 @@
             <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
               <thead class="bg-gray-50 dark:bg-neutral-800">
                 <tr>
-                  <th scope="col" class="ps-4 pe-3 py-3 text-start">
+                  <th scope="col" class="px-4 py-3 text-start">
                     <div class="flex items-center justify-center">
                       <span class="text-xs text-center font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
                         No
@@ -237,7 +237,7 @@
               <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
                 <tr>
                   <td class="size-px whitespace-nowrap py-2">
-                    <div class="ps-6 pe-3 py-3">
+                    <div class="py-3 flex justify-center">
                       <span class="flex-shrink-0 flex justify-center items-center text-sm size-[24px] bg-gradient-to-tr from-yellow-400 to-red-500 text-white rounded-full dark:bg-blue-900 dark:text-blue-200">
                         1
                       </span>
@@ -280,7 +280,7 @@
                   <td class="size-px whitespace-nowrap py-2">
                     <div class="px-6 py-2.5">
                       <span class="text-sm font-semibold text-gray-500 dark:text-neutral-300">
-                        Rp.108.000.000
+                        Rp108.000.000
                       </span>
                     </div>
                   </td>
@@ -288,7 +288,7 @@
 
                 <tr>
                   <td class="size-px whitespace-nowrap py-2">
-                    <div class="ps-6 pe-3 py-3">
+                    <div class="py-3 flex justify-center">
                       <span class="flex-shrink-0 flex justify-center items-center text-sm size-[24px] bg-gradient-to-tr from-yellow-400 to-red-500 text-white rounded-full dark:bg-blue-900 dark:text-blue-200">
                         2
                       </span>
@@ -331,7 +331,7 @@
                   <td class="size-px whitespace-nowrap py-2">
                     <div class="px-6 py-2.5">
                       <span class="text-sm font-semibold text-gray-500 dark:text-neutral-300">
-                        Rp.108.000.000
+                        Rp108.000.000
                       </span>
                     </div>
                   </td>
@@ -339,7 +339,7 @@
 
                 <tr>
                   <td class="size-px whitespace-nowrap py-2">
-                    <div class="ps-6 pe-3 py-3">
+                    <div class="py-3 flex justify-center">
                       <span class="flex-shrink-0 flex justify-center items-center text-sm size-[24px] bg-gradient-to-tr from-yellow-400 to-red-500 text-white rounded-full dark:bg-blue-900 dark:text-blue-200">
                         3
                       </span>
@@ -382,7 +382,7 @@
                   <td class="size-px whitespace-nowrap py-2">
                     <div class="px-6 py-2.5">
                       <span class="text-sm font-semibold text-gray-500 dark:text-neutral-300">
-                        Rp.108.000.000
+                        Rp108.000.000
                       </span>
                     </div>
                   </td>
@@ -390,7 +390,7 @@
 
                 <tr>
                   <td class="size-px whitespace-nowrap py-2">
-                    <div class="ps-6 pe-3 py-3">
+                    <div class="py-3 flex justify-center">
                       <span class="flex-shrink-0 flex justify-center items-center text-sm size-[24px] bg-gradient-to-tr from-yellow-400 to-red-500 text-white rounded-full dark:bg-blue-900 dark:text-blue-200">
                         4
                       </span>
@@ -433,7 +433,7 @@
                   <td class="size-px whitespace-nowrap py-2">
                     <div class="px-6 py-2.5">
                       <span class="text-sm font-semibold text-gray-500 dark:text-neutral-300">
-                        Rp.108.000.000
+                        Rp108.000.000
                       </span>
                     </div>
                   </td>
@@ -441,7 +441,7 @@
 
                 <tr>
                   <td class="size-px whitespace-nowrap py-2">
-                    <div class="ps-6 pe-3 py-3">
+                    <div class="py-3 flex justify-center">
                       <span class="flex-shrink-0 flex justify-center items-center text-sm size-[24px] bg-gradient-to-tr from-yellow-400 to-red-500 text-white rounded-full dark:bg-blue-900 dark:text-blue-200">
                         5
                       </span>
@@ -484,7 +484,7 @@
                   <td class="size-px whitespace-nowrap py-2">
                     <div class="px-6 py-2.5">
                       <span class="text-sm font-semibold text-gray-500 dark:text-neutral-300">
-                        Rp.108.000.000
+                        Rp108.000.000
                       </span>
                     </div>
                   </td>

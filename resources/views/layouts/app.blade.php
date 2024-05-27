@@ -25,12 +25,16 @@
         @include('partials.navbar')
     @endif
 
-    <div class="">
+    <div class="xl:px-[320px]">
         @yield('container')
+    </div>
+
+    <div class="">
+        @yield('dashboard')
     </div>
 
     <script src="{{ asset('lodash/lodash.min.js') }}"></script>
     <script src="{{ asset('apexcharts/dist/apexcharts.min.js') }}"></script>
-    
+
 </body>
 </html>
