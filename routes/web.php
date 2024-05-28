@@ -82,14 +82,15 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () 
         Route::get('/return/{invoice}', [AdminOrderController::class, 'return'])->name('orders.return');
         Route::post('/return', [AdminOrderController::class, 'approveReturn'])->name('orders.approve_return');
     });
+    Route::group(['prefix' => 'reports'], function () {
+        Route::get('/order', [HomeController::class, 'orderReport'])->name('report.order');
+        Route::get('/order/pdf/{daterange}', [HomeController::class, 'orderReportPdf'])->name('report.order_pdf');
+        Route::get('/return', [HomeController::class, 'returnReport'])->name('report.return');
+        Route::get('/return/pdf/{daterange}', [HomeController::class, 'returnReportPdf'])->name('report.return_pdf');
+    });
 });
 
-Route::group(['prefix' => 'reports'], function () {
-    Route::get('/order', [HomeController::class, 'orderReport'])->name('report.order');
-    Route::get('/order/pdf/{daterange}', [HomeController::class, 'orderReportPdf'])->name('report.order_pdf');
-    Route::get('/return', [HomeController::class, 'returnReport'])->name('report.return');
-    Route::get('/return/pdf/{daterange}', [HomeController::class, 'returnReportPdf'])->name('report.return_pdf');
-});
+
 Route::get('/product/ref/{user}/{product}', [FrontController::class, 'referalProduct'])->name('front.afiliasi');
 
 require __DIR__.'/auth.php';

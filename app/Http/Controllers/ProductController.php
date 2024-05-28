@@ -33,7 +33,7 @@ class ProductController extends Controller
         $product = Product::with(['category'])->orderBy('created_at', 'DESC');
 
         if (request()->q != '') {
-            $product = $product->where('name', 'LIKE', '%'.request()->q.'%');
+            $product = $product->whereAny(['name', 'price', 'slug'], 'LIKE', '%'.request()->q.'%');
         }
         $product = $product->paginate(10);
 
@@ -68,7 +68,7 @@ class ProductController extends Controller
                 'slug' => $request->name,
                 'category_id' => $request->category_id,
                 'description' => $request->description,
-                'image' => $filename,
+                'image' => "public/products/" . $filename,
                 'price' => $request->price,
                 'weight' => $request->weight,
                 'status' => $request->status,
@@ -92,7 +92,6 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
-        return $request->all();
         $this->validate($request, [
             'name' => 'required|string|max:100',
             'description' => 'required',
@@ -109,7 +108,7 @@ class ProductController extends Controller
             $file = $request->file('image');
             $filename = time().Str::slug($request->name).'.'.$file->getClientOriginalExtension();
             $file->storeAs('public/products', $filename);
-            Storage::delete(Storage::path('app/public/products/'.$product->image));
+            Storage::delete($product->image);
         }
 
         $product->update([
@@ -118,7 +117,7 @@ class ProductController extends Controller
             'category_id' => $request->category_id,
             'price' => $request->price,
             'weight' => $request->weight,
-            'image' => $filename,
+            'image' => "public/products/" . $filename,
         ]);
 
         return redirect(route('product.index'))->with(['success' => 'Data Produk Diperbaharui']);
@@ -127,7 +126,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
-        Storage::delete(Storage::path('app/public/products/'.$product->image));
+        Storage::delete($product->image);
         $product->delete();
 
         return redirect(route('product.index'))->with(['success' => 'Produk Sudah Dihapus']);

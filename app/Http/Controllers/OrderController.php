@@ -16,11 +16,7 @@ class OrderController extends Controller
             ->orderBy('created_at', 'DESC');
 
         if (request()->q != '') {
-            $orders = $orders->where(function ($q) {
-                $q->where('customer_name', 'LIKE', '%'.request()->q.'%')
-                    ->orWhere('invoice', 'LIKE', '%'.request()->q.'%')
-                    ->orWhere('customer_address', 'LIKE', '%'.request()->q.'%');
-            });
+            $orders = $orders->whereAny(['customer_name', 'invoice', 'customer_address'], 'LIKE', '%' . request()->q . '%');
         }
 
         if (request()->status != '') {
