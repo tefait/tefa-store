@@ -10,8 +10,8 @@
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">
-                    <h2>Jual Produk Fashion</h2>
                     <div class="page_link">
+                        <h2>{{ucwords(Route::current()->parameter('slug') ?? "List produk")}}</h2>
                         <a href="{{ route('front.index') }}">Home</a>
                         <a href="{{ route('front.product') }}">Produk</a>
                     </div>
@@ -26,23 +26,18 @@
         <div class="container-fluid">
             <div class="row flex-row-reverse">
                 <div class="col-lg-9">
-                    <div class="product_top_bar">
+                    {{-- <div class="product_top_bar">
                         <div class="left_dorp">
                             <select class="sorting">
-                                <option value="1">Default sorting</option>
-                                <option value="2">Default sorting 01</option>
-                                <option value="4">Default sorting 02</option>
-                            </select>
-                            <select class="show">
-                                <option value="1">Show 12</option>
-                                <option value="2">Show 14</option>
-                                <option value="4">Show 16</option>
+                                <option value="1">Default</option>
+                                <option value="2">Berdasarkan harga</option>
+                                <option value="2">Berdasarkan bobot</option>
                             </select>
                         </div>
                         <div class="right_page ml-auto">
                             {{ $products->links() }}
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="latest_product_inner row">
 
                         <!-- PROSES LOOPING DATA PRODUK, SAMA DENGAN CODE YANG ADDA DIHALAMAN HOME -->

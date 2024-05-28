@@ -8,14 +8,21 @@
 
     @yield('title')
 
-    <link rel="stylesheet" href="{{ asset('ecommerce/css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('ecommerce/vendors/linericon/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('ecommerce/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('ecommerce/vendors/owl-carousel/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('ecommerce/vendors/lightbox/simpleLightbox.css') }}">
-    <link rel="stylesheet" href="{{ asset('ecommerce/vendors/nice-select/css/nice-select.css') }}">
-    <link rel="stylesheet" href="{{ asset('ecommerce/vendors/animate-css/animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('ecommerce/vendors/jquery-ui/jquery-ui.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('ecommerce/css/bootstrap.css') }}"> --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.5.0/css/font-awesome.min.css"
+        integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.2.0/dist/assets/owl.carousel.min.css"
+        integrity="sha256-ymMA1/kGhlQxXn0q9DFzHRt3VIY1Eh7BJcEfM3I88a4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplelightbox@2.14/dist/simple-lightbox.min.css"
+        integrity="sha256-ng8HIWt+GfNEXZQG0L7QBCsNfLq8VTGFTGvlMlT0CsA=" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/linearicons@1.0.2/dist/web-font/style.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"
+        integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.3/themes/base/theme.min.css">
 
     <link rel="stylesheet" href="{{ asset('ecommerce/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('ecommerce/css/responsive.css') }}">
@@ -37,7 +44,7 @@
                             <li><a href="{{ route('customer.login') }}">Login</a></li>
                         @endif
                         @auth
-                        <li><a href="{{ route('customer.dashboard') }}">My Account</a></li>
+                            <li><a href="{{ route('customer.dashboard') }}">My Account</a></li>
                         @endauth
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
@@ -75,7 +82,7 @@
                                     </li>
                                     <hr>
                                     <li class="nav-item">
-                                        <a href="{{route('customer.dashboard')}}" class="icons">
+                                        <a href="{{ route('customer.dashboard') }}" class="icons">
                                             <i class="fa fa-user" aria-hidden="true"></i>
                                         </a>
                                     </li>
@@ -83,7 +90,7 @@
 
                                     <hr>
                                     <li class="nav-item">
-                                        <a href="{{route('front.cart')}}" class="icons">
+                                        <a href="{{ route('front.cart') }}" class="icons">
                                             <i class="lnr lnr lnr-cart"></i>
                                         </a>
                                     </li>
@@ -140,61 +147,16 @@
                 <div class="col-lg-3  col-md-6 col-sm-6">
                     <div class="single-footer-widget">
                         <h6 class="footer_title">About Us</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore dolore magna aliqua.</p>
+                        <p>
+                            Tefa RPL SMKN 2 Sumedang adalah tempat siswa belajar dan berinovasi dalam bidang Rekayasa Perangkat Lunak. Kami mencetak generasi digital kreatif dan berdaya saing.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-footer-widget">
-                        <h6 class="footer_title">Newsletter</h6>
-                        <p>Stay updated with our latest trends</p>
-                        <div id="mc_embed_signup">
-                            <form target="_blank"
-                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                                method="get" class="subscribe_form relative">
-                                <div class="input-group d-flex flex-row">
-                                    <input name="EMAIL" placeholder="Email Address" onfocus="this.placeholder = ''"
-                                        onblur="this.placeholder = 'Email Address '" required="" type="email">
-                                    <button class="btn sub-btn">
-                                        <span class="lnr lnr-arrow-right"></span>
-                                    </button>
-                                </div>
-                                <div class="mt-10 info"></div>
-                            </form>
-                        </div>
-                    </div>
+                {{-- <div class="col-lg-4 col-md-6 col-sm-6">
+
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-footer-widget instafeed">
-                        <h6 class="footer_title">Instagram Feed</h6>
-                        <ul class="list instafeed d-flex flex-wrap">
-                            <li>
-                                <img src="{{ asset('ecommerce/img/instagram/Image-01.jpg') }}" alt="">
-                            </li>
-                            <li>
-                                <img src="{{ asset('ecommerce/img/instagram/Image-02.jpg') }}" alt="">
-                            </li>
-                            <li>
-                                <img src="{{ asset('ecommerce/img/instagram/Image-03.jpg') }}" alt="">
-                            </li>
-                            <li>
-                                <img src="{{ asset('ecommerce/img/instagram/Image-04.jpg') }}" alt="">
-                            </li>
-                            <li>
-                                <img src="{{ asset('ecommerce/img/instagram/Image-05.jpg') }}" alt="">
-                            </li>
-                            <li>
-                                <img src="{{ asset('ecommerce/img/instagram/Image-06.jpg') }}" alt="">
-                            </li>
-                            <li>
-                                <img src="{{ asset('ecommerce/img/instagram/Image-07.jpg') }}" alt="">
-                            </li>
-                            <li>
-                                <img src="{{ asset('ecommerce/img/instagram/Image-08.jpg') }}" alt="">
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+
+                </div> --}}
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="single-footer-widget f_social_wd">
                         <h6 class="footer_title">Follow Us</h6>
@@ -230,20 +192,26 @@
         </div>
     </footer>
     <!--================ End footer Area  =================-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha256-/ijcOLwFf26xEYAjW75FizKVo5tnTYiQddPZoLUHHZ8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha256-3gQJhtmj7YnV1fmtbVcnAV6eI4ws0Tr48bVZCThtCGQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"
+        integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"
+        integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.counterup@2.1.0/jquery.counterup.min.js"
+        integrity="sha256-uJhTN8Fnqk5uUpb/pv0ojmW81ODaj4JDlyb5Yfb3M9o=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"
+        integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplelightbox@2.14.3/dist/simple-lightbox.min.js"
+        integrity="sha256-NRMGvtPp/+ljYVhBZZk+3NQNvEqNLn0rAtTODPuUylw=" crossorigin="anonymous"></script>
 
-    <script src="{{ asset('ecommerce/js/jquery-3.2.1.min.js') }}"></script>
-    <script src="{{ asset('ecommerce/js/popper.js') }}"></script>
-    <script src="{{ asset('ecommerce/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('ecommerce/js/stellar.js') }}"></script>
-    <script src="{{ asset('ecommerce/vendors/lightbox/simpleLightbox.min.js') }}"></script>
-    <script src="{{ asset('ecommerce/vendors/nice-select/js/jquery.nice-select.min.js') }}"></script>
-    <script src="{{ asset('ecommerce/vendors/isotope/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('ecommerce/vendors/isotope/isotope-min.js') }}"></script>
-    <script src="{{ asset('ecommerce/vendors/owl-carousel/owl.carousel.min.js') }}"></script>
+    {{-- <script src="{{ asset('ecommerce/js/stellar.js') }}"></script> --}}
     <script src="{{ asset('ecommerce/js/jquery.ajaxchimp.min.js') }}"></script>
     <script src="{{ asset('ecommerce/vendors/counter-up/jquery.waypoints.min.js') }}"></script>
     <script src="{{ asset('ecommerce/vendors/flipclock/timer.js') }}"></script>
-    <script src="{{ asset('ecommerce/vendors/counter-up/jquery.counterup.js') }}"></script>
     <script src="{{ asset('ecommerce/js/mail-script.js') }}"></script>
     <script src="{{ asset('ecommerce/js/theme.js') }}"></script>
 

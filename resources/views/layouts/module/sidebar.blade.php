@@ -1,7 +1,7 @@
 <nav class="sidebar-nav">
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="{{route('dashboard')}}">
+            <a class="nav-link" href="{{ route('dashboard') }}">
                 <i class="nav-icon icon-speedometer"></i> Dashboard
             </a>
         </li>
@@ -46,10 +46,20 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('report.return') }}">
-                        <i class="nav-icon icon-doc"></i> Return
+                        <i class="nav-icon icon-doc"></i> Pengembalian
                     </a>
                 </li>
             </ul>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('logout') }}"
+                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                <i class="nav-icon fa fa-lock"></i> Logout
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </a>
+        </li>
     </ul>
+
 </nav>

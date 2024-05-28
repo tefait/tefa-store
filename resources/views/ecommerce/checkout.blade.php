@@ -166,8 +166,6 @@
 @section('js')
     <script>
         $(document).ready(function() {
-            //MAKA KITA MEMANGGIL FUNGSI LOADCITY() DAN LOADDISTRICT()
-            //AGAR SECARA OTOMATIS MENGISI SELECT BOX YANG TERSEDIA
             loadCity($('#province_id').val(), 'bySelect').then(() => {
                 loadDistrict($('#city_id').val(), 'bySelect');
             })
@@ -196,7 +194,7 @@
 
                             // KITA TAMPUNG VALUE CITY_ID SAAT INI
                             let city_selected =
-                                {{ auth('customer')->check() ? auth('customer')->user()->district->city_id : '' }};
+                                {{ auth('customer')->check() ? auth('customer')->user()->district->city_id : 'null' }};
                             //KEMUDIAN DICEK, JIKA CITY_SELECTED SAMA DENGAN ID CITY YANG DOLOOPING MAKA 'SELECTED' AKAN DIAPPEND KE TAG OPTION
                             let selected = type == 'bySelect' && city_selected == item.id ?
                                 'selected' : '';
@@ -223,7 +221,7 @@
                     $('#district_id').append('<option value="">Pilih Kecamatan</option>')
                     $.each(html.data, function(key, item) {
                         let district_selected =
-                            {{ auth('customer')->check() ? auth('customer')->user()->district->id : '' }};
+                            {{ auth('customer')->check() ? auth('customer')->user()->district->id : 'null' }};
                         let selected = type == 'bySelect' && district_selected == item.id ? 'selected' :
                             '';
                         $('#district_id').append('<option value="' + item.id + '" ' + selected + '>' +
@@ -317,10 +315,10 @@
         //     $('#ongkir').text('Rp ' + split[2])
 
         //     //UPDATE INFORMASI TOTAL (SUBTOTAL + ONGKIR)
-        //     let subtotal = "{{ $subtotal }}"
+            let subtotal = "{{ $subtotal }}"
         //     let total = parseInt(subtotal) + parseInt(split['2'])
         //     $('#total').text('Rp' + total)
-        // })
+
         $('#total').text('Rp' + subtotal)
     </script>
 @endsection
