@@ -57,23 +57,21 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="">Nama Pengirim</label>
-                                            <input type="text" name="name" class="form-control" required>
+                                            <input type="text" name="name" class="form-control" value="{{auth('customer')->user()->name}}">
                                             <p class="text-danger">{{ $errors->first('name') }}</p>
                                         </div>
                                         <div class="form-group">
                                             <label for="">Transfer Ke</label>
                                             <select name="transfer_to" class="form-control" required>
-                                                <option value="">Pilih</option>
-                                                <option value="BCA - 1234567">BCA: 1234567 a.n Anugrah Sandi</option>
-                                                <option value="Mandiri - 2345678">Mandiri: 2345678 a.n Anugrah Sandi</option>
-                                                <option value="BRI - 9876543">BCA: 9876543 a.n Anugrah Sandi</option>
-                                                <option value="BNI - 6789456">BCA: 6789456 a.n Anugrah Sandi</option>
+                                                <option>Pilih</option>
+                                                <option value="cash">Cash</option>
+                                                <option value="qris">QRIS</option>
                                             </select>
                                             <p class="text-danger">{{ $errors->first('transfer_to') }}</p>
                                         </div>
                                         <div class="form-group">
                                             <label for="">Jumlah Transfer</label>
-                                            <input type="number" name="amount" class="form-control" required>
+                                            <input type="number" name="amount" class="form-control" required value="{{request()->p}}">
                                             <p class="text-danger">{{ $errors->first('amount') }}</p>
                                         </div>
                                         <div class="form-group">

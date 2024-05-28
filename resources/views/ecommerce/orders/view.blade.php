@@ -65,7 +65,7 @@
                                         Pembayaran
 
                                         @if ($order->status == 0)
-                                            <a href="{{ url('member/payment?invoice=' . $order->invoice) }}"
+                                            <a href="{{ url('member/payment?invoice=' . $order->invoice . '&p=' . $order->subtotal) }}"
                                                 class="btn btn-primary btn-sm float-right">Konfirmasi</a>
                                         @endif
                                     </h4>

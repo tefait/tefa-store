@@ -6,7 +6,7 @@
 
 @section('content')
     <!--================Home Banner Area =================-->
-    <section class="home_banner_area">
+    {{-- <section class="home_banner_area">
         <div class="overlay"></div>
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
@@ -23,13 +23,13 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--================End Home Banner Area =================-->
 
     <!--================Hot Deals Area =================-->
     <section class="hot_deals_area section_gap">
         <div class="container-fluid">
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-lg-6">
                     <div class="hot_deal_box">
                         <img class="img-fluid" src="{{ asset('ecommerce/img/product/hot_deals/deal1.jpg') }}"
@@ -53,7 +53,7 @@
                         <a class="hot_deal_link" href="#"></a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </section>
     <!--================End Hot Deals Area =================-->

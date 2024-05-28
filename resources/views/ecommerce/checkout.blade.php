@@ -41,14 +41,16 @@
                             @csrf
                             <div class="col-md-12 form-group p_star">
                                 <label for="">Nama Lengkap</label>
-                                <input type="text" class="form-control" id="first" name="customer_name" required>
+                                <input type="text" class="form-control" id="first" name="customer_name" required
+                                    value="{{ auth('customer')->check() ? auth('customer')->user()->name : '' }}">
 
                                 <!-- UNTUK MENAMPILKAN JIKA TERDAPAT ERROR VALIDASI -->
                                 <p class="text-danger">{{ $errors->first('customer_name') }}</p>
                             </div>
                             <div class="col-md-6 form-group p_star">
                                 <label for="">No Telp</label>
-                                <input type="text" class="form-control" id="number" name="customer_phone" required>
+                                <input type="text" class="form-control" id="number" name="customer_phone" required
+                                    value="{{ auth('customer')->check() ? auth('customer')->user()->phone_number : '' }}">
                                 <p class="text-danger">{{ $errors->first('customer_phone') }}</p>
                             </div>
                             <div class="col-md-6 form-group p_star">
@@ -64,7 +66,8 @@
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <label for="">Alamat Lengkap</label>
-                                <input type="text" class="form-control" id="add1" name="customer_address" required>
+                                <input type="text" class="form-control" id="add1" name="customer_address" required
+                                    value="{{ auth('customer')->check() ? auth('customer')->user()->address : '' }}">
                                 <p class="text-danger">{{ $errors->first('customer_address') }}</p>
                             </div>
                             <div class="col-md-12 form-group p_star">
@@ -73,7 +76,9 @@
                                     <option value="">Pilih Propinsi</option>
                                     <!-- LOOPING DATA PROVINCE UNTUK DIPILIH OLEH CUSTOMER -->
                                     @foreach ($provinces as $row)
-                                        <option value="{{ $row->id }}">{{ $row->name }}</option>
+                                        <option value="{{ $row->id }}"
+                                            {{ auth('customer')->check() && $row->id === auth('customer')->user()->district->city->province->id ? 'selected' : '' }}>
+                                            {{ $row->name }}</option>
                                     @endforeach
                                 </select>
                                 <p class="text-danger">{{ $errors->first('province_id') }}</p>
@@ -82,14 +87,17 @@
                             <!-- ADAPUN DATA KOTA DAN KECAMATAN AKAN DI RENDER SETELAH PROVINSI DIPILIH -->
                             <div class="col-md-12 form-group p_star">
                                 <label for="">Kabupaten / Kota</label>
-                                <select class="form-control" name="city_id" id="city_id" required>
+                                <select class="form-control" name="city_id" id="city_id" required
+                                    value="{{ auth('customer')->check() ? auth('customer')->user()->district->city->id : '' }}">
                                     <option value="">Pilih Kabupaten/Kota</option>
                                 </select>
                                 <p class="text-danger">{{ $errors->first('city_id') }}</p>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <label for="">Kecamatan</label>
-                                <select class="form-control" name="district_id" id="district_id" required>
+                                <select class="form-control" name="district_id" id="district_id"
+                                    value="{{ auth('customer')->check() ? auth('customer')->user()->district->id : '' }}"
+                                    required>
                                     <option value="">Pilih Kecamatan</option>
                                 </select>
                                 <p class="text-danger">{{ $errors->first('district_id') }}</p>
@@ -157,6 +165,73 @@
 
 @section('js')
     <script>
+        $(document).ready(function() {
+            //MAKA KITA MEMANGGIL FUNGSI LOADCITY() DAN LOADDISTRICT()
+            //AGAR SECARA OTOMATIS MENGISI SELECT BOX YANG TERSEDIA
+            loadCity($('#province_id').val(), 'bySelect').then(() => {
+                loadDistrict($('#city_id').val(), 'bySelect');
+            })
+        })
+
+        $('#province_id').on('change', function() {
+            loadCity($(this).val(), '');
+        })
+
+        $('#city_id').on('change', function() {
+            loadDistrict($(this).val(), '')
+        })
+
+        function loadCity(province_id, type) {
+            return new Promise((resolve, reject) => {
+                $.ajax({
+                    url: "{{ url('/api/city') }}",
+                    type: "GET",
+                    data: {
+                        province_id: province_id
+                    },
+                    success: function(html) {
+                        $('#city_id').empty()
+                        $('#city_id').append('<option value="">Pilih Kabupaten/Kota</option>')
+                        $.each(html.data, function(key, item) {
+
+                            // KITA TAMPUNG VALUE CITY_ID SAAT INI
+                            let city_selected =
+                                {{ auth('customer')->check() ? auth('customer')->user()->district->city_id : '' }};
+                            //KEMUDIAN DICEK, JIKA CITY_SELECTED SAMA DENGAN ID CITY YANG DOLOOPING MAKA 'SELECTED' AKAN DIAPPEND KE TAG OPTION
+                            let selected = type == 'bySelect' && city_selected == item.id ?
+                                'selected' : '';
+                            //KEMUDIAN KITA MASUKKAN VALUE SELECTED DI ATAS KE DALAM TAG OPTION
+                            $('#city_id').append('<option value="' + item.id + '" ' + selected +
+                                '>' + item.name + '</option>')
+                            resolve()
+                        })
+                    }
+                });
+            })
+        }
+
+        //CARA KERJANYA SAMA SAJA DENGAN FUNGSI DI ATAS
+        function loadDistrict(city_id, type) {
+            $.ajax({
+                url: "{{ url('/api/district') }}",
+                type: "GET",
+                data: {
+                    city_id: city_id
+                },
+                success: function(html) {
+                    $('#district_id').empty()
+                    $('#district_id').append('<option value="">Pilih Kecamatan</option>')
+                    $.each(html.data, function(key, item) {
+                        let district_selected =
+                            {{ auth('customer')->check() ? auth('customer')->user()->district->id : '' }};
+                        let selected = type == 'bySelect' && district_selected == item.id ? 'selected' :
+                            '';
+                        $('#district_id').append('<option value="' + item.id + '" ' + selected + '>' +
+                            item.name + '</option>')
+                    })
+                }
+            });
+        }
         //KETIKA SELECT BOX DENGAN ID province_id DIPILIH
         $('#province_id').on('change', function() {
             //MAKA AKAN MELAKUKAN REQUEST KE URL /API/CITY
@@ -174,7 +249,8 @@
                     //UNTUK MENAMPILKAN DATA KABUPATEN / KOTA
                     $('#city_id').append('<option value="">Pilih Kabupaten/Kota</option>')
                     $.each(html.data, function(key, item) {
-                        $('#city_id').append('<option value="' + item.id + '">' + item.type+ " "+
+                        $('#city_id').append('<option value="' + item.id + '">' + item.type +
+                            " " +
                             item
                             .name + '</option>');
                     })
