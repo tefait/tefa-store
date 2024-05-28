@@ -1,72 +1,95 @@
 <?php
 
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\PesananController;
-use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Ecommerce\CartController;
+use App\Http\Controllers\Ecommerce\FrontController;
+use App\Http\Controllers\Ecommerce\LoginController;
+use App\Http\Controllers\Ecommerce\OrderController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController as AdminOrderController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Produk;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
 
 Route::get('/api/products', function () {
-    return response()->json(Produk::all()) ;
+    return response()->json(Produk::all());
 })->name('product.api');
-
-// Route::get('/dashboard', function () {
-//     return view('development.dashboard', ['produks' => Produk::where('id', 1)->get()]);
-// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-// Can be accessed only by admin
-Route::middleware(['auth'
-// , 'admin'
 
-])->group(function () {
-    // Produk Routes
-    Route::get('/produk/create', [ProdukController::class, 'create'])->name('produk.create');
-    Route::post('/produk/create', [ProdukController::class, 'store'])->name('produk.store');
-    Route::get('/produk/{produk}/edit', [ProdukController::class, 'edit'])->name('produk.edit');
-    Route::get('/produk/{produk}/update', [ProdukController::class, 'update'])->name('produk.update');
+// Dari tutorial
 
-    Route::delete('/produk/{produk}/delete', [ProdukController::class, 'destroy'])->name('produk.destroy');
-    // Pesanan Routes
-    Route::post('/pesanan/{pesanan}/confirm', [PesananController::class, 'confirm_payment'])->name('confirm_payment');
-    Route::post('/pesanan/{pesanan}/reject', [PesananController::class, 'reject_payment'])->name('reject_payment');
-  });
-  // Can be accessed by authenticated code
-  Route::middleware('auth')->group(function () {
-    // Profile routes
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    // Cart soutes
-    Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
-    Route::patch('/cart/{cart}', [CartController::class, 'update_cart'])->name('update.cart');
-    Route::post('/action/cart/add/{produk}', [CartController::class, 'addToCart'])->name('add.to.cart');
-    Route::delete('/action/cart/delete/{cart}', [CartController::class, 'destroy'])->name('destroy.cart');
+Route::get('/beranda', [FrontController::class, 'index'])->name('front.index');
 
-    // Pesanan routes
-    Route::post('/action/checkout', [PesananController::class, 'checkout'])->name('checkout');
-    Route::post('/pesanan/{pesanan}/pay', [PesananController::class, 'store_receipt'])->name('store_receipt');
-    Route::get('/pesanan/{pesanan}', [PesananController::class, 'show'])->name('show_pesanan');
-    Route::get('/pesanan/nota/{pesanan}', [PesananController::class, 'nota'])->name('nota');
-    Route::get('/pesanan', [PesananController::class, 'index'])->name('pesanan.index');
-    // Produk Routes
+Route::get('/product', [FrontController::class, 'product'])->name('front.product');
+Route::get('/category/{slug}', [FrontController::class, 'categoryProduct'])->name('front.category');
+Route::get('/product/{slug}', [FrontController::class, 'show'])->name('front.show_product');
+Route::post('cart', [CartController::class, 'addToCart'])->name('front.cart');
+Route::get('/cart', [CartController::class, 'listCart'])->name('front.list_cart');
+Route::post('/cart/update', [CartController::class, 'updateCart'])->name('front.update_cart');
+Route::get('/checkout', [CartController::class, 'checkout'])->name('front.checkout');
+Route::post('/checkout', [CartController::class, 'processCheckout'])->name('front.store_checkout');
+Route::get('/checkout/{invoice}', [CartController::class, 'checkoutFinish'])->name('front.finish_checkout');
+Route::group(['prefix' => 'member', 'namespace' => 'Ecommerce'], function () {
+    Route::get('login', [LoginController::class, 'loginForm'])->name('customer.login');
+    Route::post('login', [LoginController::class, 'login'])->name('customer.post_login');
+    Route::get('verify/{token}', [FrontController::class, 'verifyCustomerRegistration'])->name('customer.verify');
 
-    Route::get('/produk/{produk}', [ProdukController::class, 'show'])->name('produk.show');
-  });
+    Route::group(['middleware' => 'customer'], function () {
+        Route::get('dashboard', [LoginController::class, 'dashboard'])->name('customer.dashboard');
+        Route::get('logout', [LoginController::class, 'logout'])->name('customer.logout');
+        Route::get('orders', [OrderController::class, 'index'])->name('customer.orders');
+        Route::get('orders/{invoice}', [OrderController::class, 'view'])->name('customer.view_order');
+        Route::get('orders/pdf/{invoice}', [OrderController::class, 'pdf'])->name('customer.order_pdf');
+        Route::post('orders/accept', [OrderController::class, 'acceptOrder'])->name('customer.order_accept');
+        Route::get('orders/return/{invoice}', [OrderController::class, 'returnForm'])->name('customer.order_return');
+        Route::put('orders/return/{invoice}', [OrderController::class, 'processReturn'])->name('customer.return');
+        Route::get('payment', [OrderController::class, 'paymentForm'])->name('customer.paymentForm');
+        Route::post('payment', [OrderController::class, 'storePayment'])->name('customer.savePayment');
+        Route::get('setting', [FrontController::class, 'customerSettingForm'])->name('customer.settingForm');
+        Route::post('setting', [FrontController::class, 'customerUpdateProfile'])->name('customer.setting');
+        Route::get('/afiliasi', [FrontController::class, 'listCommission'])->name('customer.affiliate');
+    });
+});
 
+Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () {
+    Route::post('/product/marketplace', 'ProductController@uploadViaMarketplace')->name('product.marketplace');
+
+    Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+    Route::resource('category', CategoryController::class)->except(['create', 'show']);
+    Route::resource('product', ProductController::class)->except(['show']);
+    Route::get('/product/bulk', [ProductController::class, 'massUploadForm'])->name('product.bulk');
+    Route::post('/product/bulk', [ProductController::class, 'massUpload'])->name('product.saveBulk');
+    Route::group(['prefix' => 'orders'], function () {
+        Route::get('/', [AdminOrderController::class, 'index'])->name('orders.index');
+        Route::delete('/{id}', [AdminOrderController::class, 'destroy'])->name('orders.destroy');
+        Route::get('/{invoice}', [AdminOrderController::class, 'view'])->name('orders.view');
+        Route::get('/payment/{invoice}', [AdminOrderController::class, 'acceptPayment'])->name('orders.approve_payment');
+        Route::post('/shipping', [AdminOrderController::class, 'shippingOrder'])->name('orders.shipping');
+        Route::get('/return/{invoice}', [AdminOrderController::class, 'return'])->name('orders.return');
+        Route::post('/return', [AdminOrderController::class, 'approveReturn'])->name('orders.approve_return');
+    });
+});
+
+Route::group(['prefix' => 'reports'], function () {
+    Route::get('/order', [HomeController::class, 'orderReport'])->name('report.order');
+    Route::get('/order/pdf/{daterange}', [HomeController::class, 'orderReportPdf'])->name('report.order_pdf');
+    Route::get('/return', [HomeController::class, 'returnReport'])->name('report.return');
+    Route::get('/return/pdf/{daterange}', [HomeController::class, 'returnReportPdf'])->name('report.return_pdf');
+});
+Route::get('/product/ref/{user}/{product}', [FrontController::class, 'referalProduct'])->name('front.afiliasi');
 
 require __DIR__.'/auth.php';
-
