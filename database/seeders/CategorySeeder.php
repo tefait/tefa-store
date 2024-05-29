@@ -16,13 +16,5 @@ class CategorySeeder extends Seeder
             'name' => 'Souvenirs',
             'slug' => 'Souvenirs',
         ]);
-        Category::create([
-            'name' => 'Gifts',
-            'slug' => 'Gifts',
-        ]);
-        Category::create([
-            'name' => 'Foods',
-            'slug' => 'Foods',
-        ]);
     }
 }

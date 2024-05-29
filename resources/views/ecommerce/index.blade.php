@@ -1,29 +1,28 @@
 @extends('layouts.ecommerce')
 
 @section('title')
-    <title>TEFA Ecommerce - Pusat Belanja Online</title>
+    <title>TEFA Ecommerce</title>
 @endsection
 
 @section('content')
     <!--================Home Banner Area =================-->
-    {{-- <section class="home_banner_area">
+    <section class="home_banner_area">
         <div class="overlay"></div>
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content row">
                     <div class="offset-lg-2 col-lg-8">
-                        <h3>Fashion for
-                            <br />Upcoming Winter
+                        <h3>Inovasi Digital untuk Masa Depan
+
                         </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                        <a class="white_bg_btn" href="#">View Collection</a>
+                        <p>
+                            Lingkungan yang mendukung siswa untuk belajar, berinovasi, dan bersaing dalam dunia digital. Mari bergabung dan menjadi bagian dari generasi digital yang siap menghadapi tantangan masa depan.</p>
+                        <a class="white_bg_btn" href="{{route('front.product')}}">Eksplor Produk</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
     <!--================End Home Banner Area =================-->
 
     <!--================Hot Deals Area =================-->
