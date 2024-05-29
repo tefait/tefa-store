@@ -20,7 +20,7 @@
     @vite('resources/js/app.js')
 </head>
 
-<body class="h-screen dark:bg-black">
+<body class="dark:bg-black">
 
     @if (Request::is('dashboard'))
         @include('partials.header')
@@ -29,7 +29,7 @@
         @include('partials.navbar')
     @endif
 
-    <div class="xl:px-[360px]">
+    <div class="lg:px-[5vw] 2xl:px-[360px]">
         @yield('container')
     </div>
 

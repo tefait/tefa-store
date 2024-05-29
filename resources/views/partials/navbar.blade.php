@@ -35,7 +35,7 @@
 </div>
 <!-- End SearchBox -->
 
-<nav class="hidden lg:flex items-center justify-between h-7 max-w-full px-6 sm:px-8 lg:px-10 bg-primary dark:bg-secondary">
+<nav class="hidden lg:flex z-50 items-center justify-between h-7 w-full px-6 sm:px-8 lg:px-10 bg-primary dark:bg-secondary">
     <div class="flex flex-row py-2 sm:justify-end gap-y-0 gap-x-2 sm:py-0">
         <a class="text-xs text-white text-opacity-80 hover:text-white duration-300" href="#">Hubungi Kami</a>
             <span class="text-xs text-white text-opacity-80">|</span>
@@ -72,7 +72,7 @@
     </div>
 </nav>
 
-<header class="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-white text-sm py-2 px-4 lg:px-10 sm:py-0 mb-2 lg:mb-0 dark:bg-black">
+<header class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-2 px-4 lg:px-10 sm:py-0 dark:bg-black">
     <nav class="relative w-full sm:flex sm:items-center sm:justify-between" aria-label="Global">
         <div class="flex items-center justify-between w-full">
             <a class="flex-none text-xl font-semibold dark:text-white hidden lg:block" href="#" aria-label="Logo"><img src="{{ asset('assets/logo2.png') }}" class="lg:h-12" alt=""></a>
@@ -346,7 +346,7 @@
             data-hs-accordion-always-open>
                 <!-- Card -->
                 <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -381,7 +381,7 @@
                 <!-- End Card -->
                 <!-- Card -->
                 <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -416,7 +416,7 @@
                 <!-- End Card -->
                 <!-- Card -->
                 <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -451,7 +451,7 @@
                 <!-- End Card -->
                 <!-- Card -->
                 <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -486,7 +486,7 @@
                 <!-- End Card -->
                 <!-- Card -->
                 <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -521,7 +521,7 @@
                 <!-- End Card -->
                 <!-- Card -->
                 <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -556,7 +556,7 @@
                 <!-- End Card -->
                 <!-- Card -->
                 <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -591,7 +591,7 @@
                 <!-- End Card -->
                 <!-- Card -->
                 <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -626,7 +626,7 @@
                 <!-- End Card -->
                 <!-- Card -->
                 <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -661,7 +661,7 @@
                 <!-- End Card -->
                 <!-- Card -->
                 <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -903,7 +903,7 @@
         </div>
     </nav>
 </header>
-  <!-- ========== END HEADER ========== -->
+<!-- ========== END HEADER ========== -->
 
 {{-- <div class="sm:hidden hs-dropdown relative inline-flex cursor-pointer py-3 md:py-6 ml-5">
     <button id="hs-dropdown-default" class="hs-dropdown-toggle sm:hidden flex items-center w-full text-base text-gray-600 hover:text-black hover:bg-gray-100 group-hover:bg-gray-100 duration-300 rounded-xl p-2 font-normal dark:text-neutral-200 dark:hover:text-neutral-500">

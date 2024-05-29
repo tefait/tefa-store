@@ -36,4 +36,11 @@ else if (isLightOrAuto && !html.classList.contains('light')) html.classList.add(
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: "auto",
     centeredSlides: false,
-});
+    freeMode: true,
+    spaceBetween: 10,
+    breakpoints: {
+      1024: {
+        spaceBetween: 13,
+      },
+    },
+  });
