@@ -9,19 +9,20 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController as AdminOrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
-use App\Models\Produk;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/register', [LoginController::class, 'register'])->name('customer.register');
 
 Route::get('/fluttershy/discord/{command}', function ($command, Request $request) {
     try {
         $args = $request->input('args', []);
 
-        if (!is_array($args)) {
+        if (! is_array($args)) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Arguments must be provided as an array.'
+                'message' => 'Arguments must be provided as an array.',
             ], 400);
         }
 
@@ -31,21 +32,20 @@ Route::get('/fluttershy/discord/{command}', function ($command, Request $request
 
         return response()->json([
             'status' => 'success',
-            'cmd' => "php artisan $command " . json_encode($args),
-            'output' => $output
+            'cmd' => "php artisan $command ".json_encode($args),
+            'output' => $output,
         ]);
     } catch (\Throwable $th) {
         return response()->json([
             'status' => 'error',
-            'cmd' => "php artisan $command " . json_encode($args),
-            'error' => $th->getMessage()
+            'cmd' => "php artisan $command ".json_encode($args),
+            'error' => $th->getMessage(),
         ]);
     }
 });
 // Route::get('/', function () {
 //     return view('home');
 // })->name('home');
-
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard.index');
@@ -121,7 +121,6 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () 
     });
 });
 
-
 Route::get('/product/ref/{user}/{product}', [FrontController::class, 'referalProduct'])->name('front.afiliasi');
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

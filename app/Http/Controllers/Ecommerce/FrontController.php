@@ -15,7 +15,7 @@ class FrontController extends Controller
 {
     public function referalProduct($user, $product)
     {
-        $code = $user . '-' . $product; //KITA MERGE USERID DAN PRODUCTID
+        $code = $user.'-'.$product; //KITA MERGE USERID DAN PRODUCTID
         $product = Product::find($product); //FIND PRODUCT BERDASARKAN PRODUCTID
         $cookie = cookie('afiliasi', json_encode($code), 2880); //BUAT COOKIE DENGAN NAMA AFILIASI DAN VALUENYA ADALAH CODE YANG SUDAH DI-MERGE
 
@@ -51,6 +51,7 @@ class FrontController extends Controller
     {
         // Take first ever shown category and then take all the product then order by created at
         $products = Category::where('slug', $slug)->first()->product()->orderBy('created_at', 'DESC')->paginate(12);
+
         // return json_encode(Route::current());
         return view('ecommerce.product', compact('products'));
     }

@@ -161,6 +161,40 @@ class CartController extends Controller
         return response()->json(['status' => 'success', 'data' => $districts]);
     }
 
+
+    public function generateRandomPassword()
+    {
+        // Daftar kata yang dapat digunakan
+        $words = [
+            'kantong', 'hdpe', 'airsumur', 'kopi', 'hitam', 'daun', 'pohon', 'batu', 'sungai', 'hujan', 'plastik'
+        ];
+
+        // Daftar karakter khusus
+        $specialChars = ['%', '@', '#', '$', '!', '&'];
+
+        // Daftar angka
+        $numbers = range(0, 255);
+
+        // Memilih kata secara acak
+        $word1 = $words[array_rand($words)];
+        $word2 = $words[array_rand($words)];
+
+        // Memastikan dua kata tidak sama
+        while ($word1 == $word2) {
+            $word2 = $words[array_rand($words)];
+        }
+
+        // Memilih angka secara acak
+        $number = $numbers[array_rand($numbers)];
+
+        // Memilih karakter khusus secara acak
+        $specialChar = $specialChars[array_rand($specialChars)];
+
+        // Menggabungkan kata, angka, dan karakter khusus
+        $password = $word1 . $number . $word2 . $specialChar;
+
+        return $password;
+    }
     public function processCheckout(Request $request)
     {
         $this->validate($request, [
@@ -180,7 +214,7 @@ class CartController extends Controller
             $explodeAffiliate = explode('-', $affiliate);
 
             $customer = Customer::where('email', $request->email)->first();
-            if (! auth()->guard('customer')->check() && $customer) {
+            if (!auth()->guard('customer')->check() && $customer) {
                 return redirect()->back()->with(['error' => 'Silahkan Login Terlebih Dahulu']);
             }
 
@@ -189,8 +223,8 @@ class CartController extends Controller
                 return $q['qty'] * $q['product_price'];
             });
 
-            if (! auth()->guard('customer')->check()) {
-                $password = Str::random(8);
+            if (!auth()->guard('customer')->check()) {
+                $password = $this->generateRandomPassword();
                 $customer = Customer::create([
                     'name' => $request->customer_name,
                     'email' => $request->email,
@@ -205,7 +239,7 @@ class CartController extends Controller
 
             // $shipping = explode('-', $request->courier);
             $order = Order::create([
-                'invoice' => Str::random(4).'-'.time(),
+                'invoice' => Str::random(4) . '-' . time(),
                 'customer_id' => $customer->id,
                 'customer_name' => $customer->name,
                 'customer_phone' => $request->customer_phone,
@@ -234,7 +268,7 @@ class CartController extends Controller
             $cookie = cookie('carts', json_encode($carts), 2880);
             Cookie::queue(Cookie::forget('afiliasi'));
 
-            if (! auth()->guard('customer')->check()) {
+            if (!auth()->guard('customer')->check()) {
                 Mail::to($request->email)->send(new CustomerRegisterMail($customer, $password));
             }
 
@@ -244,6 +278,9 @@ class CartController extends Controller
 
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
+    }
+    public function storeCustomer(Request $request)
+    {
     }
 
     public function checkoutFinish($invoice)

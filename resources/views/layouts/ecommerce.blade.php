@@ -46,7 +46,7 @@
                         @auth
                             <li><a href="{{ route('customer.dashboard') }}">My Account</a></li>
                         @endauth
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="{{route('login')}}">Panel</a></li>
                     </ul>
                 </div>
             </div>

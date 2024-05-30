@@ -8,6 +8,7 @@ use App\Models\Order;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -15,10 +16,14 @@ class AppServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
+
     }
 
     public function boot(): void
     {
+        if (!empty(env('NGROK_URL'))) {
+            $this->app['url']->forceRootUrl(env('NGROK_URL'));
+        }
         Blade::directive('src', function ($expression) {
             return "<?php echo strpos($expression, 'http://') === 0 || strpos($expression, 'https://') === 0 ? $expression : Storage::url($expression); ?>";
         });

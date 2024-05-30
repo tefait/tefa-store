@@ -68,7 +68,7 @@ class ProductController extends Controller
                 'slug' => $request->name,
                 'category_id' => $request->category_id,
                 'description' => $request->description,
-                'image' => "public/products/" . $filename,
+                'image' => 'public/products/'.$filename,
                 'price' => $request->price,
                 'weight' => $request->weight,
                 'status' => $request->status,
@@ -117,7 +117,7 @@ class ProductController extends Controller
             'category_id' => $request->category_id,
             'price' => $request->price,
             'weight' => $request->weight,
-            'image' => "public/products/" . $filename,
+            'image' => 'public/products/'.$filename,
         ]);
 
         return redirect(route('product.index'))->with(['success' => 'Data Produk Diperbaharui']);
