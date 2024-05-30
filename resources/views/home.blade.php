@@ -99,8 +99,8 @@
 </div>
 <!-- End Card Kategori -->
 
-<!-- Kategori -->
-<div class="lg:hidden py-2 px-4 mt-2">
+<!-- Menu -->
+{{-- <div class="py-2 px-4 mt-2">
   <div class="flex justify-between items-center">
     <div class="relative inline-block">
       <i class="bx bxs-category text-3xl min-w-12 bg-orange-100 rounded-full text-orange-400 flex justify-center items-center h-12 w-full"></i>
@@ -123,15 +123,15 @@
       <p class="text-xs text-center mt-1">Menu</p>
     </div>
   </div>
-</div>
-<!-- End Kategori -->
+</div> --}}
+<!-- End Menu -->
 
-<!-- Swiper -->
+<!-- Produk Terlaris -->
 <div class="flex items-center gap-1 mt-4 px-4 mb-2 lg:mt-8 lg:px-0">
     <h3 class="text-base lg:text-xl font-bold text-gray-800 dark:text-white">Produk Terlaris</h3>
     <i class="bx bxs-hot text-xl lg:text-2xl text-red-500"></i>
 </div>
-<section class="relative h-full bg-orange-100 py-4">
+<section class="relative h-full bg-orange-100 lg:rounded-xl py-4">
     <!-- Swiper -->
     <div class="swiper mySwiper h-full w-full">
         <div class="swiper-wrapper">
@@ -140,15 +140,16 @@
               <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div class="flex flex-col justify-center items-center">
                   <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
-                  <div class="flex items-center justify-center h-4 w-10 bg-[#FDB840] rounded-tr-md p-1 absolute top-[127.7px] left-0 lg:top-[192px]">
+                  <div class="flex items-center justify-center h-4 w-10 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[128px] left-0 lg:top-[192px]">
+                    <i class="bx bxs-medal text-sm text-white"></i>
                     <p class="text-[10px] font-semibold text-white uppercase">
                       Top
                     </p>
                   </div>
                 </div>
                 <div class="py-1 lg:py-2 px-2 gap-1 text-start">
-                  <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 20ch;">
-                    Kaos pendek cotton combed 30s kaos kaos kaos
+                  <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
+                    Kaos pendek cotton combed 30s
                   </p>
                   <p class="block font-bold text-gray-800 dark:text-white text-sm">Rp50.000</p>
                   <div class="flex justify-center items-center">
@@ -166,15 +167,16 @@
               <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div class="flex flex-col justify-center items-center">
                   <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
-                  <div class="flex items-center justify-center h-4 w-10 bg-[#FDB840] rounded-tr-md p-1 absolute top-[127.7px] left-0 lg:top-[192px]">
+                  <div class="flex items-center justify-center h-4 w-10 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[128px] left-0 lg:top-[192px]">
+                    <i class="bx bxs-medal text-sm text-white"></i>
                     <p class="text-[10px] font-semibold text-white uppercase">
                       Top
                     </p>
                   </div>
                 </div>
                 <div class="py-1 lg:py-2 px-2 gap-1 text-start">
-                  <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 20ch;">
-                    Kaos pendek cotton combed 30s kaos kaos kaos
+                  <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
+                    Kaos pendek cotton combed 30s
                   </p>
                   <p class="block font-bold text-gray-800 dark:text-white text-sm">Rp50.000</p>
                   <div class="flex justify-center items-center">
@@ -192,15 +194,16 @@
               <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div class="flex flex-col justify-center items-center">
                   <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
-                  <div class="flex items-center justify-center h-4 w-10 bg-[#FDB840] rounded-tr-md p-1 absolute top-[127.7px] left-0 lg:top-[192px]">
+                  <div class="flex items-center justify-center h-4 w-10 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[128px] left-0 lg:top-[192px]">
+                    <i class="bx bxs-medal text-sm text-white"></i>
                     <p class="text-[10px] font-semibold text-white uppercase">
                       Top
                     </p>
                   </div>
                 </div>
                 <div class="py-1 lg:py-2 px-2 gap-1 text-start">
-                  <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 20ch;">
-                    Kaos pendek cotton combed 30s kaos kaos kaos
+                  <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
+                    Kaos pendek cotton combed 30s
                   </p>
                   <p class="block font-bold text-gray-800 dark:text-white text-sm">Rp50.000</p>
                   <div class="flex justify-center items-center">
@@ -218,15 +221,16 @@
               <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div class="flex flex-col justify-center items-center">
                   <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
-                  <div class="flex items-center justify-center h-4 w-10 bg-[#FDB840] rounded-tr-md p-1 absolute top-[127.7px] left-0 lg:top-[192px]">
+                  <div class="flex items-center justify-center h-4 w-10 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[128px] left-0 lg:top-[192px]">
+                    <i class="bx bxs-medal text-sm text-white"></i>
                     <p class="text-[10px] font-semibold text-white uppercase">
                       Top
                     </p>
                   </div>
                 </div>
                 <div class="py-1 lg:py-2 px-2 gap-1 text-start">
-                  <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 20ch;">
-                    Kaos pendek cotton combed 30s kaos kaos kaos
+                  <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
+                    Kaos pendek cotton combed 30s
                   </p>
                   <p class="block font-bold text-gray-800 dark:text-white text-sm">Rp50.000</p>
                   <div class="flex justify-center items-center">
@@ -244,15 +248,16 @@
               <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div class="flex flex-col justify-center items-center">
                   <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
-                  <div class="flex items-center justify-center h-4 w-10 bg-[#FDB840] rounded-tr-md p-1 absolute top-[127.7px] left-0 lg:top-[192px]">
+                  <div class="flex items-center justify-center h-4 w-10 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[128px] left-0 lg:top-[192px]">
+                    <i class="bx bxs-medal text-sm text-white"></i>
                     <p class="text-[10px] font-semibold text-white uppercase">
                       Top
                     </p>
                   </div>
                 </div>
                 <div class="py-1 lg:py-2 px-2 gap-1 text-start">
-                  <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 20ch;">
-                    Kaos pendek cotton combed 30s kaos kaos kaos
+                  <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
+                    Kaos pendek cotton combed 30s
                   </p>
                   <p class="block font-bold text-gray-800 dark:text-white text-sm">Rp50.000</p>
                   <div class="flex justify-center items-center">
@@ -295,7 +300,99 @@
         </div>
     </div>
 </section>
-<!-- End Swiper -->
+<!-- End Produk Terlaris -->
+
+<!-- Produk Terbaru -->
+<div class="flex items-center mt-4 px-4 mb-2 lg:mt-8 lg:px-0">
+    <h3 class="text-base lg:text-xl font-bold text-gray-800 dark:text-white">Produk Terbaru</h3>
+</div>
+<section class="flex gap-4 relative h-full mb-4 px-4 lg:px-0">
+    <div class="hidden xl:block h-full w-[calc(50%-180px)]">
+        <img src="{{ asset('assets/produkterbaru.jpg') }}" alt="" class="h-full w-full rounded-lg">
+    </div>
+    <!-- Card Section -->
+    <div class="w-full">
+        <!-- Grid -->
+        <div class="flex flex-wrap gap-3">
+        <!-- Card -->
+        <a class="group flex flex-col h-16 lg:h-[145px] w-[calc(50%-6px)] bg-white rounded-md lg:rounded-xl transition dark:bg-neutral-900" href="#"
+        style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
+        onmouseover="this.style.boxShadow='0 0 8px rgba(0, 0, 0, 0.2)';"
+        onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
+            <div class="flex h-full">
+                <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="rounded-l-md lg:rounded-l-lg mr-3">
+                <div class="flex justify-between items-center w-full">
+                    <div class="py-1 lg:py-2 px-2 gap-1 text-start w-full">
+                        <p class="text-gray-600 dark:text-neutral-300 text-xs lg:text-base">
+                        Kaos
+                        </p>
+                        <p class="block font-bold text-gray-800 dark:text-white text-sm lg:text-lg">Rp50.000</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <!-- End Card -->
+        <!-- Card -->
+        <a class="group flex flex-col h-16 lg:h-[145px] w-[calc(50%-6px)] bg-white rounded-md lg:rounded-xl transition dark:bg-neutral-900" href="#"
+        style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
+        onmouseover="this.style.boxShadow='0 0 8px rgba(0, 0, 0, 0.2)';"
+        onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
+            <div class="flex h-full">
+                <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="rounded-l-md lg:rounded-l-lg mr-3">
+                <div class="flex justify-between items-center w-full">
+                    <div class="py-1 lg:py-2 px-2 gap-1 text-start w-full">
+                        <p class="text-gray-600 dark:text-neutral-300 text-xs lg:text-base">
+                        Kaos
+                        </p>
+                        <p class="block font-bold text-gray-800 dark:text-white text-sm lg:text-lg">Rp50.000</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <!-- End Card -->
+        <!-- Card -->
+        <a class="group flex flex-col h-16 lg:h-[145px] w-[calc(50%-6px)] bg-white rounded-md lg:rounded-xl transition dark:bg-neutral-900" href="#"
+        style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
+        onmouseover="this.style.boxShadow='0 0 8px rgba(0, 0, 0, 0.2)';"
+        onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
+            <div class="flex h-full">
+                <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="rounded-l-md lg:rounded-l-lg mr-3">
+                <div class="flex justify-between items-center w-full">
+                    <div class="py-1 lg:py-2 px-2 gap-1 text-start w-full">
+                        <p class="text-gray-600 dark:text-neutral-300 text-xs lg:text-base">
+                        Kaos
+                        </p>
+                        <p class="block font-bold text-gray-800 dark:text-white text-sm lg:text-lg">Rp50.000</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <!-- End Card -->
+        <!-- Card -->
+        <a class="group flex flex-col h-16 lg:h-[145px] w-[calc(50%-6px)] bg-white rounded-md lg:rounded-xl transition dark:bg-neutral-900" href="#"
+        style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
+        onmouseover="this.style.boxShadow='0 0 8px rgba(0, 0, 0, 0.2)';"
+        onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
+            <div class="flex h-full">
+                <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="rounded-l-md lg:rounded-l-lg mr-3">
+                <div class="flex justify-between items-center w-full">
+                    <div class="py-1 lg:py-2 px-2 gap-1 text-start w-full">
+                        <p class="text-gray-600 dark:text-neutral-300 text-xs lg:text-base">
+                        Kaos
+                        </p>
+                        <p class="block font-bold text-gray-800 dark:text-white text-sm lg:text-lg">Rp50.000</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <!-- End Card -->
+        </div>
+        <!-- End Grid -->
+    </div>
+    <!-- End Card Section -->
+
+</section>
+<!-- End Produk Terbaru -->
 
 <!-- Kategori -->
 {{-- <div class="lg:hidden py-2 px-4 mt-2">
