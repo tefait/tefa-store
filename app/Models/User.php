@@ -11,6 +11,20 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    public function getRoleAttribute()
+    {
+        switch ($this->role) {
+            case 0:
+                return "Administrator";
+
+            case 1:
+                return "Gudang";
+
+            default:
+                return "Undefined";
+        }
+    }
+
     /**
      * The attributes that are mass assignable.
      *

@@ -33,7 +33,7 @@
         @yield('container')
     </div>
 
-    <div class="">
+    <div>
         @yield('dashboard')
     </div>
 
