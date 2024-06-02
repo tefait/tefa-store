@@ -20,7 +20,37 @@
 </div>
 
 <!-- Carousel -->
-<div class="flex justify-center px-4 mb-2 lg:mb-4 lg:px-0">
+<section class="relative h-full w-full flex justify-center group px-4 mb-2 lg:mb-4 lg:px-0">
+  <button id="prevBtn" class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -left-5 translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14">
+      <path d="M7 1L1 7l6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </button>
+  <button id="nextBtn" class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -right-5 -translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14">
+      <path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </button>
+  <div class="swiper myCarousel relative overflow-hidden h-[130px] sm:h-[220px] lg:h-[300px] rounded-xl">
+    <div class="swiper-wrapper h-full w-full">
+      <div class="swiper-slide flex justify-center items-center h-full w-full">
+        <img src="{{ asset('assets/carousel/carousel1.jpg') }}" alt="Slide Pertama" class="h-full w-full object-cover" />
+      </div>
+      <div class="swiper-slide flex justify-center items-center h-full w-full">
+        <img src="{{ asset('assets/carousel/carousel2.jpg') }}" alt="Slide Kedua" class="h-full w-full object-cover" />
+      </div>
+      <div class="swiper-slide flex justify-center items-center h-full w-full">
+        <img src="{{ asset('assets/carousel/carousel3.jpg') }}" alt="Slide Ketiga" class="h-full w-full object-cover" />
+      </div>
+    </div>
+    <div class="swiper-pagination flex justify-start absolute bottom-2 lg:bottom-3 px-3 lg:px-5"></div>
+  </div>
+</section>
+
+<!-- End Carousel -->
+
+<!-- Carousel -->
+{{-- <div class="flex justify-center px-4 mb-2 lg:mb-4 lg:px-0">
   <div class="w-full rounded-xl">
     <div data-hs-carousel='{
         "loadingClasses": "opacity-0",
@@ -72,7 +102,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> --}}
 <!-- End Carousel -->
 
 <!-- Card Kategori -->
@@ -131,17 +161,22 @@
     <h3 class="text-base lg:text-xl font-bold text-gray-800 dark:text-white">Produk Terlaris</h3>
     <img src="{{ asset('assets/icons/best.png') }}" class="h-5 lg:h-6">
 </div>
-<section class="relative h-full bg-gradient-to-tr from-orange-500 from-30% via-orange-300 via-10% to-orange-200 to-90% bg-opacity-30 lg:rounded-xl py-4">
-  <div class="bg-white rounded-full p-4 absolute z-30 top-[50%] right-0">
-    <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14">
+<section class="relative h-full group bg-gradient-to-tr from-orange-500 from-30% via-orange-300 via-10% to-orange-200 to-90% bg-opacity-30 lg:rounded-xl py-4">
+  <button id="prevBtn" class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -left-5 translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14">
+      <path d="M7 1L1 7l6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>    
+  </button>
+  <button id="nextBtn" class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -right-5 -translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14">
       <path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
-  </div>
+  </button>
     <!-- Swiper -->
     <div class="swiper mySwiper h-full w-full">
         <div class="swiper-wrapper">
             <!-- Card -->
-            <div class="flex justify-center swiper-slide h-[245px] w-36 lg:h-[310px] lg:w-52">
+            <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
               <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div class="flex flex-col justify-center items-center">
                   <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
@@ -168,7 +203,7 @@
             </div>
             <!-- End Card -->
             <!-- Card -->
-            <div class="flex justify-center swiper-slide h-[245px] w-36 lg:h-[310px] lg:w-52">
+            <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
               <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div class="flex flex-col justify-center items-center">
                   <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
@@ -195,7 +230,7 @@
             </div>
             <!-- End Card -->
             <!-- Card -->
-            <div class="flex justify-center swiper-slide h-[245px] w-36 lg:h-[310px] lg:w-52">
+            <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
               <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div class="flex flex-col justify-center items-center">
                   <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
@@ -222,7 +257,7 @@
             </div>
             <!-- End Card -->
             <!-- Card -->
-            <div class="flex justify-center swiper-slide h-[245px] w-36 lg:h-[310px] lg:w-52">
+            <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
               <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div class="flex flex-col justify-center items-center">
                   <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
@@ -249,7 +284,7 @@
             </div>
             <!-- End Card -->
             <!-- Card -->
-            <div class="flex justify-center swiper-slide h-[245px] w-36 lg:h-[310px] lg:w-52">
+            <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
               <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div class="flex flex-col justify-center items-center">
                   <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
@@ -276,7 +311,7 @@
             </div>
             <!-- End Card -->
             <!-- Card -->
-            <div class="flex justify-center swiper-slide h-[245px] w-36 lg:h-[310px] lg:w-52">
+            <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
               <div class="group flex flex-col justify-center items-center h-full w-full bg-[#FDB840] shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:shadow-neutral-700/70">
                 <div class="absolute bottom-5 opacity-30">
                   <svg class="size-20 lg:size-28" width="12" height="12" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -404,13 +439,23 @@
   <h3 class="text-base lg:text-xl font-bold text-gray-800 dark:text-white">Segera Hadir</h3>
   <img src="{{ asset('assets/icons/soon.png') }}" class="h-5 lg:h-6">
 </div>
-<section class="relative h-full">
+<section class="relative h-full group">
+  <button id="prevBtn" class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -left-5 translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14">
+      <path d="M7 1L1 7l6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>    
+  </button>
+  <button id="nextBtn" class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -right-5 -translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14">
+      <path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </button>
   <div class="circlePosition w-[80%] h-[80%] bg-primary rounded-[100%] absolute z-0 top-[25%] blur-[250px]"></div>
   <!-- Swiper -->
   <div class="swiper mySwiper h-full w-full">
     <div class="swiper-wrapper lg:-start-4">
       <!-- Card -->
-      <div class="flex justify-center swiper-slide h-[245px] w-36 lg:h-[310px] lg:w-52">
+      <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
         <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
           <div class="flex justify-center items-center h-full">
             <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="h-full object-cover rounded-md lg:rounded-lg" />
@@ -419,7 +464,7 @@
       </div>
       <!-- End Card -->
       <!-- Card -->
-      <div class="flex justify-center swiper-slide h-[245px] w-36 lg:h-[310px] lg:w-52">
+      <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
         <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
           <div class="flex justify-center items-center h-full">
             <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="h-full object-cover rounded-md lg:rounded-lg" />
@@ -428,7 +473,7 @@
       </div>
       <!-- End Card -->
       <!-- Card -->
-      <div class="flex justify-center swiper-slide h-[245px] w-36 lg:h-[310px] lg:w-52">
+      <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
         <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
           <div class="flex justify-center items-center h-full">
             <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="h-full object-cover rounded-md lg:rounded-lg" />
@@ -437,7 +482,7 @@
       </div>
       <!-- End Card -->
       <!-- Card -->
-      <div class="flex justify-center swiper-slide h-[245px] w-36 lg:h-[310px] lg:w-52">
+      <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
         <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
           <div class="flex justify-center items-center h-full">
             <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="h-full object-cover rounded-md lg:rounded-lg" />
@@ -446,7 +491,7 @@
       </div>
       <!-- End Card -->
       <!-- Card -->
-      <div class="flex justify-center swiper-slide h-[245px] w-36 lg:h-[310px] lg:w-52">
+      <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
         <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
           <div class="flex justify-center items-center h-full">
             <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="h-full object-cover rounded-md lg:rounded-lg" />
@@ -455,7 +500,7 @@
       </div>
       <!-- End Card -->
       <!-- Card -->
-      <div class="flex justify-center swiper-slide h-[245px] w-36 lg:h-[310px] lg:w-52">
+      <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
         <div class="group flex flex-col justify-center items-center h-full w-full bg-primary shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:shadow-neutral-700/70">
           <div class="absolute bottom-5 opacity-30">
             <svg class="size-20 lg:size-28" width="12" height="12" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -717,6 +762,10 @@
 <!-- Footer -->
 @include('partials.footer')
 <!-- End Footer -->
+
+<!-- Bottom Navbar -->
+@include('partials.bottom-nav')
+<!-- End Bottom Navbar -->
 
 <!-- Kategori -->
 {{-- <div class="lg:hidden py-2 px-4 mt-2">

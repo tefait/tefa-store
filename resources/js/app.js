@@ -32,6 +32,37 @@ else if (isDarkOrAuto && html.classList.contains('light')) html.classList.remove
 else if (isDarkOrAuto && !html.classList.contains('dark')) html.classList.add('dark');
 else if (isLightOrAuto && !html.classList.contains('light')) html.classList.add('light');
 
+// Initialize Carousel
+var swiper = new Swiper(".myCarousel", {
+  slidesPerView: 1,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  autoplay: {
+    delay: 3000,
+  },
+  navigation: {
+    nextEl: '#nextBtn',
+    prevEl: '#prevBtn',
+  },
+  renderBullet: function (index, swiperPagination) {
+    return '<span class="' + swiperPagination + ' swiper-pagination-bullet"></span>';
+  },
+});
+
+// Add event listeners for custom buttons
+document.querySelectorAll('.custom-button').forEach(function(button) {
+  button.addEventListener('click', function() {
+    if (this.id === 'prevBtn') {
+      swiper.slidePrev();
+    } else if (this.id === 'nextBtn') {
+      swiper.slideNext();
+    }
+  });
+});
+
 // Initialize Swiper
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: "auto",
@@ -43,4 +74,8 @@ var swiper = new Swiper(".mySwiper", {
         spaceBetween: 13,
       },
     },
-  });
+    navigation: {
+      nextEl: '#nextBtn',
+      prevEl: '#prevBtn',
+    },
+});

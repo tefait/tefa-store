@@ -1,5 +1,5 @@
 <!-- ========== FOOTER ========== -->
-<footer class="w-full max-w-[85rem] border-t mt-4 px-4 py-4 lg:px-0 lg:py-10">
+<footer class="w-full max-w-[85rem] border-t mt-4 px-4 pt-4 lg:px-0 lg:py-10">
     <div class="flex justify-between">
       <div class="col-span-full hidden lg:col-span-1 lg:block w-1/3">
         <a class="flex-none text-xl font-semibold dark:text-white hidden lg:block" href="#" aria-label="Logo"><img src="{{ asset('assets/img/logo2.png') }}" class="lg:h-12" alt="Logo Tefa PPLG"></a>
@@ -39,7 +39,7 @@
             </span>
           </div>
   
-          <h4 class="text-sm lg:text-base font-bold text-gray-900 uppercase dark:text-neutral-100 mt-4">Panduan</h4>
+          <h4 class="text-sm lg:text-base font-bold text-gray-900 uppercase dark:text-neutral-100 mt-3">Panduan</h4>
           <div class="grid space-y-2 lg:space-y-3 text-sm">
             <p><a href="#" class="inline-flex gap-x-2 text-gray-600 hover:text-primary dark:text-neutral-400 dark:hover:text-primary duration-300">Cara Order</a></p>
             <p><a href="#" class="inline-flex gap-x-2 text-gray-600 hover:text-primary dark:text-neutral-400 dark:hover:text-primary duration-300">Pembayaran</a></p>

@@ -1,6 +1,6 @@
 <!-- ========== HEADER ========== -->
 <!-- SearchBox Modal -->
-<div id="json-example-with-tab-filter-using-modal-popup-with-shortcut-call-trigger" class="hs-overlay hs-overlay-open:opacity-100 hs-overlay-open:duration-500 hidden size-full fixed top-0 start-0 lg:-start-24 z-[80] opacity-0 overflow-x-hidden transition-all overflow-y-auto pointer-events-none">
+<div id="json-example-with-tab-filter-using-modal-popup-with-shortcut-call-trigger" class="hs-overlay hs-overlay-open:opacity-100 hs-overlay-open:duration-500 hidden size-full fixed top-0 start-0 lg:-start-24 z-[200] opacity-0 overflow-x-hidden transition-all overflow-y-auto pointer-events-none">
   <div class="hs-overlay-open:opacity-100 hs-overlay-open:duration-500 opacity-0 transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
     <div class="flex flex-col lg:w-[45rem] bg-white border shadow-sm rounded-xl pointer-events-auto dark:bg-black dark:border-neutral-800 dark:shadow-neutral-700/70">
       <div class="relative" data-hs-combo-box='{
@@ -36,7 +36,7 @@
 <!-- End SearchBox -->
 
 <!-- Navbar -->
-<nav class="fixed z-[100] w-full top-0">
+<nav class="fixed z-[199] w-full top-0">
 <div class="hidden lg:flex items-center justify-between h-7 w-full px-6 sm:px-8 lg:px-10 bg-primary dark:bg-secondary">
     <div class="flex flex-row py-2 sm:justify-end gap-y-0 gap-x-2 sm:py-0">
         <a class="text-xs text-white text-opacity-80 hover:text-white duration-300" href="#">Hubungi Kami</a>
@@ -315,7 +315,7 @@
             <!-- End Off canvas Notification -->
 
             <!-- Off canvas Cart -->
-            <div id="hs-overlay-right" class="hs-overlay hs-overlay-open:translate-x-0 hidden translate-x-full fixed top-0 end-0 transition-all duration-[400ms] transform h-full max-w-full sm:max-w-sm xl:max-w-md w-full z-[200] bg-white dark:bg-black dark:border-neutral-700" tabindex="-1">
+            <div id="hs-overlay-right" class="hs-overlay hs-overlay-open:translate-x-0 hidden translate-x-full fixed top-0 end-0 transition-all duration-[400ms] transform h-full max-w-full sm:max-w-sm 2xl:max-w-md w-full z-[200] bg-white dark:bg-black dark:border-neutral-700" tabindex="-1">
             <div class="flex justify-between items-center py-3 px-4 shadow-md dark:border dark:border-neutral-800">
                 <h3 class="text-base font-bold text-gray-800 dark:text-white">
                 Keranjang

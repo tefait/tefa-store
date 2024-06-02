@@ -18,11 +18,11 @@
 }
 
 /* Slider Produk Terlaris */
-.swiper-slide:first-child {
+.slide-tsh:first-child {
   margin-left: 16px;
 }
 
-.swiper-slide:last-child {
+.slide-tsh:last-child {
   margin-right: 16px;
 }
 
@@ -39,3 +39,18 @@
   overflow: hidden;
 }
 /* End Slider Produk Terlaris */
+
+.swiper-pagination-bullet {
+  @apply bg-white bg-opacity-90 rounded-full cursor-pointer;
+  width: 8px;
+  height: 8px;
+}
+@media (min-width: 1024px) {
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+  }
+}
+.swiper-pagination-bullet-active {
+  @apply bg-white;
+}
