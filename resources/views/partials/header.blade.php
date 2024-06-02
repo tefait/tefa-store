@@ -4,7 +4,7 @@
       <div class="me-5 lg:me-0 lg:hidden w-full">
         <!-- Logo -->
           <a class="flex" href="#" aria-label="Logo">
-            <img src="{{ asset('assets/logo2.png') }}" class="" alt="">
+            <img src="{{ asset('assets/img/logo2.png') }}" class="" alt="">
           </a>
         <!-- End Logo -->
       </div>
@@ -14,7 +14,7 @@
           <h3 class="text-xl font-bold italic text-primary dark:text-blue-300">
             Semangat bekerja
           </h3>
-          <img src="{{ asset('assets/api.gif') }}" alt="" class="h-7">
+          <img src="{{ asset('assets/icons/api.gif') }}" alt="" class="h-7">
         </div>
 
         <div class="flex flex-row items-center justify-end gap-2">

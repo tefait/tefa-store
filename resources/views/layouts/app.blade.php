@@ -31,7 +31,7 @@
         @include('partials.navbar')
     @endif
 
-    <div class="lg:px-[5vw] 2xl:px-[360px]">
+    <div class="lg:container lg:px-[5vw] mt-16 sm:mt-20 lg:mt-28">
         @yield('container')
     </div>
 

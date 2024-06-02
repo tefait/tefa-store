@@ -35,7 +35,9 @@
 </div>
 <!-- End SearchBox -->
 
-<nav class="hidden lg:flex z-50 items-center justify-between h-7 w-full px-6 sm:px-8 lg:px-10 bg-primary dark:bg-secondary">
+<!-- Navbar -->
+<nav class="fixed z-[100] w-full top-0">
+<div class="hidden lg:flex items-center justify-between h-7 w-full px-6 sm:px-8 lg:px-10 bg-primary dark:bg-secondary">
     <div class="flex flex-row py-2 sm:justify-end gap-y-0 gap-x-2 sm:py-0">
         <a class="text-xs text-white text-opacity-80 hover:text-white duration-300" href="#">Hubungi Kami</a>
             <span class="text-xs text-white text-opacity-80">|</span>
@@ -47,7 +49,7 @@
     <div class="flex justify-center items-center font-medium text-xs whitespace-nowrap text-white text-opacity-80">
         <span>Ikuti Kami</span>
         <div class="flex ml-2 gap-1 items-center font-medium text-base whitespace-nowrap">
-            <a href="#" class=" text-white text-opacity-80 hover:text-opacity-100"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class=" text-white text-opacity-80 hover:text-opacity-100"><i class="bx bxl-facebook-circle"></i></a>
             <a href="#" class=" text-white text-opacity-80 hover:text-opacity-100"><i class="bx bxl-youtube"></i></a>
             <a href="#" class=" text-white text-opacity-80 hover:text-opacity-100"><i class="bx bxl-instagram"></i></a>
         </div>
@@ -70,12 +72,12 @@
             Light
         </button>
     </div>
-</nav>
+</div>
 
 <header class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-2 px-4 lg:px-10 sm:py-0 dark:bg-black">
-    <nav class="relative w-full sm:flex sm:items-center sm:justify-between" aria-label="Global">
+    <div class="relative w-full sm:flex sm:items-center sm:justify-between" aria-label="Global">
         <div class="flex items-center justify-between w-full">
-            <a class="flex-none text-xl font-semibold dark:text-white hidden lg:block" href="#" aria-label="Logo"><img src="{{ asset('assets/logo2.png') }}" class="lg:h-12" alt=""></a>
+            <a class="flex-none text-xl font-semibold dark:text-white hidden lg:block" href="#" aria-label="Logo"><img src="{{ asset('assets/img/logo2.png') }}" class="lg:h-12" alt="Logo Tefa PPLG"></a>
 
             <div class="hidden sm:flex hs-dropdown group [--strategy:static] md:[--strategy:absolute] [--adaptive:none] md:[--trigger:hover] cursor-pointer py-3 ml-5">
                 <button class="hidden sm:flex items-center w-full text-sm text-gray-800 hover:text-black hover:bg-gray-100 group-hover:bg-gray-100 duration-300 rounded-xl p-2 font-medium dark:text-white dark:group-hover:text-gray-800">
@@ -203,6 +205,10 @@
                         </span>
                     </span>
                 </button>
+                <!-- Hamburger -->
+                <button type="button" class="lg:hidden relative inline-flex items-center text-sm font-medium" data-hs-overlay="#hs-overlay-bottom" aria-label="Toggle Menu">
+                    <i class="bx bx-menu-alt-right text-2xl text-gray-800 dark:text-white hover:text-black py-1 px-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-700 duration-300"></i>
+                </button>
             </div>
 
             <div class="hidden lg:flex justify-center mx-4">
@@ -221,6 +227,7 @@
                     </div>
                 </div>
             </div>
+</nav>
 
             {{-- <div class="hs-dropdown [--placement:bottom-right] hidden relative lg:inline-flex ms-2">
                 <button id="hs-dropdown-with-header" type="button" class="w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700">
@@ -252,7 +259,7 @@
             </div> --}}
 
             <!-- Off canvas Notification -->
-            <div id="hs-scroll-inside-body-modal" class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
+            <div id="hs-scroll-inside-body-modal" class="hs-overlay hidden size-full fixed top-0 start-0 z-[200] overflow-x-hidden overflow-y-auto pointer-events-none">
                 <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto h-[calc(100%-3.5rem)]">
                     <div class="max-h-full overflow-hidden flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto dark:bg-black dark:border-neutral-800 dark:shadow-neutral-700/70">
                         <div class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-800">
@@ -308,7 +315,7 @@
             <!-- End Off canvas Notification -->
 
             <!-- Off canvas Cart -->
-            <div id="hs-overlay-right" class="hs-overlay hs-overlay-open:translate-x-0 hidden translate-x-full fixed top-0 end-0 transition-all duration-[400ms] transform h-full max-w-full sm:max-w-sm xl:max-w-md w-full z-[80] bg-white dark:bg-black dark:border-neutral-700" tabindex="-1">
+            <div id="hs-overlay-right" class="hs-overlay hs-overlay-open:translate-x-0 hidden translate-x-full fixed top-0 end-0 transition-all duration-[400ms] transform h-full max-w-full sm:max-w-sm xl:max-w-md w-full z-[200] bg-white dark:bg-black dark:border-neutral-700" tabindex="-1">
             <div class="flex justify-between items-center py-3 px-4 shadow-md dark:border dark:border-neutral-800">
                 <h3 class="text-base font-bold text-gray-800 dark:text-white">
                 Keranjang
@@ -746,14 +753,9 @@
                 </div>
             </div>
             </div> --}}
-
-            <!-- Hamburger -->
-            <button type="button" class="lg:hidden ms-1 relative inline-flex items-center text-sm font-medium" data-hs-overlay="#hs-overlay-bottom" aria-label="Toggle Menu">
-                <i class="bx bx-menu-alt-right text-2xl text-gray-800 dark:text-white hover:text-black py-1 px-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-700 duration-300"></i>
-            </button>
         </div>
 
-        <div id="hs-overlay-bottom" class="hs-overlay hs-overlay-open:translate-y-0 translate-y-full fixed bottom-0 inset-x-0 transition-all duration-[400ms] transform size-full z-[80] bg-white border-b dark:bg-black dark:border-neutral-800 hidden">
+        <div id="hs-overlay-bottom" class="hs-overlay hs-overlay-open:translate-y-0 translate-y-full fixed bottom-0 inset-x-0 transition-all duration-[400ms] transform size-full z-[200] bg-white border-b dark:bg-black dark:border-neutral-800 hidden">
             <div class="hs-overlay-open:mt-0 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-10 opacity-0 transition-all max-w-full max-h-full h-full">
                 <div class="flex flex-col bg-white pointer-events-auto max-w-full max-h-full h-full dark:bg-black">
                     <div class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-800">
@@ -901,7 +903,7 @@
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
 </header>
 <!-- ========== END HEADER ========== -->
 

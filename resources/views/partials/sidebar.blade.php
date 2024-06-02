@@ -4,7 +4,7 @@
     <div class="px-8 lg:py-4 absolute">
         <!-- Logo -->
         <a class="hidden lg:block" href="#" aria-label="Logo">
-            <img src="{{ asset('assets/logo2.png') }}" alt="Logo">
+            <img src="{{ asset('assets/img/logo2.png') }}" alt="Logo">
         </a>
         <!-- End Logo -->
     </div>
