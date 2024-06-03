@@ -80,7 +80,7 @@
             <a class="flex-none text-xl font-semibold dark:text-white hidden lg:block" href="#" aria-label="Logo"><img src="{{ asset('assets/img/logo2.png') }}" class="lg:h-12" alt="Logo Tefa PPLG"></a>
 
             <div class="hidden sm:flex hs-dropdown group [--strategy:static] md:[--strategy:absolute] [--adaptive:none] md:[--trigger:hover] cursor-pointer py-3 ml-5">
-                <button class="hidden sm:flex items-center w-full text-sm text-gray-800 hover:text-black hover:bg-gray-100 group-hover:bg-gray-100 duration-300 rounded-xl p-2 font-medium dark:text-white dark:group-hover:text-gray-800">
+                <button class="hidden sm:flex items-center justify-center w-24 text-sm text-gray-800 hover:text-black hover:bg-gray-100 group-hover:bg-gray-100 duration-300 rounded-xl p-2 font-medium dark:text-white dark:group-hover:text-gray-800">
                     Kategori
                     <i class="bx bx-chevron-down ms-1 text-2xl group-hover:rotate-180 duration-300"></i>
                 </button>
@@ -174,6 +174,15 @@
                     <!-- End Icon Blocks -->
                 </div>
             </div>
+
+            <!-- Tombol Toko -->
+            <div class="text-gray-600 ms-0.5">
+                <button class="hidden lg:flex items-center justify-center w-24 text-sm hover:text-black hover:bg-gray-100 duration-300 rounded-xl p-2 font-medium dark:text-white">
+                    <i class="bx bxs-store me-1 text-2xl"></i>
+                    Toko
+                </button>
+            </div>
+            <!-- End Tombol Toko  -->
 
             <div class="flex flex-col gap-y-4 gap-x-0 sm:flex-row sm:items-center sm:justify-between sm:gap-y-0 sm:gap-x-5 sm:mx-5 mr-3 w-full">
                 <!-- SearchBox -->

@@ -21,12 +21,12 @@
 
 <!-- Carousel -->
 <section class="relative h-full w-full flex justify-center group px-4 mb-2 lg:mb-4 lg:px-0">
-  <button id="prevBtn" class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -left-5 translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+  <button id="prevBtnCar" class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -left-5 translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
     <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14">
       <path d="M7 1L1 7l6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
   </button>
-  <button id="nextBtn" class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -right-5 -translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+  <button id="nextBtnCar" class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -right-5 -translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
     <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14">
       <path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
@@ -162,18 +162,18 @@
     <img src="{{ asset('assets/icons/best.png') }}" class="h-5 lg:h-6">
 </div>
 <section class="relative h-full group bg-gradient-to-tr from-orange-500 from-30% via-orange-300 via-10% to-orange-200 to-90% bg-opacity-30 lg:rounded-xl py-4">
-  <button id="prevBtn" class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -left-5 translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+  <button id="prevBtnPT" class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -left-5 translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
     <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14">
       <path d="M7 1L1 7l6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-    </svg>    
+    </svg>
   </button>
-  <button id="nextBtn" class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -right-5 -translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+  <button id="nextBtnPT" class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -right-5 -translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
     <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14">
       <path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
   </button>
     <!-- Swiper -->
-    <div class="swiper mySwiper h-full w-full">
+    <div class="swiper mySwiperPT h-full w-full">
         <div class="swiper-wrapper">
             <!-- Card -->
             <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
@@ -440,19 +440,19 @@
   <img src="{{ asset('assets/icons/soon.png') }}" class="h-5 lg:h-6">
 </div>
 <section class="relative h-full group">
-  <button id="prevBtn" class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -left-5 translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+  <button id="prevBtnSH" class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -left-5 translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
     <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14">
       <path d="M7 1L1 7l6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-    </svg>    
+    </svg>
   </button>
-  <button id="nextBtn" class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -right-5 -translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+  <button id="nextBtnSH" class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -right-5 -translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
     <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14">
       <path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
   </button>
   <div class="circlePosition w-[80%] h-[80%] bg-primary rounded-[100%] absolute z-0 top-[25%] blur-[250px]"></div>
   <!-- Swiper -->
-  <div class="swiper mySwiper h-full w-full">
+  <div class="swiper mySwiperSH h-full w-full">
     <div class="swiper-wrapper lg:-start-4">
       <!-- Card -->
       <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
@@ -556,9 +556,9 @@
     <!-- End Title -->
 
     <!-- Grid -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:px-3">
       <!-- Card -->
-      <div class="flex h-auto cursor-pointer rounded-xl hover:scale-[101%] duration-300"
+      <div class="flex h-auto cursor-pointer rounded-xl hover:-translate-y-1 duration-300"
         style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
         onmouseover="this.style.boxShadow='0 0 16px rgba(167, 139, 255, 1)';"
         onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
@@ -611,7 +611,7 @@
       <!-- End Card -->
 
       <!-- Card -->
-      <div class="flex h-auto cursor-pointer rounded-xl hover:scale-[101%] duration-300"
+      <div class="flex h-auto cursor-pointer rounded-xl hover:-translate-y-1 duration-300"
         style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
         onmouseover="this.style.boxShadow='0 0 16px rgba(167, 139, 255, 1)';"
         onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
@@ -664,7 +664,7 @@
       <!-- End Card -->
 
       <!-- Card -->
-      <div class="flex h-auto cursor-pointer rounded-xl hover:scale-[101%] duration-300"
+      <div class="flex h-auto cursor-pointer rounded-xl hover:-translate-y-1 duration-300"
         style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
         onmouseover="this.style.boxShadow='0 0 16px rgba(167, 139, 255, 1)';"
         onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">

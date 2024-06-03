@@ -44,8 +44,8 @@ var swiper = new Swiper(".myCarousel", {
     delay: 3000,
   },
   navigation: {
-    nextEl: '#nextBtn',
-    prevEl: '#prevBtn',
+    nextEl: '#nextBtnCar',
+    prevEl: '#prevBtnCar',
   },
   renderBullet: function (index, swiperPagination) {
     return '<span class="' + swiperPagination + ' swiper-pagination-bullet"></span>';
@@ -55,16 +55,16 @@ var swiper = new Swiper(".myCarousel", {
 // Add event listeners for custom buttons
 document.querySelectorAll('.custom-button').forEach(function(button) {
   button.addEventListener('click', function() {
-    if (this.id === 'prevBtn') {
+    if (this.id === 'prevBtnCar') {
       swiper.slidePrev();
-    } else if (this.id === 'nextBtn') {
+    } else if (this.id === 'nextBtnCar') {
       swiper.slideNext();
     }
   });
 });
 
-// Initialize Swiper
-var swiper = new Swiper(".mySwiper", {
+// Initialize Swiper Produk Terlaris
+var swiper = new Swiper(".mySwiperPT", {
     slidesPerView: "auto",
     centeredSlides: false,
     freeMode: true,
@@ -75,7 +75,24 @@ var swiper = new Swiper(".mySwiper", {
       },
     },
     navigation: {
-      nextEl: '#nextBtn',
-      prevEl: '#prevBtn',
+      nextEl: '#nextBtnPT',
+      prevEl: '#prevBtnPT',
+    },
+});
+
+// Initialize Swiper Segera Hadir
+var swiper = new Swiper(".mySwiperSH", {
+    slidesPerView: "auto",
+    centeredSlides: false,
+    freeMode: true,
+    spaceBetween: 10,
+    breakpoints: {
+      1024: {
+        spaceBetween: 13,
+      },
+    },
+    navigation: {
+      nextEl: '#nextBtnSH',
+      prevEl: '#prevBtnSH',
     },
 });
