@@ -5,22 +5,32 @@ namespace App\Providers;
 use App\Http\View\CategoryComposer;
 use App\Models\Customer;
 use App\Models\Order;
+use App\Models\Setting;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
+use function Laravel\Prompts\error;
+
 class AppServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-
     }
 
     public function boot(): void
     {
-        if (! empty(env('NGROK_URL'))) {
+        try {
+            cache()->rememberForever(
+                'settings',
+                fn () => Setting::all()->keyBy('key'),
+            );
+        } catch (\Throwable $th) {
+            error('The `configs` table does not exist.');
+        }
+        if (!empty(env('NGROK_URL'))) {
             $this->app['url']->forceRootUrl(env('NGROK_URL'));
         }
         Blade::directive('src', function ($expression) {

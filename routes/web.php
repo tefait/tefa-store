@@ -103,7 +103,16 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () 
         return view('settings.index', compact('settings'));
     })->name('settings');
     Route::post('/settings', function (Request $request) {
-        dd($request);
+
+        // Get all the input data
+        $data = $request->except('_token');
+
+        // Loop through each setting and update it
+        foreach ($data as $key => $value) {
+            Setting::updateOrCreate(['key' => $key], ['value' => $value]);
+        }
+
+        return redirect()->with('sucess', 'Settings updated successfully');
     })->name('settings.StoreOrUpdate');
     Route::post('/product/marketplace', 'ProductController@uploadViaMarketplace')->name('product.marketplace');
 

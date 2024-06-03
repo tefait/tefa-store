@@ -1,11 +1,11 @@
 <!-- MEMANGGIL MASTER TEMPLATE YANG SUDAH DIBUAT SEBELUMNYA, YAKNI admin.blade.php -->
-@extends('layouts.admin')
 
-@section('title')
+
+<?php $__env->startSection('title'); ?>
     <title>Settings</title>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
     <main class="main">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">Home</li>
@@ -21,17 +21,17 @@
                             </div>
                             <div class="card-body">
 
-                                <form action="{{ route('settings.StoreOrUpdate') }}" method="post">
-                                    @csrf
+                                <form action="<?php echo e(route('settings.StoreOrUpdate')); ?>" method="post">
+                                    <?php echo csrf_field(); ?>
                                     <div class="form-group">
                                         <label for="name">Judul</label>
                                         <input type="text" name="key" class="form-control" required>
-                                        <p class="text-danger">{{ $errors->first('name') }}</p>
+                                        <p class="text-danger"><?php echo e($errors->first('name')); ?></p>
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Isi</label>
                                         <input type="text" name="value" class="form-control" required>
-                                        <p class="text-danger">{{ $errors->first('name') }}</p>
+                                        <p class="text-danger"><?php echo e($errors->first('name')); ?></p>
                                     </div>
                                     <div class="form-group">
                                         <button class="btn btn-primary btn-sm">Tambah</button>
@@ -51,16 +51,16 @@
                             </div>
                             <div class="card-body">
                                 <!-- KETIKA ADA SESSION SUCCESS  -->
-                                @if (session('success'))
+                                <?php if(session('success')): ?>
                                     <!-- MAKA TAMPILKAN ALERT SUCCESS -->
-                                    <div class="alert alert-success">{{ session('success') }}</div>
-                                @endif
+                                    <div class="alert alert-success"><?php echo e(session('success')); ?></div>
+                                <?php endif; ?>
 
                                 <!-- KETIKA ADA SESSION ERROR  -->
-                                @if (session('error'))
+                                <?php if(session('error')): ?>
                                     <!-- MAKA TAMPILKAN ALERT DANGER -->
-                                    <div class="alert alert-danger">{{ session('error') }}</div>
-                                @endif
+                                    <div class="alert alert-danger"><?php echo e(session('error')); ?></div>
+                                <?php endif; ?>
 
                                 <div class="table-responsive">
                                     <table class="table table-hover table-bordered">
@@ -73,25 +73,25 @@
                                             </tr>
                                         </thead>
                                         <form method="POST">
-                                            @csrf
+                                            <?php echo csrf_field(); ?>
                                             <tbody>
                                                 <!-- LOOPING DATA KATEGORI SESUAI JUMLAH DATA YANG ADA DI VARIABLE $settings -->
-                                                @forelse ($settings as $key => $val)
+                                                <?php $__empty_1 = true; $__currentLoopData = $settings; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $val): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                                                     <tr>
-                                                        <td>{{ $val->key }}</td>
-                                                        <td><strong>{{ $val->name }}</strong></td>
+                                                        <td><?php echo e($val->key); ?></td>
+                                                        <td><strong><?php echo e($val->name); ?></strong></td>
                                                         <!-- MENGGUNAKAN TERNARY OPERATOR, UNTUK MENGECEK, JIKA $val->parent ADA MAKA TAMPILKAN NAMA PARENTNYA, SELAIN ITU MAKA TANMPILKAN STRING - -->
-                                                        <td id="{{ $val->type . '-' . $val->key }}">
-                                                            @switch($val->type)
-                                                                @case('image')
-                                                                    <img src="{{ url($val->value) }}" alt="{{ $val->name }}">
+                                                        <td id="<?php echo e($val->type . '-' . $val->key); ?>">
+                                                            <?php switch($val->type):
+                                                                case ('image'): ?>
+                                                                    <img src="<?php echo e(url($val->value)); ?>" alt="<?php echo e($val->name); ?>">
                                                                     <br>
                                                                     <hr>
                                                                     <input type="text" class="form-control"
-                                                                        value="{{ $val->value }}" name="{{ $val->key }}">
-                                                                @break
+                                                                        value="<?php echo e($val->value); ?>" name="<?php echo e($val->key); ?>">
+                                                                <?php break; ?>
 
-                                                                @case('multi_image')
+                                                                <?php case ('multi_image'): ?>
                                                                     <?php
                                                                     $images = explode(';', $val->value);
                                                                     $i = 1;
@@ -103,22 +103,22 @@
                                                                         $i++;
                                                                     }
                                                                     ?>
-                                                                    <div id="multi-image-container-{{ $val->key }}">
+                                                                    <div id="multi-image-container-<?php echo e($val->key); ?>">
                                                                         <!-- Placeholder for new inputs -->
                                                                     </div>
                                                                     <button class="btn btn-primary"
-                                                                        onclick="addNewInput(event, '{{ $val->key }}')">
+                                                                        onclick="addNewInput(event, '<?php echo e($val->key); ?>')">
                                                                         <i class="fa fa-plus"></i> New
                                                                     </button>
-                                                                @break
+                                                                <?php break; ?>
 
-                                                                @case('text')
-                                                                    <input type="text" value="{{ $val->value }}"
-                                                                        class="form-control" name="{{ $val->key }}">
-                                                                @break
+                                                                <?php case ('text'): ?>
+                                                                    <input type="text" value="<?php echo e($val->value); ?>"
+                                                                        class="form-control" name="<?php echo e($val->key); ?>">
+                                                                <?php break; ?>
 
-                                                                @default
-                                                            @endswitch
+                                                                <?php default: ?>
+                                                            <?php endswitch; ?>
                                                         </td>
 
                                                         <script>
@@ -144,11 +144,11 @@
 
                                                     </tr>
 
-                                                    @empty
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                                                         <tr>
                                                             <td colspan="5" class="text-center">Tidak ada data</td>
                                                         </tr>
-                                                    @endforelse
+                                                    <?php endif; ?>
                                                 </tbody>
                                                 <button type="submit" class="btn btn-primary">Ubah</button>
                                             </form>
@@ -164,4 +164,6 @@
                 </div>
             </div>
         </main>
-    @endsection
+    <?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.admin', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\tefa-store\resources\views/settings/index.blade.php ENDPATH**/ ?>

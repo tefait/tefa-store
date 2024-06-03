@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/favicon.png" type="image/png">
 
-    @yield('title')
+    <?php echo $__env->yieldContent('title'); ?>
 
-    {{-- <link rel="stylesheet" href="{{ asset('ecommerce/css/bootstrap.css') }}"> --}}
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.5.0/css/font-awesome.min.css"
@@ -24,8 +24,8 @@
         integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.3/themes/base/theme.min.css">
 
-    <link rel="stylesheet" href="{{ asset('ecommerce/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('ecommerce/css/responsive.css') }}">
+    <link rel="stylesheet" href="<?php echo e(asset('ecommerce/css/style.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('ecommerce/css/responsive.css')); ?>">
 </head>
 
 <body>
@@ -38,15 +38,15 @@
                 </div>
                 <div class="float-right">
                     <ul class="right_side">
-                        @if (auth()->guard('customer')->check())
-                            <li><a href="{{ route('customer.logout') }}">Logout</a></li>
-                        @else
-                            <li><a href="{{ route('customer.login') }}">Login</a></li>
-                        @endif
-                        @auth
-                            <li><a href="{{ route('customer.dashboard') }}">My Account</a></li>
-                        @endauth
-                        <li><a href="{{ route('login') }}">Panel</a></li>
+                        <?php if(auth()->guard('customer')->check()): ?>
+                            <li><a href="<?php echo e(route('customer.logout')); ?>">Logout</a></li>
+                        <?php else: ?>
+                            <li><a href="<?php echo e(route('customer.login')); ?>">Login</a></li>
+                        <?php endif; ?>
+                        <?php if(auth()->guard()->check()): ?>
+                            <li><a href="<?php echo e(route('customer.dashboard')); ?>">My Account</a></li>
+                        <?php endif; ?>
+                        <li><a href="<?php echo e(route('login')); ?>">Panel</a></li>
                     </ul>
                 </div>
             </div>
@@ -55,8 +55,8 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="{{ url('/') }}">
-                        <img src="{{ cache('settings')['site-logo']['value'] }}" alt="">
+                    <a class="navbar-brand logo_h" href="<?php echo e(url('/')); ?>">
+                        <img src="<?php echo e(cache('settings')['site-logo']['value']); ?>" alt="">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -69,7 +69,7 @@
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <div class="row w-100">
                             <div class="col-lg-7 pr-0">
-                                @include('layouts.ecommerce.module.menu')
+                                <?php echo $__env->make('layouts.ecommerce.module.menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                             </div>
 
                             <div class="col-lg-5">
@@ -82,7 +82,7 @@
                                     </li>
                                     <hr>
                                     <li class="nav-item">
-                                        <a href="{{ route('customer.dashboard') }}" class="icons">
+                                        <a href="<?php echo e(route('customer.dashboard')); ?>" class="icons">
                                             <i class="fa fa-user" aria-hidden="true"></i>
                                         </a>
                                     </li>
@@ -90,7 +90,7 @@
 
                                     <hr>
                                     <li class="nav-item">
-                                        <a href="{{ route('front.cart') }}" class="icons">
+                                        <a href="<?php echo e(route('front.cart')); ?>" class="icons">
                                             <i class="lnr lnr lnr-cart"></i>
                                         </a>
                                     </li>
@@ -105,39 +105,10 @@
     </header>
     <!--================Header Menu Area =================-->
 
-    @yield('content')
+    <?php echo $__env->yieldContent('content'); ?>
 
     <!--================ Subscription Area ================-->
-    {{-- <section class="subscription-area section_gap">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section-title text-center">
-                        <h2>Subscribe for Our Newsletter</h2>
-                        <span>We won’t send any kind of spam</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div id="mc_embed_signup">
-                        <form target="_blank" novalidate
-                            action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&id=92a4423d01"
-                            method="get" class="subscription relative">
-                            <input type="email" name="EMAIL" placeholder="Email address"
-                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'"
-                                required="">
-                            <!-- <div style="position: absolute; left: -5000px;">
-                                <input type="text" name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="">
-                            </div> -->
-                            <button type="submit" class="newsl-btn">Get Started</button>
-                            <div class="info"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
+    
     <!--================ End Subscription Area ================-->
 
     <!--================ start footer Area  =================-->
@@ -152,12 +123,7 @@
                             Perangkat Lunak. Kami mencetak generasi digital kreatif dan berdaya saing.</p>
                     </div>
                 </div>
-                {{-- <div class="col-lg-4 col-md-6 col-sm-6">
-
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-
-                </div> --}}
+                
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="single-footer-widget f_social_wd">
                         <h6 class="footer_title">Follow Us</h6>
@@ -207,14 +173,15 @@
     <script src="https://cdn.jsdelivr.net/npm/simplelightbox@2.14.3/dist/simple-lightbox.min.js"
         integrity="sha256-NRMGvtPp/+ljYVhBZZk+3NQNvEqNLn0rAtTODPuUylw=" crossorigin="anonymous"></script>
 
-    {{-- <script src="{{ asset('ecommerce/js/stellar.js') }}"></script> --}}
-    <script src="{{ asset('ecommerce/js/jquery.ajaxchimp.min.js') }}"></script>
-    <script src="{{ asset('ecommerce/vendors/counter-up/jquery.waypoints.min.js') }}"></script>
-    <script src="{{ asset('ecommerce/vendors/flipclock/timer.js') }}"></script>
-    <script src="{{ asset('ecommerce/js/mail-script.js') }}"></script>
-    <script src="{{ asset('ecommerce/js/theme.js') }}"></script>
+    
+    <script src="<?php echo e(asset('ecommerce/js/jquery.ajaxchimp.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('ecommerce/vendors/counter-up/jquery.waypoints.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('ecommerce/vendors/flipclock/timer.js')); ?>"></script>
+    <script src="<?php echo e(asset('ecommerce/js/mail-script.js')); ?>"></script>
+    <script src="<?php echo e(asset('ecommerce/js/theme.js')); ?>"></script>
 
-    @yield('js')
+    <?php echo $__env->yieldContent('js'); ?>
 </body>
 
 </html>
+<?php /**PATH C:\laragon\www\tefa-store\resources\views/layouts/ecommerce.blade.php ENDPATH**/ ?>
