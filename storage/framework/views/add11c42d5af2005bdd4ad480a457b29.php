@@ -1,12 +1,10 @@
-@extends('layouts.auth')
-
-@section('title')
+<?php $__env->startSection('title'); ?>
     <title>Login</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js']); ?>
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card-group">
@@ -14,8 +12,8 @@
                     <div class="card-body">
                         <h1>Login</h1>
                         <p class="text-muted">Sign In to your account</p>
-                        <form action="{{ route('login') }}" method="post">
-                            @csrf
+                        <form action="<?php echo e(route('login')); ?>" method="post">
+                            <?php echo csrf_field(); ?>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
@@ -23,11 +21,11 @@
                                     </span>
                                 </div>
 
-                                <input class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                <input class="form-control <?php echo e($errors->has('email') ? ' is-invalid' : ''); ?>"
                                     type="text"
                                     name="email"
                                     placeholder="Email Address"
-                                    value="{{ old('email') }}"
+                                    value="<?php echo e(old('email')); ?>"
                                     autofocus
                                     required>
                             </div>
@@ -37,20 +35,21 @@
                                         <i class="icon-lock"></i>
                                     </span>
                                 </div>
-                                <input class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                <input class="form-control <?php echo e($errors->has('email') ? ' is-invalid' : ''); ?>"
                                     type="password"
                                     name="password"
                                     placeholder="Password"
                                     required>
                             </div>
                             <div class="row">
-                                @if (session('error'))
+                                <?php if(session('error')): ?>
                                 <div class="col-md-12">
                                     <div class="alert alert-danger" role="alert">
-                                        {{ session('error') }}
+                                        <?php echo e(session('error')); ?>
+
                                     </div>
                                 </div>
-                                @endif
+                                <?php endif; ?>
 
                                 <div class="col-6">
                                     <button class="btn btn-primary px-4">Login</button>
@@ -70,4 +69,6 @@
             </div>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.auth', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/azfasa15/nginx/tefa-store/resources/views/auth/login.blade.php ENDPATH**/ ?>

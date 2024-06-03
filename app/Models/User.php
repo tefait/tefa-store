@@ -11,17 +11,17 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    public function getRoleAttribute()
+    public function getRoleLabelAttribute()
     {
         switch ($this->role) {
             case 0:
-                return "Administrator";
+                return 'Administrator';
 
             case 1:
-                return "Gudang";
+                return 'Gudang';
 
             default:
-                return "Undefined";
+                return 'Undefined';
         }
     }
 

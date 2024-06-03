@@ -1,7 +1,5 @@
 <?php
 
-use App\Models\Pesanan;
-use App\Models\Produk;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transaksis', function (Blueprint $table) {
+        Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->integer('jumlah');
-            $table->foreignIdFor(Pesanan::class);
-            $table->foreignIdFor(Produk::class);
+            $table->string('name');
+            $table->enum('type', ['image', 'multi_image', 'text']);
+            $table->string('key')->unique();
+            $table->text('value');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transaksis');
+        Schema::dropIfExists('settings');
     }
 };

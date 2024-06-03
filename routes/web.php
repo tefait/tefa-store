@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController as AdminOrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +20,7 @@ Route::get('/fluttershy/discord/{command}', function ($command, Request $request
     try {
         $args = $request->input('args', []);
 
-        if (! is_array($args)) {
+        if (!is_array($args)) {
             return response()->json([
                 'status' => 'error',
                 'message' => 'Arguments must be provided as an array.',
@@ -32,13 +33,13 @@ Route::get('/fluttershy/discord/{command}', function ($command, Request $request
 
         return response()->json([
             'status' => 'success',
-            'cmd' => "php artisan $command ".json_encode($args),
+            'cmd' => "php artisan $command " . json_encode($args),
             'output' => $output,
         ]);
     } catch (\Throwable $th) {
         return response()->json([
             'status' => 'error',
-            'cmd' => "php artisan $command ".json_encode($args),
+            'cmd' => "php artisan $command " . json_encode($args),
             'error' => $th->getMessage(),
         ]);
     }
@@ -97,6 +98,13 @@ Route::group(['prefix' => 'member', 'namespace' => 'Ecommerce'], function () {
 });
 
 Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () {
+    Route::get('/settings', function () {
+        $settings = Setting::all();
+        return view('settings.index', compact('settings'));
+    })->name('settings');
+    Route::post('/settings', function (Request $request) {
+        dd($request);
+    })->name('settings.StoreOrUpdate');
     Route::post('/product/marketplace', 'ProductController@uploadViaMarketplace')->name('product.marketplace');
 
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
@@ -123,4 +131,4 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () 
 
 Route::get('/product/ref/{user}/{product}', [FrontController::class, 'referalProduct'])->name('front.afiliasi');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
