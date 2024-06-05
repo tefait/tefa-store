@@ -103,8 +103,11 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () 
         return view('settings.index', compact('settings'));
     })->name('settings');
     Route::post('/settings', function (Request $request) {
-
-
+        // ddd($request);
+        echo "<pre>";
+        print_r($_POST);
+        echo "</pre>";
+        exit();
         $data = $request->except('_token');
 
         foreach ($data as $key => $value) {

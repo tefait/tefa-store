@@ -50,30 +50,32 @@
                                 <h4 class="card-title">Settings list</h4>
                             </div>
                             <div class="card-body">
-                                <!-- KETIKA ADA SESSION SUCCESS  -->
-                                @if (session('success'))
-                                    <!-- MAKA TAMPILKAN ALERT SUCCESS -->
-                                    <div class="alert alert-success">{{ session('success') }}</div>
-                                @endif
+                                <form method="POST">
+                                    @csrf
+                                    <!-- KETIKA ADA SESSION SUCCESS  -->
+                                    @if (session('success'))
+                                        <!-- MAKA TAMPILKAN ALERT SUCCESS -->
+                                        <div class="alert alert-success">{{ session('success') }}</div>
+                                    @endif
 
-                                <!-- KETIKA ADA SESSION ERROR  -->
-                                @if (session('error'))
-                                    <!-- MAKA TAMPILKAN ALERT DANGER -->
-                                    <div class="alert alert-danger">{{ session('error') }}</div>
-                                @endif
+                                    <!-- KETIKA ADA SESSION ERROR  -->
+                                    @if (session('error'))
+                                        <!-- MAKA TAMPILKAN ALERT DANGER -->
+                                        <div class="alert alert-danger">{{ session('error') }}</div>
+                                    @endif
 
-                                <div class="table-responsive">
-                                    <table class="table table-hover table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                                <th>Nama</th>
-                                                <th>Isi</th>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                    <th>Nama</th>
+                                                    <th>Isi</th>
+                                                    <th></th>
 
-                                            </tr>
-                                        </thead>
-                                        <form method="POST">
-                                            @csrf
+                                                </tr>
+                                            </thead>
+
                                             <tbody>
                                                 <!-- LOOPING DATA KATEGORI SESUAI JUMLAH DATA YANG ADA DI VARIABLE $settings -->
                                                 @forelse ($settings as $key => $val)
@@ -105,42 +107,55 @@
                                                                     <script>
                                                                         var iterator = {{ count($images) }};
                                                                     </script>
-                                                                    <div id="multi-image-container-{{ $val->key }}">
-                                                                        <!-- Placeholder for new inputs -->
-                                                                    </div>
+                                                                <td style="display: flex; gap: 2px; flex-direction: column;">
                                                                     <button class="btn btn-primary"
-                                                                        onclick="addNewInput(event, '{{ $val->key }}')">
-                                                                        <i class="fa fa-plus"></i> New
+                                                                        onclick="addNewInput(event, '{{ $val->key }}', '{{ $val->type . '-' . $val->key }}')">
+                                                                        <i class="fa fa-arrow-up"></i> New
                                                                     </button>
-                                                                @break
+                                                                    <button class="btn btn-danger"
+                                                                        onclick="removeInput(event, '{{ $val->key }}')">
+                                                                        <i class="fa fa-arrow-down"></i> Delete
+                                                                    </button>
+                                                                </td>
+                                                            @break
 
-                                                                @case('text')
-                                                                    <input type="text" value="{{ $val->value }}"
-                                                                        class="form-control" name="{{ $val->key }}">
-                                                                @break
+                                                            @case('text')
+                                                                <input type="text" value="{{ $val->value }}"
+                                                                    class="form-control" name="{{ $val->key }}">
+                                                            @break
 
-                                                                @default
-                                                            @endswitch
+                                                            @default
+                                                        @endswitch
                                                         </td>
 
                                                         <script>
-                                                            function addNewInput(event, key) {
+                                                            function addNewInput(event, key, parent) {
                                                                 // Prevent the default action
                                                                 event.preventDefault();
 
                                                                 // Create a new input element
-                                                                var newInput = document.createElement('input');
-                                                                newInput.setAttribute('type', 'text');
-                                                                newInput.setAttribute('class', 'mt-2 form-control');
-                                                                newInput.setAttribute('name', `${key}[${iterator}]`);
+                                                                var newInput = document.createElement("input");
+                                                                newInput.setAttribute("type", "text");
+                                                                newInput.setAttribute("class", "mt-2 form-control");
+                                                                newInput.setAttribute("name", `${key}[${iterator}]`);
+                                                                newInput.setAttribute("placeholder", "url");
                                                                 iterator += 1;
+
                                                                 // Append the new input to the container
-                                                                var container = document.getElementById('multi-image-container-' + key);
+                                                                var container = document.getElementById(parent);
                                                                 container.appendChild(newInput);
 
                                                                 // Optionally, add a horizontal rule for separation
-                                                                var hr = document.createElement('hr');
+                                                                var hr = document.createElement("hr");
+                                                                newInput.setAttribute("id", `${key}[${iterator}]`);
+
                                                                 container.appendChild(hr);
+                                                            }
+
+                                                            function removeInput(event, key) {
+                                                                event.preventDefault();
+                                                                iterator--;
+                                                                document.querySelector("[name='" + key + "[" + iterator + "]']").remove();
                                                             }
                                                         </script>
 
@@ -151,19 +166,22 @@
                                                             <td colspan="5" class="text-center">Tidak ada data</td>
                                                         </tr>
                                                     @endforelse
-                                                </tbody>
-                                                <button type="submit" class="btn btn-primary">Ubah</button>
-                                            </form>
+                                                    <tr>
+                                                        <td>
 
-                                        </table>
-                                    </div>
-                                    <!-- FUNGSI INI AKAN SECARA OTOMATIS MEN-GENERATE TOMBOL PAGINATION  -->
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Ubah</button>
+                                    </form>
                                 </div>
                             </div>
+                            <!-- BAGIAN INI AKAN MENG-HANDLE TABLE LIST CATEGORY  -->
                         </div>
-                        <!-- BAGIAN INI AKAN MENG-HANDLE TABLE LIST CATEGORY  -->
                     </div>
                 </div>
-            </div>
         </main>
     @endsection
