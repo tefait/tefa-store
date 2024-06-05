@@ -16,6 +16,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/toko', function () {
+    return view('toko.index-toko');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard.index');
 });

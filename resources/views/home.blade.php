@@ -176,142 +176,238 @@
     <div class="swiper mySwiperPT h-full w-full">
         <div class="swiper-wrapper">
             <!-- Card -->
-            <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
+            <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
               <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div class="flex flex-col justify-center items-center">
                   <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
-                  <div class="flex items-center justify-center h-4 w-12 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[128px] left-0 lg:top-[192px]">
+                  <div class="flex items-center justify-center h-4 w-12 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[144px] left-0 lg:top-[174px]">
                     <i class="bx bxs-medal text-sm text-white"></i>
                     <p class="text-[10px] font-semibold text-white uppercase">
                       Top
                     </p>
                   </div>
                 </div>
-                <div class="py-1 lg:py-2 px-2 gap-1 text-start">
+                <div class="pt-1 lg:pt-2 px-2 gap-1 text-start h-full">
                   <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
                     Kaos pendek cotton combed 30s
                   </p>
                   <p class="block font-bold text-gray-800 dark:text-white text-sm">Rp50.000</p>
-                  <div class="flex justify-center items-center">
+                  <div class="flex items-center gap-1">
+                      <span class="line-through text-[11px] text-gray-400">Rp75.000</span>
+                      <span class="py-[1px] px-1 inline-flex items-center text-[10px] font-semibold bg-red-100 text-red-600 rounded-full dark:bg-red-500/10 dark:text-red-500">
+                        33%
+                      </span>
+                  </div>
+                </div>
+                <div class="flex justify-center items-center mb-2">
                     <i class="bx bxs-hot text-2xl text-red-500 z-10 translate-x-1"></i>
                     <span class="flex justify-center items-center py-0.5 px-4 w-full text-xs font-semibold -translate-x-3 bg-gradient-to-r from-yellow-300 to-red-500 text-white rounded-full">
                       2160 Terjual
                     </span>
                   </div>
-                </div>
               </div>
             </div>
             <!-- End Card -->
             <!-- Card -->
-            <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
+            <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
               <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div class="flex flex-col justify-center items-center">
                   <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
-                  <div class="flex items-center justify-center h-4 w-12 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[128px] left-0 lg:top-[192px]">
+                  <div class="flex items-center justify-center h-4 w-12 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[144px] left-0 lg:top-[174px]">
                     <i class="bx bxs-medal text-sm text-white"></i>
                     <p class="text-[10px] font-semibold text-white uppercase">
                       Top
                     </p>
                   </div>
                 </div>
-                <div class="py-1 lg:py-2 px-2 gap-1 text-start">
+                <div class="pt-1 lg:pt-2 px-2 gap-1 text-start h-full">
                   <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
                     Kaos pendek cotton combed 30s
                   </p>
                   <p class="block font-bold text-gray-800 dark:text-white text-sm">Rp50.000</p>
-                  <div class="flex justify-center items-center">
+                  <div class="flex items-center gap-1">
+                      <span class="line-through text-[11px] text-gray-400">Rp75.000</span>
+                      <span class="py-[1px] px-1 inline-flex items-center text-[10px] font-semibold bg-red-100 text-red-600 rounded-full dark:bg-red-500/10 dark:text-red-500">
+                        33%
+                      </span>
+                  </div>
+                </div>
+                <div class="flex justify-center items-center mb-2">
                     <i class="bx bxs-hot text-2xl text-red-500 z-10 translate-x-1"></i>
                     <span class="flex justify-center items-center py-0.5 px-4 w-full text-xs font-semibold -translate-x-3 bg-gradient-to-r from-yellow-300 to-red-500 text-white rounded-full">
                       2160 Terjual
                     </span>
                   </div>
-                </div>
               </div>
             </div>
             <!-- End Card -->
             <!-- Card -->
-            <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
+            <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
               <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div class="flex flex-col justify-center items-center">
                   <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
-                  <div class="flex items-center justify-center h-4 w-12 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[128px] left-0 lg:top-[192px]">
+                  <div class="flex items-center justify-center h-4 w-12 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[144px] left-0 lg:top-[174px]">
                     <i class="bx bxs-medal text-sm text-white"></i>
                     <p class="text-[10px] font-semibold text-white uppercase">
                       Top
                     </p>
                   </div>
                 </div>
-                <div class="py-1 lg:py-2 px-2 gap-1 text-start">
+                <div class="pt-1 lg:pt-2 px-2 gap-1 text-start h-full">
                   <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
                     Kaos pendek cotton combed 30s
                   </p>
                   <p class="block font-bold text-gray-800 dark:text-white text-sm">Rp50.000</p>
-                  <div class="flex justify-center items-center">
+                  <div class="flex items-center gap-1">
+                      <span class="line-through text-[11px] text-gray-400">Rp75.000</span>
+                      <span class="py-[1px] px-1 inline-flex items-center text-[10px] font-semibold bg-red-100 text-red-600 rounded-full dark:bg-red-500/10 dark:text-red-500">
+                        33%
+                      </span>
+                  </div>
+                </div>
+                <div class="flex justify-center items-center mb-2">
                     <i class="bx bxs-hot text-2xl text-red-500 z-10 translate-x-1"></i>
                     <span class="flex justify-center items-center py-0.5 px-4 w-full text-xs font-semibold -translate-x-3 bg-gradient-to-r from-yellow-300 to-red-500 text-white rounded-full">
                       2160 Terjual
                     </span>
                   </div>
-                </div>
               </div>
             </div>
             <!-- End Card -->
             <!-- Card -->
-            <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
+            <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
               <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div class="flex flex-col justify-center items-center">
                   <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
-                  <div class="flex items-center justify-center h-4 w-12 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[128px] left-0 lg:top-[192px]">
+                  <div class="flex items-center justify-center h-4 w-12 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[144px] left-0 lg:top-[174px]">
                     <i class="bx bxs-medal text-sm text-white"></i>
                     <p class="text-[10px] font-semibold text-white uppercase">
                       Top
                     </p>
                   </div>
                 </div>
-                <div class="py-1 lg:py-2 px-2 gap-1 text-start">
+                <div class="pt-1 lg:pt-2 px-2 gap-1 text-start h-full">
                   <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
                     Kaos pendek cotton combed 30s
                   </p>
                   <p class="block font-bold text-gray-800 dark:text-white text-sm">Rp50.000</p>
-                  <div class="flex justify-center items-center">
+                  <div class="flex items-center gap-1">
+                      <span class="line-through text-[11px] text-gray-400">Rp75.000</span>
+                      <span class="py-[1px] px-1 inline-flex items-center text-[10px] font-semibold bg-red-100 text-red-600 rounded-full dark:bg-red-500/10 dark:text-red-500">
+                        33%
+                      </span>
+                  </div>
+                </div>
+                <div class="flex justify-center items-center mb-2">
                     <i class="bx bxs-hot text-2xl text-red-500 z-10 translate-x-1"></i>
                     <span class="flex justify-center items-center py-0.5 px-4 w-full text-xs font-semibold -translate-x-3 bg-gradient-to-r from-yellow-300 to-red-500 text-white rounded-full">
                       2160 Terjual
                     </span>
                   </div>
-                </div>
               </div>
             </div>
             <!-- End Card -->
             <!-- Card -->
-            <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
+            <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
               <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                 <div class="flex flex-col justify-center items-center">
                   <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
-                  <div class="flex items-center justify-center h-4 w-12 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[128px] left-0 lg:top-[192px]">
+                  <div class="flex items-center justify-center h-4 w-12 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[144px] left-0 lg:top-[174px]">
                     <i class="bx bxs-medal text-sm text-white"></i>
                     <p class="text-[10px] font-semibold text-white uppercase">
                       Top
                     </p>
                   </div>
                 </div>
-                <div class="py-1 lg:py-2 px-2 gap-1 text-start">
+                <div class="pt-1 lg:pt-2 px-2 gap-1 text-start h-full">
                   <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
                     Kaos pendek cotton combed 30s
                   </p>
                   <p class="block font-bold text-gray-800 dark:text-white text-sm">Rp50.000</p>
-                  <div class="flex justify-center items-center">
+                  <div class="flex items-center gap-1">
+                      <span class="line-through text-[11px] text-gray-400">Rp75.000</span>
+                      <span class="py-[1px] px-1 inline-flex items-center text-[10px] font-semibold bg-red-100 text-red-600 rounded-full dark:bg-red-500/10 dark:text-red-500">
+                        33%
+                      </span>
+                  </div>
+                </div>
+                <div class="flex justify-center items-center mb-2">
                     <i class="bx bxs-hot text-2xl text-red-500 z-10 translate-x-1"></i>
                     <span class="flex justify-center items-center py-0.5 px-4 w-full text-xs font-semibold -translate-x-3 bg-gradient-to-r from-yellow-300 to-red-500 text-white rounded-full">
                       2160 Terjual
                     </span>
                   </div>
-                </div>
               </div>
             </div>
             <!-- End Card -->
             <!-- Card -->
-            <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
+            <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
+                <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+                  <div class="flex flex-col justify-center items-center">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
+                    <div class="flex items-center justify-center h-4 w-12 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[144px] left-0 lg:top-[174px]">
+                      <i class="bx bxs-medal text-sm text-white"></i>
+                      <p class="text-[10px] font-semibold text-white uppercase">
+                        Top
+                      </p>
+                    </div>
+                  </div>
+                  <div class="pt-1 lg:pt-2 px-2 gap-1 text-start h-full">
+                    <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
+                      Kaos pendek cotton combed 30s
+                    </p>
+                    <p class="block font-bold text-gray-800 dark:text-white text-sm">Rp50.000</p>
+                    <div class="flex items-center gap-1">
+                        <span class="line-through text-[11px] text-gray-400">Rp75.000</span>
+                        <span class="py-[1px] px-1 inline-flex items-center text-[10px] font-semibold bg-red-100 text-red-600 rounded-full dark:bg-red-500/10 dark:text-red-500">
+                          33%
+                        </span>
+                    </div>
+                  </div>
+                  <div class="flex justify-center items-center mb-2">
+                      <i class="bx bxs-hot text-2xl text-red-500 z-10 translate-x-1"></i>
+                      <span class="flex justify-center items-center py-0.5 px-4 w-full text-xs font-semibold -translate-x-3 bg-gradient-to-r from-yellow-300 to-red-500 text-white rounded-full">
+                        2160 Terjual
+                      </span>
+                    </div>
+                </div>
+            </div>
+            <!-- End Card -->
+            <!-- Card -->
+            <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
+                <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+                  <div class="flex flex-col justify-center items-center">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
+                    <div class="flex items-center justify-center h-4 w-12 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[144px] left-0 lg:top-[174px]">
+                      <i class="bx bxs-medal text-sm text-white"></i>
+                      <p class="text-[10px] font-semibold text-white uppercase">
+                        Top
+                      </p>
+                    </div>
+                  </div>
+                  <div class="pt-1 lg:pt-2 px-2 gap-1 text-start h-full">
+                    <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
+                      Kaos pendek cotton combed 30s
+                    </p>
+                    <p class="block font-bold text-gray-800 dark:text-white text-sm">Rp50.000</p>
+                    <div class="flex items-center gap-1">
+                        <span class="line-through text-[11px] text-gray-400">Rp75.000</span>
+                        <span class="py-[1px] px-1 inline-flex items-center text-[10px] font-semibold bg-red-100 text-red-600 rounded-full dark:bg-red-500/10 dark:text-red-500">
+                          33%
+                        </span>
+                    </div>
+                  </div>
+                  <div class="flex justify-center items-center mb-2">
+                      <i class="bx bxs-hot text-2xl text-red-500 z-10 translate-x-1"></i>
+                      <span class="flex justify-center items-center py-0.5 px-4 w-full text-xs font-semibold -translate-x-3 bg-gradient-to-r from-yellow-300 to-red-500 text-white rounded-full">
+                        2160 Terjual
+                      </span>
+                    </div>
+                </div>
+            </div>
+            <!-- End Card -->
+            <!-- Card -->
+            <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
               <div class="group flex flex-col justify-center items-center h-full w-full bg-[#FDB840] shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:shadow-neutral-700/70">
                 <div class="absolute bottom-5 opacity-30">
                   <svg class="size-20 lg:size-28" width="12" height="12" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -455,7 +551,7 @@
   <div class="swiper mySwiperSH h-full w-full">
     <div class="swiper-wrapper lg:-start-4">
       <!-- Card -->
-      <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
+      <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
         <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
           <div class="flex justify-center items-center h-full">
             <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="h-full object-cover rounded-md lg:rounded-lg" />
@@ -464,7 +560,7 @@
       </div>
       <!-- End Card -->
       <!-- Card -->
-      <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
+      <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
         <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
           <div class="flex justify-center items-center h-full">
             <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="h-full object-cover rounded-md lg:rounded-lg" />
@@ -473,7 +569,7 @@
       </div>
       <!-- End Card -->
       <!-- Card -->
-      <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
+      <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
         <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
           <div class="flex justify-center items-center h-full">
             <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="h-full object-cover rounded-md lg:rounded-lg" />
@@ -482,7 +578,7 @@
       </div>
       <!-- End Card -->
       <!-- Card -->
-      <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
+      <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
         <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
           <div class="flex justify-center items-center h-full">
             <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="h-full object-cover rounded-md lg:rounded-lg" />
@@ -491,7 +587,7 @@
       </div>
       <!-- End Card -->
       <!-- Card -->
-      <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
+      <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
         <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
           <div class="flex justify-center items-center h-full">
             <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="h-full object-cover rounded-md lg:rounded-lg" />
@@ -500,7 +596,25 @@
       </div>
       <!-- End Card -->
       <!-- Card -->
-      <div class="swiper-slide slide-tsh flex justify-center h-[245px] w-36 lg:h-[310px] lg:w-52">
+      <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
+        <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+          <div class="flex justify-center items-center h-full">
+            <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="h-full object-cover rounded-md lg:rounded-lg" />
+          </div>
+        </div>
+      </div>
+      <!-- End Card -->
+      <!-- Card -->
+      <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
+        <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+          <div class="flex justify-center items-center h-full">
+            <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="h-full object-cover rounded-md lg:rounded-lg" />
+          </div>
+        </div>
+      </div>
+      <!-- End Card -->
+      <!-- Card -->
+      <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
         <div class="group flex flex-col justify-center items-center h-full w-full bg-primary shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:shadow-neutral-700/70">
           <div class="absolute bottom-5 opacity-30">
             <svg class="size-20 lg:size-28" width="12" height="12" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
