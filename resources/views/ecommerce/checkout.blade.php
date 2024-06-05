@@ -1,7 +1,7 @@
 @extends('layouts.ecommerce')
 
 @section('title')
-    <title>Checkout - TEFA Ecommerce</title>
+    <title>Checkout - {{ cache('settings')['site-name']['value'] }}</title>
 @endsection
 
 @section('content')

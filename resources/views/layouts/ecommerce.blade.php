@@ -181,7 +181,7 @@
             </div>
             <div class="row footer-bottom d-flex justify-content-between align-items-center">
                 <p class="col-lg-12 footer-text text-center">
-                    Copyright tefa it &copy;
+                    Copyright {{ cache('settings')['site-name']['value'] }} &copy;
                     <script>
                         document.write(new Date().getFullYear());
                     </script>

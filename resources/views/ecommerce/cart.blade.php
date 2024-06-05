@@ -1,7 +1,7 @@
 @extends('layouts.ecommerce')
 
 @section('title')
-    <title>Keranjang Belanja - TEFA Ecommerce</title>
+    <title>Keranjang Belanja - {{ cache('settings')['site-name']['value'] }}</title>
 @endsection
 
 @section('content')

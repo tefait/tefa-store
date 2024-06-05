@@ -99,10 +99,12 @@
                                                                         echo '<img src="' . $value . '" width="50%" >';
                                                                         echo '<input type="text" class="mt-2 form-control" value="' . $value . '" name="' . $val->key . '[' . $key . ']">';
                                                                         echo '<hr>';
-
                                                                         $i++;
                                                                     }
                                                                     ?>
+                                                                    <script>
+                                                                        var iterator = {{ count($images) }};
+                                                                    </script>
                                                                     <div id="multi-image-container-{{ $val->key }}">
                                                                         <!-- Placeholder for new inputs -->
                                                                     </div>
@@ -130,8 +132,8 @@
                                                                 var newInput = document.createElement('input');
                                                                 newInput.setAttribute('type', 'text');
                                                                 newInput.setAttribute('class', 'mt-2 form-control');
-                                                                newInput.setAttribute('name', key + '[]');
-
+                                                                newInput.setAttribute('name', `${key}[${iterator}]`);
+                                                                iterator += 1;
                                                                 // Append the new input to the container
                                                                 var container = document.getElementById('multi-image-container-' + key);
                                                                 container.appendChild(newInput);

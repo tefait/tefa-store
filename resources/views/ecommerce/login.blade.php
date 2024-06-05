@@ -1,7 +1,7 @@
 @extends('layouts.ecommerce')
 
 @section('title')
-    <title>Login - TEFA Ecommerce</title>
+    <title>Login - {{ cache('settings')['site-name']['value'] }}</title>
 @endsection
 
 @section('content')

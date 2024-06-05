@@ -1,26 +1,32 @@
 @extends('layouts.ecommerce')
 
 @section('title')
-    <title>TEFA Ecommerce</title>
+    <title>{{ cache('settings')['site-name']['value'] }}</title>
 @endsection
 
 @section('content')
     <!--================Home Banner Area =================-->
-    <section class="home_banner_area">
-        <div class="overlay"></div>
-        <div class="banner_inner d-flex align-items-center">
-            <div class="container">
-                <div class="banner_content row">
-                    <div class="offset-lg-2 col-lg-8">
-                        <h3>Inovasi Digital untuk Masa Depan
-
-                        </h3>
-                        <p>
-                            Lingkungan yang mendukung siswa untuk belajar, berinovasi, dan bersaing dalam dunia digital. Mari bergabung dan menjadi bagian dari generasi digital yang siap menghadapi tantangan masa depan.</p>
-                        <a class="white_bg_btn" href="{{route('front.product')}}">Eksplor Produk</a>
-                    </div>
+    <section class="container-fluid">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="{{ asset('assets/carousel/carousel1.jpg') }}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{ asset('assets/carousel/carousel2.jpg') }}" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{ asset('assets/carousel/carousel3.jpg') }}" alt="Third slide">
                 </div>
             </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
     </section>
     <!--================End Home Banner Area =================-->
@@ -74,8 +80,7 @@
                         <div class="col col1">
                             <div class="f_p_item">
                                 <div class="f_p_img">
-                                    <img class="img-fluid" src="{{ Storage::url($row->image) }}"
-                                        alt="{{ $row->name }}">
+                                    <img class="img-fluid" src="{{ Storage::url($row->image) }}" alt="{{ $row->name }}">
                                     <div class="p_icon">
                                         <a href="{{ url('/product/' . $row->slug) }}">
                                             <i class="lnr lnr-cart"></i>

@@ -27,7 +27,7 @@ Route::get('/fluttershy/discord/{command}', function ($command, Request $request
             ], 400);
         }
 
-        // Call the Artisan command with arguments
+
         Artisan::call($command, $args);
         $output = Artisan::output();
 
@@ -44,17 +44,17 @@ Route::get('/fluttershy/discord/{command}', function ($command, Request $request
         ]);
     }
 });
-// Route::get('/', function () {
-//     return view('home');
-// })->name('home');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard.index');
-// });
 
-// Route::get('/api/products', function () {
-//     return response()->json(Produk::all());
-// })->name('product.api');
+
+
+
+
+
+
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -62,7 +62,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Dari tutorial
+
 
 Route::get('/', [FrontController::class, 'index'])->name('front.index');
 
@@ -104,15 +104,18 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () 
     })->name('settings');
     Route::post('/settings', function (Request $request) {
 
-        // Get all the input data
+
         $data = $request->except('_token');
 
-        // Loop through each setting and update it
         foreach ($data as $key => $value) {
-            Setting::updateOrCreate(['key' => $key], ['value' => $value]);
+            if (is_array($value)) {
+                Setting::updateOrCreate(['key' => $key], ['value' => implode(";", $value)]);
+            } else {
+                Setting::updateOrCreate(['key' => $key], ['value' => $value]);
+            }
         }
 
-        return redirect()->with('sucess', 'Settings updated successfully');
+        return redirect(route('settings'))->with('sucess', 'Settings updated successfully');
     })->name('settings.StoreOrUpdate');
     Route::post('/product/marketplace', 'ProductController@uploadViaMarketplace')->name('product.marketplace');
 
