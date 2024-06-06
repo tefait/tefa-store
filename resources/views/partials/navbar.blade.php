@@ -36,7 +36,7 @@
 <!-- End SearchBox -->
 
 <!-- Navbar -->
-<nav class="fixed z-[199] w-full top-0">
+<nav class="sticky top-0 z-[199] w-full top-0">
 <div class="hidden lg:flex items-center justify-between h-7 w-full px-6 sm:px-8 lg:px-10 bg-primary dark:bg-secondary">
     <div class="flex flex-row py-2 sm:justify-end gap-y-0 gap-x-2 sm:py-0">
         <a class="text-xs text-white text-opacity-80 hover:text-white duration-300" href="#">Hubungi Kami</a>
@@ -74,115 +74,19 @@
     </div>
 </div>
 
-<header class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-2 px-4 lg:px-10 sm:py-0 dark:bg-black">
-    <div class="relative w-full sm:flex sm:items-center sm:justify-between" aria-label="Global">
+<header class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-2 px-4 sm:px-[5vw] lg:py-0 dark:bg-black">
+    <div class="relative w-full sm:flex sm:items-center sm:justify-between sm:px-4 lg:px-0" aria-label="Global">
         <div class="flex items-center justify-between w-full">
-            <a class="flex-none text-xl font-semibold dark:text-white hidden lg:block" href="#" aria-label="Logo"><img src="{{ asset('assets/img/logo2.png') }}" class="lg:h-12" alt="Logo Tefa PPLG"></a>
+            <a class="flex-none text-xl font-semibold dark:text-white hidden sm:block" href="#" aria-label="Logo"><img src="{{ asset('assets/img/logo2.png') }}" class="sm:h-12" alt="Logo Tefa PPLG"></a>
 
-            <div class="hidden sm:flex hs-dropdown group [--strategy:static] md:[--strategy:absolute] [--adaptive:none] md:[--trigger:hover] cursor-pointer py-3 ml-5">
-                <button class="hidden sm:flex items-center justify-center w-24 text-sm text-gray-800 hover:text-black hover:bg-gray-100 group-hover:bg-gray-100 duration-300 rounded-xl p-2 font-medium dark:text-white dark:group-hover:text-gray-800">
-                    Kategori
-                    <i class="bx bx-chevron-down ms-1 text-2xl group-hover:rotate-180 duration-300"></i>
-                </button>
-
-                <div class="hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 cursor-default max-w-lg hidden z-10 top-full start-14 overflow-hidden bg-white md:shadow-2xl rounded-lg before:absolute before:-top-5 before:w-full before:h-5">
-                    <!-- Icon Blocks -->
-                    <div class="max-w-[85rem] py-2 px-2 lg:px-4 lg:py-4 mx-auto">
-                    <div class="max-w-4xl mx-auto">
-                        <!-- Grid -->
-                        <div class="grid grid-cols-2 gap-1">
-                        <div class="space-y-1">
-                            <!-- Icon Block -->
-                            <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
-                                <img src="{{ asset('assets/kategori/kaos.gif') }}" alt="" class="flex-shrink-0 size-8">
-                                <div class="ms-2 sm:ms-4">
-                                <h3 class="text-sm text-gray-800">
-                                    Kaos
-                                </h3>
-                                </div>
-                            </a>
-                            <!-- End Icon Block -->
-
-                            <!-- Icon Block -->
-                            <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
-                                <img src="{{ asset('assets/kategori/totebag.gif') }}" alt="" class="flex-shrink-0 size-8">
-                                <div class="ms-2 sm:ms-4">
-                                <h3 class="text-sm text-gray-800">
-                                    Totebag
-                                </h3>
-                                </div>
-                            </a>
-                            <!-- End Icon Block -->
-
-                            <!-- Icon Block -->
-                            <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
-                                <img src="{{ asset('assets/kategori/tumbler.gif') }}" alt="" class="flex-shrink-0 size-8">
-                                <div class="ms-2 sm:ms-4">
-                                <h3 class="text-sm text-gray-800">
-                                    Tumbler
-                                </h3>
-                                </div>
-                            </a>
-                            <!-- End Icon Block -->
-                        </div>
-                        <!-- End Col -->
-
-                        <div class="space-y-1">
-                            <!-- Icon Block -->
-                            <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
-                                <img src="{{ asset('assets/kategori/mug.gif') }}" alt="" class="flex-shrink-0 size-8">
-                                <div class="ms-2 sm:ms-4">
-                                <h3 class="text-sm text-gray-800">
-                                    Mug
-                                </h3>
-                                </div>
-                            </a>
-                            <!-- End Icon Block -->
-
-                            <!-- Icon Block -->
-                            <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
-                                <img src="{{ asset('assets/kategori/ganci.gif') }}" alt="" class="flex-shrink-0 size-8">
-                                <div class="ms-2 sm:ms-4">
-                                <h3 class="text-sm text-gray-800">
-                                    Gantungan Kunci
-                                </h3>
-                                </div>
-                            </a>
-                            <!-- End Icon Block -->
-
-                            <!-- Icon Block -->
-                            <a href="#" class="group flex items-center gap-2 px-2 sm:px-4 bg-gray-100 py-2 rounded-lg transition-all"
-                                onmouseover="this.querySelector('.bx').style.transition = 'transform 0.3s ease-in-out'; this.querySelector('.bx').style.transform = 'translateX(50px)'"
-                                onmouseout="this.querySelector('.bx').style.transition = 'transform 0.3s ease-in-out'; this.querySelector('.bx').style.transform = 'none'"
-                                style="text-decoration: none; color: inherit;">
-                                <div>
-                                    <h3 class="text-sm text-gray-800">
-                                        Lihat semua
-                                    </h3>
-                                </div>
-                                <div class="inline-flex">
-                                    <i class="bx bx-right-arrow-alt text-2xl text-gray-800 flex-shrink-0"></i>
-                                </div>
-                            </a>
-                            <!-- End Icon Block -->
-                        </div>
-                        <!-- End Col -->
-                        </div>
-                        <!-- End Grid -->
-                    </div>
-                    </div>
-                    <!-- End Icon Blocks -->
-                </div>
-            </div>
-
-            <!-- Tombol Toko -->
-            <div class="text-gray-600 ms-0.5">
-                <button class="hidden lg:flex items-center justify-center w-24 text-sm hover:text-black hover:bg-gray-100 duration-300 rounded-xl p-2 font-medium dark:text-white">
+            <div class="hidden lg:flex py-3 ml-5">
+                <!-- Tombol Toko -->
+                <a href="/toko" class="flex items-center justify-center w-24 text-sm text-gray-600 hover:text-black hover:bg-gray-100 duration-300 rounded-xl py-1.5 px-2 font-medium dark:text-white">
                     <i class="bx bxs-store me-1 text-2xl"></i>
                     Toko
-                </button>
+                </a>
+                <!-- End Tombol Toko  -->
             </div>
-            <!-- End Tombol Toko  -->
 
             <div class="flex flex-col gap-y-4 gap-x-0 sm:flex-row sm:items-center sm:justify-between sm:gap-y-0 sm:gap-x-5 sm:mx-5 mr-3 w-full">
                 <!-- SearchBox -->
