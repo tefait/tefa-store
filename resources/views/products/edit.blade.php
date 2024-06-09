@@ -13,11 +13,14 @@
         <div class="container-fluid">
             <div class="animated fadeIn">
 
-                                <form action="{{ route('product.update', $product->id) }}" method="post" enctype="multipart/form-data">
+                <!-- PASTIKAN MENGIRIMKAN ID PADA ROUTE YANG DIGUNAKAN -->
+                <form action="{{ route('product.update', $product->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
-                                        @method('PUT')
+                    <!-- KARENA UPDATE MAKA KITA GUNAKAN DIRECTIVE DIBAWAH INI -->
+                    @method('PUT')
 
-                                        <div class="row">
+                    <!-- FORM INI SAMA DENGAN CREATE, YANG BERBEDA HANYA ADA TAMBAHKAN VALUE UNTUK MASING-MASING INPUTAN  -->
+                    <div class="row">
                         <div class="col-md-8">
                             <div class="card">
                                 <div class="card-header">
@@ -76,10 +79,12 @@
                                         <p class="text-danger">{{ $errors->first('weight') }}</p>
                                     </div>
 
-                                                                        <div class="form-group">
+                                    <!-- GAMBAR TIDAK LAGI WAJIB, JIKA DIISI MAKA GAMBAR AKAN DIGANTI, JIKA DIBIARKAN KOSONG MAKA GAMBAR TIDAK AKAN DIUPDATE -->
+                                    <div class="form-group">
                                         <label for="image">Foto Produk</label>
                                         <br>
-                                                                                <img src="{{ Storage::url($product->image) }}" width="100px"
+                                        <!--  TAMPILKAN GAMBAR SAAT INI -->
+                                        <img src="{{ Storage::url($product->image) }}" width="100px"
                                             height="100px" alt="{{ $product->name }}">
                                         <hr>
                                         <input type="file" name="image" class="form-control">

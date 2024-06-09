@@ -5,7 +5,8 @@
 @endsection
 
 @section('content')
-        <section class="banner_area">
+    <!--================Home Banner Area =================-->
+    <section class="banner_area">
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">
@@ -18,6 +19,7 @@
             </div>
         </div>
     </section>
+    <!--================End Home Banner Area =================-->
 
     <div class="product_image_area">
         <div class="container">
@@ -59,7 +61,8 @@
                                 <input type="text" name="qty" id="sst" maxlength="12" value="1"
                                     title="Quantity:" class="input-text qty">
 
-                                                                <input type="hidden" name="product_id" value="{{ $product->id }}" class="form-control">
+                                <!-- BUAT INPUTAN HIDDEN YANG BERISI ID PRODUK -->
+                                <input type="hidden" name="product_id" value="{{ $product->id }}" class="form-control">
 
                                 <button
                                     onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
@@ -74,8 +77,10 @@
                             </div>
                             <div class="card_area">
 
-                                                                <button class="main_btn">Add to Cart</button>
-                                                                @if (session('success'))
+                                <!-- UBAH JADI BUTTON -->
+                                <button class="main_btn">Add to Cart</button>
+                                <!-- UBAH JADI BUTTON -->
+                                @if (session('success'))
                                     <div class="alert alert-success mt-2">{{ session('success') }}</div>
                                 @endif
                             </div>
@@ -85,8 +90,10 @@
             </div>
         </div>
     </div>
+    <!--================End Single Product Area =================-->
 
-        <section class="product_description_area">
+    <!--================Product Description Area =================-->
+    <section class="product_description_area">
         <div class="container">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
@@ -138,4 +145,5 @@
             </div>
         </div>
     </section>
-    @endsection
+    <!--================End Product Description Area =================-->
+@endsection

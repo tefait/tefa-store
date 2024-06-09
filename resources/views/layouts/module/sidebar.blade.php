@@ -6,7 +6,19 @@
             </a>
         </li>
 
-        <li class="nav-title"></li>
+        <li class="nav-title">MANAJEMEN PRODUK</li>
+        {{-- <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="#">
+                <i class="nav-icon icon-settings"></i> Pengaturan
+            </a>
+            <ul class="nav-dropdown-items">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="nav-icon icon-puzzle"></i> Toko
+                    </a>
+                </li>
+            </ul>
+        </li> --}}
         <li class="nav-item">
             <a class="nav-link" href="{{ route('category.index') }}">
                 <i class="nav-icon icon-tag"></i> Kategori
@@ -39,18 +51,6 @@
                 </li>
             </ul>
         </li>
-        <li class="nav-item nav-dropdown">
-            <a class="nav-link nav-dropdown-toggle">
-                <i class="nav-icon icon-settings"></i> Pengaturan
-            </a>
-            <ul class="nav-dropdown-items">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('settings')}}">
-                        <i class="nav-icon icon-puzzle"></i> Toko
-                    </a>
-                </li>
-            </ul>
-        </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();document.getElementById('logout-form').submit();">
@@ -60,7 +60,6 @@
                 </form>
             </a>
         </li>
-
     </ul>
 
 </nav>

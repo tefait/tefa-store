@@ -15,7 +15,7 @@ class Setting extends Model
     public function setNameAttribute($value)
     {
         $this->attributes['name'] = $value;
-        if (!isset($this->attributes['key']) || empty($this->attributes['key'])) {
+        if (! isset($this->attributes['key']) || empty($this->attributes['key'])) {
             $this->attributes['key'] = Str::slug($value);
         }
     }

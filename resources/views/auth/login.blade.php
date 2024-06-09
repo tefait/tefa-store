@@ -2,7 +2,7 @@
 
 @section('title')
     <title>Login</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
 @endsection
 
@@ -10,7 +10,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card-group">
-                <div class="card p-5">
+                <div class="card p-4">
                     <div class="card-body">
                         <h1>Login</h1>
                         <p class="text-muted">Sign In to your account</p>
@@ -62,7 +62,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="card text-white bg-primary p-5 d-md-down-none" style="width:44%">
+                <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
                     <div class="card-body text-center">
 
                     </div>

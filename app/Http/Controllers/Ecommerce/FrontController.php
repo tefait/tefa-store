@@ -9,16 +9,14 @@ use App\Models\Order;
 use App\Models\Product;
 use App\Models\Province;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 
 class FrontController extends Controller
 {
     public function referalProduct($user, $product)
     {
-        $code = $user . '-' . $product;
+        $code = $user.'-'.$product;
         $product = Product::find($product);
         $cookie = cookie('afiliasi', json_encode($code), 2880);
-
 
         return redirect(route('front.show_product', $product->slug))->cookie($cookie);
     }
@@ -29,33 +27,37 @@ class FrontController extends Controller
 
         $orders = Order::where('ref', $user->id)->where('status', 4)->paginate(10);
 
-
         return view('ecommerce.affiliate', compact('orders'));
     }
 
     public function index()
     {
-        $products = Product::orderBy('created_at', 'DESC')->paginate(10);
+        $newest = Product::orderBy('created_at', 'DESC')->limit(4)->get();
+        $top_sales = Product::withCount('orders')->orderBy('orders_count', 'desc')->limit(6)->get();
 
-        return view('ecommerce.index', compact('products'));
+        return view('home', compact('newest', 'top_sales'));
     }
 
     public function product()
     {
-        $query = Product::with(['category'])->orderBy('created_at', 'DESC');
-
+        $query = Product::with(['category'])->withCount('orders')->orderBy('created_at', 'DESC');
 
         if ($search = request()->q) {
             $query->where(function ($query) use ($search) {
-                $query->where('name', 'LIKE', '%' . $search . '%')
-                    ->orWhere('price', 'LIKE', '%' . $search . '%')
-                    ->orWhere('slug', 'LIKE', '%' . $search . '%');
+                $query->where('name', 'LIKE', '%'.$search.'%')
+                    ->orWhere('price', 'LIKE', '%'.$search.'%')
+                    ->orWhere('slug', 'LIKE', '%'.$search.'%');
             });
         }
 
-
         if ($sort = request()->sort) {
             switch ($sort) {
+                case 'newest':
+                    $query->orderBy('created_at', 'desc');
+                    break;
+                case 'order-asc':
+                    $query->orderBy('orders_count', 'asc');
+                    break;
                 case 'price-lowest':
                     $query->orderBy('price', 'asc');
                     break;
@@ -75,14 +77,13 @@ class FrontController extends Controller
 
         $products = $query->paginate(10);
 
-        return view('ecommerce.product', compact('products'));
+        return view('toko.index_toko', compact('products'));
     }
 
     public function categoryProduct($slug)
     {
 
         $products = Category::where('slug', $slug)->first()->product()->orderBy('created_at', 'DESC')->paginate(12);
-
 
         return view('ecommerce.product', compact('products'));
     }

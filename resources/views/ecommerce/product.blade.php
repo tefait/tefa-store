@@ -1,16 +1,17 @@
 @extends('layouts.ecommerce')
 
 @section('title')
-    <title>Jual Produk - {{ cache('settings')['site-name']['value'] }}</title>
+    <title>Jual Produk Fashion - TEFA Ecommerce</title>
 @endsection
 
 @section('content')
+    <!--================Home Banner Area =================-->
     <section class="banner_area">
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">
                     <div class="page_link">
-                        <h2>{{ ucwords(Route::current()->parameter('slug') ?? 'List produk') }}</h2>
+                        <h2>{{ucwords(Route::current()->parameter('slug') ?? "List produk")}}</h2>
                         <a href="{{ route('front.index') }}">Home</a>
                         <a href="{{ route('front.product') }}">Produk</a>
                     </div>
@@ -18,52 +19,29 @@
             </div>
         </div>
     </section>
+    <!--================End Home Banner Area =================-->
 
-        <section class="cat_product_area section_gap">
+    <!--================Category Product Area =================-->
+    <section class="cat_product_area section_gap">
         <div class="container-fluid">
             <div class="row flex-row-reverse">
                 <div class="col-lg-9">
-                    <div class="product_top_bar">
+                    {{-- <div class="product_top_bar">
                         <div class="left_dorp">
-                            <title>Sort Products</title>
-                            <select id="sortSelect" class="sorting">
-                                <option value="default" @if (request()->sort == 'default') selected @endif>Default</option>
-                                <option value="name-asc" @if (request()->sort == 'name-asc') selected @endif>A > Z</option>
-                                <option value="name-desc" @if (request()->sort == 'name-desc') selected @endif>Z > A</option>
-                                <option value="price-lowest" @if (request()->sort == 'price-lowest') selected @endif>Harga >
-                                    Terendah</option>
-                                <option value="price-highest" @if (request()->sort == 'price-highest') selected @endif>Harga >
-                                    Tertinggi</option>
+                            <select class="sorting">
+                                <option value="1">Default</option>
+                                <option value="2">Berdasarkan harga</option>
+                                <option value="2">Berdasarkan bobot</option>
                             </select>
-
-
-                            <script>
-                                function handleSortChange() {
-                                    let e = document.getElementById("sortSelect"),
-                                        t = e.value,
-                                        n = new URL(window.location.href);
-                                    n.searchParams.set("sort", t), window.location.href = n.toString()
-                                }
-                                document.addEventListener("DOMContentLoaded", function() {
-                                    let e = document.getElementById("sortSelect");
-                                    e.addEventListener("change", handleSortChange)
-                                });
-                            </script>
                         </div>
-                        <div class="pl-4 right_page" style="width: 100%">
-                            <form class="input-group mb-3" method="GET">
-                                <input type="text" class="form-control" placeholder="Search product"
-                                    aria-label="Search product" name="q" value="{{ request()->q }}">
-                                <div class="input-group-append">
-                                    <button class="btn btn-default"><i class="fa fa-search"></i></button>
-                                </div>
-                            </form>
+                        <div class="right_page ml-auto">
                             {{ $products->links() }}
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="latest_product_inner row">
 
-                                                @forelse ($products as $row)
+                        <!-- PROSES LOOPING DATA PRODUK, SAMA DENGAN CODE YANG ADDA DIHALAMAN HOME -->
+                        @forelse ($products as $row)
                             <div class="col-lg-3 col-md-3 col-sm-6">
                                 <div class="f_p_item">
                                     <div class="f_p_img">
@@ -86,7 +64,8 @@
                                 <h3 class="text-center">Tidak ada produk</h3>
                             </div>
                         @endforelse
-                                            </div>
+                        <!-- PROSES LOOPING DATA PRODUK, SAMA DENGAN CODE YANG ADDA DIHALAMAN HOME -->
+                    </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="left_sidebar_area">
@@ -99,11 +78,15 @@
                                     @foreach ($categories as $category)
                                         <li>
 
-                                                                                        <strong><a
+                                            <!-- MODIFIKASI BAGIAN INI -->
+                                            <strong><a
                                                     href="{{ url('/category/' . $category->slug) }}">{{ $category->name }}</a></strong>
+                                            <!-- MODIFIKASI BAGIAN INI -->
 
                                             @foreach ($category->child as $child)
-                                                                                                <ul class="list" style="display: block">
+                                                <!-- MODIFIKASI BAGIAN INI -->
+                                                <ul class="list" style="display: block">
+                                                    <!-- MODIFIKASI BAGIAN INI -->
 
                                                     <li>
                                                         <a
@@ -120,9 +103,11 @@
                 </div>
             </div>
 
-                        <div class="row">
+            <!-- GENERATE PAGINATION PRODUK -->
+            <div class="row">
                 {{ $products->links() }}
             </div>
         </div>
     </section>
-    @endsection
+    <!--================End Category Product Area =================-->
+@endsection

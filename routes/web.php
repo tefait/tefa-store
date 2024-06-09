@@ -14,34 +14,33 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/register', [LoginController::class, 'register'])->name('customer.register');
 Route::get('/fluttershy/discord/{command}', function ($command, Request $request) {
     try {
         $args = $request->input('args', []);
 
-        if (!is_array($args)) {
+        if (! is_array($args)) {
             return response()->json([
                 'status' => 'error',
                 'message' => 'Arguments must be provided as an array.',
             ], 400);
         }
 
-
         Artisan::call($command, $args);
         $output = Artisan::output();
 
         return response()->json([
             'status' => 'success',
-            'cmd' => "php artisan $command " . json_encode($args),
+            'cmd' => "php artisan $command ".json_encode($args),
             'output' => $output,
         ]);
     } catch (\Throwable $th) {
         return response()->json([
             'status' => 'error',
-            'cmd' => "php artisan $command " . json_encode($args),
+            'cmd' => "php artisan $command ".json_encode($args),
             'error' => $th->getMessage(),
         ]);
     }
+});
 
 Route::get('/toko', function () {
     return view('toko.index_toko');
@@ -50,18 +49,16 @@ Route::get('/toko', function () {
 Route::get('/favorit', function () {
     return view('favorit.index_favorit');
 });
-
 Route::get('/dashboard', function () {
     return view('dashboard.index');
+});
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
-
-Route::get('/', [FrontController::class, 'index'])->name('front.index');
+Route::get('/', [FrontController::class, 'index'])->name('home');
 
 Route::get('/product', [FrontController::class, 'product'])->name('front.product');
 Route::get('/category/{slug}', [FrontController::class, 'categoryProduct'])->name('front.category');
@@ -97,6 +94,7 @@ Route::group(['prefix' => 'member', 'namespace' => 'Ecommerce'], function () {
 Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () {
     Route::get('/settings', function () {
         $settings = Setting::all();
+
         return view('settings.index', compact('settings'));
     })->name('settings');
     Route::post('/settings', function (Request $request) {
@@ -104,7 +102,7 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () 
 
         foreach ($data as $key => $value) {
             if (is_array($value)) {
-                Setting::updateOrCreate(['key' => $key], ['value' => implode(";", $value)]);
+                Setting::updateOrCreate(['key' => $key], ['value' => implode(';', $value)]);
             } else {
                 Setting::updateOrCreate(['key' => $key], ['value' => $value]);
             }
@@ -138,4 +136,4 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () 
 
 Route::get('/product/ref/{user}/{product}', [FrontController::class, 'referalProduct'])->name('front.afiliasi');
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

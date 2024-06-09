@@ -2,6 +2,8 @@
 
 @section('dashboard')
 
+<!-- ========== MAIN CONTENT ========== -->
+<!-- Breadcrumb -->
 <div class="sticky top-0 inset-x-0 z-20 bg-white border-y px-4 sm:px-6 md:px-8 lg:hidden dark:bg-neutral-800 dark:border-neutral-700">
   <div class="flex justify-between items-center py-2">
     <div class="lg:hidden flex items-center gap-1">
@@ -11,17 +13,23 @@
       <img src="{{ asset('assets/api.gif') }}" alt="" class="h-6">
     </div>
 
-        <button type="button" class="py-2 px-3 flex justify-center items-center gap-x-1.5 text-xs rounded-lg border border-gray-200 text-gray-500 hover:text-gray-600 dark:border-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200" data-hs-overlay="#application-sidebar" aria-controls="application-sidebar" aria-label="Sidebar">
+    <!-- Sidebar -->
+    <button type="button" class="py-2 px-3 flex justify-center items-center gap-x-1.5 text-xs rounded-lg border border-gray-200 text-gray-500 hover:text-gray-600 dark:border-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200" data-hs-overlay="#application-sidebar" aria-controls="application-sidebar" aria-label="Sidebar">
       <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8L21 12L17 16M3 12H13M3 6H13M3 18H13"/></svg>
       <span class="sr-only">Sidebar</span>
     </button>
-      </div>
+    <!-- End Sidebar -->
+  </div>
 </div>
+<!-- End Breadcrumb -->
 
+<!-- Content -->
 <div class="w-full lg:ps-64">
   <div class="p-4 sm:p-6 space-y-4 sm:space-y-6">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
+    <!-- Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      <!-- Card -->
+      <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
         <div class="p-4 md:p-5 flex justify-between gap-x-3">
           <div>
             <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-400">
@@ -44,8 +52,10 @@
           </div>
         </div>
       </div>
+      <!-- End Card -->
 
-            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
+      <!-- Card -->
+      <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
         <div class="p-4 md:p-5 flex justify-between gap-x-3">
           <div>
             <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-400">
@@ -62,8 +72,10 @@
           </div>
         </div>
       </div>
+      <!-- End Card -->
 
-            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
+      <!-- Card -->
+      <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
         <div class="p-4 md:p-5 flex justify-between gap-x-3">
           <div>
             <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-400">
@@ -86,8 +98,10 @@
           </div>
         </div>
       </div>
+      <!-- End Card -->
 
-            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
+      <!-- Card -->
+      <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
         <div class="p-4 md:p-5 flex justify-between gap-x-3">
           <div>
             <p class="text-xs uppercase tracking-wide text-gray-500 dark:text-neutral-400">
@@ -110,9 +124,12 @@
           </div>
         </div>
       </div>
-          </div>
+      <!-- End Card -->
+    </div>
+    <!-- End Grid -->
 
-        <div class="bg-white border border-gray-200 p-2 pt-1 rounded-xl shadow-sm overflow-hidden dark:bg-neutral-800 dark:border-neutral-700">
+    <!-- Card -->
+    <div class="bg-white border border-gray-200 p-2 pt-1 rounded-xl shadow-sm overflow-hidden dark:bg-neutral-800 dark:border-neutral-700">
       <div class="flex justify-between items-center mt-2 px-4">
         <div class="inline-flex items-center">
           <p class="text-lg font-semibold text-gray-800 dark:text-white">
@@ -133,12 +150,15 @@
       <div id="hs-curved-area-charts"></div>
       <div id="chart-info" class="flex items-center justify-center text-sm text-gray-600 dark:text-gray-300"></div>
     </div>
+    <!-- End Card -->
 
-        <div class="flex flex-col">
+    <!-- Card -->
+    <div class="flex flex-col">
       <div class="-m-1.5 overflow-x-auto">
         <div class="p-1.5 min-w-full inline-block align-middle">
           <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden dark:bg-neutral-800 dark:border-neutral-700">
-                        <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-neutral-700">
+            <!-- Header -->
+            <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-neutral-700">
               <div>
                 <h2 class="text-lg font-semibold text-gray-800 dark:text-neutral-200">
                   Produk terlaris
@@ -157,8 +177,10 @@
                 </div>
               </div>
             </div>
+            <!-- End Header -->
 
-                        <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
+            <!-- Table -->
+            <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
               <thead class="bg-gray-50 dark:bg-neutral-800">
                 <tr>
                   <th scope="col" class="px-4 py-3 text-start">
@@ -469,8 +491,10 @@
                 </tr>
               </tbody>
             </table>
+            <!-- End Table -->
 
-                        <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t border-gray-200 dark:border-neutral-700">
+            <!-- Footer -->
+            <div class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-t border-gray-200 dark:border-neutral-700">
               <div>
                 <p class="text-sm text-gray-600 dark:text-neutral-400">
                   <span class="font-semibold text-gray-800 dark:text-neutral-200">12</span> results
@@ -491,12 +515,16 @@
                 </div>
               </div>
             </div>
-                      </div>
+            <!-- End Footer -->
+          </div>
         </div>
       </div>
     </div>
-      </div>
+    <!-- End Card -->
+  </div>
 </div>
+<!-- End Content -->
+<!-- ========== END MAIN CONTENT ========== -->
 
 <script src="https://preline.co/assets/js/hs-apexcharts-helpers.js"></script>
 

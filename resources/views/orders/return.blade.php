@@ -47,7 +47,8 @@
                                             </tr>
                                         </table>
 
-                                                                                @if ($order->return->status == 0)
+                                        <!-- BAGIAN PENTING HANYA PADA FORM DIBAWAH -->
+                                        @if ($order->return->status == 0)
                                             <form action="{{ route('orders.approve_return') }}"
                                                 onsubmit="return confirm('Kamu Yakin?');" method="post">
                                                 @csrf

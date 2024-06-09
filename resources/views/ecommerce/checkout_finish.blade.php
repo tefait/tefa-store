@@ -1,11 +1,12 @@
 @extends('layouts.ecommerce')
 
 @section('title')
-    <title>Keranjang Belanja - {{ cache('settings')['site-name']['value'] }}</title>
+    <title>Keranjang Belanja - TEFA Ecommerce</title>
 @endsection
 
 @section('content')
-        <section class="banner_area">
+    <!--================Home Banner Area =================-->
+    <section class="banner_area">
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">
@@ -18,8 +19,10 @@
             </div>
         </div>
     </section>
+    <!--================End Home Banner Area =================-->
 
-        <section class="order_details p_120">
+    <!--================Order Details Area =================-->
+    <section class="order_details p_120">
         <div class="container">
             <h3 class="title_confirmation">Terima kasih, pesanan anda telah kami terima.</h3>
             <div class="row order_d_inner">
@@ -75,4 +78,5 @@
             </div>
         </div>
     </section>
-    @endsection
+    <!--================End Order Details Area =================-->
+@endsection
