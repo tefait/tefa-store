@@ -30,15 +30,37 @@ class ProductController extends Controller
 
     public function index()
     {
-        $product = Product::with(['category'])->orderBy('created_at', 'DESC');
+        $query = Product::with(['category'])->orderBy('created_at', 'DESC');
 
-        if (request()->q != '') {
-            $product = $product->whereAny(['name', 'price', 'slug'], 'LIKE', '%'.request()->q.'%');
+        // Handle search query
+        if ($search = request()->q) {
+            $query->where(function ($query) use ($search) {
+                $query->where('name', 'LIKE', '%' . $search . '%')
+                    ->orWhere('price', 'LIKE', '%' . $search . '%')
+                    ->orWhere('slug', 'LIKE', '%' . $search . '%');
+            });
         }
-        $product = $product->paginate(10);
 
-        return view('products.index', compact('product'));
+        // Handle sorting
+        if ($sort = request()->sort) {
+            switch ($sort) {
+                case 'price:lowest':
+                    $query->orderBy('price', 'asc');
+                    break;
+                case 'price:highest':
+                    $query->orderBy('price', 'desc');
+                    break;
+                    // Add more sorting options here if needed
+                default:
+                    break;
+            }
+        }
+
+        $products = $query->paginate(10);
+
+        return view('products.index', compact('products'));
     }
+
 
     public function create()
     {
@@ -60,7 +82,7 @@ class ProductController extends Controller
 
         if ($request->hasFile('image')) {
             $file = $request->file('image');
-            $filename = time().Str::slug($request->name).'.'.$file->getClientOriginalExtension();
+            $filename = time() . Str::slug($request->name) . '.' . $file->getClientOriginalExtension();
             $file->storeAs('public/products', $filename);
 
             $product = Product::create([
@@ -68,7 +90,7 @@ class ProductController extends Controller
                 'slug' => $request->name,
                 'category_id' => $request->category_id,
                 'description' => $request->description,
-                'image' => "public/products/" . $filename,
+                'image' => 'public/products/' . $filename,
                 'price' => $request->price,
                 'weight' => $request->weight,
                 'status' => $request->status,
@@ -106,7 +128,7 @@ class ProductController extends Controller
 
         if ($request->hasFile('image')) {
             $file = $request->file('image');
-            $filename = time().Str::slug($request->name).'.'.$file->getClientOriginalExtension();
+            $filename = time() . Str::slug($request->name) . '.' . $file->getClientOriginalExtension();
             $file->storeAs('public/products', $filename);
             Storage::delete($product->image);
         }
@@ -117,7 +139,7 @@ class ProductController extends Controller
             'category_id' => $request->category_id,
             'price' => $request->price,
             'weight' => $request->weight,
-            'image' => "public/products/" . $filename,
+            'image' => 'public/products/' . $filename,
         ]);
 
         return redirect(route('product.index'))->with(['success' => 'Data Produk Diperbaharui']);
@@ -148,7 +170,7 @@ class ProductController extends Controller
 
         if ($request->hasFile('file')) {
             $file = $request->file('file');
-            $filename = time().'-product.'.$file->getClientOriginalExtension();
+            $filename = time() . '-product.' . $file->getClientOriginalExtension();
             $file->storeAs('public/uploads', $filename);
 
             ProductJob::dispatch($request->category_id, $filename);

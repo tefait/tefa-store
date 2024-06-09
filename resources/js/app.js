@@ -1,5 +1,4 @@
 import 'preline';
-import './bootstrap';
 import '../css/app.css';
 import 'boxicons';
 

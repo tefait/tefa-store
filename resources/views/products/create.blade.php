@@ -13,8 +13,7 @@
         <div class="container-fluid">
             <div class="animated fadeIn">
 
-                <!-- TAMBAHKAN ENCTYPE="" KETIKA MENGIRIMKAN FILE PADA FORM -->
-                <form action="{{ route('product.store') }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('product.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-8">
@@ -32,8 +31,7 @@
                                     <div class="form-group">
                                         <label for="description">Deskripsi</label>
 
-                                        <!-- TAMBAHKAN ID YANG NNTINYA DIGUNAKAN UTK MENGHUBUNGKAN DENGAN CKEDITOR -->
-                                        <textarea name="description" id="description" class="form-control">{{ old('description') }}</textarea>
+                                                                                <textarea name="description" id="description" class="form-control">{{ old('description') }}</textarea>
                                         <p class="text-danger">{{ $errors->first('description') }}</p>
                                     </div>
                                 </div>
@@ -54,8 +52,7 @@
                                     <div class="form-group">
                                         <label for="category_id">Kategori</label>
 
-                                        <!-- DATA KATEGORI DIGUNAKAN DISINI, SEHINGGA SETIAP PRODUK USER BISA MEMILIH KATEGORINYA -->
-                                        <select name="category_id" class="form-control">
+                                                                                <select name="category_id" class="form-control">
                                             <option value="">Pilih</option>
                                             @foreach ($category as $row)
                                                 <option value="{{ $row->id }}"
@@ -96,10 +93,8 @@
     </main>
 @endsection
 
-<!-- PADA ADMIN LAYOUTS, TERDAPAT YIELD JS YANG BERARTI KITA BISA MEMBUAT SECTION JS UNTUK MENAMBAHKAN SCRIPT JS JIKA DIPERLUKAN -->
 @section('js')
-    <!-- LOAD CKEDITOR -->
-    <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+        <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
     <script>
         //TERAPKAN CKEDITOR PADA TEXTAREA DENGAN ID DESCRIPTION
         CKEDITOR.replace('description');

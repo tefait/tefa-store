@@ -161,6 +161,40 @@ class CartController extends Controller
         return response()->json(['status' => 'success', 'data' => $districts]);
     }
 
+    public function generateRandomPassword()
+    {
+        // Daftar kata yang dapat digunakan
+        $words = [
+            'kantong', 'hdpe', 'airsumur', 'kopi', 'hitam', 'daun', 'pohon', 'batu', 'sungai', 'hujan', 'plastik',
+        ];
+
+        // Daftar karakter khusus
+        $specialChars = ['%', '@', '#', '$', '!', '&'];
+
+        // Daftar angka
+        $numbers = range(0, 255);
+
+        // Memilih kata secara acak
+        $word1 = $words[array_rand($words)];
+        $word2 = $words[array_rand($words)];
+
+        // Memastikan dua kata tidak sama
+        while ($word1 == $word2) {
+            $word2 = $words[array_rand($words)];
+        }
+
+        // Memilih angka secara acak
+        $number = $numbers[array_rand($numbers)];
+
+        // Memilih karakter khusus secara acak
+        $specialChar = $specialChars[array_rand($specialChars)];
+
+        // Menggabungkan kata, angka, dan karakter khusus
+        $password = $word1.$number.$word2.$specialChar;
+
+        return $password;
+    }
+
     public function processCheckout(Request $request)
     {
         $this->validate($request, [
@@ -190,7 +224,7 @@ class CartController extends Controller
             });
 
             if (! auth()->guard('customer')->check()) {
-                $password = Str::random(8);
+                $password = $this->generateRandomPassword();
                 $customer = Customer::create([
                     'name' => $request->customer_name,
                     'email' => $request->email,
@@ -244,6 +278,10 @@ class CartController extends Controller
 
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
+    }
+
+    public function storeCustomer(Request $request)
+    {
     }
 
     public function checkoutFinish($invoice)

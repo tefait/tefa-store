@@ -14,10 +14,11 @@
     </button>
     <ul class="nav navbar-nav ml-auto">
 
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown px-4">
             <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                 aria-expanded="false">
-                <img class="img-avatar" src="{{ asset('assets/img/user.png') }}" alt="{{auth()->user()->email}}">
+                {{auth()->user()->name . " | " . auth()->user()->role_label}}
+                {{-- <img class="img-avatar" src="{{ asset('assets/img/user.png') }}" alt="{{auth()->user()->email}}"> --}}
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-header text-center">

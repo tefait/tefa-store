@@ -39,7 +39,7 @@ class OrderController extends Controller
     {
         $order = Order::with(['district.city.province', 'details', 'details.product', 'payment'])
             ->where('invoice', $invoice)->first();
-        if (! Gate::forUser(auth()->guard('customer')->user())->allows('order-view', $order)) {
+        if (!Gate::forUser(auth()->guard('customer')->user())->allows('order-view', $order)) {
             return redirect(route('customer.view_order', $order->invoice));
         }
 
@@ -88,7 +88,7 @@ class OrderController extends Controller
 
         if ($request->hasFile('photo')) {
             $file = $request->file('photo');
-            $filename = time().Str::random(5).'.'.$file->getClientOriginalExtension();
+            $filename = time() . Str::random(5) . '.' . $file->getClientOriginalExtension();
             $file->storeAs('public/return', $filename);
 
             OrderReturn::create([
@@ -102,7 +102,7 @@ class OrderController extends Controller
             //CODE BARU HANYA PADA BAGIAN INI SAJA
             $order = Order::find($id); //AMBIL DATA ORDER BERDASARKAN ID
             //KIRIM PESAN MELALUI BOT
-            $this->sendMessage('#'.$order->invoice, $request->reason);
+            $this->sendMessage('#' . $order->invoice, $request->reason);
             //CODE BARU HANYA PADA BAGIAN INI SAJA
 
             return redirect()->back()->with(['success' => 'Permintaan Refund Dikirim']);
@@ -112,7 +112,7 @@ class OrderController extends Controller
     private function getTelegram($url, $params)
     {
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url.$params);
+        curl_setopt($ch, CURLOPT_URL, $url . $params);
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_TIMEOUT, 3);
@@ -126,7 +126,7 @@ class OrderController extends Controller
     {
         $key = env('TELEGRAM_KEY'); //AMBIL TOKEN DARI ENV
         //KEMUDIAN KIRIM REQUEST KE TELEGRAM UNTUK MENGAMBIL DATA USER YANG ME-LISTEN BOT KITA
-        $chat = $this->getTelegram('https://api.telegram.org/'.$key.'/getUpdates', '');
+        $chat = $this->getTelegram('https://api.telegram.org/' . $key . '/getUpdates', '');
         //JIKA ADA
         if ($chat['ok']) {
             //SAYA BERASUMSI PESAN INI HANYA DIKIRIM KE ADMIN, MAKA KITA TIDAK PERLU MELOOPING HASIL DARI GET DATA USER
@@ -134,10 +134,10 @@ class OrderController extends Controller
             //UNTUK MENDAPATKAN CHAT_ID
             $chat_id = $chat['result'][0]['message']['chat']['id'];
             //TEKS YANG DIINGINKAN
-            $text = 'Hai Tefa IT, OrderID '.$order_id.' Melakukan Permintaan Refund Dengan Alasan "'.$reason.'", Segera Dicek Ya!';
+            $text = 'Hai Tefa IT, OrderID ' . $order_id . ' Melakukan Permintaan Refund Dengan Alasan "' . $reason . '", Segera Dicek Ya!';
 
             //DAN KIRIM REQUEST KE TELEGRAM UNTUK MENGIRIMKAN PESAN
-            return $this->getTelegram('https://api.telegram.org/'.$key.'/sendMessage', '?chat_id='.$chat_id.'&text='.$text);
+            return $this->getTelegram('https://api.telegram.org/' . $key . '/sendMessage', '?chat_id=' . $chat_id . '&text=' . $text);
         }
     }
 
@@ -166,7 +166,7 @@ class OrderController extends Controller
 
             if ($order->status == 0 && $request->hasFile('proof')) {
                 $file = $request->file('proof');
-                $filename = time().'.'.$file->getClientOriginalExtension();
+                $filename = time() . '.' . $file->getClientOriginalExtension();
                 $file->storeAs('public/payment', $filename);
 
                 Payment::create([
@@ -183,11 +183,9 @@ class OrderController extends Controller
 
                 return redirect()->back()->with(['success' => 'Pesanan Dikonfirmasi']);
             }
-
             return redirect()->back()->with(['error' => 'Error, Upload Bukti Transfer']);
         } catch (\Exception $e) {
             DB::rollback();
-
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }

@@ -1,12 +1,11 @@
 @extends('layouts.ecommerce')
 
 @section('title')
-    <title>Keranjang Belanja - TEFA Ecommerce</title>
+    <title>Keranjang Belanja - {{ cache('settings')['site-name']['value'] }}</title>
 @endsection
 
 @section('content')
-    <!--================Home Banner Area =================-->
-    <section class="banner_area">
+        <section class="banner_area">
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">
@@ -19,19 +18,13 @@
             </div>
         </div>
     </section>
-    <!--================End Home Banner Area =================-->
 
-    <!--================Cart Area =================-->
-    <section class="cart_area">
+        <section class="cart_area">
         <div class="container">
             <div class="cart_inner">
 
-                <!-- DISABLE BAGIAN INI JIKA INGIN MELIHAT HASILNYA TERLEBIH DAHULU -->
-                <!-- KARENA MODULENYA AKAN DIKERJAKAN PADA SUB BAB SELANJUTNYA -->
-                <!-- HANYA SAJA DEMI KEMUDAHAN PENULISAN MAKA SAYA MASUKKAN PADA BAGIAN INI -->
-                <form action="{{ route('front.update_cart') }}" method="post">
+                                                                <form action="{{ route('front.update_cart') }}" method="post">
                     @csrf
-                    <!-- DISABLE BAGIAN INI JIKA INGIN MELIHAT HASILNYA TERLEBIH DAHULU -->
 
                     <div class="table-responsive">
                         <table class="table">
@@ -44,8 +37,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- LOOPING DATA DARI VARIABLE CARTS -->
-                                @forelse ($carts as $row)
+                                                                @forelse ($carts as $row)
                                     <tr>
                                         <td>
                                             <div class="media">
@@ -65,13 +57,11 @@
                                             <div class="product_count">
 
 
-                                                <!-- PERHATIKAN BAGIAN INI, NAMENYA KITA GUNAKAN ARRAY AGAR BISA MENYIMPAN LEBIH DARI 1 DATA -->
-                                                <input type="text" name="qty[]" id="sst{{ $row['product_id'] }}"
+                                                                                                <input type="text" name="qty[]" id="sst{{ $row['product_id'] }}"
                                                     maxlength="12" value="{{ $row['qty'] }}" title="Quantity:"
                                                     class="input-text qty">
                                                 <input type="hidden" name="product_id[]" value="{{ $row['product_id'] }}"
                                                     class="form-control">
-                                                <!-- PERHATIKAN BAGIAN INI, NAMENYA KITA GUNAKAN ARRAY AGAR BISA MENYIMPAN LEBIH DARI 1 DATA -->
 
 
                                                 <button
@@ -175,5 +165,4 @@
         </div>
         </div>
     </section>
-    <!--================End Cart Area =================-->
-@endsection
+    @endsection

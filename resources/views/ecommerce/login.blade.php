@@ -1,12 +1,11 @@
 @extends('layouts.ecommerce')
 
 @section('title')
-    <title>Login - TEFA Ecommerce</title>
+    <title>Login - {{ cache('settings')['site-name']['value'] }}</title>
 @endsection
 
 @section('content')
-    <!--================Home Banner Area =================-->
-    <section class="banner_area">
+        <section class="banner_area">
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">
@@ -19,10 +18,8 @@
             </div>
         </div>
     </section>
-    <!--================End Home Banner Area =================-->
 
-    <!--================Login Box Area =================-->
-    <section class="login_box_area p_120">
+        <section class="login_box_area p_120">
         <div class="container">
             <div class="row">
                 <div class="offset-md-3 col-lg-6">

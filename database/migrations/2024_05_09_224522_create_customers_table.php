@@ -12,7 +12,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('customers', function (Blueprint $table) {
-            //DENGAN FIELD SEBAGAI BERIKUT
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();

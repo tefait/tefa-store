@@ -1,4 +1,3 @@
-<!-- MEMANGGIL MASTER TEMPLATE YANG SUDAH DIBUAT SEBELUMNYA, YAKNI admin.blade.php -->
 @extends('layouts.admin')
 
 @section('title')
@@ -15,8 +14,7 @@
             <div class="animated fadeIn">
                 <div class="row">
 
-                    <!-- BAGIAN INI AKAN MENG-HANDLE FORM INPUT NEW CATEGORY  -->
-                    <div class="col-md-4">
+                                        <div class="col-md-4">
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Kategori Baru</h4>
@@ -32,10 +30,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="parent_id">Kategori</label>
-                                        <!-- VARIABLE $PARENT PADA METHOD INDEX KITA GUNAKAN DISINI -->
-                                        <!-- UNTUK MENAMPILKAN DATA CATEGORY YANG PARENT_ID NYA NULL -->
-                                        <!-- UNTUK DIPILIH SEBAGAI PARENT TAPI SIFATNYA OPTIONAL -->
-                                        <select name="parent_id" class="form-control">
+                                                                                                                                                                <select name="parent_id" class="form-control">
                                             <option value="">None</option>
                                             @foreach ($parent as $row)
                                                 <option value="{{ $row->id }}">{{ $row->name }}</option>
@@ -51,25 +46,19 @@
                             </div>
                         </div>
                     </div>
-                    <!-- BAGIAN INI AKAN MENG-HANDLE FORM INPUT NEW CATEGORY  -->
 
-                    <!-- BAGIAN INI AKAN MENG-HANDLE TABLE LIST CATEGORY  -->
-                    <div class="col-md-8">
+                                        <div class="col-md-8">
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">List Kategori</h4>
                             </div>
                             <div class="card-body">
-                                <!-- KETIKA ADA SESSION SUCCESS  -->
-                                @if (session('success'))
-                                    <!-- MAKA TAMPILKAN ALERT SUCCESS -->
-                                    <div class="alert alert-success">{{ session('success') }}</div>
+                                                                @if (session('success'))
+                                                                        <div class="alert alert-success">{{ session('success') }}</div>
                                 @endif
 
-                                <!-- KETIKA ADA SESSION ERROR  -->
-                                @if (session('error'))
-                                    <!-- MAKA TAMPILKAN ALERT DANGER -->
-                                    <div class="alert alert-danger">{{ session('error') }}</div>
+                                                                @if (session('error'))
+                                                                        <div class="alert alert-danger">{{ session('error') }}</div>
                                 @endif
 
                                 <div class="table-responsive">
@@ -77,28 +66,24 @@
                                         <thead>
                                             <tr>
                                                 <th>
+                                                <th>Nama</th>
                                                 <th>Kategori</th>
-                                                <th>Parent</th>
-                                                <th>Created At</th>
+                                                <th>Dibuat pada</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <!-- LOOPING DATA KATEGORI SESUAI JUMLAH DATA YANG ADA DI VARIABLE $CATEGORY -->
-                                            @forelse ($category as $val)
+                                                                                        @forelse ($category as $val)
                                                 <tr>
                                                     <td></td>
                                                     <td><strong>{{ $val->name }}</strong></td>
 
-                                                    <!-- MENGGUNAKAN TERNARY OPERATOR, UNTUK MENGECEK, JIKA $val->parent ADA MAKA TAMPILKAN NAMA PARENTNYA, SELAIN ITU MAKA TANMPILKAN STRING - -->
-                                                    <td>{{ $val->parent ? $val->parent->name : '-' }}</td>
+                                                                                                        <td>{{ $val->parent ? $val->parent->name : '-' }}</td>
 
-                                                    <!-- FORMAT TANGGAL KETIKA KATEGORI DIINPUT SESUAI FORMAT INDONESIA -->
-                                                    <td>{{ $val->created_at->format('d-m-Y') }}</td>
+                                                                                                        <td>{{ $val->created_at->format('d-m-Y') }}</td>
                                                     <td>
 
-                                                        <!-- FORM ACTION UNTUK METHOD DELETE -->
-                                                        <form action="{{ route('category.destroy', $val->id) }}"
+                                                                                                                <form action="{{ route('category.destroy', $val->id) }}"
                                                             method="post">
 
                                                             @csrf
@@ -118,13 +103,11 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <!-- FUNGSI INI AKAN SECARA OTOMATIS MEN-GENERATE TOMBOL PAGINATION  -->
-                                {!! $category->links() !!}
+                                                                {!! $category->links() !!}
                             </div>
                         </div>
                     </div>
-                    <!-- BAGIAN INI AKAN MENG-HANDLE TABLE LIST CATEGORY  -->
-                </div>
+                                    </div>
             </div>
         </div>
     </main>

@@ -15,21 +15,21 @@ class FrontController extends Controller
 {
     public function referalProduct($user, $product)
     {
-        $code = $user . '-' . $product; //KITA MERGE USERID DAN PRODUCTID
-        $product = Product::find($product); //FIND PRODUCT BERDASARKAN PRODUCTID
-        $cookie = cookie('afiliasi', json_encode($code), 2880); //BUAT COOKIE DENGAN NAMA AFILIASI DAN VALUENYA ADALAH CODE YANG SUDAH DI-MERGE
+        $code = $user . '-' . $product;
+        $product = Product::find($product);
+        $cookie = cookie('afiliasi', json_encode($code), 2880);
 
-        //KEMUDIAN REDIRECT KE HALAMAN SHOW PRODUCT DAN MENGIRIMKAN COOKIE KE BROWSER
+
         return redirect(route('front.show_product', $product->slug))->cookie($cookie);
     }
 
     public function listCommission()
     {
-        $user = auth()->guard('customer')->user(); //AMBIL DATA USER YANG LOGIN
-        //QUERY BERDASARKAN ID USER DARI DATA REF YANG ADA DIORDER DENGAN STATUS 4 ATAU SELESAI
+        $user = auth()->guard('customer')->user();
+
         $orders = Order::where('ref', $user->id)->where('status', 4)->paginate(10);
 
-        //LOAD VIEW AFFILIATE.BLADE.PHP DAN PASSING DATA ORDERS
+
         return view('ecommerce.affiliate', compact('orders'));
     }
 
@@ -42,16 +42,48 @@ class FrontController extends Controller
 
     public function product()
     {
-        $products = Product::orderBy('created_at', 'DESC')->paginate(12);
+        $query = Product::with(['category'])->orderBy('created_at', 'DESC');
+
+
+        if ($search = request()->q) {
+            $query->where(function ($query) use ($search) {
+                $query->where('name', 'LIKE', '%' . $search . '%')
+                    ->orWhere('price', 'LIKE', '%' . $search . '%')
+                    ->orWhere('slug', 'LIKE', '%' . $search . '%');
+            });
+        }
+
+
+        if ($sort = request()->sort) {
+            switch ($sort) {
+                case 'price-lowest':
+                    $query->orderBy('price', 'asc');
+                    break;
+                case 'price-highest':
+                    $query->orderBy('price', 'desc');
+                    break;
+                case 'name-asc':
+                    $query->orderBy('name', 'asc');
+                    break;
+                case 'name-desc':
+                    $query->orderBy('name', 'desc');
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        $products = $query->paginate(10);
 
         return view('ecommerce.product', compact('products'));
     }
 
     public function categoryProduct($slug)
     {
-        // Take first ever shown category and then take all the product then order by created at
+
         $products = Category::where('slug', $slug)->first()->product()->orderBy('created_at', 'DESC')->paginate(12);
-        // return json_encode(Route::current());
+
+
         return view('ecommerce.product', compact('products'));
     }
 

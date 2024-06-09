@@ -42,7 +42,7 @@ class CustomerRegisterMail extends Mailable
                 'password' => $this->randomPassword,
                 'from' => [
                     'address' => env('MAIL_FROM_ADDRESS', 'Tefa IT@gmail.com'),
-                    'name' => env('MAIL_FROM_NAME', 'TEFA Ecommerce'),
+                    'name' => env('MAIL_FROM_NAME', cache('settings')['site-name']['value']),
                 ],
             ],
         );
