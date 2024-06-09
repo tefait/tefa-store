@@ -19990,7 +19990,7 @@ $classes = ($active ?? false)
                             </div>
                             <div class="card-body">
 
-                                <form action="{{ route('settings.StoreOrUpdate') }}" method="post">
+                                <form action="{{ route('settings.update') }}" method="post">
                                     @csrf
                                     <div class="form-group">
                                         <label for="name">Judul</label>
@@ -20326,7 +20326,7 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () 
         }
 
         return redirect(route('settings'))->with('sucess', 'Settings updated successfully');
-    })->name('settings.StoreOrUpdate');
+    })->name('settings.update');
     Route::post('/product/marketplace', 'ProductController@uploadViaMarketplace')->name('product.marketplace');
 
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');

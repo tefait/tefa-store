@@ -5,8 +5,7 @@
 @endsection
 
 @section('content')
-    <!--================Home Banner Area =================-->
-    <section class="banner_area">
+        <section class="banner_area">
         <div class="banner_inner d-flex align-items-center">
             <div class="overlay"></div>
             <div class="container">
@@ -20,10 +19,8 @@
             </div>
         </div>
     </section>
-    <!--================End Home Banner Area =================-->
 
-    <!--================Checkout Area =================-->
-    <section class="checkout_area section_gap">
+        <section class="checkout_area section_gap">
         <div class="container">
             <div class="billing_details">
                 <div class="row">
@@ -34,9 +31,7 @@
                         @endif
 
 
-                        <!-- REMOVE DULU VALUE ACTION-NYA JIKA INGIN MELIHATNYA DI BROWSER -->
-                        <!-- KARENA ROUTE NAME front.store_checkout BELUM DIBUAT -->
-                        <form class="row contact_form" action="{{ route('register') }}" method="post"
+                                                                        <form class="row contact_form" action="{{ route('register') }}" method="post"
                             novalidate="novalidate">
                             @csrf
                             <div class="col-md-12 form-group p_star">
@@ -44,8 +39,7 @@
                                 <input type="text" class="form-control" id="first" name="customer_name" placeholder="Budi bebas" required
                                     value="{{ old('customer_name') }}">
 
-                                <!-- UNTUK MENAMPILKAN JIKA TERDAPAT ERROR VALIDASI -->
-                                <p class="text-danger">{{ $errors->first('customer_name') }}</p>
+                                                                <p class="text-danger">{{ $errors->first('customer_name') }}</p>
                             </div>
                             <div class="col-md-6 form-group p_star">
                                 <label for="">No Telp</label>
@@ -68,8 +62,7 @@
                                 <label for="">Propinsi</label>
                                 <select class="form-control" name="province_id" id="province_id" required>
                                     <option value="">Pilih Propinsi</option>
-                                    <!-- LOOPING DATA PROVINCE UNTUK DIPILIH OLEH CUSTOMER -->
-                                    @foreach ($provinces as $row)
+                                                                        @foreach ($provinces as $row)
                                         <option value="{{ $row->id }}"
                                             {{ $row->id === old('province_id') ? 'selected' : '' }}>
                                             {{ $row->name }}</option>
@@ -78,8 +71,7 @@
                                 <p class="text-danger">{{ $errors->first('province_id') }}</p>
                             </div>
 
-                            <!-- ADAPUN DATA KOTA DAN KECAMATAN AKAN DI RENDER SETELAH PROVINSI DIPILIH -->
-                            <div class="col-md-12 form-group p_star">
+                                                        <div class="col-md-12 form-group p_star">
                                 <label for="">Kabupaten / Kota</label>
                                 <select class="form-control" name="city_id" id="city_id" required>
                                     <option value="">Pilih Kabupaten/Kota</option>
@@ -105,7 +97,6 @@
                                 </select>
                                 <p class="text-danger">{{ $errors->first('courier') }}</p>
                             </div> --}}
-                            <!-- ADAPUN DATA KOTA DAN KECAMATAN AKAN DI RENDER SETELAH PROVINSI DIPILIH -->
 
                             <button class="mx-3 main_btn">Daftar</button>
                         </form>
@@ -115,8 +106,7 @@
             </div>
         </div>
     </section>
-    <!--================End Checkout Area =================-->
-@endsection
+    @endsection
 
 @section('js')
     <script>

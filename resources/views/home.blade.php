@@ -19,7 +19,6 @@
     </div>
 </div>
 
-<!-- Carousel -->
 <div class="flex justify-center px-4 lg:px-0">
     <div class="w-full rounded-xl">
       <div data-hs-carousel='{
@@ -73,12 +72,9 @@
       </div>
     </div>
   </div>
-  <!-- End Carousel -->
 
-  <!-- Card Blog -->
-  <div class="px-4 lg:px-0 py-2 lg:py-4 mx-auto">
-      <!-- Grid -->
-      <div class="grid grid-cols-3 gap-2">
+    <div class="px-4 lg:px-0 py-2 lg:py-4 mx-auto">
+            <div class="grid grid-cols-3 gap-2">
 
           <div class="h-16 lg:h-28">
               <div class="flex justify-center items-center h-full w-full">
@@ -97,11 +93,8 @@
           </div>
 
       </div>
-      <!-- End Grid -->
-  </div>
-  <!-- End Card Blog -->
+        </div>
 
-<!-- Swiper -->
 <div class="flex justify-between items-center mt-4 mb-2 px-4 lg:px-0">
     <h3 class="text-base lg:text-lg font-bold text-gray-800 dark:text-white">Kategori</h3>
     <a href="#">
@@ -109,11 +102,9 @@
     </a>
 </div>
 <section class="py-4">
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
+        <div class="swiper mySwiper">
         <div class="swiper-wrapper start-4 gap-4">
-            <!-- Card -->
-            <div class="swiper-slide">
+                        <div class="swiper-slide">
                 <div class="group flex flex-col h-full w-full bg-white border border-gray-200 shadow-sm rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                     <div class="flex flex-col justify-center items-center bg-[#FDB840] rounded-t-lg py-4">
                     <svg class="size-20" width="12" height="12" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -148,9 +139,7 @@
                     </div>
                 </div>
             </div>
-            <!-- End Card -->
-            <!-- Card -->
-            <div class="swiper-slide">
+                                    <div class="swiper-slide">
                 <div class="group flex flex-col h-full w-full bg-white border border-gray-200 shadow-sm rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                     <div class="flex flex-col justify-center items-center bg-blue-600 rounded-t-lg py-4">
                     <svg class="size-20" width="12" height="12" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -185,9 +174,7 @@
                     </div>
                 </div>
             </div>
-            <!-- End Card -->
-            <!-- Card -->
-            <div class="swiper-slide">
+                                    <div class="swiper-slide">
                 <div class="group flex flex-col h-full w-full bg-white border border-gray-200 shadow-sm rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                     <div class="flex flex-col justify-center items-center bg-blue-600 rounded-t-lg py-4">
                     <svg class="size-20" width="12" height="12" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -222,9 +209,7 @@
                     </div>
                 </div>
             </div>
-            <!-- End Card -->
-            <!-- Card -->
-            <div class="swiper-slide">
+                                    <div class="swiper-slide">
                 <div class="group flex flex-col h-full w-full bg-white border border-gray-200 shadow-sm rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                     <div class="flex flex-col justify-center items-center bg-blue-600 rounded-t-lg py-4">
                     <svg class="size-20" width="12" height="12" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -259,9 +244,7 @@
                     </div>
                 </div>
             </div>
-            <!-- End Card -->
-            <!-- Card -->
-            <div class="swiper-slide">
+                                    <div class="swiper-slide">
                 <div class="group flex flex-col h-full w-full bg-white border border-gray-200 shadow-sm rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                     <div class="flex flex-col justify-center items-center bg-blue-600 rounded-t-lg py-4">
                     <svg class="size-20" width="12" height="12" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -296,9 +279,7 @@
                     </div>
                 </div>
             </div>
-            <!-- End Card -->
-            <!-- Card -->
-            <div class="swiper-slide">
+                                    <div class="swiper-slide">
                 <div class="group flex flex-col h-full w-full bg-white border border-gray-200 shadow-sm rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                     <div class="flex flex-col justify-center items-center bg-blue-600 rounded-t-lg py-4">
                     <svg class="size-20" width="12" height="12" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -333,9 +314,7 @@
                     </div>
                 </div>
             </div>
-            <!-- End Card -->
-            <!-- Card -->
-            <div class="swiper-slide">
+                                    <div class="swiper-slide">
                 <div class="group flex flex-col h-full w-full bg-white border border-gray-200 shadow-sm rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                     <div class="flex flex-col justify-center items-center bg-blue-600 rounded-t-lg py-4">
                     <svg class="size-20" width="12" height="12" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -370,9 +349,7 @@
                     </div>
                 </div>
             </div>
-            <!-- End Card -->
-            <!-- Card -->
-            <div class="swiper-slide">
+                                    <div class="swiper-slide">
                 <div class="group flex flex-col h-full w-full bg-white border border-gray-200 shadow-sm rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                     <div class="flex flex-col justify-center items-center bg-blue-600 rounded-t-lg py-4">
                     <svg class="size-20" width="12" height="12" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -407,9 +384,7 @@
                     </div>
                 </div>
             </div>
-            <!-- End Card -->
-            <!-- Card -->
-            <div class="swiper-slide">
+                                    <div class="swiper-slide">
                 <div class="group flex flex-col h-full w-full bg-white border border-gray-200 shadow-sm rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                     <div class="flex flex-col justify-center items-center bg-blue-600 rounded-t-lg py-4">
                     <svg class="size-20" width="12" height="12" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -444,9 +419,7 @@
                     </div>
                 </div>
             </div>
-            <!-- End Card -->
-            <!-- Card -->
-            <div class="swiper-slide">
+                                    <div class="swiper-slide">
                 <div class="group flex flex-col h-full w-full bg-white border border-gray-200 shadow-sm rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                     <div class="flex flex-col justify-center items-center bg-blue-600 rounded-t-lg py-4">
                     <svg class="size-20" width="12" height="12" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -481,9 +454,7 @@
                     </div>
                 </div>
             </div>
-            <!-- End Card -->
-            <!-- Card -->
-            <div class="swiper-slide">
+                                    <div class="swiper-slide">
                 <div class="group flex flex-col h-full w-full bg-white border border-gray-200 shadow-sm rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                     <div class="flex flex-col justify-center items-center bg-blue-600 rounded-t-lg py-4">
                     <svg class="size-20" width="12" height="12" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -518,15 +489,12 @@
                     </div>
                 </div>
             </div>
-            <!-- End Card -->
-        </div>
+                    </div>
         <div class="swiper-pagination"></div>
     </div>
 </section>
-<!-- End Swiper -->
 
 
-<!-- Kategori -->
 <div class="lg:hidden py-2 px-4 mt-2">
   <div class="flex justify-between items-center mb-2">
     <h3 class="text-base font-bold text-gray-800 dark:text-white">Kategori</h3>

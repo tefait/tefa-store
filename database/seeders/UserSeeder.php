@@ -26,11 +26,11 @@ class UserSeeder extends Seeder
         Customer::create([
             'name' => 'Muhammad Azfa',
             'email' => 'azfasa15@gmail.com',
-            'phone_number' => 1,
+            'phone_number' => '085156105763',
             'address' => 'Sumedang',
             'district_id' => 6082,
             'status' => true,
-            'activate_token' => \Illuminate\Support\Str::random(30),
+            'activate_token' => \Illuminate\Support\Str::random(32),
             'password' => Hash::make('12345678'),
         ]);
     }

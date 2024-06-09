@@ -1,4 +1,3 @@
-<!-- MEMANGGIL MASTER TEMPLATE YANG SUDAH DIBUAT SEBELUMNYA, YAKNI admin.blade.php -->
 @extends('layouts.admin')
 
 @section('title')
@@ -14,37 +13,7 @@
         <div class="container-fluid">
             <div class="animated fadeIn">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">New Settings</h4>
-                            </div>
-                            <div class="card-body">
-
-                                <form action="{{ route('settings.StoreOrUpdate') }}" method="post">
-                                    @csrf
-                                    <div class="form-group">
-                                        <label for="name">Judul</label>
-                                        <input type="text" name="key" class="form-control" required>
-                                        <p class="text-danger">{{ $errors->first('name') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="name">Isi</label>
-                                        <input type="text" name="value" class="form-control" required>
-                                        <p class="text-danger">{{ $errors->first('name') }}</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <button class="btn btn-primary btn-sm">Tambah</button>
-                                    </div>
-                                </form>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- BAGIAN INI AKAN MENG-HANDLE FORM INPUT NEW CATEGORY  -->
-
-                    <!-- BAGIAN INI AKAN MENG-HANDLE TABLE LIST CATEGORY  -->
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Settings list</h4>
@@ -52,15 +21,10 @@
                             <div class="card-body">
                                 <form method="POST">
                                     @csrf
-                                    <!-- KETIKA ADA SESSION SUCCESS  -->
                                     @if (session('success'))
-                                        <!-- MAKA TAMPILKAN ALERT SUCCESS -->
                                         <div class="alert alert-success">{{ session('success') }}</div>
                                     @endif
-
-                                    <!-- KETIKA ADA SESSION ERROR  -->
                                     @if (session('error'))
-                                        <!-- MAKA TAMPILKAN ALERT DANGER -->
                                         <div class="alert alert-danger">{{ session('error') }}</div>
                                     @endif
 
@@ -77,13 +41,11 @@
                                             </thead>
 
                                             <tbody>
-                                                <!-- LOOPING DATA KATEGORI SESUAI JUMLAH DATA YANG ADA DI VARIABLE $settings -->
-                                                @forelse ($settings as $key => $val)
+                                                                                                @forelse ($settings as $key => $val)
                                                     <tr>
                                                         <td>{{ $val->key }}</td>
                                                         <td><strong>{{ $val->name }}</strong></td>
-                                                        <!-- MENGGUNAKAN TERNARY OPERATOR, UNTUK MENGECEK, JIKA $val->parent ADA MAKA TAMPILKAN NAMA PARENTNYA, SELAIN ITU MAKA TANMPILKAN STRING - -->
-                                                        <td id="{{ $val->type . '-' . $val->key }}">
+                                                                                                                <td id="{{ $val->type . '-' . $val->key }}">
                                                             @switch($val->type)
                                                                 @case('image')
                                                                     <img src="{{ url($val->value) }}" alt="{{ $val->name }}">
@@ -179,8 +141,7 @@
                                     </form>
                                 </div>
                             </div>
-                            <!-- BAGIAN INI AKAN MENG-HANDLE TABLE LIST CATEGORY  -->
-                        </div>
+                                                    </div>
                     </div>
                 </div>
         </main>

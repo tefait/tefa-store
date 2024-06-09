@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-    <!--================Home Banner Area =================-->
     <section class="banner_area">
         <div class="banner_inner d-flex align-items-center">
             <div class="overlay"></div>
@@ -20,9 +19,7 @@
             </div>
         </div>
     </section>
-    <!--================End Home Banner Area =================-->
 
-    <!--================Checkout Area =================-->
     <section class="checkout_area section_gap">
         <div class="container">
             <div class="billing_details">
@@ -34,8 +31,6 @@
                         @endif
 
 
-                        <!-- REMOVE DULU VALUE ACTION-NYA JIKA INGIN MELIHATNYA DI BROWSER -->
-                        <!-- KARENA ROUTE NAME front.store_checkout BELUM DIBUAT -->
                         <form class="row contact_form" action="{{ route('front.store_checkout') }}" method="post"
                             novalidate="novalidate">
                             @csrf
@@ -44,7 +39,6 @@
                                 <input type="text" class="form-control" id="first" name="customer_name" required
                                     value="{{ auth('customer')->check() ? auth('customer')->user()->name : '' }}">
 
-                                <!-- UNTUK MENAMPILKAN JIKA TERDAPAT ERROR VALIDASI -->
                                 <p class="text-danger">{{ $errors->first('customer_name') }}</p>
                             </div>
                             <div class="col-md-6 form-group p_star">
@@ -74,7 +68,6 @@
                                 <label for="">Propinsi</label>
                                 <select class="form-control" name="province_id" id="province_id" required>
                                     <option value="">Pilih Propinsi</option>
-                                    <!-- LOOPING DATA PROVINCE UNTUK DIPILIH OLEH CUSTOMER -->
                                     @foreach ($provinces as $row)
                                         <option value="{{ $row->id }}"
                                             {{ auth('customer')->check() && $row->id === auth('customer')->user()->district->city->province->id ? 'selected' : '' }}>
@@ -83,8 +76,6 @@
                                 </select>
                                 <p class="text-danger">{{ $errors->first('province_id') }}</p>
                             </div>
-
-                            <!-- ADAPUN DATA KOTA DAN KECAMATAN AKAN DI RENDER SETELAH PROVINSI DIPILIH -->
                             <div class="col-md-12 form-group p_star">
                                 <label for="">Kabupaten / Kota</label>
                                 <select class="form-control" name="city_id" id="city_id" required
@@ -114,8 +105,6 @@
                                 </select>
                                 <p class="text-danger">{{ $errors->first('courier') }}</p>
                             </div> --}}
-                            <!-- ADAPUN DATA KOTA DAN KECAMATAN AKAN DI RENDER SETELAH PROVINSI DIPILIH -->
-
                     </div>
                     <div class="col-lg-4">
                         <div class="order_box">
@@ -153,31 +142,30 @@
                                 </li>
                             </ul>
                             <button class="main_btn">Bayar Pesanan</button>
-                            </form>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
-    <!--================End Checkout Area =================-->
 @endsection
 
 @section('js')
-    <script>
+    {{-- <script>
         $(document).ready(function() {
             loadCity($('#province_id').val(), 'bySelect').then(() => {
                 loadDistrict($('#city_id').val(), 'bySelect');
             })
-        })
+        });
 
         $('#province_id').on('change', function() {
             loadCity($(this).val(), '');
-        })
+        });
 
         $('#city_id').on('change', function() {
             loadDistrict($(this).val(), '')
-        })
+        });
 
         function loadCity(province_id, type) {
             return new Promise((resolve, reject) => {
@@ -315,10 +303,121 @@
         //     $('#ongkir').text('Rp ' + split[2])
 
         //     //UPDATE INFORMASI TOTAL (SUBTOTAL + ONGKIR)
-            let subtotal = "{{ $subtotal }}"
+        let subtotal = "{{ $subtotal }}"
         //     let total = parseInt(subtotal) + parseInt(split['2'])
         //     $('#total').text('Rp' + total)
 
         $('#total').text('Rp' + subtotal)
+    </script> --}}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            loadCity(document.getElementById('province_id').value, 'bySelect').then(() => {
+                loadDistrict(document.getElementById('city_id').value, 'bySelect');
+            });
+        });
+
+        document.getElementById('province_id').addEventListener('change', function() {
+            loadCity(this.value, '');
+        });
+
+        document.getElementById('city_id').addEventListener('change', function() {
+            loadDistrict(this.value, '');
+        });
+
+        function loadCity(province_id, type) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", "/api/city?province_id=" + province_id, true);
+                xhr.onload = function() {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        const html = JSON.parse(xhr.responseText);
+                        const citySelect = document.getElementById('city_id');
+                        citySelect.innerHTML = '<option value="">Pilih Kabupaten/Kota</option>';
+                        html.data.forEach(item => {
+                            let city_selected =
+                                {{ auth('customer')->check() ? auth('customer')->user()->district->city_id : 'null' }};
+                            let selected = type === 'bySelect' && city_selected == item.id ?
+                                'selected' : '';
+                            citySelect.insertAdjacentHTML('beforeend',
+                                `<option value="${item.id}" ${selected}>${item.name}</option>`);
+                        });
+                        resolve();
+                    } else {
+                        reject();
+                    }
+                };
+                xhr.onerror = reject;
+                xhr.send();
+            });
+        }
+
+        function loadDistrict(city_id, type) {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "/api/district?city_id=" + city_id, true);
+            xhr.onload = function() {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    const html = JSON.parse(xhr.responseText);
+                    const districtSelect = document.getElementById('district_id');
+                    districtSelect.innerHTML = '<option value="">Pilih Kecamatan</option>';
+                    html.data.forEach(item => {
+                        let district_selected =
+                            {{ auth('customer')->check() ? auth('customer')->user()->district->id : 'null' }};
+                        let selected = type === 'bySelect' && district_selected == item.id ? 'selected' : '';
+                        districtSelect.insertAdjacentHTML('beforeend',
+                            `<option value="${item.id}" ${selected}>${item.name}</option>`);
+                    });
+                }
+            };
+            xhr.send();
+        }
+
+        document.getElementById('province_id').addEventListener('change', function() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "/api/city?province_id=" + this.value, true);
+            xhr.onload = function() {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    const html = JSON.parse(xhr.responseText);
+                    const citySelect = document.getElementById('city_id');
+                    citySelect.innerHTML = '<option value="">Pilih Kabupaten/Kota</option>';
+                    html.data.forEach(item => {
+                        citySelect.insertAdjacentHTML('beforeend',
+                            `<option value="${item.id}">${item.type + " "} ${item.name}</option>`);
+                    });
+                }
+            };
+            xhr.send();
+        });
+
+        document.getElementById('city_id').addEventListener('change', function() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "/api/district?city_id=" + this.value, true);
+            xhr.onload = function() {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    const html = JSON.parse(xhr.responseText);
+                    const districtSelect = document.getElementById('district_id');
+                    districtSelect.innerHTML = '<option value="">Pilih Kecamatan</option>';
+                    html.data.forEach(item => {
+                        districtSelect.insertAdjacentHTML('beforeend',
+                            `<option value="${item.id}">${item.name}</option>`);
+                    });
+                }
+            };
+            xhr.send();
+        });
+
+        document.getElementById('district_id').addEventListener('change', function() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "/api/cost", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onload = function() {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    // Handle the response data as needed
+                }
+            };
+            xhr.send("destination=" + this.value + "&weight=" + document.getElementById('weight').value);
+        });
+
+        let subtotal = "{{ $subtotal }}";
+        document.getElementById('total').textContent = 'Rp' + subtotal;
     </script>
 @endsection

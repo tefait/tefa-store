@@ -29,8 +29,7 @@
 </head>
 
 <body>
-    <!--================Header Menu Area =================-->
-    <header class="header_area">
+        <header class="header_area">
         <div class="top_menu row m0">
             <div class="container-fluid">
                 <div class="float-left">
@@ -54,8 +53,7 @@
         <div class="main_menu">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="{{ url('/') }}">
+                                        <a class="navbar-brand logo_h" href="{{ url('/') }}">
                         <img src="{{ cache('settings')['site-logo']['value'] }}" alt="">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -65,8 +63,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                                        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <div class="row w-100">
                             <div class="col-lg-7 pr-0">
                                 @include('layouts.ecommerce.module.menu')
@@ -103,12 +100,10 @@
             </nav>
         </div>
     </header>
-    <!--================Header Menu Area =================-->
 
     @yield('content')
 
-    <!--================ Subscription Area ================-->
-    {{-- <section class="subscription-area section_gap">
+        {{-- <section class="subscription-area section_gap">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -127,10 +122,7 @@
                             <input type="email" name="EMAIL" placeholder="Email address"
                                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'"
                                 required="">
-                            <!-- <div style="position: absolute; left: -5000px;">
-                                <input type="text" name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="">
-                            </div> -->
-                            <button type="submit" class="newsl-btn">Get Started</button>
+                                                        <button type="submit" class="newsl-btn">Get Started</button>
                             <div class="info"></div>
                         </form>
                     </div>
@@ -138,10 +130,8 @@
             </div>
         </div>
     </section> --}}
-    <!--================ End Subscription Area ================-->
 
-    <!--================ start footer Area  =================-->
-    <footer class="footer-area section_gap">
+        <footer class="footer-area section_gap">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3  col-md-6 col-sm-6">
@@ -152,12 +142,6 @@
                             Perangkat Lunak. Kami mencetak generasi digital kreatif dan berdaya saing.</p>
                     </div>
                 </div>
-                {{-- <div class="col-lg-4 col-md-6 col-sm-6">
-
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-
-                </div> --}}
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="single-footer-widget f_social_wd">
                         <h6 class="footer_title">Follow Us</h6>
@@ -190,8 +174,7 @@
             </div>
         </div>
     </footer>
-    <!--================ End footer Area  =================-->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha256-/ijcOLwFf26xEYAjW75FizKVo5tnTYiQddPZoLUHHZ8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"

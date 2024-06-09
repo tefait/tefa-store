@@ -39,6 +39,11 @@ class SettingSeeder extends Seeder
                 'value' => '12',
                 'type' => 'text'
             ],
+            [
+                'name' => 'Upcoming product',
+                'value' => 'https://images.tokopedia.net/img/cache/1208/NsjrJu/2024/5/29/d941571a-437e-443a-9db6-babf4f9780f6.jpg.webp?ect=4g;https://images.tokopedia.net/img/cache/1208/NsjrJu/2024/5/31/70cafaaf-9149-4b4b-a16c-847a270fb92a.jpg.webp?ect=4g',
+                'type' => 'multi_image'
+            ],
         ];
         foreach ($setting as $set) {
             Setting::create($set);

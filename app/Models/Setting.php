@@ -10,7 +10,7 @@ class Setting extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['key', 'value'];
+    protected $guarded = [];
 
     public function setNameAttribute($value)
     {

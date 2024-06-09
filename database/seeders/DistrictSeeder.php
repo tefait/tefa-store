@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class DistrictTableSeeder extends Seeder
+class DistrictSeeder extends Seeder
 {
     /**
      * Run the database seeds.

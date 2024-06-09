@@ -1,13 +1,10 @@
-<!-- Sidebar -->
 <div id="application-sidebar"
     class="hs-overlay [--auto-close:lg] hs-overlay-open:translate-x-0 -translate-x-full transition-all duration-300 transform w-[260px] hidden fixed inset-y-0 start-0 z-[60] bg-white border-e border-gray-200 lg:block lg:translate-x-0 lg:end-auto lg:bottom-0 dark:bg-neutral-800 dark:border-neutral-700">
     <div class="px-8 lg:py-4 absolute">
-        <!-- Logo -->
-        <a class="hidden lg:block" href="#" aria-label="Logo">
+                <a class="hidden lg:block" href="#" aria-label="Logo">
             <img src="{{ asset('assets/logo2.png') }}" alt="Logo">
         </a>
-        <!-- End Logo -->
-    </div>
+            </div>
 
     <nav class="hs-accordion-group p-4 lg:mt-20 w-full flex flex-col flex-wrap
   overflow-x-hidden overflow-y-auto
@@ -303,4 +300,3 @@
         </ul>
     </nav>
 </div>
-<!-- End Sidebar -->

@@ -103,11 +103,6 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () 
         return view('settings.index', compact('settings'));
     })->name('settings');
     Route::post('/settings', function (Request $request) {
-        // ddd($request);
-        echo "<pre>";
-        print_r($_POST);
-        echo "</pre>";
-        exit();
         $data = $request->except('_token');
 
         foreach ($data as $key => $value) {
@@ -119,7 +114,7 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () 
         }
 
         return redirect(route('settings'))->with('sucess', 'Settings updated successfully');
-    })->name('settings.StoreOrUpdate');
+    })->name('settings.update');
     Route::post('/product/marketplace', 'ProductController@uploadViaMarketplace')->name('product.marketplace');
 
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');

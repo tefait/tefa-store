@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\City;
+use App\Models\Province;
 use GuzzleHttp\Client;
 use Illuminate\Database\Seeder;
 
-class CityTableSeeder extends Seeder
+class ProvinceSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class CityTableSeeder extends Seeder
     public function run(): void
     {
         $client = new Client();
-        $response = $client->request('GET', 'https://api.rajaongkir.com/starter/city', [
+        $response = $client->request('GET', 'https://api.rajaongkir.com/starter/province', [
             'headers' => [
                 'key' => config('app.rajaongkir_api_key'),
             ],
@@ -25,12 +25,9 @@ class CityTableSeeder extends Seeder
         $results = $body['rajaongkir']['results'];
 
         foreach ($results as $result) {
-            City::create([
-                'id' => $result['city_id'],
-                'province_id' => $result['province_id'],
-                'type' => $result['type'],
-                'name' => $result['city_name'],
-                'postal_code' => $result['postal_code'],
+            Province::create([
+                'id' => $result['province_id'],
+                'name' => $result['province'],
             ]);
         }
     }

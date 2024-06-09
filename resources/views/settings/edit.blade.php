@@ -19,8 +19,7 @@
                                 <h4 class="card-title">Edit Kategori</h4>
                             </div>
                             <div class="card-body">
-                                <!-- ROUTINGNYA MENGIRIMKAN ID CATEGORY YANG AKAN DIEDIT -->
-                                <form action="{{ route('category.update', $category->id) }}" method="post">
+                                                                <form action="{{ route('category.update', $category->id) }}" method="post">
                                     @csrf
                                     @method('PUT')
 
@@ -35,8 +34,7 @@
                                         <select name="parent_id" class="form-control">
                                             <option value="">None</option>
                                             @foreach ($parent as $row)
-                                                <!-- TERDAPAT TERNARY OPERATOR UNTUK MENGECEK JIKA PARENT_ID SAMA DENGAN ID CATEGORY PADA LIST PARENT, MAKA OTOMATIS SELECTED -->
-                                                <option value="{{ $row->id }}"
+                                                                                                <option value="{{ $row->id }}"
                                                     {{ $category->parent_id == $row->id ? 'selected' : '' }}>
                                                     {{ $row->name }}</option>
                                             @endforeach

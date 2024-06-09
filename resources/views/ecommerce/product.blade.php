@@ -18,10 +18,8 @@
             </div>
         </div>
     </section>
-    <!--================End Home Banner Area =================-->
 
-    <!--================Category Product Area =================-->
-    <section class="cat_product_area section_gap">
+        <section class="cat_product_area section_gap">
         <div class="container-fluid">
             <div class="row flex-row-reverse">
                 <div class="col-lg-9">
@@ -65,8 +63,7 @@
                     </div>
                     <div class="latest_product_inner row">
 
-                        <!-- PROSES LOOPING DATA PRODUK, SAMA DENGAN CODE YANG ADDA DIHALAMAN HOME -->
-                        @forelse ($products as $row)
+                                                @forelse ($products as $row)
                             <div class="col-lg-3 col-md-3 col-sm-6">
                                 <div class="f_p_item">
                                     <div class="f_p_img">
@@ -89,8 +86,7 @@
                                 <h3 class="text-center">Tidak ada produk</h3>
                             </div>
                         @endforelse
-                        <!-- PROSES LOOPING DATA PRODUK, SAMA DENGAN CODE YANG ADDA DIHALAMAN HOME -->
-                    </div>
+                                            </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="left_sidebar_area">
@@ -103,15 +99,11 @@
                                     @foreach ($categories as $category)
                                         <li>
 
-                                            <!-- MODIFIKASI BAGIAN INI -->
-                                            <strong><a
+                                                                                        <strong><a
                                                     href="{{ url('/category/' . $category->slug) }}">{{ $category->name }}</a></strong>
-                                            <!-- MODIFIKASI BAGIAN INI -->
 
                                             @foreach ($category->child as $child)
-                                                <!-- MODIFIKASI BAGIAN INI -->
-                                                <ul class="list" style="display: block">
-                                                    <!-- MODIFIKASI BAGIAN INI -->
+                                                                                                <ul class="list" style="display: block">
 
                                                     <li>
                                                         <a
@@ -128,11 +120,9 @@
                 </div>
             </div>
 
-            <!-- GENERATE PAGINATION PRODUK -->
-            <div class="row">
+                        <div class="row">
                 {{ $products->links() }}
             </div>
         </div>
     </section>
-    <!--================End Category Product Area =================-->
-@endsection
+    @endsection

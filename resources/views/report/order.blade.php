@@ -29,8 +29,7 @@
                                 <div class="alert alert-danger">{{ session('error') }}</div>
                             @endif
 
-                            <!-- FORM UNTUK FILTER BERDASARKAN DATE RANGE -->
-                            <form action="{{ route('report.order') }}" method="get">
+                                                        <form action="{{ route('report.order') }}" method="get">
                                 <div class="input-group mb-3 col-md-4 float-right">
                                     <input type="text" id="created_at" name="date" class="form-control">
                                     <div class="input-group-append">
@@ -40,8 +39,7 @@
                                 </div>
                             </form>
                             <div class="table-responsive">
-                                <!-- TAMPILKAN DATA YANG BERHASIL DIFILTER -->
-                                <table class="table table-hover table-bordered">
+                                                                <table class="table table-hover table-bordered">
                                     <thead>
                                         <tr>
                                             <th>InvoiceID</th>
@@ -79,7 +77,6 @@
 </main>
 @endsection
 
-<!-- KITA GUNAKAN LIBRARY DATERANGEPICKER -->
 @section('js')
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>

@@ -5,8 +5,7 @@
 @endsection
 
 @section('content')
-    <!--================Home Banner Area =================-->
-    <section class="container-fluid">
+    <section style="margin-top: 120px">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -19,19 +18,17 @@
                     <img class="d-block w-100" src="{{ asset('assets/carousel/carousel3.jpg') }}" alt="Third slide">
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <a class="carousel-control-prev" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <a class="carousel-control-next" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
         </div>
     </section>
-    <!--================End Home Banner Area =================-->
 
-    <!--================Hot Deals Area =================-->
     <section class="hot_deals_area section_gap">
         <div class="container-fluid">
             {{-- <div class="row">
@@ -61,9 +58,7 @@
             </div> --}}
         </div>
     </section>
-    <!--================End Hot Deals Area =================-->
 
-    <!--================Feature Product Area =================-->
     <section class="feature_product_area section_gap">
         <div class="main_box">
             <div class="container-fluid">
@@ -75,7 +70,6 @@
                 </div>
                 <div class="row">
 
-                    <!-- PERHATIAKAN BAGIAN INI, LOOPING DATA PRODUK -->
                     @forelse($products as $row)
                         <div class="col col1">
                             <div class="f_p_item">
@@ -87,13 +81,9 @@
                                         </a>
                                     </div>
                                 </div>
-                                <!-- KETIKA PRODUK INI DIKLIK MAKA AKAN DIARAHKAN KE URL DIBAWAH -->
-                                <!-- HANYA SAJA URL TERSEBUT BELUM DISEDIAKAN PADA ARTIKEL KALI INI -->
                                 <a href="{{ url('/product/' . $row->slug) }}">
-                                    <!-- TAMPILKAN NAMA PRODUK -->
                                     <h4>{{ $row->name }}</h4>
                                 </a>
-                                <!-- TAMPILKAN HARGA PRODUK -->
                                 <h5>Rp {{ number_format($row->price) }}</h5>
                             </div>
                         </div>
@@ -101,12 +91,10 @@
                     @endforelse
                 </div>
 
-                <!-- GENERATE PAGINATION UNTUK MEMBUAT NAVIGASI DATA SELANJUTNYA JIKA ADA -->
                 <div class="row">
                     {{ $products->links() }}
                 </div>
             </div>
         </div>
     </section>
-    <!--================End Feature Product Area =================-->
 @endsection

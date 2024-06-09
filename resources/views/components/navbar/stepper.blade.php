@@ -1,7 +1,5 @@
-<!-- Stepper -->
 <div class="mt-4 mb-2 mx-10" data-hs-stepper="">
-    <!-- Stepper Nav -->
-    <ul class="relative flex flex-row gap-x-2">
+        <ul class="relative flex flex-row gap-x-2">
     <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{
         "index": 1
     }'>
@@ -51,8 +49,6 @@
         </span>
         </span>
     </li>
-    <!-- End Item -->
-    </ul>
-    <!-- End Stepper Nav -->
-</div>
+        </ul>
+    </div>
 <!-- End Stepper -->
