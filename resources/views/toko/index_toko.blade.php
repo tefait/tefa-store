@@ -2,7 +2,7 @@
 
 @section('container')
 
-    @include('partials.sidebar-toko')
+    @include('partials.sidebar_toko')
 
     <!-- Mobile Version -->
     <nav class="flex justify-center sm:hidden sticky top-[56px] z-[199] mb-4 w-full bg-white border-b border-gray-100" aria-label="Tabs" role="tablist">
@@ -22,37 +22,40 @@
             Game
         </button>
         <span class="border my-4"></span>
-        <button type="button" class="w-[50%] p-2 inline-flex items-center justify-center gap-x-2 border-b-2 border-transparent text-sm whitespace-nowrap text-primary focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
-            <i class="bx bx-sort text-xl"></i>
+        <button type="button" class="w-[60%] bg-gray-100 rounded-full m-2 inline-flex items-center justify-center gap-x-2 border-b-2 border-transparent text-sm whitespace-nowrap text-gray-600 focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
+            <i class="bx bx-sort text-lg"></i>
         </button>
     </nav>
     <!-- End Mobile Version -->
 
     <section class="sm:ms-[270px] lg:ms-72 px-4 mb-8">
-        <nav class="hidden sm:flex justify-end py-2 gap-2 mb-4">
+        <nav class="hidden sm:flex justify-end bg-white py-2 gap-2 mb-4">
             <button type="button" class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium border border-primary text-primary bg-blue-50 dark:border-neutral-200 dark:text-white active">
                 Semua
             </button>
-            <button type="button" class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium border border-neutral-300 text-gray-500 dark:border-neutral-200 dark:text-white">
+            <button type="button" class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-gray-100 border border-gray-100 text-gray-800 dark:border-neutral-200 dark:text-white">
                 Terbaru
             </button>
-            <button type="button" class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium border border-neutral-300 text-gray-500 dark:border-neutral-200 dark:text-white">
+            <button type="button" class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-gray-100 border border-gray-100 text-gray-800 dark:border-neutral-200 dark:text-white">
                 Terlaris
             </button>
-            <button type="button" class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium border border-neutral-300 text-gray-500 dark:border-neutral-200 dark:text-white">
+            <button type="button" class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-gray-100 border border-gray-100 text-gray-800 dark:border-neutral-200 dark:text-white">
                 Harga Tertinggi
             </button>
-            <button type="button" class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium border border-neutral-300 text-gray-500 dark:border-neutral-200 dark:text-white">
+            <button type="button" class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-gray-100 border border-gray-100 text-gray-800 dark:border-neutral-200 dark:text-white">
                 Harga Terendah
             </button>
         </nav>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 lg:gap-4">
             <!-- Card -->
-            <div class="swiper-slide flex justify-center h-[100%] w-[100%] mb-2">
+            <a href="#" class="swiper-slide group flex justify-center h-[100%] w-[100%] mb-2">
                 <div class="group flex flex-col h-full w-full shadow-sm sm:shadow-md rounded-md lg:rounded-lg">
                     <div class="flex flex-col justify-center items-center">
                         <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-md lg:rounded-lg" />
+                        <div class="hidden lg:block bg-white rounded-full py-[1px] px-[5px] absolute top-2 right-2 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+                            <i class="bx bxs-heart text-xl text-gray-400 hover:text-red-500 duration-300"></i>
+                        </div>
                     </div>
                     <div class="pt-1 px-1.5 gap-1 text-start h-full">
                         <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
@@ -75,7 +78,7 @@
                             </span>
                         </div>
                         <div class="flex items-center mt-1 gap-1 text-xs text-gray-500">
-                            <svg class="flex-shrink-0 size-4 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <svg class="flex-shrink-0 size-3.5 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
                             </svg>
                             <p>5.0</p>
@@ -84,13 +87,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
             <!-- End Card -->
             <!-- Card -->
-            <div class="swiper-slide flex justify-center h-[100%] w-[100%] mb-2">
+            <a href="#" class="swiper-slide group flex justify-center h-[100%] w-[100%] mb-2">
                 <div class="group flex flex-col h-full w-full shadow-sm sm:shadow-md rounded-md lg:rounded-lg">
                     <div class="flex flex-col justify-center items-center">
                         <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-md lg:rounded-lg" />
+                        <div class="hidden lg:block bg-white rounded-full py-[1px] px-[5px] absolute top-2 right-2 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+                            <i class="bx bxs-heart text-xl text-gray-400 hover:text-red-500 duration-300"></i>
+                        </div>
                     </div>
                     <div class="pt-1 px-1.5 gap-1 text-start h-full">
                         <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
@@ -113,7 +119,7 @@
                             </span>
                         </div>
                         <div class="flex items-center mt-1 gap-1 text-xs text-gray-500">
-                            <svg class="flex-shrink-0 size-4 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <svg class="flex-shrink-0 size-3.5 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
                             </svg>
                             <p>5.0</p>
@@ -122,13 +128,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
             <!-- End Card -->
             <!-- Card -->
-            <div class="swiper-slide flex justify-center h-[100%] w-[100%] mb-2">
+            <a href="#" class="swiper-slide group flex justify-center h-[100%] w-[100%] mb-2">
                 <div class="group flex flex-col h-full w-full shadow-sm sm:shadow-md rounded-md lg:rounded-lg">
                     <div class="flex flex-col justify-center items-center">
                         <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-md lg:rounded-lg" />
+                        <div class="hidden lg:block bg-white rounded-full py-[1px] px-[5px] absolute top-2 right-2 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+                            <i class="bx bxs-heart text-xl text-gray-400 hover:text-red-500 duration-300"></i>
+                        </div>
                     </div>
                     <div class="pt-1 px-1.5 gap-1 text-start h-full">
                         <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
@@ -151,7 +160,7 @@
                             </span>
                         </div>
                         <div class="flex items-center mt-1 gap-1 text-xs text-gray-500">
-                            <svg class="flex-shrink-0 size-4 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <svg class="flex-shrink-0 size-3.5 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
                             </svg>
                             <p>5.0</p>
@@ -160,13 +169,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
             <!-- End Card -->
             <!-- Card -->
-            <div class="swiper-slide flex justify-center h-[100%] w-[100%] mb-2">
+            <a href="#" class="swiper-slide group flex justify-center h-[100%] w-[100%] mb-2">
                 <div class="group flex flex-col h-full w-full shadow-sm sm:shadow-md rounded-md lg:rounded-lg">
                     <div class="flex flex-col justify-center items-center">
                         <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-md lg:rounded-lg" />
+                        <div class="hidden lg:block bg-white rounded-full py-[1px] px-[5px] absolute top-2 right-2 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+                            <i class="bx bxs-heart text-xl text-gray-400 hover:text-red-500 duration-300"></i>
+                        </div>
                     </div>
                     <div class="pt-1 px-1.5 gap-1 text-start h-full">
                         <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
@@ -189,7 +201,7 @@
                             </span>
                         </div>
                         <div class="flex items-center mt-1 gap-1 text-xs text-gray-500">
-                            <svg class="flex-shrink-0 size-4 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <svg class="flex-shrink-0 size-3.5 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
                             </svg>
                             <p>5.0</p>
@@ -198,13 +210,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
             <!-- End Card -->
             <!-- Card -->
-            <div class="swiper-slide flex justify-center h-[100%] w-[100%] mb-2">
+            <a href="#" class="swiper-slide group flex justify-center h-[100%] w-[100%] mb-2">
                 <div class="group flex flex-col h-full w-full shadow-sm sm:shadow-md rounded-md lg:rounded-lg">
                     <div class="flex flex-col justify-center items-center">
                         <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-md lg:rounded-lg" />
+                        <div class="hidden lg:block bg-white rounded-full py-[1px] px-[5px] absolute top-2 right-2 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+                            <i class="bx bxs-heart text-xl text-gray-400 hover:text-red-500 duration-300"></i>
+                        </div>
                     </div>
                     <div class="pt-1 px-1.5 gap-1 text-start h-full">
                         <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
@@ -227,7 +242,7 @@
                             </span>
                         </div>
                         <div class="flex items-center mt-1 gap-1 text-xs text-gray-500">
-                            <svg class="flex-shrink-0 size-4 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <svg class="flex-shrink-0 size-3.5 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
                             </svg>
                             <p>5.0</p>
@@ -236,13 +251,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
             <!-- End Card -->
             <!-- Card -->
-            <div class="swiper-slide flex justify-center h-[100%] w-[100%] mb-2">
+            <a href="#" class="swiper-slide group flex justify-center h-[100%] w-[100%] mb-2">
                 <div class="group flex flex-col h-full w-full shadow-sm sm:shadow-md rounded-md lg:rounded-lg">
                     <div class="flex flex-col justify-center items-center">
                         <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-md lg:rounded-lg" />
+                        <div class="hidden lg:block bg-white rounded-full py-[1px] px-[5px] absolute top-2 right-2 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+                            <i class="bx bxs-heart text-xl text-gray-400 hover:text-red-500 duration-300"></i>
+                        </div>
                     </div>
                     <div class="pt-1 px-1.5 gap-1 text-start h-full">
                         <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
@@ -265,7 +283,7 @@
                             </span>
                         </div>
                         <div class="flex items-center mt-1 gap-1 text-xs text-gray-500">
-                            <svg class="flex-shrink-0 size-4 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <svg class="flex-shrink-0 size-3.5 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
                             </svg>
                             <p>5.0</p>
@@ -274,13 +292,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
             <!-- End Card -->
             <!-- Card -->
-            <div class="swiper-slide flex justify-center h-[100%] w-[100%] mb-2">
+            <a href="#" class="swiper-slide group flex justify-center h-[100%] w-[100%] mb-2">
                 <div class="group flex flex-col h-full w-full shadow-sm sm:shadow-md rounded-md lg:rounded-lg">
                     <div class="flex flex-col justify-center items-center">
                         <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-md lg:rounded-lg" />
+                        <div class="hidden lg:block bg-white rounded-full py-[1px] px-[5px] absolute top-2 right-2 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+                            <i class="bx bxs-heart text-xl text-gray-400 hover:text-red-500 duration-300"></i>
+                        </div>
                     </div>
                     <div class="pt-1 px-1.5 gap-1 text-start h-full">
                         <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
@@ -303,7 +324,7 @@
                             </span>
                         </div>
                         <div class="flex items-center mt-1 gap-1 text-xs text-gray-500">
-                            <svg class="flex-shrink-0 size-4 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <svg class="flex-shrink-0 size-3.5 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
                             </svg>
                             <p>5.0</p>
@@ -312,13 +333,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
             <!-- End Card -->
             <!-- Card -->
-            <div class="swiper-slide flex justify-center h-[100%] w-[100%] mb-2">
+            <a href="#" class="swiper-slide group flex justify-center h-[100%] w-[100%] mb-2">
                 <div class="group flex flex-col h-full w-full shadow-sm sm:shadow-md rounded-md lg:rounded-lg">
                     <div class="flex flex-col justify-center items-center">
                         <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-md lg:rounded-lg" />
+                        <div class="hidden lg:block bg-white rounded-full py-[1px] px-[5px] absolute top-2 right-2 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+                            <i class="bx bxs-heart text-xl text-gray-400 hover:text-red-500 duration-300"></i>
+                        </div>
                     </div>
                     <div class="pt-1 px-1.5 gap-1 text-start h-full">
                         <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
@@ -341,7 +365,7 @@
                             </span>
                         </div>
                         <div class="flex items-center mt-1 gap-1 text-xs text-gray-500">
-                            <svg class="flex-shrink-0 size-4 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <svg class="flex-shrink-0 size-3.5 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
                             </svg>
                             <p>5.0</p>
@@ -350,13 +374,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
             <!-- End Card -->
             <!-- Card -->
-            <div class="swiper-slide flex justify-center h-[100%] w-[100%] mb-2">
+            <a href="#" class="swiper-slide group flex justify-center h-[100%] w-[100%] mb-2">
                 <div class="group flex flex-col h-full w-full shadow-sm sm:shadow-md rounded-md lg:rounded-lg">
                     <div class="flex flex-col justify-center items-center">
                         <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-md lg:rounded-lg" />
+                        <div class="hidden lg:block bg-white rounded-full py-[1px] px-[5px] absolute top-2 right-2 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+                            <i class="bx bxs-heart text-xl text-gray-400 hover:text-red-500 duration-300"></i>
+                        </div>
                     </div>
                     <div class="pt-1 px-1.5 gap-1 text-start h-full">
                         <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
@@ -379,7 +406,7 @@
                             </span>
                         </div>
                         <div class="flex items-center mt-1 gap-1 text-xs text-gray-500">
-                            <svg class="flex-shrink-0 size-4 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <svg class="flex-shrink-0 size-3.5 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
                             </svg>
                             <p>5.0</p>
@@ -388,13 +415,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
             <!-- End Card -->
             <!-- Card -->
-            <div class="swiper-slide flex justify-center h-[100%] w-[100%] mb-2">
+            <a href="#" class="swiper-slide group flex justify-center h-[100%] w-[100%] mb-2">
                 <div class="group flex flex-col h-full w-full shadow-sm sm:shadow-md rounded-md lg:rounded-lg">
                     <div class="flex flex-col justify-center items-center">
                         <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-md lg:rounded-lg" />
+                        <div class="hidden lg:block bg-white rounded-full py-[1px] px-[5px] absolute top-2 right-2 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+                            <i class="bx bxs-heart text-xl text-gray-400 hover:text-red-500 duration-300"></i>
+                        </div>
                     </div>
                     <div class="pt-1 px-1.5 gap-1 text-start h-full">
                         <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
@@ -417,7 +447,7 @@
                             </span>
                         </div>
                         <div class="flex items-center mt-1 gap-1 text-xs text-gray-500">
-                            <svg class="flex-shrink-0 size-4 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <svg class="flex-shrink-0 size-3.5 text-yellow-400 dark:text-yellow-600" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
                             </svg>
                             <p>5.0</p>
@@ -426,7 +456,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
             <!-- End Card -->
         </div>
     </section>
@@ -519,7 +549,7 @@
 <!-- ========== END FOOTER ========== -->
 
     <!-- Bottom Navbar -->
-    @include('partials.bottom-nav')
+    @include('partials.bottom_nav')
     <!-- End Bottom Navbar -->
 
 @endsection

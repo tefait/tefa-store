@@ -54,3 +54,13 @@
 .swiper-pagination-bullet-active {
   @apply bg-white;
 }
+
+#hs-radio-group-1 {
+  box-shadow: none !important;
+}
+#hs-radio-group-2 {
+  box-shadow: none !important;
+}
+#hs-radio-group-3 {
+  box-shadow: none !important;
+}

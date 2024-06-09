@@ -20,7 +20,7 @@
 </div>
 
 <!-- Carousel -->
-<section class="relative h-full w-full flex justify-center group px-4 mb-2 lg:mb-4 lg:px-0">
+<section class="relative h-full w-full flex justify-center group px-4 mb-2 lg:my-4 lg:px-0">
   <button id="prevBtnCar" class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -left-5 translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
     <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14">
       <path d="M7 1L1 7l6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -47,62 +47,6 @@
   </div>
 </section>
 
-<!-- End Carousel -->
-
-<!-- Carousel -->
-{{-- <div class="flex justify-center px-4 mb-2 lg:mb-4 lg:px-0">
-  <div class="w-full rounded-xl">
-    <div data-hs-carousel='{
-        "loadingClasses": "opacity-0",
-        "isAutoPlay": true,
-        "isInfiniteLoop": true,
-        "speed": 4999
-      }' class="relative">
-      <div class="hs-carousel relative overflow-hidden h-[120px] sm:h-[220px] lg:h-[300px] rounded-xl">
-        <div class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
-          <div class="hs-carousel-slide">
-            <div class="flex justify-center items-center h-full w-full">
-              <img src="{{ asset('assets/carousel/carousel1.jpg') }}" alt="First slide" class="h-full w-full object-cover" />
-            </div>
-          </div>
-          <div class="hs-carousel-slide">
-            <div class="flex justify-center items-center h-full w-full">
-              <img src="{{ asset('assets/carousel/carousel2.jpg') }}" alt="Second slide" class="h-full w-full object-cover" />
-            </div>
-          </div>
-          <div class="hs-carousel-slide">
-            <div class="flex justify-center items-center h-full w-full">
-              <img src="{{ asset('assets/carousel/carousel3.jpg') }}" alt="Third slide" class="h-full w-full object-cover" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <button type="button" class="hs-carousel-prev hs-carousel:disabled:opacity-50 disabled:pointer-events-none absolute inset-y-0 start-0 hidden lg:inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/10 rounded-s-lg dark:text-white dark:hover:bg-white/10 duration-300">
-        <span class="text-2xl" aria-hidden="true">
-          <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m15 18-6-6 6-6"></path>
-          </svg>
-        </span>
-        <span class="sr-only">Previous</span>
-      </button>
-      <button type="button" class="hs-carousel-next hs-carousel:disabled:opacity-50 disabled:pointer-events-none absolute inset-y-0 end-0 hidden lg:inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/10 rounded-e-lg dark:text-white dark:hover:bg-white/10 duration-300">
-        <span class="sr-only">Next</span>
-        <span class="text-2xl" aria-hidden="true">
-          <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m9 18 6-6-6-6"></path>
-          </svg>
-        </span>
-      </button>
-
-      <div class="hs-carousel-pagination flex justify-start absolute bottom-2 lg:bottom-3 start-5 space-x-1">
-        <span class="hs-carousel-active:bg-white bg-white bg-opacity-50 size-1.5 lg:size-2 rounded-full cursor-pointer"></span>
-        <span class="hs-carousel-active:bg-white bg-white bg-opacity-50 size-1.5 lg:size-2 rounded-full cursor-pointer"></span>
-        <span class="hs-carousel-active:bg-white bg-white bg-opacity-50 size-1.5 lg:size-2 rounded-full cursor-pointer"></span>
-      </div>
-    </div>
-  </div>
-</div> --}}
 <!-- End Carousel -->
 
 <!-- Card Kategori -->
@@ -375,39 +319,6 @@
             <!-- End Card -->
             <!-- Card -->
             <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
-                <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-                  <div class="flex flex-col justify-center items-center">
-                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
-                    <div class="flex items-center justify-center h-4 w-12 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[144px] left-0 lg:top-[174px]">
-                      <i class="bx bxs-medal text-sm text-white"></i>
-                      <p class="text-[10px] font-semibold text-white uppercase">
-                        Top
-                      </p>
-                    </div>
-                  </div>
-                  <div class="pt-1 lg:pt-2 px-2 gap-1 text-start h-full">
-                    <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars" style="max-width: 100%;">
-                      Kaos pendek cotton combed 30s
-                    </p>
-                    <p class="block font-bold text-gray-800 dark:text-white text-sm">Rp50.000</p>
-                    <div class="flex items-center gap-1">
-                        <span class="line-through text-[11px] text-gray-400">Rp75.000</span>
-                        <span class="py-[1px] px-1 inline-flex items-center text-[10px] font-semibold bg-red-100 text-red-600 rounded-full dark:bg-red-500/10 dark:text-red-500">
-                          33%
-                        </span>
-                    </div>
-                  </div>
-                  <div class="flex justify-center items-center mb-2">
-                      <i class="bx bxs-hot text-2xl text-red-500 z-10 translate-x-1"></i>
-                      <span class="flex justify-center items-center py-0.5 px-4 w-full text-xs font-semibold -translate-x-3 bg-gradient-to-r from-yellow-300 to-red-500 text-white rounded-full">
-                        2160 Terjual
-                      </span>
-                    </div>
-                </div>
-            </div>
-            <!-- End Card -->
-            <!-- Card -->
-            <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
               <div class="group flex flex-col justify-center items-center h-full w-full bg-[#FDB840] shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:shadow-neutral-700/70">
                 <div class="absolute bottom-5 opacity-30">
                   <svg class="size-20 lg:size-28" width="12" height="12" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -550,15 +461,6 @@
   <!-- Swiper -->
   <div class="swiper mySwiperSH h-full w-full">
     <div class="swiper-wrapper lg:-start-4">
-      <!-- Card -->
-      <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
-        <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-          <div class="flex justify-center items-center h-full">
-            <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="h-full object-cover rounded-md lg:rounded-lg" />
-          </div>
-        </div>
-      </div>
-      <!-- End Card -->
       <!-- Card -->
       <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
         <div class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
@@ -878,7 +780,7 @@
 <!-- End Footer -->
 
 <!-- Bottom Navbar -->
-@include('partials.bottom-nav')
+@include('partials.bottom_nav')
 <!-- End Bottom Navbar -->
 
 <!-- Kategori -->

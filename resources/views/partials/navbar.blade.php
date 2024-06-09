@@ -19,7 +19,7 @@
             <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3.5">
                 <i class="bx bx-search text-xl text-gray-500 dark:text-gray-300"></i>
             </div>
-            <input class="py-3 ps-10 pe-4 block h-10 w-full border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-black dark:border-white dark:text-white dark:placeholder-gray-300 dark:focus:ring-neutral-600" type="text" placeholder="Cari di Tefa Store" value="" autofocus="" data-hs-combo-box-input="">
+            <input class="py-3 ps-10 pe-4 block h-10 w-full border-gray-300 rounded-full text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-black dark:border-white dark:text-white dark:placeholder-gray-300 dark:focus:ring-neutral-600" type="text" placeholder="Cari di Tefa Store" value="" autofocus="" data-hs-combo-box-input="">
           </div>
         </div>
 
@@ -36,7 +36,7 @@
 <!-- End SearchBox -->
 
 <!-- Navbar -->
-<nav class="sticky top-0 z-[199] w-full top-0">
+<nav class="sticky top-0 z-[199] w-full">
 <div class="hidden lg:flex items-center justify-between h-7 w-full px-6 sm:px-8 lg:px-10 bg-primary dark:bg-secondary">
     <div class="flex flex-row py-2 sm:justify-end gap-y-0 gap-x-2 sm:py-0">
         <a class="text-xs text-white text-opacity-80 hover:text-white duration-300" href="#">Hubungi Kami</a>
@@ -77,11 +77,11 @@
 <header class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-2 px-4 sm:px-[5vw] lg:py-0 dark:bg-black">
     <div class="relative w-full sm:flex sm:items-center sm:justify-between sm:px-4 lg:px-0" aria-label="Global">
         <div class="flex items-center justify-between w-full">
-            <a class="flex-none text-xl font-semibold dark:text-white hidden sm:block" href="#" aria-label="Logo"><img src="{{ asset('assets/img/logo2.png') }}" class="sm:h-12" alt="Logo Tefa PPLG"></a>
+            <a href="/" class="flex-none text-xl font-semibold dark:text-white hidden sm:block" aria-label="Logo"><img src="{{ asset('assets/img/logo2.png') }}" class="sm:h-12" alt="Logo Tefa PPLG"></a>
 
             <div class="hidden lg:flex py-3 ml-5">
                 <!-- Tombol Toko -->
-                <a href="/toko" class="flex items-center justify-center w-24 text-sm text-gray-600 hover:text-black hover:bg-gray-100 duration-300 rounded-xl py-1.5 px-2 font-medium dark:text-white">
+                <a href="/toko" class="flex items-center justify-center w-24 text-sm text-gray-600 hover:text-black hover:bg-gray-100 duration-300 rounded-full py-1.5 px-2 font-medium dark:text-white">
                     <i class="bx bxs-store me-1 text-2xl"></i>
                     Toko
                 </a>
@@ -94,7 +94,7 @@
                     <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3.5">
                         <i class="bx bx-search text-xl text-gray-500 dark:text-gray-300"></i>
                     </div>
-                    <input class="block py-3 ps-10 pe-4 w-[100%] h-[34px] lg:h-10 border-gray-300 rounded-lg text-sm cursor-pointer disabled:opacity-50 disabled:pointer-events-none dark:bg-black dark:border-white dark:text-white dark:placeholder-gray-300 dark:focus:ring-neutral-600" type="text" placeholder="Cari di Tefa Store" value="" data-hs-overlay="#json-example-with-tab-filter-using-modal-popup-with-shortcut-call-trigger" readonly>
+                    <input class="block py-3 ps-10 pe-4 w-[100%] h-[34px] lg:h-10 border-gray-300 rounded-full text-sm cursor-pointer disabled:opacity-50 disabled:pointer-events-none dark:bg-black dark:border-white dark:text-white dark:placeholder-gray-300 dark:focus:ring-neutral-600" type="text" placeholder="Cari di Tefa Store" value="" data-hs-overlay="#json-example-with-tab-filter-using-modal-popup-with-shortcut-call-trigger" readonly>
                 </div>
             </div>
 
