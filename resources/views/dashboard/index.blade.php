@@ -223,7 +223,7 @@
                   </td>
                   <td class="size-px min-w-72 whitespace-nowrap py-2">
                     <div class="flex items-center gap-x-3 ps-3 pe-6 py-0.5">
-                        <img class="inline-block size-[40px] rounded-lg" src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="Image Product">
+                        <img class="inline-block size-[40px] rounded-lg" src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="Image Product">
                         <div class="grow">
                           <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200 max-w-52 lg:max-w-full truncate">
                             Kaos pendek cotton combed 30s
@@ -274,7 +274,7 @@
                   </td>
                   <td class="size-px min-w-72 whitespace-nowrap py-2">
                     <div class="flex items-center gap-x-3 ps-3 pe-6 py-0.5">
-                        <img class="inline-block size-[40px] rounded-lg" src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="Image Product">
+                        <img class="inline-block size-[40px] rounded-lg" src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="Image Product">
                         <div class="grow">
                           <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200 max-w-52 lg:max-w-full truncate">
                             Kaos pendek cotton combed 30s
@@ -325,7 +325,7 @@
                   </td>
                   <td class="size-px min-w-72 whitespace-nowrap py-2">
                     <div class="flex items-center gap-x-3 ps-3 pe-6 py-0.5">
-                        <img class="inline-block size-[40px] rounded-lg" src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="Image Product">
+                        <img class="inline-block size-[40px] rounded-lg" src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="Image Product">
                         <div class="grow">
                           <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200 max-w-52 lg:max-w-full truncate">
                             Kaos pendek cotton combed 30s
@@ -376,7 +376,7 @@
                   </td>
                   <td class="size-px min-w-72 whitespace-nowrap py-2">
                     <div class="flex items-center gap-x-3 ps-3 pe-6 py-0.5">
-                        <img class="inline-block size-[40px] rounded-lg" src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="Image Product">
+                        <img class="inline-block size-[40px] rounded-lg" src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="Image Product">
                         <div class="grow">
                           <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200 max-w-52 lg:max-w-full truncate">
                             Kaos pendek cotton combed 30s
@@ -427,7 +427,7 @@
                   </td>
                   <td class="size-px min-w-72 whitespace-nowrap py-2">
                     <div class="flex items-center gap-x-3 ps-3 pe-6 py-0.5">
-                        <img class="inline-block size-[40px] rounded-lg" src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="Image Product">
+                        <img class="inline-block size-[40px] rounded-lg" src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="Image Product">
                         <div class="grow">
                           <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200 max-w-52 lg:max-w-full truncate">
                             Kaos pendek cotton combed 30s

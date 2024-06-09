@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/register', [LoginController::class, 'register'])->name('customer.register');
-
 Route::get('/fluttershy/discord/{command}', function ($command, Request $request) {
     try {
         $args = $request->input('args', []);
@@ -43,19 +42,17 @@ Route::get('/fluttershy/discord/{command}', function ($command, Request $request
             'error' => $th->getMessage(),
         ]);
     }
+
+Route::get('/toko', function () {
+    return view('toko.index_toko');
 });
 
+Route::get('/favorit', function () {
+    return view('favorit.index_favorit');
+});
 
-
-
-
-
-
-
-
-
-
-
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

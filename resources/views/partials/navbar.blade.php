@@ -1,4 +1,6 @@
-<div id="json-example-with-tab-filter-using-modal-popup-with-shortcut-call-trigger" class="hs-overlay hs-overlay-open:opacity-100 hs-overlay-open:duration-500 hidden size-full fixed top-0 start-0 lg:-start-24 z-[80] opacity-0 overflow-x-hidden transition-all overflow-y-auto pointer-events-none">
+<!-- ========== HEADER ========== -->
+<!-- SearchBox Modal -->
+<div id="json-example-with-tab-filter-using-modal-popup-with-shortcut-call-trigger" class="hs-overlay hs-overlay-open:opacity-100 hs-overlay-open:duration-500 hidden size-full fixed top-0 start-0 lg:-start-24 z-[200] opacity-0 overflow-x-hidden transition-all overflow-y-auto pointer-events-none">
   <div class="hs-overlay-open:opacity-100 hs-overlay-open:duration-500 opacity-0 transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto">
     <div class="flex flex-col lg:w-[45rem] bg-white border shadow-sm rounded-xl pointer-events-auto dark:bg-black dark:border-neutral-800 dark:shadow-neutral-700/70">
       <div class="relative" data-hs-combo-box='{
@@ -17,19 +19,25 @@
             <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3.5">
                 <i class="bx bx-search text-xl text-gray-500 dark:text-gray-300"></i>
             </div>
-            <input class="py-3 ps-10 pe-4 block h-10 w-full border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-black dark:border-white dark:text-white dark:placeholder-gray-300 dark:focus:ring-neutral-600" type="text" placeholder="Cari di Tefa Store" value="" autofocus="" data-hs-combo-box-input="">
+            <input class="py-3 ps-10 pe-4 block h-10 w-full border-gray-300 rounded-full text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-black dark:border-white dark:text-white dark:placeholder-gray-300 dark:focus:ring-neutral-600" type="text" placeholder="Cari di Tefa Store" value="" autofocus="" data-hs-combo-box-input="">
           </div>
         </div>
 
-                <div class="!mt-0" data-hs-combo-box-output="">
+        <!-- SearchBox Modal Body -->
+        <div class="!mt-0" data-hs-combo-box-output="">
           <div class="h-72 p-2 overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500" data-hs-combo-box-output-items-wrapper=""></div>
         </div>
-              </div>
+        <!-- SearchBox Modal Body -->
+      </div>
     </div>
   </div>
-  </div>
+  <!-- End SearchBox Modal -->
+</div>
+<!-- End SearchBox -->
 
-<nav class="hidden lg:flex items-center justify-between h-7 max-w-full px-6 sm:px-8 lg:px-10 bg-primary dark:bg-secondary">
+<!-- Navbar -->
+<nav class="sticky top-0 z-[199] w-full">
+<div class="hidden lg:flex items-center justify-between h-7 w-full px-6 sm:px-8 lg:px-10 bg-primary dark:bg-secondary">
     <div class="flex flex-row py-2 sm:justify-end gap-y-0 gap-x-2 sm:py-0">
         <a class="text-xs text-white text-opacity-80 hover:text-white duration-300" href="#">Hubungi Kami</a>
             <span class="text-xs text-white text-opacity-80">|</span>
@@ -41,7 +49,7 @@
     <div class="flex justify-center items-center font-medium text-xs whitespace-nowrap text-white text-opacity-80">
         <span>Ikuti Kami</span>
         <div class="flex ml-2 gap-1 items-center font-medium text-base whitespace-nowrap">
-            <a href="#" class=" text-white text-opacity-80 hover:text-opacity-100"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class=" text-white text-opacity-80 hover:text-opacity-100"><i class="bx bxl-facebook-circle"></i></a>
             <a href="#" class=" text-white text-opacity-80 hover:text-opacity-100"><i class="bx bxl-youtube"></i></a>
             <a href="#" class=" text-white text-opacity-80 hover:text-opacity-100"><i class="bx bxl-instagram"></i></a>
         </div>
@@ -64,102 +72,35 @@
             Light
         </button>
     </div>
-</nav>
+</div>
 
-<header class="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-white text-sm py-2 px-4 lg:px-10 sm:py-0 mb-2 lg:mb-0 dark:bg-black">
-    <nav class="relative w-full sm:flex sm:items-center sm:justify-between" aria-label="Global">
+<header class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-2 px-4 sm:px-[5vw] lg:py-0 dark:bg-black">
+    <div class="relative w-full sm:flex sm:items-center sm:justify-between sm:px-4 lg:px-0" aria-label="Global">
         <div class="flex items-center justify-between w-full">
-            <a class="flex-none text-xl font-semibold dark:text-white hidden lg:block" href="#" aria-label="Logo"><img src="{{ asset('assets/logo2.png') }}" class="lg:h-12" alt=""></a>
+            <a href="/" class="flex-none text-xl font-semibold dark:text-white hidden sm:block" aria-label="Logo"><img src="{{ asset('assets/img/logo2.png') }}" class="sm:h-12" alt="Logo Tefa PPLG"></a>
 
-            <div class="hidden sm:flex hs-dropdown group [--strategy:static] md:[--strategy:absolute] [--adaptive:none] md:[--trigger:hover] cursor-pointer py-3 ml-5">
-                <button class="hidden sm:flex items-center w-full text-sm text-gray-800 hover:text-black hover:bg-gray-100 group-hover:bg-gray-100 duration-300 rounded-xl p-2 font-medium dark:text-white dark:group-hover:text-gray-800">
-                    Kategori
-                    <i class="bx bx-chevron-down ms-1 text-2xl group-hover:rotate-180 duration-300"></i>
-                </button>
-
-                <div class="hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 cursor-default max-w-lg hidden z-10 top-full start-14 overflow-hidden bg-white md:shadow-2xl rounded-lg before:absolute before:-top-5 before:w-full before:h-5">
-                                        <div class="max-w-[85rem] py-2 px-2 lg:px-4 lg:py-4 mx-auto">
-                    <div class="max-w-4xl mx-auto">
-                                                <div class="grid grid-cols-2 gap-1">
-                        <div class="space-y-1">
-                                                        <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
-                                <img src="{{ asset('assets/kategori/kaos.gif') }}" alt="" class="flex-shrink-0 size-8">
-                                <div class="ms-2 sm:ms-4">
-                                <h3 class="text-sm text-gray-800">
-                                    Kaos
-                                </h3>
-                                </div>
-                            </a>
-
-                                                        <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
-                                <img src="{{ asset('assets/kategori/totebag.gif') }}" alt="" class="flex-shrink-0 size-8">
-                                <div class="ms-2 sm:ms-4">
-                                <h3 class="text-sm text-gray-800">
-                                    Totebag
-                                </h3>
-                                </div>
-                            </a>
-
-                                                        <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
-                                <img src="{{ asset('assets/kategori/tumbler.gif') }}" alt="" class="flex-shrink-0 size-8">
-                                <div class="ms-2 sm:ms-4">
-                                <h3 class="text-sm text-gray-800">
-                                    Tumbler
-                                </h3>
-                                </div>
-                            </a>
-                                                    </div>
-
-                        <div class="space-y-1">
-                                                        <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
-                                <img src="{{ asset('assets/kategori/mug.gif') }}" alt="" class="flex-shrink-0 size-8">
-                                <div class="ms-2 sm:ms-4">
-                                <h3 class="text-sm text-gray-800">
-                                    Mug
-                                </h3>
-                                </div>
-                            </a>
-
-                                                        <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
-                                <img src="{{ asset('assets/kategori/ganci.gif') }}" alt="" class="flex-shrink-0 size-8">
-                                <div class="ms-2 sm:ms-4">
-                                <h3 class="text-sm text-gray-800">
-                                    Gantungan Kunci
-                                </h3>
-                                </div>
-                            </a>
-
-                                                        <a href="#" class="group flex items-center gap-2 px-2 sm:px-4 bg-gray-100 py-2 rounded-lg transition-all"
-                                onmouseover="this.querySelector('.bx').style.transition = 'transform 0.3s ease-in-out'; this.querySelector('.bx').style.transform = 'translateX(50px)'"
-                                onmouseout="this.querySelector('.bx').style.transition = 'transform 0.3s ease-in-out'; this.querySelector('.bx').style.transform = 'none'"
-                                style="text-decoration: none; color: inherit;">
-                                <div>
-                                    <h3 class="text-sm text-gray-800">
-                                        Lihat semua
-                                    </h3>
-                                </div>
-                                <div class="inline-flex">
-                                    <i class="bx bx-right-arrow-alt text-2xl text-gray-800 flex-shrink-0"></i>
-                                </div>
-                            </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                    </div>
-                                    </div>
+            <div class="hidden lg:flex py-3 ml-5">
+                <!-- Tombol Toko -->
+                <a href="/toko" class="flex items-center justify-center w-24 text-sm text-gray-600 hover:text-black hover:bg-gray-100 duration-300 rounded-full py-1.5 px-2 font-medium dark:text-white">
+                    <i class="bx bxs-store me-1 text-2xl"></i>
+                    Toko
+                </a>
+                <!-- End Tombol Toko  -->
             </div>
 
             <div class="flex flex-col gap-y-4 gap-x-0 sm:flex-row sm:items-center sm:justify-between sm:gap-y-0 sm:gap-x-5 sm:mx-5 mr-3 w-full">
-                                <div class="relative w-full">
+                <!-- SearchBox -->
+                <div class="relative w-full">
                     <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3.5">
                         <i class="bx bx-search text-xl text-gray-500 dark:text-gray-300"></i>
                     </div>
-                    <input class="block py-3 ps-10 pe-4 w-[100%] h-[34px] lg:h-10 border-gray-300 rounded-lg text-sm cursor-pointer disabled:opacity-50 disabled:pointer-events-none dark:bg-black dark:border-white dark:text-white dark:placeholder-gray-300 dark:focus:ring-neutral-600" type="text" placeholder="Cari di Tefa Store" value="" data-hs-overlay="#json-example-with-tab-filter-using-modal-popup-with-shortcut-call-trigger" readonly>
+                    <input class="block py-3 ps-10 pe-4 w-[100%] h-[34px] lg:h-10 border-gray-300 rounded-full text-sm cursor-pointer disabled:opacity-50 disabled:pointer-events-none dark:bg-black dark:border-white dark:text-white dark:placeholder-gray-300 dark:focus:ring-neutral-600" type="text" placeholder="Cari di Tefa Store" value="" data-hs-overlay="#json-example-with-tab-filter-using-modal-popup-with-shortcut-call-trigger" readonly>
                 </div>
             </div>
 
             <div class="flex items-center gap-1">
-                                <button type="button" class="relative inline-flex items-center text-sm font-medium" data-hs-overlay="#hs-scroll-inside-body-modal">
+                <!-- Notification -->
+                <button type="button" class="relative inline-flex items-center text-sm font-medium" data-hs-overlay="#hs-scroll-inside-body-modal">
                     <i class="bx bx-bell text-2xl text-gray-800 dark:text-white hover:text-black py-1 px-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-700 duration-300"></i>
                     <span class="flex absolute top-0 end-0 mt-0.5 me-[5px]">
                         <span class="animate-ping absolute inline-flex size-full rounded-full bg-red-400 opacity-75 dark:bg-red-600"></span>
@@ -168,13 +109,18 @@
                         </span>
                     </span>
                 </button>
-                                <button type="button" class="relative inline-flex items-center text-sm font-medium" data-hs-overlay="#hs-overlay-right">
+                <!-- Cart -->
+                <button type="button" class="relative inline-flex items-center text-sm font-medium" data-hs-overlay="#hs-overlay-right">
                     <i class="bx bx-cart text-2xl text-gray-800 dark:text-white hover:text-black py-1 px-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-700 duration-300"></i>
                     <span class="flex absolute top-0 end-0 mt-0.5 me-[5px]">
                         <span class="relative inline-flex bg-red-500 text-white rounded-full py-[1px] px-[5px]" style="font-size: 10px; line-height:14px;">
                             5
                         </span>
                     </span>
+                </button>
+                <!-- Hamburger -->
+                <button type="button" class="lg:hidden relative inline-flex items-center text-sm font-medium" data-hs-overlay="#hs-overlay-bottom" aria-label="Toggle Menu">
+                    <i class="bx bx-menu-alt-right text-2xl text-gray-800 dark:text-white hover:text-black py-1 px-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-700 duration-300"></i>
                 </button>
             </div>
 
@@ -194,6 +140,7 @@
                     </div>
                 </div>
             </div>
+</nav>
 
             {{-- <div class="hs-dropdown [--placement:bottom-right] hidden relative lg:inline-flex ms-2">
                 <button id="hs-dropdown-with-header" type="button" class="w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700">
@@ -224,7 +171,8 @@
                 </div>
             </div> --}}
 
-                        <div id="hs-scroll-inside-body-modal" class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
+            <!-- Off canvas Notification -->
+            <div id="hs-scroll-inside-body-modal" class="hs-overlay hidden size-full fixed top-0 start-0 z-[200] overflow-x-hidden overflow-y-auto pointer-events-none">
                 <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto h-[calc(100%-3.5rem)]">
                     <div class="max-h-full overflow-hidden flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto dark:bg-black dark:border-neutral-800 dark:shadow-neutral-700/70">
                         <div class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-800">
@@ -233,14 +181,15 @@
                         </h3>
                         <button type="button" class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700" data-hs-overlay="#hs-scroll-inside-body-modal">
                             <span class="sr-only">Close</span>
-                            <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M18 6 6 18"></path>
                             <path d="m6 6 12 12"></path>
                             </svg>
                         </button>
                         </div>
                         <div class="p-0 overflow-y-auto divide-y dark:divide-neutral-800">
-                                                        <a href="#" class="group flex items-center gap-y-6 gap-x-4 py-3 px-4 size-full hover:bg-gray-100 duration-300 transition-all dark:bg-black dark:hover:bg-neutral-900">
+                            <!-- Card -->
+                            <a href="#" class="group flex items-center gap-y-6 gap-x-4 py-3 px-4 size-full hover:bg-gray-100 duration-300 transition-all dark:bg-black dark:hover:bg-neutral-900">
                                 <div class="inline-flex justify-center items-center py-1 px-2 rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-700 dark:bg-blue-600">
                                     <i class="bx bx-envelope flex-shrink-0 text-2xl text-gray-800 dark:text-neutral-200"></i>
                                 </div>
@@ -253,7 +202,9 @@
                                     <span class="relative inline-flex rounded-full size-3 bg-red-500"></span>
                                 </div>
                             </a>
-                                                                                    <a href="#" class="group flex items-center gap-y-6 gap-x-4 py-3 px-4 size-full hover:bg-gray-100 duration-300 transition-all dark:bg-black dark:hover:bg-neutral-900">
+                            <!-- End Card -->
+                            <!-- Card -->
+                            <a href="#" class="group flex items-center gap-y-6 gap-x-4 py-3 px-4 size-full hover:bg-gray-100 duration-300 transition-all dark:bg-black dark:hover:bg-neutral-900">
                                 <div class="inline-flex justify-center items-center py-1 px-2 rounded-full border-4 border-blue-50 bg-blue-100 dark:border-blue-700 dark:bg-blue-600">
                                     <i class="bx bx-envelope flex-shrink-0 text-2xl text-gray-800 dark:text-neutral-200"></i>
                                 </div>
@@ -263,7 +214,8 @@
                                 </div>
                                 <span class="text-end w-20 text-xs text-gray-500 dark:text-white">13 Jun</span>
                             </a>
-                                                    </div>
+                            <!-- End Card -->
+                        </div>
                         <div class="flex justify-end items-center py-1.5 px-4 border-t dark:border-neutral-800">
                             <a href="#" class="inline-flex items-center text-xs font-medium text-gray-800 hover:text-opacity-70 duration-300 dark:text-white dark:hover:text-opacity-70">
                                 Lihat semua
@@ -273,15 +225,17 @@
                     </div>
                 </div>
             </div>
+            <!-- End Off canvas Notification -->
 
-                        <div id="hs-overlay-right" class="hs-overlay hs-overlay-open:translate-x-0 hidden translate-x-full fixed top-0 end-0 transition-all duration-[400ms] transform h-full max-w-full sm:max-w-sm xl:max-w-md w-full z-[80] bg-white dark:bg-black dark:border-neutral-700" tabindex="-1">
+        <!-- Off canvas Cart -->
+        <div id="hs-overlay-right" class="hs-overlay hs-overlay-open:translate-x-0 hidden translate-x-full fixed top-0 end-0 transition-all duration-[400ms] transform h-full max-w-full sm:max-w-sm 2xl:max-w-md w-full z-[200] bg-white dark:bg-black dark:border-neutral-700" tabindex="-1">
             <div class="flex justify-between items-center py-3 px-4 shadow-md dark:border dark:border-neutral-800">
                 <h3 class="text-base font-bold text-gray-800 dark:text-white">
                 Keranjang
                 </h3>
                 <button type="button" class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700" data-hs-overlay="#hs-overlay-right">
                 <span class="sr-only">Close modal</span>
-                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M18 6 6 18"></path>
                     <path d="m6 6 12 12"></path>
                 </svg>
@@ -296,7 +250,9 @@
                 </button>
             </div>
 
-                            @include('components.navbar.stepper')
+            <!-- Stepper -->
+                @include('components.navbar.stepper')
+            <!-- End Stepper -->
 
             <div class="divide-y-8 divide-gray-100 dark:divide-neutral-900
             max-h-[calc(100vh-300px)] sm:max-h-[calc(100vh-250px)] overflow-y-auto
@@ -308,8 +264,9 @@
             dark:[&::-webkit-scrollbar-track]:bg-neutral-700
             dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
             data-hs-accordion-always-open>
-                                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                <!-- Card -->
+                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -317,7 +274,8 @@
                         </div>
 
                         <div class="flex justify-between">
-                                                        <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
+                            <!-- Input Number -->
+                            <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
                                 <div class="flex items-center gap-x-1.5">
                                     <button type="button" class="size-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-decrement="">
                                         <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -333,14 +291,17 @@
                                     </button>
                                 </div>
                             </div>
-                                                        <button class="flex items-center mt-2">
+                            <!-- End Input Number -->
+                            <button class="flex items-center mt-2">
                                 <i class="bx bx-trash text-xl text-red-600 dark:text-red-500 hover:text-opacity-60 dark:hover:text-opacity-60 duration-300"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-                                                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                <!-- End Card -->
+                <!-- Card -->
+                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -348,7 +309,8 @@
                         </div>
 
                         <div class="flex justify-between">
-                                                        <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
+                            <!-- Input Number -->
+                            <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
                                 <div class="flex items-center gap-x-1.5">
                                     <button type="button" class="size-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-decrement="">
                                         <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -364,14 +326,17 @@
                                     </button>
                                 </div>
                             </div>
-                                                        <button class="flex items-center mt-2">
+                            <!-- End Input Number -->
+                            <button class="flex items-center mt-2">
                                 <i class="bx bx-trash text-xl text-red-600 dark:text-red-500 hover:text-opacity-60 dark:hover:text-opacity-60 duration-300"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-                                                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                <!-- End Card -->
+                <!-- Card -->
+                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -379,7 +344,8 @@
                         </div>
 
                         <div class="flex justify-between">
-                                                        <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
+                            <!-- Input Number -->
+                            <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
                                 <div class="flex items-center gap-x-1.5">
                                     <button type="button" class="size-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-decrement="">
                                         <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -395,14 +361,17 @@
                                     </button>
                                 </div>
                             </div>
-                                                        <button class="flex items-center mt-2">
+                            <!-- End Input Number -->
+                            <button class="flex items-center mt-2">
                                 <i class="bx bx-trash text-xl text-red-600 dark:text-red-500 hover:text-opacity-60 dark:hover:text-opacity-60 duration-300"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-                                                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                <!-- End Card -->
+                <!-- Card -->
+                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -410,7 +379,8 @@
                         </div>
 
                         <div class="flex justify-between">
-                                                        <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
+                            <!-- Input Number -->
+                            <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
                                 <div class="flex items-center gap-x-1.5">
                                     <button type="button" class="size-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-decrement="">
                                         <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -426,14 +396,17 @@
                                     </button>
                                 </div>
                             </div>
-                                                        <button class="flex items-center mt-2">
+                            <!-- End Input Number -->
+                            <button class="flex items-center mt-2">
                                 <i class="bx bx-trash text-xl text-red-600 dark:text-red-500 hover:text-opacity-60 dark:hover:text-opacity-60 duration-300"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-                                                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                <!-- End Card -->
+                <!-- Card -->
+                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -441,7 +414,8 @@
                         </div>
 
                         <div class="flex justify-between">
-                                                        <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
+                            <!-- Input Number -->
+                            <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
                                 <div class="flex items-center gap-x-1.5">
                                     <button type="button" class="size-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-decrement="">
                                         <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -457,14 +431,17 @@
                                     </button>
                                 </div>
                             </div>
-                                                        <button class="flex items-center mt-2">
+                            <!-- End Input Number -->
+                            <button class="flex items-center mt-2">
                                 <i class="bx bx-trash text-xl text-red-600 dark:text-red-500 hover:text-opacity-60 dark:hover:text-opacity-60 duration-300"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-                                                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                <!-- End Card -->
+                <!-- Card -->
+                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -472,7 +449,8 @@
                         </div>
 
                         <div class="flex justify-between">
-                                                        <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
+                            <!-- Input Number -->
+                            <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
                                 <div class="flex items-center gap-x-1.5">
                                     <button type="button" class="size-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-decrement="">
                                         <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -488,14 +466,17 @@
                                     </button>
                                 </div>
                             </div>
-                                                        <button class="flex items-center mt-2">
+                            <!-- End Input Number -->
+                            <button class="flex items-center mt-2">
                                 <i class="bx bx-trash text-xl text-red-600 dark:text-red-500 hover:text-opacity-60 dark:hover:text-opacity-60 duration-300"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-                                                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                <!-- End Card -->
+                <!-- Card -->
+                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -503,7 +484,8 @@
                         </div>
 
                         <div class="flex justify-between">
-                                                        <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
+                            <!-- Input Number -->
+                            <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
                                 <div class="flex items-center gap-x-1.5">
                                     <button type="button" class="size-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-decrement="">
                                         <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -519,14 +501,17 @@
                                     </button>
                                 </div>
                             </div>
-                                                        <button class="flex items-center mt-2">
+                            <!-- End Input Number -->
+                            <button class="flex items-center mt-2">
                                 <i class="bx bx-trash text-xl text-red-600 dark:text-red-500 hover:text-opacity-60 dark:hover:text-opacity-60 duration-300"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-                                                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                <!-- End Card -->
+                <!-- Card -->
+                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -534,7 +519,8 @@
                         </div>
 
                         <div class="flex justify-between">
-                                                        <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
+                            <!-- Input Number -->
+                            <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
                                 <div class="flex items-center gap-x-1.5">
                                     <button type="button" class="size-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-decrement="">
                                         <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -550,14 +536,17 @@
                                     </button>
                                 </div>
                             </div>
-                                                        <button class="flex items-center mt-2">
+                            <!-- End Input Number -->
+                            <button class="flex items-center mt-2">
                                 <i class="bx bx-trash text-xl text-red-600 dark:text-red-500 hover:text-opacity-60 dark:hover:text-opacity-60 duration-300"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-                                                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                <!-- End Card -->
+                <!-- Card -->
+                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -565,7 +554,8 @@
                         </div>
 
                         <div class="flex justify-between">
-                                                        <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
+                            <!-- Input Number -->
+                            <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
                                 <div class="flex items-center gap-x-1.5">
                                     <button type="button" class="size-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-decrement="">
                                         <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -581,14 +571,17 @@
                                     </button>
                                 </div>
                             </div>
-                                                        <button class="flex items-center mt-2">
+                            <!-- End Input Number -->
+                            <button class="flex items-center mt-2">
                                 <i class="bx bx-trash text-xl text-red-600 dark:text-red-500 hover:text-opacity-60 dark:hover:text-opacity-60 duration-300"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-                                                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
-                    <img src="{{ asset('assets/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
+                <!-- End Card -->
+                <!-- Card -->
+                <div class="group flex gap-y-6 p-4 size-full transition-all dark:bg-black">
+                    <img src="{{ asset('storage/products/kaos_sm.jpg') }}" alt="" class="h-20 rounded-lg mr-3">
                     <div class="w-full">
                         <div>
                             <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">Kaos pendek cotton combed 30s</p>
@@ -596,7 +589,8 @@
                         </div>
 
                         <div class="flex justify-between">
-                                                        <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
+                            <!-- Input Number -->
+                            <div class="py-1 px-1 mt-2 inline-block bg-white border border-gray-200 rounded-3xl dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
                                 <div class="flex items-center gap-x-1.5">
                                     <button type="button" class="size-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md text-gray-800 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-decrement="">
                                         <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -612,13 +606,15 @@
                                     </button>
                                 </div>
                             </div>
-                                                        <button class="flex items-center mt-2">
+                            <!-- End Input Number -->
+                            <button class="flex items-center mt-2">
                                 <i class="bx bx-trash text-xl text-red-600 dark:text-red-500 hover:text-opacity-60 dark:hover:text-opacity-60 duration-300"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-                            </div>
+                <!-- End Card -->
+            </div>
             <nav class="border-gray-200 fixed w-full z-20 bottom-0 start-0">
                 <div class="flex items-center justify-between max-w-full px-4 rounded-t-lg bg-purple-100 border border-purple-600 h-10">
                     <span class="inline-flex items-center gap-x-2 text-sm text-purple-700">
@@ -636,46 +632,9 @@
                     </form>
                 </div>
             </nav>
-            </div>
-
-            {{-- <div id="hs-vertically-centered-modal" class="hs-overlay hs-overlay-backdrop-open:bg-gray-900/70 hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
-            <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto min-h-[calc(100%-3.5rem)] flex items-center">
-                <div class="w-full flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto dark:bg-black dark:border-neutral-700 dark:shadow-neutral-700/70">
-                <div class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-700">
-                    <h3 class="font-bold text-gray-800 dark:text-white">
-                    Modal title
-                    </h3>
-                    <button type="button" class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700" data-hs-overlay="#hs-vertically-centered-modal">
-                    <span class="sr-only">Close</span>
-                    <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M18 6 6 18"></path>
-                        <path d="m6 6 12 12"></path>
-                    </svg>
-                    </button>
-                </div>
-                <div class="p-4 overflow-y-auto">
-                    <p class="text-gray-800 dark:text-neutral-400">
-                    This is a wider card with supporting text below as a natural lead-in to additional content.
-                    </p>
-                </div>
-                <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t dark:border-neutral-700">
-                    <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-overlay="#hs-vertically-centered-modal">
-                    Close
-                    </button>
-                    <button type="button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
-                    Save changes
-                    </button>
-                </div>
-                </div>
-            </div>
-            </div> --}}
-
-                        <button type="button" class="lg:hidden ms-1 relative inline-flex items-center text-sm font-medium" data-hs-overlay="#hs-overlay-bottom" aria-label="Toggle Menu">
-                <i class="bx bx-menu-alt-right text-2xl text-gray-800 dark:text-white hover:text-black py-1 px-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-700 duration-300"></i>
-            </button>
         </div>
-
-        <div id="hs-overlay-bottom" class="hs-overlay hs-overlay-open:translate-y-0 translate-y-full fixed bottom-0 inset-x-0 transition-all duration-[400ms] transform size-full z-[80] bg-white border-b dark:bg-black dark:border-neutral-800 hidden">
+        <!-- End Off canvas Cart -->
+        <div id="hs-overlay-bottom" class="hs-overlay hs-overlay-open:translate-y-0 translate-y-full fixed bottom-0 inset-x-0 transition-all duration-[400ms] transform size-full z-[200] bg-white border-b dark:bg-black dark:border-neutral-800 hidden">
             <div class="hs-overlay-open:mt-0 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-10 opacity-0 transition-all max-w-full max-h-full h-full">
                 <div class="flex flex-col bg-white pointer-events-auto max-w-full max-h-full h-full dark:bg-black">
                     <div class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-800">
@@ -684,7 +643,7 @@
                         </h3>
                         <button type="button" class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700" data-hs-overlay="#hs-overlay-bottom">
                             <span class="sr-only">Close modal</span>
-                            <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                               <path d="M18 6 6 18"></path>
                               <path d="m6 6 12 12"></path>
                             </svg>
@@ -823,8 +782,9 @@
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
 </header>
+<!-- ========== END HEADER ========== -->
 
 {{-- <div class="sm:hidden hs-dropdown relative inline-flex cursor-pointer py-3 md:py-6 ml-5">
     <button id="hs-dropdown-default" class="hs-dropdown-toggle sm:hidden flex items-center w-full text-base text-gray-600 hover:text-black hover:bg-gray-100 group-hover:bg-gray-100 duration-300 rounded-xl p-2 font-normal dark:text-neutral-200 dark:hover:text-neutral-500">
@@ -833,11 +793,14 @@
     </button>
 
   <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg p-2 mt-2 dark:bg-black dark:border dark:border-neutral-700 dark:divide-neutral-700 after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full" aria-labelledby="hs-dropdown-default"">
-        <div class="max-w-xs py-2 px-2 mx-auto">
+    <!-- Icon Blocks -->
+    <div class="max-w-xs py-2 px-2 mx-auto">
       <div class="max-w-4xl mx-auto">
-                <div class="grid grid-cols-2">
+        <!-- Grid -->
+        <div class="grid grid-cols-2">
             <div class="space-y-0">
-                        <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
+            <!-- Icon Block -->
+            <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
                 <img src="{{ asset('assets/shirt.gif') }}" alt="" class="flex-shrink-0 size-8">
                 <div class="ms-2 sm:ms-4">
                 <h3 class="text-sm sm:text-base text-gray-500 dark:text-neutral-200">
@@ -845,8 +808,10 @@
                 </h3>
                 </div>
             </a>
+            <!-- End Icon Block -->
 
-                        <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
+            <!-- Icon Block -->
+            <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
                 <img src="{{ asset('assets/totebag.gif') }}" alt="" class="flex-shrink-0 size-8">
                 <div class="ms-2 sm:ms-4">
                 <h3 class="text-sm sm:text-base text-gray-500 dark:text-neutral-200">
@@ -854,8 +819,10 @@
                 </h3>
                 </div>
             </a>
+            <!-- End Icon Block -->
 
-                        <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
+            <!-- Icon Block -->
+            <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
                 <img src="{{ asset('assets/tumbler.gif') }}" alt="" class="flex-shrink-0 size-8">
                 <div class="ms-2 sm:ms-4">
                 <h3 class="text-sm sm:text-base text-gray-500 dark:text-neutral-200">
@@ -863,10 +830,13 @@
                 </h3>
                 </div>
             </a>
-                        </div>
+            <!-- End Icon Block -->
+            </div>
+            <!-- End Col -->
 
             <div class="space-y-0">
-                        <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
+            <!-- Icon Block -->
+            <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
                 <img src="{{ asset('assets/mug.gif') }}" alt="" class="flex-shrink-0 size-8">
                 <div class="ms-2 sm:ms-4">
                 <h3 class="text-sm sm:text-base text-gray-500 dark:text-neutral-200">
@@ -874,8 +844,10 @@
                 </h3>
                 </div>
             </a>
+            <!-- End Icon Block -->
 
-                        <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
+            <!-- Icon Block -->
+            <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
                 <img src="{{ asset('assets/ganci.gif') }}" alt="" class="flex-shrink-0 size-8">
                 <div class="ms-2 sm:ms-4">
                 <h3 class="text-sm sm:text-base text-gray-500 dark:text-neutral-200">
@@ -883,8 +855,10 @@
                 </h3>
                 </div>
             </a>
+            <!-- End Icon Block -->
 
-                        <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
+            <!-- Icon Block -->
+            <a href="#" class="flex items-center hover:bg-gray-100 px-4 py-2 rounded-lg">
                 <img src="{{ asset('assets/pin.png') }}" alt="" class="flex-shrink-0 size-8">
                 <div class="ms-2 sm:ms-4">
                 <h3 class="text-sm sm:text-base text-gray-500 dark:text-neutral-200">
@@ -892,11 +866,15 @@
                 </h3>
                 </div>
             </a>
-                        </div>
-                    </div>
-              </div>
-    </div>
+            <!-- End Icon Block -->
+            </div>
+            <!-- End Col -->
+        </div>
+        <!-- End Grid -->
       </div>
+    </div>
+    <!-- End Icon Blocks -->
+  </div>
 </div> --}}
 
 {{-- <p class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold text-gray-800 dark:text-neutral-200">

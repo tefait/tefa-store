@@ -1,10 +1,13 @@
+<!-- Sidebar -->
 <div id="application-sidebar"
     class="hs-overlay [--auto-close:lg] hs-overlay-open:translate-x-0 -translate-x-full transition-all duration-300 transform w-[260px] hidden fixed inset-y-0 start-0 z-[60] bg-white border-e border-gray-200 lg:block lg:translate-x-0 lg:end-auto lg:bottom-0 dark:bg-neutral-800 dark:border-neutral-700">
     <div class="px-8 lg:py-4 absolute">
-                <a class="hidden lg:block" href="#" aria-label="Logo">
-            <img src="{{ asset('assets/logo2.png') }}" alt="Logo">
+        <!-- Logo -->
+        <a class="hidden lg:block" href="#" aria-label="Logo">
+            <img src="{{ asset('assets/img/logo2.png') }}" alt="Logo">
         </a>
-            </div>
+        <!-- End Logo -->
+    </div>
 
     <nav class="hs-accordion-group p-4 lg:mt-20 w-full flex flex-col flex-wrap
   overflow-x-hidden overflow-y-auto
@@ -35,12 +38,12 @@
                     class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-white dark:hover:text-neutral-300 dark:hs-accordion-active:text-white duration-300">
                     <i class="bx bx-package text-2xl text-neutral-700 dark:text-white"></i>
                     Data Produk
-                    <svg class="hs-accordion-active:block ms-auto hidden size-4" xmlns="http://www.w3.org/2000/svg"
+                    <svg class="hs-accordion-active:block ms-auto hidden size-5" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="m18 15-6-6-6 6" />
                     </svg>
-                    <svg class="hs-accordion-active:hidden ms-auto block size-4" xmlns="http://www.w3.org/2000/svg"
+                    <svg class="hs-accordion-active:hidden ms-auto block size-5" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="m6 9 6 6 6-6" />
@@ -88,12 +91,12 @@
                     class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-white dark:hover:text-neutral-300 dark:hs-accordion-active:text-white duration-300">
                     <i class="bx bx-transfer-alt text-2xl text-neutral-700 dark:text-white"></i>
                     Transaksi
-                    <svg class="hs-accordion-active:block ms-auto hidden size-4" xmlns="http://www.w3.org/2000/svg"
+                    <svg class="hs-accordion-active:block ms-auto hidden size-5" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="m18 15-6-6-6 6" />
                     </svg>
-                    <svg class="hs-accordion-active:hidden ms-auto block size-4" xmlns="http://www.w3.org/2000/svg"
+                    <svg class="hs-accordion-active:hidden ms-auto block size-5" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="m6 9 6 6 6-6" />
@@ -141,12 +144,12 @@
                     class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-white dark:hover:text-neutral-300 dark:hs-accordion-active:text-white duration-300">
                     <i class="bx bx-printer text-2xl text-neutral-700 dark:text-white"></i>
                     Laporan
-                    <svg class="hs-accordion-active:block ms-auto hidden size-4" xmlns="http://www.w3.org/2000/svg"
+                    <svg class="hs-accordion-active:block ms-auto hidden size-5" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="m18 15-6-6-6 6" />
                     </svg>
-                    <svg class="hs-accordion-active:hidden ms-auto block size-4" xmlns="http://www.w3.org/2000/svg"
+                    <svg class="hs-accordion-active:hidden ms-auto block size-5" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="m6 9 6 6 6-6" />
@@ -193,12 +196,12 @@
                     class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-white dark:hover:text-neutral-300 dark:hs-accordion-active:text-white duration-300">
                     <i class="bx bx-cog text-2xl text-neutral-700 dark:text-white"></i>
                     Pengaturan
-                    <svg class="hs-accordion-active:block ms-auto hidden size-4" xmlns="http://www.w3.org/2000/svg"
+                    <svg class="hs-accordion-active:block ms-auto hidden size-5" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="m18 15-6-6-6 6" />
                     </svg>
-                    <svg class="hs-accordion-active:hidden ms-auto block size-4" xmlns="http://www.w3.org/2000/svg"
+                    <svg class="hs-accordion-active:hidden ms-auto block size-5" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="m6 9 6 6 6-6" />
@@ -213,13 +216,13 @@
                                 class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-white dark:hs-accordion-active:text-white duration-300">
                                 <i class="bx bx-subdirectory-right text-lg"></i>
                                 Sub Menu 1
-                                <svg class="hs-accordion-active:block ms-auto hidden size-4"
+                                <svg class="hs-accordion-active:block ms-auto hidden size-5"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round">
                                     <path d="m18 15-6-6-6 6" />
                                 </svg>
-                                <svg class="hs-accordion-active:hidden ms-auto block size-4"
+                                <svg class="hs-accordion-active:hidden ms-auto block size-5"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round">
@@ -256,13 +259,13 @@
                                 class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-white dark:hs-accordion-active:text-white duration-300">
                                 <i class="bx bx-subdirectory-right text-lg"></i>
                                 Sub Menu 2
-                                <svg class="hs-accordion-active:block ms-auto hidden size-4"
+                                <svg class="hs-accordion-active:block ms-auto hidden size-5"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round">
                                     <path d="m18 15-6-6-6 6" />
                                 </svg>
-                                <svg class="hs-accordion-active:hidden ms-auto block size-4"
+                                <svg class="hs-accordion-active:hidden ms-auto block size-5"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round">
@@ -300,3 +303,4 @@
         </ul>
     </nav>
 </div>
+<!-- End Sidebar -->

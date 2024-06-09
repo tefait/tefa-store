@@ -41,5 +41,9 @@ class AppServiceProvider extends ServiceProvider
             return $customer->id == $order->customer_id;
         });
         View::composer('ecommerce.*', CategoryComposer::class);
+
+        if (!empty(env('NGROK_URL'))) {
+                $this->app['url']->forceRootUrl(env('NGROK_URL'));
+        }
     }
 }
