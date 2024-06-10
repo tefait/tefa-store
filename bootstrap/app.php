@@ -23,9 +23,9 @@ return Application::configure(basePath: dirname(__DIR__))
             'customer' => AuthenticatedCustomer::class,
         ]);
         $middleware->web(append: [
-            // MinifyHtml::class,
-            // MinifyCss::class,
-            // MinifyJavascript::class,
+            MinifyHtml::class,
+            MinifyCss::class,
+            MinifyJavascript::class,
         ],replace: [RedirectIfAuthenticated::class => CustomizedRedirectIfAuthenticated::class]
         );
     })

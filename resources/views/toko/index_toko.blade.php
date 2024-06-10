@@ -91,7 +91,7 @@
                                 {{ number_format($product->price, 0, ',', '.') }}</p>
                             <div class="flex gap-1 items-center">
                                 <span class="line-through text-[11px] text-gray-400">Rp
-                                    {{ number_format($product->price, 0, ',', '.') }}}}</span>
+                                    {{ number_format($product->price, 0, ',', '.') }}</span>
                                 <span
                                     class="py-[1px] px-1 inline-flex items-center text-[10px] font-semibold bg-red-100 text-red-600 rounded-full dark:bg-red-500/10 dark:text-red-500">
                                     33%

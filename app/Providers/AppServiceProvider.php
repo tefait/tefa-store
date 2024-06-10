@@ -17,12 +17,10 @@ class AppServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-
     }
 
     public function boot(): void
     {
-        URL::forceScheme('https');
         try {
             cache()->rememberForever(
                 'settings',
@@ -32,7 +30,8 @@ class AppServiceProvider extends ServiceProvider
             error('The `configs` table does not exist.');
         }
 
-        if (! empty(env('NGROK_URL'))) {
+        if (!empty(env('NGROK_URL'))) {
+            URL::forceScheme('https');
             $this->app['url']->forceRootUrl(env('NGROK_URL'));
         }
         Gate::define('order-view', function (Customer $customer, Order $order) {
@@ -40,7 +39,7 @@ class AppServiceProvider extends ServiceProvider
         });
         View::composer('ecommerce.*', CategoryComposer::class);
 
-        if (! empty(env('NGROK_URL'))) {
+        if (!empty(env('NGROK_URL'))) {
             $this->app['url']->forceRootUrl(env('NGROK_URL'));
         }
     }

@@ -161,7 +161,7 @@
                     <span class="h-8 border border-gray-100 dark:border-gray-800"></span>
                 </div>
 
-                {{-- <div class="">
+                <div class="">
                     <div id="navbar-collapse-with-animation"
                         class="hidden overflow-hidden w-full transition-all duration-300 lg:flex hs-collapse">
                         <div class="flex gap-2 justify-center">
@@ -175,40 +175,41 @@
                             </a>
                         </div>
                     </div>
+                </div>
+
+                {{-- <div class="hs-dropdown [--placement:bottom-right] hidden relative lg:inline-flex ms-2">
+                    <button id="hs-dropdown-with-header" type="button" class="w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700">
+                        <img class="inline-block size-[38px] rounded-full ring-2 ring-white dark:ring-neutral-800" src="{{ asset('assets/team/hafiz.jpg') }}" alt="Profile Image">
+                        <span class="block absolute bottom-0 bg-green-500 rounded-full ring-2 ring-white end-0 size-3 dark:ring-neutral-900"></span>
+                    </button>
+
+                    <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden z-50 min-w-60 bg-white shadow-md rounded-lg p-2 dark:bg-neutral-900 dark:border dark:border-neutral-700" aria-labelledby="hs-dropdown-with-header">
+                        <div class="px-5 py-3 -m-2 bg-gray-100 rounded-t-lg dark:bg-neutral-800">
+                            <h3 class="text-base font-bold text-gray-800 dark:text-white">Prof. H. Hafiz Haekal</h3>
+                            <p class="text-sm text-gray-600 dark:text-neutral-400">hafizhaekal03@gmail.com</p>
+                        </div>
+                        <div class="py-2 mt-2 first:pt-0 last:pb-0">
+                            <a href="#" class="flex gap-x-2 items-center px-3 py-1.5 text-sm text-gray-800 rounded-lg duration-300 hover:bg-gray-100 dark:text-white dark:hover:bg-neutral-800">
+                                <i class="text-xl bx bx-user"></i>
+                                Akun Saya
+                            </a>
+                            <a href="#" class="flex gap-x-2 items-center px-3 py-1.5 text-sm text-gray-800 rounded-lg duration-300 hover:bg-gray-100 dark:text-white dark:hover:bg-neutral-800">
+                                <i class="text-xl bx bx-shopping-bag"></i>
+                                Pembelian
+                            </a>
+                            <hr class="my-2">
+                            <a href="#" class="flex gap-x-2 items-center px-3 py-1.5 text-sm text-red-600 rounded-lg duration-300 dark:font-bold hover:bg-gray-100 dark:text-red-500 dark:hover:bg-neutral-800">
+                                <i class="text-xl bx bx-log-out-circle"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
                 </div> --}}
+
             </div>
         </div>
     </header>
 </nav>
-
-<div class="hs-dropdown [--placement:bottom-right] hidden relative lg:inline-flex ms-2">
-    <button id="hs-dropdown-with-header" type="button" class="w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700">
-        <img class="inline-block size-[38px] rounded-full ring-2 ring-white dark:ring-neutral-800" src="{{ asset('assets/team/hafiz.jpg') }}" alt="Profile Image">
-        <span class="block absolute bottom-0 bg-green-500 rounded-full ring-2 ring-white end-0 size-3 dark:ring-neutral-900"></span>
-    </button>
-
-    <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden z-50 min-w-60 bg-white shadow-md rounded-lg p-2 dark:bg-neutral-900 dark:border dark:border-neutral-700" aria-labelledby="hs-dropdown-with-header">
-        <div class="px-5 py-3 -m-2 bg-gray-100 rounded-t-lg dark:bg-neutral-800">
-            <h3 class="text-base font-bold text-gray-800 dark:text-white">Prof. H. Hafiz Haekal</h3>
-            <p class="text-sm text-gray-600 dark:text-neutral-400">hafizhaekal03@gmail.com</p>
-        </div>
-        <div class="py-2 mt-2 first:pt-0 last:pb-0">
-            <a href="#" class="flex gap-x-2 items-center px-3 py-1.5 text-sm text-gray-800 rounded-lg duration-300 hover:bg-gray-100 dark:text-white dark:hover:bg-neutral-800">
-                <i class="text-xl bx bx-user"></i>
-                Akun Saya
-            </a>
-            <a href="#" class="flex gap-x-2 items-center px-3 py-1.5 text-sm text-gray-800 rounded-lg duration-300 hover:bg-gray-100 dark:text-white dark:hover:bg-neutral-800">
-                <i class="text-xl bx bx-shopping-bag"></i>
-                Pembelian
-            </a>
-            <hr class="my-2">
-            <a href="#" class="flex gap-x-2 items-center px-3 py-1.5 text-sm text-red-600 rounded-lg duration-300 dark:font-bold hover:bg-gray-100 dark:text-red-500 dark:hover:bg-neutral-800">
-                <i class="text-xl bx bx-log-out-circle"></i>
-                Logout
-            </a>
-        </div>
-    </div>
-</div>
 
 <!-- Off canvas Notification -->
 <div id="hs-scroll-inside-body-modal"

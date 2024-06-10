@@ -292,7 +292,7 @@
                 <!-- End Card -->
 
                 <!-- Card -->
-                <div class="swiper-slide slide-tsh flex justify-center h-[265px] w-40 lg:h-[300px] lg:w-[190px]">
+                <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
                     <div
                         class="flex flex-col justify-center items-center w-full h-full rounded-md shadow-sm group bg-primary lg:rounded-lg dark:bg-neutral-900 dark:shadow-neutral-700/70">
                         <div class="absolute bottom-5 opacity-30">
