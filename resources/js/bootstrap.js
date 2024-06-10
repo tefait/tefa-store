@@ -1,5 +1,3 @@
-import 'bootstrap';
-
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
@@ -32,3 +30,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
 //     enabledTransports: ['ws', 'wss'],
 // });
+const html = document.querySelector('html');
+const isLightOrAuto = localStorage.getItem('hs_theme') === 'light' || (localStorage.getItem('hs_theme') === 'auto' && !window.matchMedia('(prefers-color-scheme: dark)').matches);
+const isDarkOrAuto = localStorage.getItem('hs_theme') === 'dark' || (localStorage.getItem('hs_theme') === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+if (isLightOrAuto && html.classList.contains('dark')) html.classList.remove('dark');
+else if (isDarkOrAuto && html.classList.contains('light')) html.classList.remove('light');
+else if (isDarkOrAuto && !html.classList.contains('dark')) html.classList.add('dark');
+else if (isLightOrAuto && !html.classList.contains('light')) html.classList.add('light');

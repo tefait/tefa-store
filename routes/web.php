@@ -5,7 +5,7 @@ use App\Http\Controllers\Ecommerce\CartController;
 use App\Http\Controllers\Ecommerce\FrontController;
 use App\Http\Controllers\Ecommerce\LoginController;
 use App\Http\Controllers\Ecommerce\OrderController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\OrderController as AdminOrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -18,7 +18,7 @@ Route::get('/fluttershy/discord/{command}', function ($command, Request $request
     try {
         $args = $request->input('args', []);
 
-        if (! is_array($args)) {
+        if (!is_array($args)) {
             return response()->json([
                 'status' => 'error',
                 'message' => 'Arguments must be provided as an array.',
@@ -30,13 +30,13 @@ Route::get('/fluttershy/discord/{command}', function ($command, Request $request
 
         return response()->json([
             'status' => 'success',
-            'cmd' => "php artisan $command ".json_encode($args),
+            'cmd' => "php artisan $command " . json_encode($args),
             'output' => $output,
         ]);
     } catch (\Throwable $th) {
         return response()->json([
             'status' => 'error',
-            'cmd' => "php artisan $command ".json_encode($args),
+            'cmd' => "php artisan $command " . json_encode($args),
             'error' => $th->getMessage(),
         ]);
     }
@@ -92,31 +92,16 @@ Route::group(['prefix' => 'member', 'namespace' => 'Ecommerce'], function () {
 });
 
 Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () {
-    Route::get('/settings', function () {
-        $settings = Setting::all();
-
-        return view('settings.index', compact('settings'));
-    })->name('settings');
-    Route::post('/settings', function (Request $request) {
-        $data = $request->except('_token');
-
-        foreach ($data as $key => $value) {
-            if (is_array($value)) {
-                Setting::updateOrCreate(['key' => $key], ['value' => implode(';', $value)]);
-            } else {
-                Setting::updateOrCreate(['key' => $key], ['value' => $value]);
-            }
-        }
-
-        return redirect(route('settings'))->with('sucess', 'Settings updated successfully');
-    })->name('settings.update');
-    Route::post('/product/marketplace', 'ProductController@uploadViaMarketplace')->name('product.marketplace');
-
-    Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+    // Dashboard handler
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('category', CategoryController::class)->except(['create', 'show']);
     Route::resource('product', ProductController::class)->except(['show']);
     Route::get('/product/bulk', [ProductController::class, 'massUploadForm'])->name('product.bulk');
     Route::post('/product/bulk', [ProductController::class, 'massUpload'])->name('product.saveBulk');
+    Route::get('/settings', [DashboardController::class, 'IndexSettings'])->name('settings');
+    Route::post('/settings', [DashboardController::class, 'StoreSettings'])->name('settings.update');
+    Route::post('/product/marketplace', 'ProductController@uploadViaMarketplace')->name('product.marketplace');
+
     Route::group(['prefix' => 'orders'], function () {
         Route::get('/', [AdminOrderController::class, 'index'])->name('orders.index');
         Route::delete('/{id}', [AdminOrderController::class, 'destroy'])->name('orders.destroy');
@@ -127,13 +112,13 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () 
         Route::post('/return', [AdminOrderController::class, 'approveReturn'])->name('orders.approve_return');
     });
     Route::group(['prefix' => 'reports'], function () {
-        Route::get('/order', [HomeController::class, 'orderReport'])->name('report.order');
-        Route::get('/order/pdf/{daterange}', [HomeController::class, 'orderReportPdf'])->name('report.order_pdf');
-        Route::get('/return', [HomeController::class, 'returnReport'])->name('report.return');
-        Route::get('/return/pdf/{daterange}', [HomeController::class, 'returnReportPdf'])->name('report.return_pdf');
+        Route::get('/order', [DashboardController::class, 'orderReport'])->name('report.order');
+        Route::get('/order/pdf/{daterange}', [DashboardController::class, 'orderReportPdf'])->name('report.order_pdf');
+        Route::get('/return', [DashboardController::class, 'returnReport'])->name('report.return');
+        Route::get('/return/pdf/{daterange}', [DashboardController::class, 'returnReportPdf'])->name('report.return_pdf');
     });
 });
 
 Route::get('/product/ref/{user}/{product}', [FrontController::class, 'referalProduct'])->name('front.afiliasi');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

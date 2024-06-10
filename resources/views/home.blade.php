@@ -4,7 +4,7 @@
     <div class="flex justify-between px-4 pb-4 lg:hidden">
         <div class="flex items-center">
             <div class="inline-block relative bg-orange-100 rounded-full min-w-10">
-                <img class="inline-block w-full h-10" src="{{ asset('assets/img/maskot.png') }}" />
+                <img class="inline-block w-full h-10" src="/assets/img/maskot.png" />
             </div>
             <div class="ms-3">
                 <h3 class="text-sm font-bold text-gray-800 dark:text-white max-w-[15rem] truncate">Hai, Calon Pembeli!</h3>
@@ -58,19 +58,19 @@
         <div class="grid grid-cols-3 gap-2">
             <div class="h-16 lg:h-28">
                 <div class="flex justify-center items-center w-full h-full">
-                    <img src="{{ asset('assets/kategori/kategori1.jpg') }}" alt="Teaching Factory"
+                    <img src="/assets/kategori/kategori1.jpg" alt="Teaching Factory"
                         class="object-cover w-full h-full rounded-lg" />
                 </div>
             </div>
             <div class="h-16 lg:h-28">
                 <div class="flex justify-center items-center w-full h-full">
-                    <img src="{{ asset('assets/kategori/kategori2.jpg') }}" alt="Software"
+                    <img src="/assets/kategori/kategori2.jpg" alt="Software"
                         class="object-cover w-full h-full rounded-lg" />
                 </div>
             </div>
             <div class="h-16 lg:h-28">
                 <div class="flex justify-center items-center w-full h-full">
-                    <img src="{{ asset('assets/kategori/kategori3.jpg') }}" alt="Game"
+                    <img src="/assets/kategori/kategori3.jpg" alt="Game"
                         class="object-cover w-full h-full rounded-lg" />
                 </div>
             </div>
@@ -109,7 +109,7 @@
     <!-- Produk Terlaris -->
     <div class="flex gap-1 items-center px-4 mt-8 mb-2 lg:px-0">
         <h3 class="text-base font-bold text-gray-800 lg:text-xl dark:text-white">Produk Terlaris</h3>
-        <img src="{{ asset('assets/icons/best.png') }}" class="h-5 lg:h-6">
+        <img src="/assets/icons/best.png" class="h-5 lg:h-6">
     </div>
     <section
         class="relative h-full group bg-gradient-to-tr from-orange-500 from-30% via-orange-300 via-10% to-orange-200 to-90% bg-opacity-30 lg:rounded-xl py-4">
@@ -149,9 +149,9 @@
                                 <p class="text-sm text-gray-600 dark:text-neutral-300 truncate max-w-full">
                                     {{ $product->name }}
                                 </p>
-                                <p class="block text-sm font-bold text-gray-800 dark:text-white">Rp{{ number_format($product->price, 0, ',', '.') }}</p>
+                                <p class="block text-sm font-bold text-gray-800 dark:text-white">Rp{{ number_format($product->price, 0, ',', '.</p>
                                 <div class="flex gap-1 items-center">
-                                    <span class="line-through text-[11px] text-gray-400">Rp{{ number_format($product->price, 0, ',', '.') }}</span>
+                                    <span class="line-through text-[11px] text-gray-400">Rp{{ number_format($product->price, 0, ',', '.</span>
                                     <span
                                         class="py-[1px] px-1 inline-flex items-center text-[10px] font-semibold bg-red-100 text-red-600 rounded-full dark:bg-red-500/10 dark:text-red-500">
                                         33%
@@ -214,11 +214,11 @@
     <!-- Produk Terbaru -->
     <div class="flex gap-2 items-center px-4 mt-8 mb-4 lg:px-0">
         <h3 class="text-base font-bold text-gray-800 lg:text-xl dark:text-white">Produk Terbaru</h3>
-        <img src="{{ asset('assets/icons/new.png') }}" class="h-5 lg:h-6">
+        <img src="/assets/icons/new.png" class="h-5 lg:h-6">
     </div>
     <section class="flex gap-4 relative lg:h-[302px] mb-4 px-4 lg:px-0">
         <div class="hidden xl:block h-full w-[402px]">
-            <img src="{{ asset('assets/img/produkterbaru.jpg') }}" alt="" class="w-full h-full rounded-lg">
+            <img src="/assets/img/produkterbaru.jpg" alt="" class="w-full h-full rounded-lg">
         </div>
         <!-- Card Section -->
         <div class="w-full">
@@ -238,7 +238,7 @@
                                 <p class="text-xs text-gray-600 dark:text-neutral-300 lg:text-base truncate-1-line">
                                     {{$product->name}}
                                 </p>
-                                <p class="block text-sm font-bold text-gray-800 dark:text-white lg:text-lg">Rp{{ number_format($product->price, 0, ',', '.') }}</p>
+                                <p class="block text-sm font-bold text-gray-800 dark:text-white lg:text-lg">Rp{{ number_format($product->price, 0, ',', '.</p>
                             </div>
                         </div>
                     </div>
@@ -256,7 +256,7 @@
     <!-- Produk Yang Akan Datang -->
     <div class="flex gap-1 items-center px-4 mt-8 mb-4 lg:px-0">
         <h3 class="text-base font-bold text-gray-800 lg:text-xl dark:text-white">Segera Hadir</h3>
-        <img src="{{ asset('assets/icons/soon.png') }}" class="h-5 lg:h-6">
+        <img src="/assets/icons/soon.png" class="h-5 lg:h-6">
     </div>
     <section class="relative h-full group">
         <button id="prevBtnSH"
@@ -385,7 +385,7 @@
                             <div class="flex items-center">
                                 <div class="flex-shrink-0">
                                     <img class="size-8 sm:h-[2.875rem] sm:w-[2.875rem] rounded-full"
-                                        src="{{ asset('assets/team/pak-asep.jpg') }}" alt="Image Testimonials">
+                                        src="/assets/team/pak-asep.jpg" alt="Image Testimonials">
                                 </div>
 
                                 <div class="flex gap-2 justify-between w-full">
@@ -460,7 +460,7 @@
                             <div class="flex items-center">
                                 <div class="flex-shrink-0">
                                     <img class="size-8 sm:h-[2.875rem] sm:w-[2.875rem] rounded-full"
-                                        src="{{ asset('assets/team/hafiz.jpg') }}" alt="Image Testimonials">
+                                        src="/assets/team/hafiz.jpg" alt="Image Testimonials">
                                 </div>
 
                                 <div class="flex gap-2 justify-between w-full">
@@ -535,7 +535,7 @@
                             <div class="flex items-center">
                                 <div class="flex-shrink-0">
                                     <img class="size-8 sm:h-[2.875rem] sm:w-[2.875rem] rounded-full"
-                                        src="{{ asset('assets/team/azfa.jpg') }}" alt="Image Testimonials">
+                                        src="/assets/team/azfa.jpg" alt="Image Testimonials">
                                 </div>
 
                                 <div class="flex gap-2 justify-between w-full">
@@ -656,7 +656,7 @@
   <div class="flex flex-wrap">
     <div class="p-1 w-1/3 border-r border-b">
       <a href="#" class="flex items-center p-2 rounded-lg duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700">
-        <img src="{{ asset('assets/kategori/kaos.png') }}" class="flex-shrink-0 size-7">
+        <img src="/assets/kategori/kaos.png" class="flex-shrink-0 size-7">
         <div class="ms-2">
           <h3 class="text-sm text-gray-800 dark:text-white">
             Kaos
@@ -666,7 +666,7 @@
     </div>
     <div class="p-1 w-1/3 border-r border-b">
       <a href="#" class="flex items-center p-2 rounded-lg duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700">
-        <img src="{{ asset('assets/kategori/totebag.png') }}" class="flex-shrink-0 size-7">
+        <img src="/assets/kategori/totebag.png" class="flex-shrink-0 size-7">
         <div class="ms-2">
           <h3 class="text-sm text-gray-800 dark:text-white">
             Totebag
@@ -676,7 +676,7 @@
     </div>
     <div class="p-1 w-1/3 border-b">
       <a href="#" class="flex items-center p-2 rounded-lg duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700">
-        <img src="{{ asset('assets/kategori/tumbler.png') }}" class="flex-shrink-0 size-7">
+        <img src="/assets/kategori/tumbler.png" class="flex-shrink-0 size-7">
         <div class="ms-2">
           <h3 class="text-sm text-gray-800 dark:text-white">
             Tumbler
@@ -686,7 +686,7 @@
     </div>
     <div class="p-1 w-1/3 border-r">
       <a href="#" class="flex items-center p-2 rounded-lg duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700">
-        <img src="{{ asset('assets/kategori/mug.png') }}" class="flex-shrink-0 size-7">
+        <img src="/assets/kategori/mug.png" class="flex-shrink-0 size-7">
         <div class="ms-2">
           <h3 class="text-sm text-gray-800 dark:text-white">
             Mug
@@ -696,7 +696,7 @@
     </div>
     <div class="p-1 w-1/3 border-r">
       <a href="#" class="flex items-center p-2 rounded-lg duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700">
-        <img src="{{ asset('assets/kategori/ganci.png') }}" class="flex-shrink-0 size-7">
+        <img src="/assets/kategori/ganci.png" class="flex-shrink-0 size-7">
         <div class="ms-2">
           <h3 class="text-sm text-gray-800 dark:text-white">
             Ganci
@@ -706,7 +706,7 @@
     </div>
     <div class="p-1 w-1/3">
       <a href="#" class="flex items-center p-2 rounded-lg duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700">
-        <img src="{{ asset('assets/kategori/pin.png') }}" class="flex-shrink-0 size-7">
+        <img src="/assets/kategori/pin.png" class="flex-shrink-0 size-7">
         <div class="ms-2">
           <h3 class="text-sm text-gray-800 dark:text-white">
             Pin

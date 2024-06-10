@@ -1,11 +1,9 @@
 {
-    "private": true,
-    "type": "module",
-    "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-        "watch": "vite build --watch",
-        "start": "serve"
+    "dependencies": {
+        "@preline/carousel": "^2.1.0",
+        "@preline/theme-switch": "^2.1.0",
+        "apexcharts": "^3.49.1",
+        "lodash": "^4.17.21"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",
@@ -15,17 +13,15 @@
         "laravel-vite-plugin": "^1.0",
         "postcss": "^8.4.38",
         "preline": "^2.1.0",
-        "sass": "^1.77.2",
-        "serve": "^14.2.3",
         "tailwindcss": "^3.4.3",
         "vite": "^5.0"
     },
-    "dependencies": {
-        "@preline/carousel": "^2.1.0",
-        "@preline/theme-switch": "^2.1.0",
-        "apexcharts": "^3.49.1",
-        "bootstrap": "5.3.3",
-        "boxicons": "^2.1.4",
-        "lodash": "^4.17.21"
-    }
+    "private": true,
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite",
+        "start": "serve",
+        "watch": "vite build --watch"
+    },
+    "type": "module"
 }

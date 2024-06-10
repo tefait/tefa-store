@@ -41,8 +41,18 @@ class SettingSeeder extends Seeder
             ],
             [
                 'name' => 'Upcoming product',
-                'value' => 'https://images.tokopedia.net/img/cache/1208/NsjrJu/2024/5/29/d941571a-437e-443a-9db6-babf4f9780f6.jpg.webp?ect=4g;https://images.tokopedia.net/img/cache/1208/NsjrJu/2024/5/31/70cafaaf-9149-4b4b-a16c-847a270fb92a.jpg.webp?ect=4g',
+                'value' => '/assets/img/new-product.png;/assets/img/new-product.png;/assets/img/new-product.png;/assets/img/new-product.png;/assets/img/new-product.png;/assets/img/new-product.png',
                 'type' => 'multi_image',
+            ],
+            [
+                'name' => 'WhatsApp',
+                'value' => '0878-9481-8815',
+                'type' => 'text',
+            ],
+            [
+                'name' => 'Email',
+                'value' => 'tefaitrpl@gmail.com',
+                'type' => 'text',
             ],
         ];
 

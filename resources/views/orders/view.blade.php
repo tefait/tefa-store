@@ -19,10 +19,8 @@
                                 <h4 class="card-title">
                                     Detail pesanan
 
-                                    <!-- TOMBOL UNTUK MENERIMA PEMBAYARAN -->
-                                    <div class="float-right">
-                                        <!-- TOMBOL INI HANYA TAMPIL JIKA STATUSNYA 1 DARI ORDER DAN 0 DARI PEMBAYARAN -->
-                                        @if ($order->status == 1 && $order->payment->status == 0)
+                                                                        <div class="float-right">
+                                                                                @if ($order->status == 1 && $order->payment->status == 0)
                                             <a href="{{ route('orders.approve_payment', $order->invoice) }}"
                                                 class="btn btn-primary btn-sm">Terima Pembayaran</a>
                                         @endif
@@ -32,8 +30,7 @@
                             <div class="card-body">
                                 <div class="row">
 
-                                    <!-- BLOCK UNTUK MENAMPILKAN DATA PELANGGAN -->
-                                    <div class="col-md-6">
+                                                                        <div class="col-md-6">
                                         <h4>Detail Pelanggan</h4>
                                         <table class="table table-bordered">
                                             <tr>
@@ -54,8 +51,7 @@
                                                 <th>Order Status</th>
                                                 <td>{!! $order->status_label !!}</td>
                                             </tr>
-                                            <!-- FORM INPUT RESI HANYA AKAN TAMPIL JIKA STATUS LEBIH BESAR 1 -->
-                                            @if ($order->status > 1)
+                                                                                        @if ($order->status > 1)
                                                 <tr>
                                                     <th>Nomor Resi</th>
                                                     <td>
