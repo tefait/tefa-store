@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('container')
-    <div class="lg:hidden flex justify-between pb-4 px-4">
+    <div class="flex justify-between px-4 pb-4 lg:hidden">
         <div class="flex items-center">
-            <div class="relative inline-block min-w-10 bg-orange-100 rounded-full">
-                <img class="inline-block h-10 w-full" src="{{ asset('assets/img/maskot.png') }}" />
+            <div class="inline-block relative bg-orange-100 rounded-full min-w-10">
+                <img class="inline-block w-full h-10" src="{{ asset('assets/img/maskot.png') }}" />
             </div>
             <div class="ms-3">
                 <h3 class="text-sm font-bold text-gray-800 dark:text-white max-w-[15rem] truncate">Hai, Calon Pembeli!</h3>
@@ -14,14 +14,14 @@
         </div>
         <div class="flex items-center">
             <a href="#"
-                class="inline-flex justify-center items-center h-9 w-full gap-x-3 text-center bg-gradient-to-r from-secondary to-primary hover:from-primary hover:to-secondary duration-300 text-white text-sm font-medium rounded-3xl py-3 px-5">
+                class="inline-flex gap-x-3 justify-center items-center px-5 py-3 w-full h-9 text-sm font-medium text-center text-white bg-gradient-to-r rounded-3xl duration-300 from-secondary to-primary hover:from-primary hover:to-secondary">
                 Masuk
             </a>
         </div>
     </div>
 
     <!-- Carousel -->
-    <section class="relative h-full w-full flex justify-center group px-4 mb-2 lg:my-4 lg:px-0">
+    <section class="flex relative justify-center px-4 mb-2 w-full h-full group lg:my-4 lg:px-0">
         <button id="prevBtnCar"
             class="hidden lg:block bg-white border rounded-full p-3 absolute z-30 top-[45%] -left-5 translate-x-10 group-hover:translate-x-0 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
             <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14">
@@ -37,41 +37,41 @@
             </svg>
         </button>
         <div class="swiper myCarousel relative overflow-hidden h-[130px] sm:h-[220px] lg:h-[300px] rounded-xl">
-            <div class="swiper-wrapper h-full w-full">
+            <div class="w-full h-full swiper-wrapper">
                 @foreach (explode(";", cache('settings')['carousel-image']['value']) as $carousel)
-                <div class="swiper-slide flex justify-center items-center h-full w-full">
+                <div class="flex justify-center items-center w-full h-full swiper-slide">
                     <img src="{{ $carousel }}" alt="Slide Pertama"
-                        class="h-full w-full object-cover" />
+                        class="object-cover w-full h-full" />
                 </div>
                 @endforeach
 
             </div>
-            <div class="swiper-pagination flex justify-start absolute bottom-2 lg:bottom-3 px-3 lg:px-5"></div>
+            <div class="flex absolute bottom-2 justify-start px-3 swiper-pagination lg:bottom-3 lg:px-5"></div>
         </div>
     </section>
 
     <!-- End Carousel -->
 
     <!-- Card Kategori -->
-    <div class="px-4 lg:px-0 mb-4 mx-auto">
+    <div class="px-4 mx-auto mb-4 lg:px-0">
         <!-- Grid -->
         <div class="grid grid-cols-3 gap-2">
             <div class="h-16 lg:h-28">
-                <div class="flex justify-center items-center h-full w-full">
+                <div class="flex justify-center items-center w-full h-full">
                     <img src="{{ asset('assets/kategori/kategori1.jpg') }}" alt="Teaching Factory"
-                        class="h-full w-full object-cover rounded-lg" />
+                        class="object-cover w-full h-full rounded-lg" />
                 </div>
             </div>
             <div class="h-16 lg:h-28">
-                <div class="flex justify-center items-center h-full w-full">
+                <div class="flex justify-center items-center w-full h-full">
                     <img src="{{ asset('assets/kategori/kategori2.jpg') }}" alt="Software"
-                        class="h-full w-full object-cover rounded-lg" />
+                        class="object-cover w-full h-full rounded-lg" />
                 </div>
             </div>
             <div class="h-16 lg:h-28">
-                <div class="flex justify-center items-center h-full w-full">
+                <div class="flex justify-center items-center w-full h-full">
                     <img src="{{ asset('assets/kategori/kategori3.jpg') }}" alt="Game"
-                        class="h-full w-full object-cover rounded-lg" />
+                        class="object-cover w-full h-full rounded-lg" />
                 </div>
             </div>
         </div>
@@ -80,35 +80,35 @@
     <!-- End Card Kategori -->
 
     <!-- Menu -->
-    {{-- <div class="py-2 px-4 mt-2">
+    {{-- <div class="px-4 py-2 mt-2">
   <div class="flex justify-between items-center">
-    <div class="relative inline-block">
-      <i class="bx bxs-category text-3xl min-w-12 bg-orange-100 rounded-full text-orange-400 flex justify-center items-center h-12 w-full"></i>
-      <p class="text-xs text-center mt-1">Menu</p>
+    <div class="inline-block relative">
+      <i class="flex justify-center items-center w-full h-12 text-3xl text-orange-400 bg-orange-100 rounded-full bx bxs-category min-w-12"></i>
+      <p class="mt-1 text-xs text-center">Menu</p>
     </div>
-    <div class="relative inline-block">
-      <i class="bx bxs-category text-3xl min-w-12 bg-orange-100 rounded-full text-orange-400 flex justify-center items-center h-12 w-full"></i>
-      <p class="text-xs text-center mt-1">Menu</p>
+    <div class="inline-block relative">
+      <i class="flex justify-center items-center w-full h-12 text-3xl text-orange-400 bg-orange-100 rounded-full bx bxs-category min-w-12"></i>
+      <p class="mt-1 text-xs text-center">Menu</p>
     </div>
-    <div class="relative inline-block">
-      <i class="bx bxs-category text-3xl min-w-12 bg-orange-100 rounded-full text-orange-400 flex justify-center items-center h-12 w-full"></i>
-      <p class="text-xs text-center mt-1">Menu</p>
+    <div class="inline-block relative">
+      <i class="flex justify-center items-center w-full h-12 text-3xl text-orange-400 bg-orange-100 rounded-full bx bxs-category min-w-12"></i>
+      <p class="mt-1 text-xs text-center">Menu</p>
     </div>
-    <div class="relative inline-block">
-      <i class="bx bxs-category text-3xl min-w-12 bg-orange-100 rounded-full text-orange-400 flex justify-center items-center h-12 w-full"></i>
-      <p class="text-xs text-center mt-1">Menu</p>
+    <div class="inline-block relative">
+      <i class="flex justify-center items-center w-full h-12 text-3xl text-orange-400 bg-orange-100 rounded-full bx bxs-category min-w-12"></i>
+      <p class="mt-1 text-xs text-center">Menu</p>
     </div>
-    <div class="relative inline-block">
-      <i class="bx bxs-category text-3xl min-w-12 bg-orange-100 rounded-full text-orange-400 flex justify-center items-center h-12 w-full"></i>
-      <p class="text-xs text-center mt-1">Menu</p>
+    <div class="inline-block relative">
+      <i class="flex justify-center items-center w-full h-12 text-3xl text-orange-400 bg-orange-100 rounded-full bx bxs-category min-w-12"></i>
+      <p class="mt-1 text-xs text-center">Menu</p>
     </div>
   </div>
 </div> --}}
     <!-- End Menu -->
 
     <!-- Produk Terlaris -->
-    <div class="flex items-center gap-1 mt-8 px-4 mb-2 lg:px-0">
-        <h3 class="text-base lg:text-xl font-bold text-gray-800 dark:text-white">Produk Terlaris</h3>
+    <div class="flex gap-1 items-center px-4 mt-8 mb-2 lg:px-0">
+        <h3 class="text-base font-bold text-gray-800 lg:text-xl dark:text-white">Produk Terlaris</h3>
         <img src="{{ asset('assets/icons/best.png') }}" class="h-5 lg:h-6">
     </div>
     <section
@@ -128,33 +128,30 @@
             </svg>
         </button>
         <!-- Swiper -->
-        <div class="swiper mySwiperPT h-full w-full">
+        <div class="w-full h-full swiper mySwiperPT">
             <div class="swiper-wrapper">
                 <!-- Card -->
                 @foreach ($top_sales as $product)
-                    <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
+                    <div class="swiper-slide slide-tsh flex justify-center h-[265px] w-40 lg:h-[300px] lg:w-[190px]">
                         <div
-                            class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+                            class="flex flex-col w-full h-full bg-white rounded-md shadow-sm group lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                             <div class="flex flex-col justify-center items-center">
                                 <img src="{{ $product->image }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
                                 <div
                                     class="flex items-center justify-center h-4 w-12 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[144px] left-0 lg:top-[174px]">
-                                    <i class="bx bxs-medal text-sm text-white"></i>
+                                    <i class="text-sm text-white bx bxs-medal"></i>
                                     <p class="text-[10px] font-semibold text-white uppercase">
                                         Top
                                     </p>
                                 </div>
                             </div>
-                            <div class="pt-1 lg:pt-2 px-2 gap-1 text-start h-full">
-                                <p class="text-gray-600 dark:text-neutral-300 text-sm truncate-20-chars"
-                                    style="max-width: 100%;">
+                            <div class="gap-1 px-2 py-1 lg:py-2 text-start h-auto">
+                                <p class="text-sm text-gray-600 dark:text-neutral-300 truncate max-w-full">
                                     {{ $product->name }}
                                 </p>
-                                <p class="block font-bold text-gray-800 dark:text-white text-sm">Rp.
-                                    {{ number_format($product->price, 0, ',', '.') }}</p>
-                                <div class="flex items-center gap-1">
-                                    <span class="line-through text-[11px] text-gray-400">Rp.
-                                        {{ number_format($product->price, 0, ',', '.') }}</span>
+                                <p class="block text-sm font-bold text-gray-800 dark:text-white">Rp{{ number_format($product->price, 0, ',', '.') }}</p>
+                                <div class="flex gap-1 items-center">
+                                    <span class="line-through text-[11px] text-gray-400">Rp{{ number_format($product->price, 0, ',', '.') }}</span>
                                     <span
                                         class="py-[1px] px-1 inline-flex items-center text-[10px] font-semibold bg-red-100 text-red-600 rounded-full dark:bg-red-500/10 dark:text-red-500">
                                         33%
@@ -162,9 +159,9 @@
                                 </div>
                             </div>
                             <div class="flex justify-center items-center mb-2">
-                                <i class="bx bxs-hot text-2xl text-red-500 z-10 translate-x-1"></i>
+                                <i class="z-10 text-2xl text-red-500 translate-x-1 bx bxs-hot"></i>
                                 <span
-                                    class="flex justify-center items-center py-0.5 px-4 w-full text-xs font-semibold -translate-x-3 bg-gradient-to-r from-yellow-300 to-red-500 text-white rounded-full">
+                                    class="flex justify-center items-center px-4 py-0.5 w-full text-xs font-semibold text-white bg-gradient-to-r from-yellow-300 to-red-500 rounded-full -translate-x-3">
                                     {{ $product->orders_count }} Terjual
                                 </span>
                             </div>
@@ -175,7 +172,7 @@
                 <!-- End Card -->
 
                 <!-- Open All Card -->
-                <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
+                <div class="swiper-slide slide-tsh flex justify-center h-[265px] w-40 lg:h-[300px] lg:w-[190px]">
                     <div
                         class="group flex flex-col justify-center items-center h-full w-full bg-[#FDB840] shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:shadow-neutral-700/70">
                         <div class="absolute bottom-5 opacity-30">
@@ -197,13 +194,13 @@
                                 </defs>
                             </svg>
                         </div>
-                        <div class="py-1 px-2 gap-1 text-start">
-                            <p class="text-white dark:text-neutral-300 text-sm lg:text-lg font-semibold">
+                        <div class="gap-1 px-2 py-1 text-start">
+                            <p class="text-sm font-semibold text-white dark:text-neutral-300 lg:text-lg">
                                 Lihat Semua
                             </p>
                             <div class="flex justify-center items-center">
                                 <i
-                                    class="bx bxs-chevron-right-circle text-3xl lg:text-4xl text-white dark:text-neutral-300 z-10 translate-x-1"></i>
+                                    class="z-10 text-3xl text-white translate-x-1 bx bxs-chevron-right-circle lg:text-4xl dark:text-neutral-300"></i>
                             </div>
                         </div>
                     </div>
@@ -215,13 +212,13 @@
     <!-- End Produk Terlaris -->
 
     <!-- Produk Terbaru -->
-    <div class="flex items-center gap-2 mt-8 px-4 mb-4 lg:px-0">
-        <h3 class="text-base lg:text-xl font-bold text-gray-800 dark:text-white">Produk Terbaru</h3>
+    <div class="flex gap-2 items-center px-4 mt-8 mb-4 lg:px-0">
+        <h3 class="text-base font-bold text-gray-800 lg:text-xl dark:text-white">Produk Terbaru</h3>
         <img src="{{ asset('assets/icons/new.png') }}" class="h-5 lg:h-6">
     </div>
     <section class="flex gap-4 relative lg:h-[302px] mb-4 px-4 lg:px-0">
         <div class="hidden xl:block h-full w-[402px]">
-            <img src="{{ asset('assets/img/produkterbaru.jpg') }}" alt="" class="h-full w-full rounded-lg">
+            <img src="{{ asset('assets/img/produkterbaru.jpg') }}" alt="" class="w-full h-full rounded-lg">
         </div>
         <!-- Card Section -->
         <div class="w-full">
@@ -237,17 +234,16 @@
                         <img src="{{ $product->image }}" alt=""
                             class="rounded-l-md lg:rounded-l-lg">
                         <div class="flex justify-between items-center w-full">
-                            <div class="p-2 lg:p-4 gap-1 text-start w-full">
-                                <p class="text-gray-600 dark:text-neutral-300 text-xs lg:text-base truncate-1-line">
+                            <div class="gap-1 p-2 w-full lg:p-4 text-start">
+                                <p class="text-xs text-gray-600 dark:text-neutral-300 lg:text-base truncate-1-line">
                                     {{$product->name}}
                                 </p>
-                                <p class="block font-bold text-gray-800 dark:text-white text-sm lg:text-lg">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
+                                <p class="block text-sm font-bold text-gray-800 dark:text-white lg:text-lg">Rp{{ number_format($product->price, 0, ',', '.') }}</p>
                             </div>
                         </div>
                     </div>
                 </a>
                 @endforeach
-
                 <!-- End Card -->
 
             </div>
@@ -258,8 +254,8 @@
     <!-- End Produk Terbaru -->
 
     <!-- Produk Yang Akan Datang -->
-    <div class="flex items-center gap-1 mt-8 mb-4 px-4 lg:px-0">
-        <h3 class="text-base lg:text-xl font-bold text-gray-800 dark:text-white">Segera Hadir</h3>
+    <div class="flex gap-1 items-center px-4 mt-8 mb-4 lg:px-0">
+        <h3 class="text-base font-bold text-gray-800 lg:text-xl dark:text-white">Segera Hadir</h3>
         <img src="{{ asset('assets/icons/soon.png') }}" class="h-5 lg:h-6">
     </div>
     <section class="relative h-full group">
@@ -279,27 +275,26 @@
         </button>
         <div class="circlePosition w-[80%] h-[80%] bg-primary rounded-[100%] absolute z-0 top-[25%] blur-[250px]"></div>
         <!-- Swiper -->
-        <div class="swiper mySwiperSH h-full w-full">
+        <div class="w-full h-full swiper mySwiperSH">
             <div class="swiper-wrapper lg:-start-4">
                 <!-- Card -->
                 @foreach (explode(";", cache('settings')['upcoming-product']['value']) as $product)
                 <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
                     <div
-                        class="group flex flex-col h-full w-full bg-white shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+                        class="flex flex-col w-full h-full bg-white rounded-md shadow-sm group lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                         <div class="flex justify-center items-center h-full">
                             <img src="{{ $product }}"
-                                class="h-full object-cover rounded-md lg:rounded-lg" />
+                                class="object-cover h-full rounded-md lg:rounded-lg" />
                         </div>
                     </div>
                 </div>
                 @endforeach
-
                 <!-- End Card -->
 
                 <!-- Card -->
-                <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
+                <div class="swiper-slide slide-tsh flex justify-center h-[265px] w-40 lg:h-[300px] lg:w-[190px]">
                     <div
-                        class="group flex flex-col justify-center items-center h-full w-full bg-primary shadow-sm rounded-md lg:rounded-lg dark:bg-neutral-900 dark:shadow-neutral-700/70">
+                        class="flex flex-col justify-center items-center w-full h-full rounded-md shadow-sm group bg-primary lg:rounded-lg dark:bg-neutral-900 dark:shadow-neutral-700/70">
                         <div class="absolute bottom-5 opacity-30">
                             <svg class="size-20 lg:size-28" width="12" height="12" viewBox="0 0 56 56"
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -318,13 +313,13 @@
                                     fill="#93c5fd" />
                             </svg>
                         </div>
-                        <div class="py-1 px-2 gap-1 text-start">
-                            <p class="text-white dark:text-neutral-300 text-sm lg:text-lg font-semibold">
+                        <div class="gap-1 px-2 py-1 text-start">
+                            <p class="text-sm font-semibold text-white dark:text-neutral-300 lg:text-lg">
                                 Lihat Semua
                             </p>
                             <div class="flex justify-center items-center">
                                 <i
-                                    class="bx bxs-chevron-right-circle text-3xl lg:text-4xl text-white dark:text-neutral-300 z-10 translate-x-1"></i>
+                                    class="z-10 text-3xl text-white translate-x-1 bx bxs-chevron-right-circle lg:text-4xl dark:text-neutral-300"></i>
                             </div>
                         </div>
                     </div>
@@ -343,9 +338,9 @@
     <div class="overflow-hidden mt-4">
         <div class="relative max-w-[85rem] px-4 py-4 sm:py-6 lg:py-10 lg:px-0 mx-auto">
             <!-- Title -->
-            <div class="flex justify-around items-center w-full mb-6">
+            <div class="flex justify-around items-center mb-6 w-full">
                 <span>
-                    <svg class="size-8 sm:size-10 lg:size-16 text-gray-300 dark:text-neutral-500" width="16"
+                    <svg class="text-gray-300 size-8 sm:size-10 lg:size-16 dark:text-neutral-500" width="16"
                         height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
                         aria-hidden="true">
                         <path
@@ -355,7 +350,7 @@
                 </span>
                 <span>
                     <h2
-                        class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 text-xl lg:text-2xl font-bold">
+                        class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500 lg:text-2xl">
                         Testimoni
                     </h2>
                 </span>
@@ -363,7 +358,7 @@
                     <a href="#"><i
                             class="bx bxs-right-top-arrow-circle text-[32px] sm:text-[40px] lg:text-[48px] text-primary hover:"></i></a>
                     <span
-                        class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1.5 px-2 bg-primary text-xs font-medium text-white dark:text-black rounded shadow-sm"
+                        class="inline-block absolute invisible z-10 px-2 py-1.5 text-xs font-medium text-white rounded shadow-sm opacity-0 transition-opacity hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible bg-primary dark:text-black"
                         role="tooltip">
                         Lihat semua
                     </span>
@@ -372,15 +367,15 @@
             <!-- End Title -->
 
             <!-- Grid -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:px-3">
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:px-3">
                 <!-- Card -->
-                <div class="flex h-auto cursor-pointer rounded-xl hover:-translate-y-1 duration-300"
+                <div class="flex h-auto rounded-xl duration-300 cursor-pointer hover:-translate-y-1"
                     style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
                     onmouseover="this.style.boxShadow='0 0 16px rgba(167, 139, 255, 1)';"
                     onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
                     <div class="flex flex-col bg-white rounded-xl dark:bg-neutral-900">
                         <div class="flex-auto p-4 md:p-6">
-                            <p class="text-base italic md:text-lg text-gray-800 dark:text-neutral-200">
+                            <p class="text-base italic text-gray-800 md:text-lg dark:text-neutral-200">
                                 " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ab est ex, esse neque
                                 molestias nobis nisi, expedita dolorum beatae, dignissimos odit recusandae amet adipisci! "
                             </p>
@@ -393,9 +388,9 @@
                                         src="{{ asset('assets/team/pak-asep.jpg') }}" alt="Image Testimonials">
                                 </div>
 
-                                <div class="flex justify-between gap-2 w-full">
+                                <div class="flex gap-2 justify-between w-full">
                                     <div class="grow ms-3">
-                                        <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-neutral-200">
+                                        <p class="text-sm font-semibold text-gray-800 sm:text-base dark:text-neutral-200">
                                             Asep Wayhudin
                                         </p>
                                         <p class="text-xs text-gray-500 dark:text-neutral-400">
@@ -403,36 +398,36 @@
                                         </p>
                                     </div>
                                     <!-- Rating -->
-                                    <div class="flex items-center gap-0.5">
-                                        <svg class="flex-shrink-0 size-5 text-yellow-400 dark:text-yellow-600"
+                                    <div class="flex gap-0.5 items-center">
+                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
                                             </path>
                                         </svg>
-                                        <svg class="flex-shrink-0 size-5 text-yellow-400 dark:text-yellow-600"
+                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
                                             </path>
                                         </svg>
-                                        <svg class="flex-shrink-0 size-5 text-yellow-400 dark:text-yellow-600"
+                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
                                             </path>
                                         </svg>
-                                        <svg class="flex-shrink-0 size-5 text-yellow-400 dark:text-yellow-600"
+                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
                                             </path>
                                         </svg>
-                                        <svg class="flex-shrink-0 size-5 text-yellow-400 dark:text-yellow-600"
+                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path
@@ -449,13 +444,13 @@
                 <!-- End Card -->
 
                 <!-- Card -->
-                <div class="flex h-auto cursor-pointer rounded-xl hover:-translate-y-1 duration-300"
+                <div class="flex h-auto rounded-xl duration-300 cursor-pointer hover:-translate-y-1"
                     style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
                     onmouseover="this.style.boxShadow='0 0 16px rgba(167, 139, 255, 1)';"
                     onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
                     <div class="flex flex-col bg-white rounded-xl dark:bg-neutral-900">
                         <div class="flex-auto p-4 md:p-6">
-                            <p class="text-base italic md:text-lg text-gray-800 dark:text-neutral-200">
+                            <p class="text-base italic text-gray-800 md:text-lg dark:text-neutral-200">
                                 " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ab est ex, esse neque
                                 molestias nobis nisi, expedita dolorum beatae, dignissimos odit recusandae amet adipisci! "
                             </p>
@@ -468,9 +463,9 @@
                                         src="{{ asset('assets/team/hafiz.jpg') }}" alt="Image Testimonials">
                                 </div>
 
-                                <div class="flex justify-between gap-2 w-full">
+                                <div class="flex gap-2 justify-between w-full">
                                     <div class="grow ms-3">
-                                        <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-neutral-200">
+                                        <p class="text-sm font-semibold text-gray-800 sm:text-base dark:text-neutral-200">
                                             Hafiz Haekal
                                         </p>
                                         <p class="text-xs text-gray-500 dark:text-neutral-400">
@@ -478,36 +473,36 @@
                                         </p>
                                     </div>
                                     <!-- Rating -->
-                                    <div class="flex items-center gap-0.5">
-                                        <svg class="flex-shrink-0 size-5 text-yellow-400 dark:text-yellow-600"
+                                    <div class="flex gap-0.5 items-center">
+                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
                                             </path>
                                         </svg>
-                                        <svg class="flex-shrink-0 size-5 text-yellow-400 dark:text-yellow-600"
+                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
                                             </path>
                                         </svg>
-                                        <svg class="flex-shrink-0 size-5 text-yellow-400 dark:text-yellow-600"
+                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
                                             </path>
                                         </svg>
-                                        <svg class="flex-shrink-0 size-5 text-yellow-400 dark:text-yellow-600"
+                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
                                             </path>
                                         </svg>
-                                        <svg class="flex-shrink-0 size-5 text-yellow-400 dark:text-yellow-600"
+                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path
@@ -524,13 +519,13 @@
                 <!-- End Card -->
 
                 <!-- Card -->
-                <div class="flex h-auto cursor-pointer rounded-xl hover:-translate-y-1 duration-300"
+                <div class="flex h-auto rounded-xl duration-300 cursor-pointer hover:-translate-y-1"
                     style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
                     onmouseover="this.style.boxShadow='0 0 16px rgba(167, 139, 255, 1)';"
                     onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
                     <div class="flex flex-col bg-white rounded-xl dark:bg-neutral-900">
                         <div class="flex-auto p-4 md:p-6">
-                            <p class="text-base italic md:text-lg text-gray-800 dark:text-neutral-200">
+                            <p class="text-base italic text-gray-800 md:text-lg dark:text-neutral-200">
                                 " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ab est ex, esse neque
                                 molestias nobis nisi, expedita dolorum beatae, dignissimos odit recusandae amet adipisci! "
                             </p>
@@ -543,9 +538,9 @@
                                         src="{{ asset('assets/team/azfa.jpg') }}" alt="Image Testimonials">
                                 </div>
 
-                                <div class="flex justify-between gap-2 w-full">
+                                <div class="flex gap-2 justify-between w-full">
                                     <div class="grow ms-3">
-                                        <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-neutral-200">
+                                        <p class="text-sm font-semibold text-gray-800 sm:text-base dark:text-neutral-200">
                                             Muhammad Azfa
                                         </p>
                                         <p class="text-xs text-gray-500 dark:text-neutral-400">
@@ -553,36 +548,36 @@
                                         </p>
                                     </div>
                                     <!-- Rating -->
-                                    <div class="flex items-center gap-0.5">
-                                        <svg class="flex-shrink-0 size-5 text-yellow-400 dark:text-yellow-600"
+                                    <div class="flex gap-0.5 items-center">
+                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
                                             </path>
                                         </svg>
-                                        <svg class="flex-shrink-0 size-5 text-yellow-400 dark:text-yellow-600"
+                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
                                             </path>
                                         </svg>
-                                        <svg class="flex-shrink-0 size-5 text-yellow-400 dark:text-yellow-600"
+                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
                                             </path>
                                         </svg>
-                                        <svg class="flex-shrink-0 size-5 text-yellow-400 dark:text-yellow-600"
+                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path
                                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
                                             </path>
                                         </svg>
-                                        <svg class="flex-shrink-0 size-5 text-yellow-400 dark:text-yellow-600"
+                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
                                             xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" viewBox="0 0 16 16">
                                             <path
@@ -601,27 +596,27 @@
             <!-- End Grid -->
 
             <!-- Grid -->
-            <div class="mt-16 grid gap-6 grid-cols-2 sm:gap-12 lg:grid-cols-3 lg:gap-8">
+            <div class="grid grid-cols-2 gap-6 mt-16 sm:gap-12 lg:grid-cols-3 lg:gap-8">
                 <!-- Stats -->
                 <div>
-                    <h4 class="text-lg sm:text-xl font-semibold text-gray-800">Produk</h4>
-                    <p class="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-primary">32</p>
+                    <h4 class="text-lg font-semibold text-gray-800 sm:text-xl">Produk</h4>
+                    <p class="mt-2 text-4xl font-bold sm:mt-3 sm:text-6xl text-primary">32</p>
                     <p class="mt-1 text-gray-400">Dijamin berkualitas</p>
                 </div>
                 <!-- End Stats -->
 
                 <!-- Stats -->
                 <div>
-                    <h4 class="text-lg sm:text-xl font-semibold text-gray-800">Lebih dari</h4>
-                    <p class="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-primary">500k</p>
+                    <h4 class="text-lg font-semibold text-gray-800 sm:text-xl">Lebih dari</h4>
+                    <p class="mt-2 text-4xl font-bold sm:mt-3 sm:text-6xl text-primary">500k</p>
                     <p class="mt-1 text-gray-400">Melayani pesanan</p>
                 </div>
                 <!-- End Stats -->
 
                 <!-- Stats -->
                 <div>
-                    <h4 class="text-lg sm:text-xl font-semibold text-gray-800">Pelanggan puas</h4>
-                    <p class="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-primary">99%</p>
+                    <h4 class="text-lg font-semibold text-gray-800 sm:text-xl">Pelanggan puas</h4>
+                    <p class="mt-2 text-4xl font-bold sm:mt-3 sm:text-6xl text-primary">99%</p>
                     <p class="mt-1 text-gray-400">Happy customer</p>
                 </div>
                 <!-- End Stats -->
@@ -629,7 +624,7 @@
             <!-- End Grid -->
 
             <!-- SVG Element -->
-            <div class="absolute bottom-0 end-0 transform lg:translate-x-32" aria-hidden="true">
+            <div class="absolute bottom-0 transform end-0 lg:translate-x-32" aria-hidden="true">
                 <svg class="w-40 h-auto sm:w-72" width="1115" height="636" viewBox="0 0 1115 636" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -657,10 +652,10 @@
     <!-- End Bottom Navbar -->
 
     <!-- Kategori -->
-    {{-- <div class="lg:hidden py-2 px-4 mt-2">
+    {{-- <div class="px-4 py-2 mt-2 lg:hidden">
   <div class="flex flex-wrap">
-    <div class="w-1/3 p-1 border-r border-b">
-      <a href="#" class="flex items-center hover:bg-neutral-100 dark:hover:bg-neutral-700 duration-200 p-2 rounded-lg">
+    <div class="p-1 w-1/3 border-r border-b">
+      <a href="#" class="flex items-center p-2 rounded-lg duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700">
         <img src="{{ asset('assets/kategori/kaos.png') }}" class="flex-shrink-0 size-7">
         <div class="ms-2">
           <h3 class="text-sm text-gray-800 dark:text-white">
@@ -669,8 +664,8 @@
         </div>
       </a>
     </div>
-    <div class="w-1/3 p-1 border-r border-b">
-      <a href="#" class="flex items-center hover:bg-neutral-100 dark:hover:bg-neutral-700 duration-200 p-2 rounded-lg">
+    <div class="p-1 w-1/3 border-r border-b">
+      <a href="#" class="flex items-center p-2 rounded-lg duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700">
         <img src="{{ asset('assets/kategori/totebag.png') }}" class="flex-shrink-0 size-7">
         <div class="ms-2">
           <h3 class="text-sm text-gray-800 dark:text-white">
@@ -679,8 +674,8 @@
         </div>
       </a>
     </div>
-    <div class="w-1/3 p-1 border-b">
-      <a href="#" class="flex items-center hover:bg-neutral-100 dark:hover:bg-neutral-700 duration-200 p-2 rounded-lg">
+    <div class="p-1 w-1/3 border-b">
+      <a href="#" class="flex items-center p-2 rounded-lg duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700">
         <img src="{{ asset('assets/kategori/tumbler.png') }}" class="flex-shrink-0 size-7">
         <div class="ms-2">
           <h3 class="text-sm text-gray-800 dark:text-white">
@@ -689,8 +684,8 @@
         </div>
       </a>
     </div>
-    <div class="w-1/3 p-1 border-r">
-      <a href="#" class="flex items-center hover:bg-neutral-100 dark:hover:bg-neutral-700 duration-200 p-2 rounded-lg">
+    <div class="p-1 w-1/3 border-r">
+      <a href="#" class="flex items-center p-2 rounded-lg duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700">
         <img src="{{ asset('assets/kategori/mug.png') }}" class="flex-shrink-0 size-7">
         <div class="ms-2">
           <h3 class="text-sm text-gray-800 dark:text-white">
@@ -699,8 +694,8 @@
         </div>
       </a>
     </div>
-    <div class="w-1/3 p-1 border-r">
-      <a href="#" class="flex items-center hover:bg-neutral-100 dark:hover:bg-neutral-700 duration-200 p-2 rounded-lg">
+    <div class="p-1 w-1/3 border-r">
+      <a href="#" class="flex items-center p-2 rounded-lg duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700">
         <img src="{{ asset('assets/kategori/ganci.png') }}" class="flex-shrink-0 size-7">
         <div class="ms-2">
           <h3 class="text-sm text-gray-800 dark:text-white">
@@ -709,8 +704,8 @@
         </div>
       </a>
     </div>
-    <div class="w-1/3 p-1">
-      <a href="#" class="flex items-center hover:bg-neutral-100 dark:hover:bg-neutral-700 duration-200 p-2 rounded-lg">
+    <div class="p-1 w-1/3">
+      <a href="#" class="flex items-center p-2 rounded-lg duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700">
         <img src="{{ asset('assets/kategori/pin.png') }}" class="flex-shrink-0 size-7">
         <div class="ms-2">
           <h3 class="text-sm text-gray-800 dark:text-white">

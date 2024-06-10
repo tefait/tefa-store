@@ -7,6 +7,7 @@ use App\Models\Customer;
 use App\Models\Order;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -16,10 +17,12 @@ class AppServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
+
     }
 
     public function boot(): void
     {
+        URL::forceScheme('https');
         try {
             cache()->rememberForever(
                 'settings',

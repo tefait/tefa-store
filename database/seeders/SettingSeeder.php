@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Setting;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Cache;
 
 class SettingSeeder extends Seeder
 {
@@ -25,12 +26,12 @@ class SettingSeeder extends Seeder
             ],
             [
                 'name' => 'Site Logo',
-                'value' => 'https://images.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/e5b8438b.svg',
+                'value' => '/assets/img/logo2.png',
                 'type' => 'image',
             ],
             [
                 'name' => 'Site favicon',
-                'value' => 'https://www.tokopedia.com/favicon.ico',
+                'value' => '/favicon.ico',
                 'type' => 'image',
             ],
             [
@@ -44,8 +45,18 @@ class SettingSeeder extends Seeder
                 'type' => 'multi_image',
             ],
         ];
+
         foreach ($setting as $set) {
             Setting::create($set);
         }
+
+        try {
+            Cache::forget('settings');
+        } catch (\Throwable $th) {
+        }
+        Cache::rememberForever(
+            'settings',
+            fn () => Setting::all()->keyBy('key'),
+        );
     }
 }

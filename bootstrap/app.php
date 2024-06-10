@@ -2,6 +2,9 @@
 
 use App\Http\Middleware\AuthenticatedCustomer;
 use App\Http\Middleware\RedirectIfAuthenticated as CustomizedRedirectIfAuthenticated;
+use Fahlisaputra\Minify\Middleware\MinifyCss;
+use Fahlisaputra\Minify\Middleware\MinifyHtml;
+use Fahlisaputra\Minify\Middleware\MinifyJavascript;
 use Illuminate\Auth\Middleware\RedirectIfAuthenticated;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -15,11 +18,15 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+
         $middleware->alias([
             'customer' => AuthenticatedCustomer::class,
         ]);
-        $middleware->web(
-            replace: [RedirectIfAuthenticated::class => CustomizedRedirectIfAuthenticated::class]
+        $middleware->web(append: [
+            // MinifyHtml::class,
+            // MinifyCss::class,
+            // MinifyJavascript::class,
+        ],replace: [RedirectIfAuthenticated::class => CustomizedRedirectIfAuthenticated::class]
         );
     })
     ->withExceptions(function (Exceptions $exceptions) {
