@@ -15,6 +15,7 @@ class CategorySeeder extends Seeder
         Category::create([
             'name' => 'Souvenirs',
             'slug' => 'Souvenirs',
+            'image' => 'assets/kategori/kategori1.jpg',
         ]);
     }
 }
