@@ -21,7 +21,7 @@ class User extends Authenticatable
                 return 'Gudang';
 
             default:
-                return 'Undefined';
+                return 'Tidak diketahui';
         }
     }
 

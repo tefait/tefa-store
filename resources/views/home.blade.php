@@ -38,11 +38,10 @@
         </button>
         <div class="swiper myCarousel relative overflow-hidden h-[130px] sm:h-[220px] lg:h-[300px] rounded-xl">
             <div class="w-full h-full swiper-wrapper">
-                @foreach (explode(";", cache('settings')['carousel-image']['value']) as $carousel)
-                <div class="flex justify-center items-center w-full h-full swiper-slide">
-                    <img src="{{ $carousel }}" alt="Slide Pertama"
-                        class="object-cover w-full h-full" />
-                </div>
+                @foreach (explode(';', cache('settings')['carousel-image']['value']) as $carousel)
+                    <div class="flex justify-center items-center w-full h-full swiper-slide">
+                        <img src="{{ $carousel }}" alt="Slide Pertama" class="object-cover w-full h-full" />
+                    </div>
                 @endforeach
 
             </div>
@@ -149,11 +148,13 @@
                                 <p class="text-sm text-gray-600 dark:text-neutral-300 truncate max-w-full">
                                     {{ $product->name }}
                                 </p>
-                                <p class="block text-sm font-bold text-gray-800 dark:text-white">Rp{{ number_format($product->price, 0, ',', '.</p>
+                                <p class="block text-sm font-bold text-gray-800 dark:text-white">
+                                    Rp{{ number_format($product->price, 0, ',', '.') }}</p>
                                 <div class="flex gap-1 items-center">
-                                    <span class="line-through text-[11px] text-gray-400">Rp{{ number_format($product->price, 0, ',', '.</span>
                                     <span
-                                        class="py-[1px] px-1 inline-flex items-center text-[10px] font-semibold bg-red-100 text-red-600 rounded-full dark:bg-red-500/10 dark:text-red-500">
+                                        class="line-through text-[11px] text-gray-400">Rp{{ number_format($product->price, 0, ',', '.') }}</span>
+                                    <span
+                                        class="py-[1px] px-1 inline-flex items-centcacheer text-[10px] font-semibold bg-red-100 text-red-600 rounded-full dark:bg-red-500/10 dark:text-red-500">
                                         33%
                                     </span>
                                 </div>
@@ -226,23 +227,23 @@
             <div class="flex flex-wrap gap-3">
                 <!-- Card -->
                 @foreach ($newest as $product)
-                <a class="group flex flex-col h-16 lg:h-[145px] z-10 w-[calc(50%-6px)] bg-white rounded-md lg:rounded-xl transition dark:bg-neutral-900"
-                    href="#" style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
-                    onmouseover="this.style.boxShadow='0 0 8px rgba(0, 163, 154, 1)';"
-                    onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
-                    <div class="flex h-full">
-                        <img src="{{ $product->image }}" alt=""
-                            class="rounded-l-md lg:rounded-l-lg">
-                        <div class="flex justify-between items-center w-full">
-                            <div class="gap-1 p-2 w-full lg:p-4 text-start">
-                                <p class="text-xs text-gray-600 dark:text-neutral-300 lg:text-base truncate-1-line">
-                                    {{$product->name}}
-                                </p>
-                                <p class="block text-sm font-bold text-gray-800 dark:text-white lg:text-lg">Rp{{ number_format($product->price, 0, ',', '.</p>
+                    <a class="group flex flex-col h-16 lg:h-[145px] z-10 w-[calc(50%-6px)] bg-white rounded-md lg:rounded-xl transition dark:bg-neutral-900"
+                        href="#" style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
+                        onmouseover="this.style.boxShadow='0 0 8px rgba(0, 163, 154, 1)';"
+                        onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
+                        <div class="flex h-full">
+                            <img src="{{ $product->image }}" alt="" class="rounded-l-md lg:rounded-l-lg">
+                            <div class="flex justify-between items-center w-full">
+                                <div class="gap-1 p-2 w-full lg:p-4 text-start">
+                                    <p class="text-xs text-gray-600 dark:text-neutral-300 lg:text-base truncate-1-line">
+                                        {{ $product->name }}
+                                    </p>
+                                    <p class="block text-sm font-bold text-gray-800 dark:text-white lg:text-lg">
+                                        Rp{{ number_format($product->price, 0, ',', '.') }}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
                 @endforeach
                 <!-- End Card -->
 
@@ -278,16 +279,15 @@
         <div class="w-full h-full swiper mySwiperSH">
             <div class="swiper-wrapper lg:-start-4">
                 <!-- Card -->
-                @foreach (explode(";", cache('settings')['upcoming-product']['value']) as $product)
-                <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
-                    <div
-                        class="flex flex-col w-full h-full bg-white rounded-md shadow-sm group lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-                        <div class="flex justify-center items-center h-full">
-                            <img src="{{ $product }}"
-                                class="object-cover h-full rounded-md lg:rounded-lg" />
+                @foreach (explode(';', cache('settings')['upcoming-product']['value']) as $product)
+                    <div class="swiper-slide slide-tsh flex justify-center h-[275px] w-40 lg:h-[320px] lg:w-[190px]">
+                        <div
+                            class="flex flex-col w-full h-full bg-white rounded-md shadow-sm group lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+                            <div class="flex justify-center items-center h-full">
+                                <img src="{{ $product }}" class="object-cover h-full rounded-md lg:rounded-lg" />
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
                 <!-- End Card -->
 
