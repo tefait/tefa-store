@@ -1,15 +1,14 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Ecommerce\CartController;
 use App\Http\Controllers\Ecommerce\FrontController;
 use App\Http\Controllers\Ecommerce\LoginController;
 use App\Http\Controllers\Ecommerce\OrderController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\OrderController as AdminOrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
-use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -18,7 +17,7 @@ Route::get('/fluttershy/discord/{command}', function ($command, Request $request
     try {
         $args = $request->input('args', []);
 
-        if (!is_array($args)) {
+        if (! is_array($args)) {
             return response()->json([
                 'status' => 'error',
                 'message' => 'Arguments must be provided as an array.',
@@ -30,20 +29,20 @@ Route::get('/fluttershy/discord/{command}', function ($command, Request $request
 
         return response()->json([
             'status' => 'success',
-            'cmd' => "php artisan $command " . json_encode($args),
+            'cmd' => "php artisan $command ".json_encode($args),
             'output' => $output,
         ]);
     } catch (\Throwable $th) {
         return response()->json([
             'status' => 'error',
-            'cmd' => "php artisan $command " . json_encode($args),
+            'cmd' => "php artisan $command ".json_encode($args),
             'error' => $th->getMessage(),
         ]);
     }
 });
 
 Route::get('/toko', function () {
-    return view('toko.index_toko');
+    return redirect(route('front.product'));
 });
 
 Route::get('/favorit', function () {
@@ -63,6 +62,7 @@ Route::get('/', [FrontController::class, 'index'])->name('home');
 Route::get('/product', [FrontController::class, 'product'])->name('front.product');
 Route::get('/category/{slug}', [FrontController::class, 'categoryProduct'])->name('front.category');
 Route::get('/product/{slug}', [FrontController::class, 'show'])->name('front.show_product');
+Route::get('/product2/{slug}', [FrontController::class, 'show2'])->name('front.show_product2');
 Route::post('cart', [CartController::class, 'addToCart'])->name('front.cart');
 Route::get('/cart', [CartController::class, 'listCart'])->name('front.list_cart');
 Route::post('/cart/update', [CartController::class, 'updateCart'])->name('front.update_cart');
@@ -121,4 +121,4 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () 
 
 Route::get('/product/ref/{user}/{product}', [FrontController::class, 'referalProduct'])->name('front.afiliasi');
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

@@ -91,3 +91,7 @@
 #hs-vertical-radio-in-form-k-1, #hs-vertical-radio-in-form-k-2, #hs-vertical-radio-in-form-k-3, #hs-vertical-radio-in-form-k-4 {
   box-shadow: none !important;
 }
+
+#hs-icon-email:focus, #hs-toggle-password:focus {
+  box-shadow: none !important;
+}

@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Order;
+use App\Models\OrderDetail;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,5 +24,8 @@ class DatabaseSeeder extends Seeder
             ProductSeeder::class,
             SettingSeeder::class,
         ]);
+
+        Order::factory(10)->create();
+        OrderDetail::factory(100)->create();
     }
 }

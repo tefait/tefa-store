@@ -14,7 +14,7 @@ class LoginController extends Controller
             return redirect(route('customer.dashboard'));
         }
 
-        return view('ecommerce.login');
+        return view('ecommerce.login2');
     }
 
     public function login(Request $request)

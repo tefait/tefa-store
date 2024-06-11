@@ -1,10 +1,10 @@
 <!-- ========== FOOTER ========== -->
-<footer class="w-full max-w-[85rem] border-t mt-4 px-4 pt-4 lg:px-0 lg:py-10">
+<footer class="w-full max-w-[85rem] border-t mt-4 mb-14 px-4 pt-4 lg:px-0 lg:py-10 lg:mb-0">
     <div class="flex justify-between">
         <div class="col-span-full hidden lg:col-span-1 lg:block w-1/3">
             <a class="flex-none text-xl font-semibold dark:text-white hidden lg:block" href="#"
                 aria-label="Logo"><img src="{{ cache('settings')['site-logo']['value'] }}" class="lg:h-12"
-                    alt="Logo Tefa PPLG"></a>
+                alt="Logo Tefa PPLG"></a>
             <p class="mt-3 text-xs sm:text-sm text-gray-600 dark:text-neutral-400">© 2024 Tefa PPLG SMKN 2 Sumedang.</p>
         </div>
         <!-- End Col -->
@@ -118,7 +118,7 @@
         class="lg:hidden flex items-center justify-center sm:justify-start mt-3 border-t border-gray-200 dark:border-neutral-700">
         <div class="flex flex-col py-2">
             <a class="flex justify-center sm:justify-start" href="#" aria-label="Logo"><img
-                    src="{{ asset('assets/img/logo2.png') }}" class="h-12" alt="Logo Tefa PPLG"></a>
+                src="{{ asset('assets/img/logo2.png') }}" class="h-12" alt="Logo Tefa PPLG"></a>
             <p class="mt-1 text-xs sm:text-sm text-gray-600 dark:text-neutral-400">© 2024 Tefa PPLG SMKN 2 Sumedang.</p>
         </div>
     </div>

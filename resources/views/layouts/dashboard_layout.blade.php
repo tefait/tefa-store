@@ -13,16 +13,11 @@
 
 <body class="dark:bg-black">
 
-    @if (Request::is('dashboard'))
-        @include('partials.header')
-        @include('partials.sidebar')
-    @else
-        @include('partials.navbar')
-    @endif
-
-    <div class="sm:container sm:px-[5vw] mb-14 sm:mb-0">
-        @yield('container')
-    </div>
+    @include('partials.header')
+    @include('partials.sidebar')
+    <section id="content">
+        @yield('dashboard')
+    </section>
     @include('layouts.js')
 </body>
 

@@ -5,7 +5,7 @@
         <i class="bx bxs-home text-[26px] text-center"></i>
         <p class="text-xs text-center bottom-nav-label">Beranda</p>
       </a>
-      <a href="{{ route('product.index') }}" class="flex flex-col justify-center w-16 bottom-nav-item text-neutral-500">
+      <a href="{{ route('front.product') }}" class="flex flex-col justify-center w-16 bottom-nav-item text-neutral-500">
         <i class="bx bxs-store text-[26px] text-center"></i>
         <p class="text-xs text-center bottom-nav-label">Toko</p>
       </a>
@@ -23,4 +23,3 @@
       </a>
     </nav>
 </div>
-  

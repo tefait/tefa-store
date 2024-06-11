@@ -134,8 +134,8 @@
                     <div class="swiper-slide slide-tsh flex justify-center h-[265px] w-40 lg:h-[300px] lg:w-[190px]">
                         <div
                             class="flex flex-col w-full h-full bg-white rounded-md shadow-sm group lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-                            <div class="flex flex-col justify-center items-center">
-                                <img src="{{ $product->image }}" class="object-cover rounded-t-md lg:rounded-t-lg" />
+                            <div class="flex flex-col justify-center items-center h-[65%]">
+                                <img src="{{ $product->image }}" class="h-full object-cover rounded-t-md lg:rounded-t-lg" />
                                 <div
                                     class="flex items-center justify-center h-4 w-12 bg-[#FDB840] rounded-tr-md p-1 ps-0 absolute top-[144px] left-0 lg:top-[174px]">
                                     <i class="text-sm text-white bx bxs-medal"></i>
@@ -391,7 +391,7 @@
                                 <div class="flex gap-2 justify-between w-full">
                                     <div class="grow ms-3">
                                         <p class="text-sm font-semibold text-gray-800 sm:text-base dark:text-neutral-200">
-                                            Asep Wayhudin
+                                            Asep Wahyudin
                                         </p>
                                         <p class="text-xs text-gray-500 dark:text-neutral-400">
                                             Ketua Program Keahlian PPLG
@@ -651,70 +651,4 @@
     @include('partials.bottom_nav')
     <!-- End Bottom Navbar -->
 
-    <!-- Kategori -->
-    {{-- <div class="px-4 py-2 mt-2 lg:hidden">
-  <div class="flex flex-wrap">
-    <div class="p-1 w-1/3 border-r border-b">
-      <a href="#" class="flex items-center p-2 rounded-lg duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700">
-        <img src="/assets/kategori/kaos.png" class="flex-shrink-0 size-7">
-        <div class="ms-2">
-          <h3 class="text-sm text-gray-800 dark:text-white">
-            Kaos
-          </h3>
-        </div>
-      </a>
-    </div>
-    <div class="p-1 w-1/3 border-r border-b">
-      <a href="#" class="flex items-center p-2 rounded-lg duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700">
-        <img src="/assets/kategori/totebag.png" class="flex-shrink-0 size-7">
-        <div class="ms-2">
-          <h3 class="text-sm text-gray-800 dark:text-white">
-            Totebag
-          </h3>
-        </div>
-      </a>
-    </div>
-    <div class="p-1 w-1/3 border-b">
-      <a href="#" class="flex items-center p-2 rounded-lg duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700">
-        <img src="/assets/kategori/tumbler.png" class="flex-shrink-0 size-7">
-        <div class="ms-2">
-          <h3 class="text-sm text-gray-800 dark:text-white">
-            Tumbler
-          </h3>
-        </div>
-      </a>
-    </div>
-    <div class="p-1 w-1/3 border-r">
-      <a href="#" class="flex items-center p-2 rounded-lg duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700">
-        <img src="/assets/kategori/mug.png" class="flex-shrink-0 size-7">
-        <div class="ms-2">
-          <h3 class="text-sm text-gray-800 dark:text-white">
-            Mug
-          </h3>
-        </div>
-      </a>
-    </div>
-    <div class="p-1 w-1/3 border-r">
-      <a href="#" class="flex items-center p-2 rounded-lg duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700">
-        <img src="/assets/kategori/ganci.png" class="flex-shrink-0 size-7">
-        <div class="ms-2">
-          <h3 class="text-sm text-gray-800 dark:text-white">
-            Ganci
-          </h3>
-        </div>
-      </a>
-    </div>
-    <div class="p-1 w-1/3">
-      <a href="#" class="flex items-center p-2 rounded-lg duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-700">
-        <img src="/assets/kategori/pin.png" class="flex-shrink-0 size-7">
-        <div class="ms-2">
-          <h3 class="text-sm text-gray-800 dark:text-white">
-            Pin
-          </h3>
-        </div>
-      </a>
-    </div>
-  </div>
-</div> --}}
-    <!-- End Kategori -->
 @endsection

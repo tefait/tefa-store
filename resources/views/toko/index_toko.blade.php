@@ -179,17 +179,17 @@
 
                 <div>
                     <h4 class="text-sm font-bold text-gray-900 uppercase lg:text-base dark:text-neutral-100">Bantuan</h4>
-                    <div class="grid mt-3 space-y-2 text-sm lg:space-y-3">
+                    <div class="mt-3 grid space-y-2 lg:space-y-3 text-sm">
                         <span class="space-y-0.5">
                             <p class="inline-flex gap-x-2 text-gray-600 dark:text-neutral-400">WhatsApp</p>
-                            <h4><a href="#"
-                                    class="text-sm font-semibold text-gray-900 duration-300 hover:text-primary dark:text-neutral-100 dark:hover:text-primary">0878-9481-8815</a>
+                            <h4><a href="https://wa.me/62{{ ltrim(str_replace('-', '', cache('settings')['whatsapp']['value']), '0') }}"
+                                    class="text-sm font-semibold text-gray-900 hover:text-primary dark:text-neutral-100 dark:hover:text-primary duration-300">{{ cache('settings')['whatsapp']['value'] }}</a>
                             </h4>
                         </span>
                         <span class="space-y-0.5">
                             <p class="inline-flex gap-x-2 text-gray-600 dark:text-neutral-400">Email</p>
-                            <h4><a href="#"
-                                    class="text-sm font-semibold text-gray-900 duration-300 hover:text-primary dark:text-neutral-100 dark:hover:text-primary">tefaitrpl@gmail.com
+                            <h4><a href="mailto:{{ cache('settings')['email']['value'] }}"
+                                    class="text-sm font-semibold text-gray-900 hover:text-primary dark:text-neutral-100 dark:hover:text-primary duration-300">{{ cache('settings')['email']['value'] }}
                             </h4>
                         </span>
                     </div>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.dashboard_layout')
 
 @section('dashboard')
 
@@ -37,14 +37,14 @@
             </p>
             <div class="mt-1 flex items-center gap-x-2">
               <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-neutral-200">
-                102,604
+                {{$user_count}}
               </h3>
-              <span class="flex items-center gap-x-1 text-red-600 dark:text-red-500">
+              {{-- <span class="flex items-center gap-x-1 text-red-600 dark:text-red-500">
                 <svg class="inline-block size-4 self-center" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg>
                 <span class="inline-block text-sm">
                   1.7%
                 </span>
-              </span>
+              </span> --}}
             </div>
           </div>
           <div class="flex-shrink-0 flex justify-center items-center size-[46px] bg-primary text-white rounded-full dark:bg-blue-900 dark:text-blue-200">
@@ -63,7 +63,7 @@
             </p>
             <div class="mt-1 flex items-center gap-x-2">
               <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-neutral-200">
-                12
+                {{$product_count}}
               </h3>
             </div>
           </div>
@@ -83,14 +83,14 @@
             </p>
             <div class="mt-1 flex items-center gap-x-2">
               <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-neutral-200">
-                75,020
+                {{$order_count}}
               </h3>
-              <span class="flex items-center gap-x-1 text-green-600 dark:text-green-500">
+              {{-- <span class="flex items-center gap-x-1 text-green-600 dark:text-green-500">
                 <svg class="inline-block size-4 self-center" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
                 <span class="inline-block text-sm">
                   3.4%
                 </span>
-              </span>
+              </span> --}}
             </div>
           </div>
           <div class="flex-shrink-0 flex justify-center items-center size-[46px] bg-primary text-white rounded-full dark:bg-blue-900 dark:text-blue-200">
@@ -235,260 +235,58 @@
               </thead>
 
               <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
+                @foreach ($top_sales as $product)
                 <tr>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="py-3 flex justify-center">
-                      <span class="flex-shrink-0 flex justify-center items-center text-sm size-[24px] bg-gradient-to-tr from-yellow-400 to-red-500 text-white rounded-full dark:bg-blue-900 dark:text-blue-200">
-                        1
-                      </span>
-                    </div>
-                  </td>
-                  <td class="size-px min-w-72 whitespace-nowrap py-2">
-                    <div class="flex items-center gap-x-3 ps-3 pe-6 py-0.5">
-                        <img class="inline-block size-[40px] rounded-lg" src="/storage/products/kaos_sm.jpg" alt="Image Product">
-                        <div class="grow">
-                          <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200 max-w-52 lg:max-w-full truncate">
-                            Kaos pendek cotton combed 30s
-                          </span>
-                        </div>
-                    </div>
-                  </td>
-                  <td class="h-px w-32 whitespace-nowrap py-2">
-                    <div class="px-6 py-3">
-                      <span class="block text-sm text-gray-500 dark:text-neutral-300">
-                        Kaos
-                      </span>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="px-6 py-3">
-                      <div class="flex items-center gap-x-3">
-                        <span class="text-sm text-gray-500 dark:text-neutral-300">
-                          Rp50.000
+                    <td class="size-px whitespace-nowrap py-2">
+                      <div class="py-3 flex justify-center">
+                        <span class="flex-shrink-0 flex justify-center items-center text-sm size-[24px] bg-gradient-to-tr from-yellow-400 to-red-500 text-white rounded-full dark:bg-blue-900 dark:text-blue-200">
+                          {{$loop->iteration}}
                         </span>
                       </div>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="py-1.5 flex items-center">
-                      <i class="bx bxs-hot text-2xl text-red-500 translate-x-2 z-10"></i>
-                      <span class="py-1 px-4 w-[72px] text-xs font-semibold -translate-x-2 text-center bg-gradient-to-r from-yellow-300 to-red-500 text-white rounded-full">
-                        2160
-                      </span>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="px-6 py-2.5">
-                      <span class="text-sm font-semibold text-gray-500 dark:text-neutral-300">
-                        Rp108.000.000
-                      </span>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="py-3 flex justify-center">
-                      <span class="flex-shrink-0 flex justify-center items-center text-sm size-[24px] bg-gradient-to-tr from-yellow-400 to-red-500 text-white rounded-full dark:bg-blue-900 dark:text-blue-200">
-                        2
-                      </span>
-                    </div>
-                  </td>
-                  <td class="size-px min-w-72 whitespace-nowrap py-2">
-                    <div class="flex items-center gap-x-3 ps-3 pe-6 py-0.5">
-                        <img class="inline-block size-[40px] rounded-lg" src="/storage/products/kaos_sm.jpg" alt="Image Product">
-                        <div class="grow">
-                          <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200 max-w-52 lg:max-w-full truncate">
-                            Kaos pendek cotton combed 30s
-                          </span>
-                        </div>
-                    </div>
-                  </td>
-                  <td class="h-px w-32 whitespace-nowrap py-2">
-                    <div class="px-6 py-3">
-                      <span class="block text-sm text-gray-500 dark:text-neutral-300">
-                        Kaos
-                      </span>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="px-6 py-3">
-                      <div class="flex items-center gap-x-3">
-                        <span class="text-sm text-gray-500 dark:text-neutral-300">
-                          Rp50.000
+                    </td>
+                    <td class="size-px min-w-72 whitespace-nowrap py-2">
+                      <div class="flex items-center gap-x-3 ps-3 pe-6 py-0.5">
+                          <img class="inline-block size-[40px] rounded-lg" src="/storage/products/kaos_sm.jpg" alt="Image Product">
+                          <div class="grow">
+                            <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200 max-w-52 lg:max-w-full truncate">
+                              {{$product->name}}
+                            </span>
+                          </div>
+                      </div>
+                    </td>
+                    <td class="h-px w-32 whitespace-nowrap py-2">
+                      <div class="px-6 py-3">
+                        <span class="block text-sm text-gray-500 dark:text-neutral-300">
+                          {{$product->category->name}}
                         </span>
                       </div>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="py-1.5 flex items-center">
-                      <i class="bx bxs-hot text-2xl text-red-500 translate-x-2 z-10"></i>
-                      <span class="py-1 px-4 w-[72px] text-xs font-semibold -translate-x-2 text-center bg-gradient-to-r from-yellow-300 to-red-500 text-white rounded-full">
-                        2160
-                      </span>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="px-6 py-2.5">
-                      <span class="text-sm font-semibold text-gray-500 dark:text-neutral-300">
-                        Rp108.000.000
-                      </span>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="py-3 flex justify-center">
-                      <span class="flex-shrink-0 flex justify-center items-center text-sm size-[24px] bg-gradient-to-tr from-yellow-400 to-red-500 text-white rounded-full dark:bg-blue-900 dark:text-blue-200">
-                        3
-                      </span>
-                    </div>
-                  </td>
-                  <td class="size-px min-w-72 whitespace-nowrap py-2">
-                    <div class="flex items-center gap-x-3 ps-3 pe-6 py-0.5">
-                        <img class="inline-block size-[40px] rounded-lg" src="/storage/products/kaos_sm.jpg" alt="Image Product">
-                        <div class="grow">
-                          <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200 max-w-52 lg:max-w-full truncate">
-                            Kaos pendek cotton combed 30s
+                    </td>
+                    <td class="size-px whitespace-nowrap py-2">
+                      <div class="px-6 py-3">
+                        <div class="flex items-center gap-x-3">
+                          <span class="text-sm text-gray-500 dark:text-neutral-300">
+                            Rp {{number_format($product->price, 0, ',', '.')}}
                           </span>
                         </div>
-                    </div>
-                  </td>
-                  <td class="h-px w-32 whitespace-nowrap py-2">
-                    <div class="px-6 py-3">
-                      <span class="block text-sm text-gray-500 dark:text-neutral-300">
-                        Kaos
-                      </span>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="px-6 py-3">
-                      <div class="flex items-center gap-x-3">
-                        <span class="text-sm text-gray-500 dark:text-neutral-300">
-                          Rp50.000
+                      </div>
+                    </td>
+                    <td class="size-px whitespace-nowrap py-2">
+                      <div class="py-1.5 flex items-center">
+                        <i class="bx bxs-hot text-2xl text-red-500 translate-x-2 z-10"></i>
+                        <span class="py-1 px-4 w-[72px] text-xs font-semibold -translate-x-2 text-center bg-gradient-to-r from-yellow-300 to-red-500 text-white rounded-full">
+                          {{$product->orders_count}}
                         </span>
                       </div>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="py-1.5 flex items-center">
-                      <i class="bx bxs-hot text-2xl text-red-500 translate-x-2 z-10"></i>
-                      <span class="py-1 px-4 w-[72px] text-xs font-semibold -translate-x-2 text-center bg-gradient-to-r from-yellow-300 to-red-500 text-white rounded-full">
-                        2160
-                      </span>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="px-6 py-2.5">
-                      <span class="text-sm font-semibold text-gray-500 dark:text-neutral-300">
-                        Rp108.000.000
-                      </span>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="py-3 flex justify-center">
-                      <span class="flex-shrink-0 flex justify-center items-center text-sm size-[24px] bg-gradient-to-tr from-yellow-400 to-red-500 text-white rounded-full dark:bg-blue-900 dark:text-blue-200">
-                        4
-                      </span>
-                    </div>
-                  </td>
-                  <td class="size-px min-w-72 whitespace-nowrap py-2">
-                    <div class="flex items-center gap-x-3 ps-3 pe-6 py-0.5">
-                        <img class="inline-block size-[40px] rounded-lg" src="/storage/products/kaos_sm.jpg" alt="Image Product">
-                        <div class="grow">
-                          <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200 max-w-52 lg:max-w-full truncate">
-                            Kaos pendek cotton combed 30s
-                          </span>
-                        </div>
-                    </div>
-                  </td>
-                  <td class="h-px w-32 whitespace-nowrap py-2">
-                    <div class="px-6 py-3">
-                      <span class="block text-sm text-gray-500 dark:text-neutral-300">
-                        Kaos
-                      </span>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="px-6 py-3">
-                      <div class="flex items-center gap-x-3">
-                        <span class="text-sm text-gray-500 dark:text-neutral-300">
-                          Rp50.000
+                    </td>
+                    <td class="size-px whitespace-nowrap py-2">
+                      <div class="px-6 py-2.5">
+                        <span class="text-sm font-semibold text-gray-500 dark:text-neutral-300">
+                          Rp {{number_format($product->orders_count * $product->price, 0, ',', '.')}}
                         </span>
                       </div>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="py-1.5 flex items-center">
-                      <i class="bx bxs-hot text-2xl text-red-500 translate-x-2 z-10"></i>
-                      <span class="py-1 px-4 w-[72px] text-xs font-semibold -translate-x-2 text-center bg-gradient-to-r from-yellow-300 to-red-500 text-white rounded-full">
-                        2160
-                      </span>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="px-6 py-2.5">
-                      <span class="text-sm font-semibold text-gray-500 dark:text-neutral-300">
-                        Rp108.000.000
-                      </span>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="py-3 flex justify-center">
-                      <span class="flex-shrink-0 flex justify-center items-center text-sm size-[24px] bg-gradient-to-tr from-yellow-400 to-red-500 text-white rounded-full dark:bg-blue-900 dark:text-blue-200">
-                        5
-                      </span>
-                    </div>
-                  </td>
-                  <td class="size-px min-w-72 whitespace-nowrap py-2">
-                    <div class="flex items-center gap-x-3 ps-3 pe-6 py-0.5">
-                        <img class="inline-block size-[40px] rounded-lg" src="/storage/products/kaos_sm.jpg" alt="Image Product">
-                        <div class="grow">
-                          <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200 max-w-52 lg:max-w-full truncate">
-                            Kaos pendek cotton combed 30s
-                          </span>
-                        </div>
-                    </div>
-                  </td>
-                  <td class="h-px w-32 whitespace-nowrap py-2">
-                    <div class="px-6 py-3">
-                      <span class="block text-sm text-gray-500 dark:text-neutral-300">
-                        Kaos
-                      </span>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="px-6 py-3">
-                      <div class="flex items-center gap-x-3">
-                        <span class="text-sm text-gray-500 dark:text-neutral-300">
-                          Rp50.000
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="py-1.5 flex items-center">
-                      <i class="bx bxs-hot text-2xl text-red-500 translate-x-2 z-10"></i>
-                      <span class="py-1 px-4 w-[72px] text-xs font-semibold -translate-x-2 text-center bg-gradient-to-r from-yellow-300 to-red-500 text-white rounded-full">
-                        2160
-                      </span>
-                    </div>
-                  </td>
-                  <td class="size-px whitespace-nowrap py-2">
-                    <div class="px-6 py-2.5">
-                      <span class="text-sm font-semibold text-gray-500 dark:text-neutral-300">
-                        Rp108.000.000
-                      </span>
-                    </div>
-                  </td>
-                </tr>
+                    </td>
+                  </tr>
+                @endforeach
               </tbody>
             </table>
             <!-- End Table -->

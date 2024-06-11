@@ -47,5 +47,7 @@ class ProductSeeder extends Seeder
                 'category_id' => $product[4],
             ]);
         }
+        Product::factory(128)->create();
+
     }
 }

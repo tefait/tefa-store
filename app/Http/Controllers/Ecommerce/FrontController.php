@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Customer;
 use App\Models\Order;
+use App\Models\OrderDetail;
 use App\Models\Product;
 use App\Models\Province;
 use Illuminate\Http\Request;
@@ -34,8 +35,9 @@ class FrontController extends Controller
     {
         $newest = Product::orderBy('created_at', 'DESC')->limit(4)->get();
         $top_sales = Product::withCount('orders')->orderBy('orders_count', 'desc')->limit(6)->get();
+        $order_count = OrderDetail::count();
 
-        return view('home', compact('newest', 'top_sales'));
+        return view('home', compact('newest', 'top_sales', 'order_count'));
     }
 
     public function product()
@@ -74,8 +76,11 @@ class FrontController extends Controller
                     break;
             }
         }
-
-        $products = $query->paginate(10);
+        if (request()->page === 'all') {
+            $products = $query->get();
+        } else {
+            $products = $query->paginate(10);
+        }
 
         return view('toko.index_toko', compact('products'));
     }
@@ -95,6 +100,13 @@ class FrontController extends Controller
         return view('ecommerce.show', compact('product'));
     }
 
+    public function show2($slug)
+    {
+        $product = Product::with(['category'])->where('slug', $slug)->first();
+
+        return view('ecommerce.show2', compact('product'));
+    }
+
     public function verifyCustomerRegistration($token)
     {
         $customer = Customer::where('activate_token', $token)->first();
@@ -112,6 +124,7 @@ class FrontController extends Controller
 
     public function customerSettingForm()
     {
+        /** @var \App\Models\Customer $customer */
         $customer = auth()->guard('customer')->user()->load('district');
         $provinces = Province::orderBy('name', 'ASC')->get();
 

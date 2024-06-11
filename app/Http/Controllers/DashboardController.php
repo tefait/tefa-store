@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use App\Models\Order;
+use App\Models\OrderDetail;
+use App\Models\Product;
 use App\Models\Setting;
+use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -14,12 +18,14 @@ class DashboardController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function IndexSettings()
     {
         $settings = Setting::all();
 
         return view('settings.index', compact('settings'));
     }
+
     public function StoreSettings(Request $request)
     {
         $data = $request->except('_token');
@@ -36,11 +42,18 @@ class DashboardController extends Controller
             'settings',
             fn () => Setting::all()->keyBy('key'),
         );
+
         return redirect(route('settings'))->with('sucess', 'Settings updated successfully');
     }
+
     public function index()
     {
-        return view('admin_home');
+        $top_sales = Product::withCount('orders')->orderBy('orders_count', 'desc')->get();
+        $product_count = $top_sales->count();
+        $user_count = Customer::count();
+        $order_count = OrderDetail::count();
+
+        return view('dashboard.index', compact('user_count', 'order_count', 'top_sales', 'product_count'));
     }
 
     public function returnReport()
@@ -50,8 +63,8 @@ class DashboardController extends Controller
 
         if (request()->date != '') {
             $date = explode(' - ', request()->date);
-            $start = Carbon::parse($date[0])->format('Y-m-d') . ' 00:00:01';
-            $end = Carbon::parse($date[1])->format('Y-m-d') . ' 23:59:59';
+            $start = Carbon::parse($date[0])->format('Y-m-d').' 00:00:01';
+            $end = Carbon::parse($date[1])->format('Y-m-d').' 23:59:59';
         }
 
         $orders = Order::with(['customer.district'])->has('return')->whereBetween('created_at', [$start, $end])->get();
@@ -62,8 +75,8 @@ class DashboardController extends Controller
     public function returnReportPdf($daterange)
     {
         $date = explode('+', $daterange);
-        $start = Carbon::parse($date[0])->format('Y-m-d') . ' 00:00:01';
-        $end = Carbon::parse($date[1])->format('Y-m-d') . ' 23:59:59';
+        $start = Carbon::parse($date[0])->format('Y-m-d').' 00:00:01';
+        $end = Carbon::parse($date[1])->format('Y-m-d').' 23:59:59';
 
         $orders = Order::with(['customer.district'])->has('return')->whereBetween('created_at', [$start, $end])->get();
         $pdf = PDF::loadView('report.return_pdf', compact('orders', 'date'));
@@ -83,8 +96,8 @@ class DashboardController extends Controller
         if (request()->date != '') {
             //MAKA FORMATTING TANGGALNYA BERDASARKAN FILTER USER
             $date = explode(' - ', request()->date);
-            $start = Carbon::parse($date[0])->format('Y-m-d') . ' 00:00:01';
-            $end = Carbon::parse($date[1])->format('Y-m-d') . ' 23:59:59';
+            $start = Carbon::parse($date[0])->format('Y-m-d').' 00:00:01';
+            $end = Carbon::parse($date[1])->format('Y-m-d').' 23:59:59';
         }
 
         //BUAT QUERY KE DB MENGGUNAKAN WHEREBETWEEN DARI TANGGAL FILTER
@@ -97,8 +110,8 @@ class DashboardController extends Controller
     public function orderReportPdf($daterange)
     {
         $date = explode('+', $daterange);
-        $start = Carbon::parse($date[0])->format('Y-m-d') . ' 00:00:01';
-        $end = Carbon::parse($date[1])->format('Y-m-d') . ' 23:59:59';
+        $start = Carbon::parse($date[0])->format('Y-m-d').' 00:00:01';
+        $end = Carbon::parse($date[1])->format('Y-m-d').' 23:59:59';
 
         $orders = Order::with(['customer.district'])->whereBetween('created_at', [$start, $end])->get();
         $pdf = Pdf::loadView('report.order_pdf', compact('orders', 'date'));
