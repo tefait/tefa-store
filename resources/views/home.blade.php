@@ -650,5 +650,4 @@
     <!-- Bottom Navbar -->
     @include('partials.bottom_nav')
     <!-- End Bottom Navbar -->
-
 @endsection
