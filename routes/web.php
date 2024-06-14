@@ -59,7 +59,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/', [FrontController::class, 'index'])->name('home');
 
-Route::get('/product', [FrontController::class, 'product'])->name('front.product');
+Route::get('/toko', [FrontController::class, 'product'])->name('front.product');
 Route::get('/category/{slug}', [FrontController::class, 'categoryProduct'])->name('front.category');
 Route::get('/product/{slug}', [FrontController::class, 'show'])->name('front.show_product');
 Route::get('/product2/{slug}', [FrontController::class, 'show2'])->name('front.show_product2');

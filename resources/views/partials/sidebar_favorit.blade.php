@@ -38,34 +38,40 @@
                     class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 block">
                     <ul class="py-2 flex flex-col">
                         <li>
-                            <div class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100">
-                                <input type="radio" name="hs-radio-u" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-radio-u-1" checked="">
-                                <label for="hs-radio-u-1" class="cursor-pointer text-sm text-gray-500 ms-2 dark:text-neutral-400">Terbaru disimpan</label>
-                            </div>
+                            <label for="hs-vertical-radio-in-form-u-1" class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100 cursor-pointer">
+                                <input type="radio" name="hs-vertical-radio-in-form-u" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-u-1" checked="">
+                                <span class="text-sm text-gray-500 ms-2 dark:text-neutral-400">Semua</span>
+                            </label>
                         </li>
                         <li>
-                            <div class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100">
-                                <input type="radio" name="hs-radio-u" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-radio-u-2">
-                                <label for="hs-radio-u-2" class="cursor-pointer text-sm text-gray-500 ms-2 dark:text-neutral-400">Terlama disimpan</label>
-                            </div>
+                            <label for="hs-vertical-radio-in-form-u-2" class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100 cursor-pointer">
+                                <input type="radio" name="hs-vertical-radio-in-form-u" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-u-2">
+                                <span class="text-sm text-gray-500 ms-2 dark:text-neutral-400">Terbaru disimpan</span>
+                            </label>
                         </li>
                         <li>
-                            <div class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100">
-                                <input type="radio" name="hs-radio-u" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-radio-u-3">
-                                <label for="hs-radio-u-3" class="cursor-pointer text-sm text-gray-500 ms-2 dark:text-neutral-400">Harga tertinggi</label>
-                            </div>
+                            <label for="hs-vertical-radio-in-form-u-3" class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100 cursor-pointer">
+                                <input type="radio" name="hs-vertical-radio-in-form-u" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-u-3">
+                                <span class="text-sm text-gray-500 ms-2 dark:text-neutral-400">Terlama disimpan</span>
+                            </label>
                         </li>
                         <li>
-                            <div class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100">
-                                <input type="radio" name="hs-radio-u" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-radio-u-4">
-                                <label for="hs-radio-u-4" class="cursor-pointer text-sm text-gray-500 ms-2 dark:text-neutral-400">Harga terendah</label>
-                            </div>
+                            <label for="hs-vertical-radio-in-form-u-4" class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100 cursor-pointer">
+                                <input type="radio" name="hs-vertical-radio-in-form-u" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-u-4">
+                                <span class="text-sm text-gray-500 ms-2 dark:text-neutral-400">Harga tertinggi</span>
+                            </label>
                         </li>
                         <li>
-                            <div class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100">
-                                <input type="radio" name="hs-radio-u" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-radio-u-5">
-                                <label for="hs-radio-u-5" class="cursor-pointer text-sm text-gray-500 ms-2 dark:text-neutral-400">Pembelian terbanyak</label>
-                            </div>
+                            <label for="hs-vertical-radio-in-form-u-5" class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100 cursor-pointer">
+                                <input type="radio" name="hs-vertical-radio-in-form-u" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-u-5">
+                                <span class="text-sm text-gray-500 ms-2 dark:text-neutral-400">Harga terendah</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="hs-vertical-radio-in-form-u-6" class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100 cursor-pointer">
+                                <input type="radio" name="hs-vertical-radio-in-form-u" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-u-6">
+                                <span class="text-sm text-gray-500 ms-2 dark:text-neutral-400">Pembelian terbanyak</span>
+                            </label>
                         </li>
                     </ul>
                 </div>
@@ -90,22 +96,28 @@
                     class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 block">
                     <ul class="py-2 flex flex-col">
                         <li>
-                            <div class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100">
-                                <input type="radio" name="hs-radio-group" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-radio-group-1" checked="">
-                                <label for="hs-radio-group-1" class="cursor-pointer text-sm text-gray-500 ms-2 dark:text-neutral-400">Pre-order</label>
-                            </div>
+                            <label for="hs-vertical-radio-in-form-s-1" class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100 cursor-pointer">
+                                <input type="radio" name="hs-vertical-radio-in-form-s" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-s-1" checked="">
+                                <span class="text-sm text-gray-500 ms-2 dark:text-neutral-400">Semua</span>
+                            </label>
                         </li>
                         <li>
-                            <div class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100">
-                                <input type="radio" name="hs-radio-group" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-radio-group-2">
-                                <label for="hs-radio-group-2" class="cursor-pointer text-sm text-gray-500 ms-2 dark:text-neutral-400">Tersedia</label>
-                            </div>
+                            <label for="hs-vertical-radio-in-form-s-2" class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100 cursor-pointer">
+                                <input type="radio" name="hs-vertical-radio-in-form-s" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-s-2">
+                                <span class="text-sm text-gray-500 ms-2 dark:text-neutral-400">Pre-order</span>
+                            </label>
                         </li>
                         <li>
-                            <div class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100">
-                                <input type="radio" name="hs-radio-group" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-radio-group-3">
-                                <label for="hs-radio-group-3" class="cursor-pointer text-sm text-gray-500 ms-2 dark:text-neutral-400">Tidak tersedia</label>
-                            </div>
+                            <label for="hs-vertical-radio-in-form-s-3" class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100 cursor-pointer">
+                                <input type="radio" name="hs-vertical-radio-in-form-s" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-s-3">
+                                <span class="text-sm text-gray-500 ms-2 dark:text-neutral-400">Tersedia</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label for="hs-vertical-radio-in-form-s-4" class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100 cursor-pointer">
+                                <input type="radio" name="hs-vertical-radio-in-form-s" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-s-4">
+                                <span class="text-sm text-gray-500 ms-2 dark:text-neutral-400">Tidak tersedia</span>
+                            </label>
                         </li>
                     </ul>
                 </div>
@@ -132,16 +144,28 @@
                     class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 block">
                     <ul class="py-2 flex flex-col">
                         <li>
-                            <a href="#" class="flex py-1.5 ps-6 cursor-pointer text-sm rounded-full hover:bg-gray-100 text-gray-500 dark:text-neutral-400">Semua</a>
+                            <label for="hs-vertical-radio-in-form-k-1" class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100 cursor-pointer">
+                                <input type="radio" name="hs-vertical-radio-in-form-k" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-k-1" checked="">
+                                <span class="text-sm text-gray-500 ms-2 dark:text-neutral-400">Semua</span>
+                            </label>
                         </li>
                         <li>
-                            <a href="#" class="flex py-1.5 ps-6 cursor-pointer text-sm rounded-full hover:bg-gray-100 text-gray-500 dark:text-neutral-400">Design & Printing</a>
+                            <label for="hs-vertical-radio-in-form-k-2" class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100 cursor-pointer">
+                                <input type="radio" name="hs-vertical-radio-in-form-k" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-k-2">
+                                <span class="text-sm text-gray-500 ms-2 dark:text-neutral-400">Design & Printing</span>
+                            </label>
                         </li>
                         <li>
-                            <a href="#" class="flex py-1.5 ps-6 cursor-pointer text-sm rounded-full hover:bg-gray-100 text-gray-500 dark:text-neutral-400">Software</a>
+                            <label for="hs-vertical-radio-in-form-k-3" class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100 cursor-pointer">
+                                <input type="radio" name="hs-vertical-radio-in-form-k" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-k-3">
+                                <span class="text-sm text-gray-500 ms-2 dark:text-neutral-400">Software</span>
+                            </label>
                         </li>
                         <li>
-                            <a href="#" class="flex py-1.5 ps-6 cursor-pointer text-sm rounded-full hover:bg-gray-100 text-gray-500 dark:text-neutral-400">Game</a>
+                            <label for="hs-vertical-radio-in-form-k-4" class="flex py-1.5 ps-6 rounded-full hover:bg-gray-100 cursor-pointer">
+                                <input type="radio" name="hs-vertical-radio-in-form-k" class="shrink-0 mt-0.5 cursor-pointer border-blue-600 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-k-4">
+                                <span class="text-sm text-gray-500 ms-2 dark:text-neutral-400">Game</span>
+                            </label>
                         </li>
                     </ul>
                 </div>

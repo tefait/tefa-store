@@ -61,9 +61,8 @@
                     </span>
                 </div>
 
-                <h4 class="text-sm lg:text-base font-bold text-gray-900 uppercase dark:text-neutral-100 mt-3">Panduan
-                </h4>
-                <div class="grid space-y-2 lg:space-y-3 text-sm">
+                <h4 class="text-sm lg:text-base font-bold text-gray-900 uppercase dark:text-neutral-100 mt-3">Panduan</h4>
+                <div class="mt-3 grid space-y-2 lg:space-y-3 text-sm">
                     <p><a href="#"
                             class="inline-flex gap-x-2 text-gray-600 hover:text-primary dark:text-neutral-400 dark:hover:text-primary duration-300">Cara
                             Order</a></p>

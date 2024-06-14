@@ -34,12 +34,63 @@
             Game
         </button>
         <span class="my-4 border"></span>
-        <button type="button"
+        <button type="button" data-hs-overlay="#hs-overlay-bottom-u-toko"
             class="w-[60%] bg-gray-100 rounded-full m-2 inline-flex items-center justify-center gap-x-2 border-b-2 border-transparent text-sm whitespace-nowrap text-gray-600 focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
             <i class="text-lg bx bx-sort"></i>
         </button>
     </nav>
     <!-- End Mobile Version -->
+
+    <!-- Offcanvas Tombol Urutkan -->
+    <div id="hs-overlay-bottom-u-toko" class="hs-overlay hs-overlay-open:translate-y-0 translate-y-full fixed bottom-0 inset-x-0 transition-all duration-300 transform h-auto size-full z-[300] rounded-t-2xl bg-white border-b dark:bg-neutral-800 dark:border-neutral-700 hidden" tabindex="-1">
+        <div class="flex justify-between items-center pt-4 pb-2 px-4">
+          <h3 class="font-bold text-base text-gray-800 dark:text-white">
+            Urutkan
+          </h3>
+          <button type="button" class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700" data-hs-overlay="#hs-overlay-bottom-u-toko">
+            <span class="sr-only">Close modal</span>
+            <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="">
+            <ul class="divide-y">
+                <li>
+                    <label for="hs-vertical-radio-in-form-um-1-toko" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                      <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Semua</span>
+                      <input type="radio" name="hs-vertical-radio-in-form-um-toko" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-um-1-toko" checked="">
+                    </label>
+                </li>
+                <li>
+                    <label for="hs-vertical-radio-in-form-um-2-toko" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                      <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Terbaru</span>
+                      <input type="radio" name="hs-vertical-radio-in-form-um-toko" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-um-2-toko">
+                    </label>
+                </li>
+                <li>
+                    <label for="hs-vertical-radio-in-form-um-3-toko" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                      <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Terlaris</span>
+                      <input type="radio" name="hs-vertical-radio-in-form-um-toko" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-um-3-toko">
+                    </label>
+                </li>
+                <li>
+                    <label for="hs-vertical-radio-in-form-um-4-toko" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                      <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Harga tertinggi</span>
+                      <input type="radio" name="hs-vertical-radio-in-form-um-toko" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-um-4-toko">
+                    </label>
+                </li>
+                <li>
+                    <label for="hs-vertical-radio-in-form-um-5-toko" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                      <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Harga terendah</span>
+                      <input type="radio" name="hs-vertical-radio-in-form-um-toko" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-um-5-toko">
+                    </label>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- End Offcanvas Tombol Urutkan -->
 
     <section class="sm:ms-[270px] lg:ms-72 px-4 mb-8">
         <nav class="hidden gap-2 justify-end py-2 mb-4 bg-white sm:flex">
@@ -194,9 +245,8 @@
                         </span>
                     </div>
 
-                    <h4 class="mt-3 text-sm font-bold text-gray-900 uppercase lg:text-base dark:text-neutral-100">Panduan
-                    </h4>
-                    <div class="grid space-y-2 text-sm lg:space-y-3">
+                    <h4 class="mt-3 text-sm font-bold text-gray-900 uppercase lg:text-base dark:text-neutral-100">Panduan</h4>
+                    <div class="mt-3 grid space-y-2 text-sm lg:space-y-3">
                         <p><a href="#"
                                 class="inline-flex gap-x-2 text-gray-600 duration-300 hover:text-primary dark:text-neutral-400 dark:hover:text-primary">Cara
                                 Order</a></p>

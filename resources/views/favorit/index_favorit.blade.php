@@ -54,33 +54,39 @@
         <div class="">
             <ul class="divide-y">
                 <li>
-                    <label for="hs-vertical-radio-in-form-u-1" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                    <label for="hs-vertical-radio-in-form-um-1" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                      <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Semua</span>
+                      <input type="radio" name="hs-vertical-radio-in-form-um" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-um-1" checked="">
+                    </label>
+                </li>
+                <li>
+                    <label for="hs-vertical-radio-in-form-um-2" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
                       <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Terbaru disimpan</span>
-                      <input type="radio" name="hs-vertical-radio-in-form" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-u-1" checked="">
+                      <input type="radio" name="hs-vertical-radio-in-form-um" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-um-2">
                     </label>
                 </li>
                 <li>
-                    <label for="hs-vertical-radio-in-form-u-2" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                    <label for="hs-vertical-radio-in-form-um-3" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
                       <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Terlama disimpan</span>
-                      <input type="radio" name="hs-vertical-radio-in-form" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-u-2">
+                      <input type="radio" name="hs-vertical-radio-in-form-um" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-um-3">
                     </label>
                 </li>
                 <li>
-                    <label for="hs-vertical-radio-in-form-u-3" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                    <label for="hs-vertical-radio-in-form-um-4" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
                       <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Harga tertinggi</span>
-                      <input type="radio" name="hs-vertical-radio-in-form" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-u-3">
+                      <input type="radio" name="hs-vertical-radio-in-form-um" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-um-4">
                     </label>
                 </li>
                 <li>
-                    <label for="hs-vertical-radio-in-form-u-4" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                    <label for="hs-vertical-radio-in-form-um-5" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
                       <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Harga terendah</span>
-                      <input type="radio" name="hs-vertical-radio-in-form" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-u-4">
+                      <input type="radio" name="hs-vertical-radio-in-form-um" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-um-5">
                     </label>
                 </li>
                 <li>
-                    <label for="hs-vertical-radio-in-form-u-5" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                    <label for="hs-vertical-radio-in-form-um-6" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
                       <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Pembelian terbanyak</span>
-                      <input type="radio" name="hs-vertical-radio-in-form" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-u-5">
+                      <input type="radio" name="hs-vertical-radio-in-form-um" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-um-6">
                     </label>
                 </li>
             </ul>
@@ -105,27 +111,27 @@
         <div class="">
             <ul class="divide-y">
                 <li>
-                    <label for="hs-vertical-radio-in-form-s-1" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                    <label for="hs-vertical-radio-in-form-sm-1" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
                       <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Semua</span>
-                      <input type="radio" name="hs-vertical-radio-in-form" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-s-1" checked="">
+                      <input type="radio" name="hs-vertical-radio-in-form-sm" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-sm-1" checked="">
                     </label>
                 </li>
                 <li>
-                    <label for="hs-vertical-radio-in-form-s-2" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                    <label for="hs-vertical-radio-in-form-sm-2" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
                       <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Pre-order</span>
-                      <input type="radio" name="hs-vertical-radio-in-form" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-s-2">
+                      <input type="radio" name="hs-vertical-radio-in-form-sm" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-sm-2">
                     </label>
                 </li>
                 <li>
-                    <label for="hs-vertical-radio-in-form-s-3" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                    <label for="hs-vertical-radio-in-form-sm-3" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
                       <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Tersedia</span>
-                      <input type="radio" name="hs-vertical-radio-in-form" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-s-3">
+                      <input type="radio" name="hs-vertical-radio-in-form-sm" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-sm-3">
                     </label>
                 </li>
                 <li>
-                    <label for="hs-vertical-radio-in-form-s-4" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                    <label for="hs-vertical-radio-in-form-sm-4" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
                       <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Tidak tersedia</span>
-                      <input type="radio" name="hs-vertical-radio-in-form" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-s-4">
+                      <input type="radio" name="hs-vertical-radio-in-form-sm" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-sm-4">
                     </label>
                 </li>
             </ul>
