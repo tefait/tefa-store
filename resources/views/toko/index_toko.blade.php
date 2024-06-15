@@ -170,7 +170,7 @@
                                     </path>
                                 </svg>
                                 <p>5.0</p>
-                                <span class="border border-gray-500 h-[0.1px]"></span>
+                                <span class="border border-gray-500 h-[0.1px] rounded-full"></span>
                                 <p>{{ $product->orders_count }} terjual</p>
                             </div>
                         </div>

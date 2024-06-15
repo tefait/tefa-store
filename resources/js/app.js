@@ -83,3 +83,16 @@ var swiper = new Swiper(".mySwiperSH", {
         prevEl: '#prevBtnSH',
     },
 });
+
+// Initialize Swiper Detail Produk
+var swiper = new Swiper(".mySwiperDP", {
+    spaceBetween: 10,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
+  });
+  var swiper2 = new Swiper(".mySwiperDP2", {
+    thumbs: {
+      swiper: swiper,
+    },
+  });
