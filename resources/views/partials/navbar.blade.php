@@ -29,8 +29,9 @@
                                 class="block py-3 w-full h-10 text-sm rounded-full border-gray-300 ps-10 pe-4 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-black dark:border-white dark:text-white dark:placeholder-gray-300 dark:focus:ring-neutral-600"
                                 type="text" placeholder="Cari di Tefa Store" value="{{ request()->q }}"
                                 autofocus="" data-hs-combo-box-input="">
-                            <button class="flex absolute inset-y-0 z-20 items-center end-0 pe-3.5" type="submit"><i
-                                    class="bx bx-search"></i></button>
+                            <button class="flex absolute inset-y-0 z-20 items-center end-0" type="submit">
+                                <p class="m-2 py-1 px-4 bg-primary text-white text-sm rounded-full">Cari</p>
+                            </button>
                         </form>
                     </div>
                 </div>

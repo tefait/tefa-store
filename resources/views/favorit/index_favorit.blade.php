@@ -408,7 +408,7 @@
           <h4 class="text-sm lg:text-base font-bold text-gray-900 uppercase dark:text-neutral-100">Metode Pembayaran</h4>
   
           <div class="mt-3 flex items-center space-x-3 text-sm">
-            <img src="{{ asset('assets/img/BRI.svg') }}" alt="BRI" class="h-5">
+            <img src="{{ asset('assets/img/BJB.png') }}" alt="BJB" class="h-7">
             <img src="{{ asset('assets/img/DANA.png') }}" alt="DANA" class="h-5">
             <img src="{{ asset('assets/img/OVO.svg') }}" alt="OVO" class="h-5">
           </div>

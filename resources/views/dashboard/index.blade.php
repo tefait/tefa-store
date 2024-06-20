@@ -248,7 +248,7 @@
                       <div class="flex items-center gap-x-3 ps-3 pe-6 py-0.5">
                           <img class="inline-block size-[40px] rounded-lg" src="/storage/products/kaos_sm.jpg" alt="Image Product">
                           <div class="grow">
-                            <span class="block text-sm font-semibold text-gray-800 dark:text-neutral-200 max-w-52 lg:max-w-full truncate">
+                            <span class="block text-wrap text-sm font-semibold text-gray-800 dark:text-neutral-200 max-w-52 lg:max-w-full truncate">
                               {{$product->name}}
                             </span>
                           </div>

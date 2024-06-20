@@ -265,7 +265,7 @@
                         Pembayaran</h4>
 
                     <div class="flex items-center mt-3 space-x-3 text-sm">
-                        <img src="{{ asset('assets/img/BRI.svg') }}" alt="BRI" class="h-5">
+                        <img src="{{ asset('assets/img/BJB.png') }}" alt="BJB" class="h-7">
                         <img src="{{ asset('assets/img/DANA.png') }}" alt="DANA" class="h-5">
                         <img src="{{ asset('assets/img/OVO.svg') }}" alt="OVO" class="h-5">
                     </div>
