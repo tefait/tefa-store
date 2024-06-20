@@ -41,10 +41,6 @@ Route::get('/fluttershy/discord/{command}', function ($command, Request $request
     }
 });
 
-Route::get('/toko', function () {
-    return redirect(route('front.product'));
-});
-
 Route::get('/favorit', function () {
     return view('favorit.index_favorit');
 });
@@ -62,9 +58,10 @@ Route::get('/', [FrontController::class, 'index'])->name('home');
 Route::get('/toko', [FrontController::class, 'product'])->name('front.product');
 Route::get('/category/{slug}', [FrontController::class, 'categoryProduct'])->name('front.category');
 Route::get('/product/{slug}', [FrontController::class, 'show'])->name('front.show_product');
-Route::get('/product2/{slug}', [FrontController::class, 'show2'])->name('front.show_product2');
 Route::post('cart', [CartController::class, 'addToCart'])->name('front.cart');
 Route::get('/cart', [CartController::class, 'listCart'])->name('front.list_cart');
+Route::get('/api/cart', [CartController::class, 'AJAXlistCart'])->name('api.list_cart');
+
 Route::post('/cart/update', [CartController::class, 'updateCart'])->name('front.update_cart');
 Route::get('/checkout', [CartController::class, 'checkout'])->name('front.checkout');
 Route::post('/checkout', [CartController::class, 'processCheckout'])->name('front.store_checkout');

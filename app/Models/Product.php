@@ -12,6 +12,13 @@ class Product extends Model
 
     protected $guarded = [];
 
+    protected $appends = ['orders_count'];
+
+    public function getOrdersCountAttribute()
+    {
+        return $this->orders()->count();
+    }
+
     public function setSlugAttribute($value)
     {
         $this->attributes['slug'] = Str::slug($value);
@@ -27,13 +34,6 @@ class Product extends Model
         return '<span class="badge badge-success">Aktif</span>';
     }
 
-    //Fungsi Yang Meng-Handle Relasi Ke Table Category
-    public function product()
-    {
-        //JENIS RELASINYA ADALAH ONE TO MANY, YANG BERARTI KATEGORI INI BISA DIGUNAKAN OLEH BANYAK PRODUK
-        return $this->hasMany(Product::class);
-    }
-
     public function orders()
     {
         return $this->hasMany(OrderDetail::class);
@@ -42,5 +42,10 @@ class Product extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function testimonies()
+    {
+        return $this->hasMany(Testimony::class);
     }
 }

@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('image')->default('/assets/img/user.png');
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone_number');
             $table->string('address');
-            $table->unsignedBigInteger('district_id');
+            $table->char('village_id', 10);
             $table->boolean('status')->default(false);
+            $table->foreign('village_id')->references('id')->on('villages')->onUpdate('cascade')->onDelete('restrict');
             $table->timestamps();
         });
     }

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\Ecommerce\CartController;
 use App\Http\View\CategoryComposer;
 use App\Models\Customer;
 use App\Models\Order;
@@ -27,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
                 fn () => Setting::all()->keyBy('key'),
             );
         } catch (\Throwable $th) {
-            error('The `configs` table does not exist.');
+            error('The settings table does not exist.');
         }
 
         if (! empty(env('NGROK_URL'))) {
@@ -38,6 +39,7 @@ class AppServiceProvider extends ServiceProvider
             return $customer->id == $order->customer_id;
         });
         View::composer('ecommerce.*', CategoryComposer::class);
+        View::share('', CartController::getCarts());
 
         if (! empty(env('NGROK_URL'))) {
             $this->app['url']->forceRootUrl(env('NGROK_URL'));

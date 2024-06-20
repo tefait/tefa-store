@@ -1,7 +1,7 @@
 <?php
 
+use App\Models\Customer;
 use App\Models\Product;
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,7 +18,8 @@ return new class extends Migration
             $table->double('penilaian')->max(5);
             $table->text('kutipan');
             $table->string('instansi');
-            $table->foreignIdFor(User::class);
+            $table->boolean('terpilih')->default(false);
+            $table->foreignIdFor(Customer::class);
             $table->foreignIdFor(Product::class);
             $table->timestamps();
         });

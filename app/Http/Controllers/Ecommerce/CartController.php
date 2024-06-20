@@ -5,13 +5,14 @@ namespace App\Http\Controllers\Ecommerce;
 use App\Http\Controllers\Controller;
 use App\Mail\CustomerRegisterMail;
 use App\Models\Cart;
-use App\Models\City;
 use App\Models\Customer;
 use App\Models\District;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Product;
 use App\Models\Province;
+use App\Models\Regency;
+use App\Models\Village;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
@@ -106,6 +107,20 @@ class CartController extends Controller
         return view('ecommerce.cart', compact('carts', 'subtotal'));
     }
 
+    public function AJAXlistCart()
+    {
+        $carts = $this->getCarts();
+        $subtotal = collect($carts)->sum(function ($q) {
+            return $q['qty'] * $q['product_price'];
+        });
+
+        return response()->json([
+            'success' => true,
+            'carts' => $carts,
+            'subtotal' => $subtotal,
+        ]);
+    }
+
     public function updateCart(Request $request)
     {
         $carts = $this->getCarts();
@@ -121,7 +136,7 @@ class CartController extends Controller
         return redirect()->back()->cookie($cookie);
     }
 
-    private function getCarts()
+    public static function getCarts()
     {
         $carts = json_decode(request()->cookie('carts'), true);
         if (auth()->guard('customer')->check()) {
@@ -149,16 +164,23 @@ class CartController extends Controller
 
     public function getCity()
     {
-        $cities = City::where('province_id', request()->province_id)->get();
+        $cities = Regency::where('province_id', request()->province_id)->get();
 
         return response()->json(['status' => 'success', 'data' => $cities]);
     }
 
     public function getDistrict()
     {
-        $districts = District::where('city_id', request()->city_id)->get();
+        $districts = District::where('regency_id', request()->city_id)->get();
 
         return response()->json(['status' => 'success', 'data' => $districts]);
+    }
+
+    public function getVillage()
+    {
+        $village = Village::where('district_id', request()->district_id)->get();
+
+        return response()->json(['status' => 'success', 'data' => $village]);
     }
 
     public function generateRandomPassword()

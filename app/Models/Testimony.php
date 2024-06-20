@@ -9,13 +9,15 @@ class Testimony extends Model
 {
     use HasFactory;
 
+    protected $with = ['customer'];
+
     public function product()
     {
         return $this->belongsTo(Product::class);
     }
 
-    public function user()
+    public function customer()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Customer::class);
     }
 }

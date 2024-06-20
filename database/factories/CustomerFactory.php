@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\District;
+use App\Models\Village;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -24,7 +24,7 @@ class CustomerFactory extends Factory
             'email' => $this->faker->unique()->safeEmail(),
             'phone_number' => $this->faker->unique()->phoneNumber(),
             'address' => $this->faker->streetAddress(),
-            'district_id' => $this->faker->randomElement(District::pluck('id')),
+            'village_id' => $this->faker->randomElement(Village::limit(15)->pluck('id')),
             'status' => $this->faker->boolean(),
             'activate_token' => Str::random(32),
             'password' => Hash::make('rahasia'),

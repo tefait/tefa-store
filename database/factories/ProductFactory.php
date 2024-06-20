@@ -4,6 +4,8 @@ namespace Database\Factories;
 
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Produk>
@@ -20,9 +22,10 @@ class ProductFactory extends Factory
         return [
             'name' => $this->faker->sentence(),
             'slug' => $this->faker->unique()->slug(),
-            'image' => $this->faker->imageUrl(),
+            'image' => collect(File::allFiles(Storage::path('public/products')))->map(fn ($file) => Storage::url('products/' . $file->getFilename()))->random(),
             'description' => $this->faker->paragraph(),
             'price' => $this->faker->randomNumber(5, true),
+            'stock' => $this->faker->randomNumber(2, true),
             'weight' => $this->faker->randomNumber(3, true),
             'category_id' => $this->faker->randomElement(Category::pluck('id')),
         ];

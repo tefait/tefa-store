@@ -9,13 +9,14 @@ use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Product;
 use App\Models\Province;
+use App\Models\Testimony;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
     public function referalProduct($user, $product)
     {
-        $code = $user.'-'.$product;
+        $code = $user . '-' . $product;
         $product = Product::find($product);
         $cookie = cookie('afiliasi', json_encode($code), 2880);
 
@@ -36,8 +37,9 @@ class FrontController extends Controller
         $newest = Product::orderBy('created_at', 'DESC')->limit(4)->get();
         $top_sales = Product::withCount('orders')->orderBy('orders_count', 'desc')->limit(6)->get();
         $order_count = OrderDetail::count();
+        $testimoni = Testimony::where('terpilih', true)->limit(3)->get();
 
-        return view('home', compact('newest', 'top_sales', 'order_count'));
+        return view('home', compact('testimoni', 'newest', 'top_sales', 'order_count'));
     }
 
     public function product()
@@ -46,9 +48,9 @@ class FrontController extends Controller
 
         if ($search = request()->q) {
             $query->where(function ($query) use ($search) {
-                $query->where('name', 'LIKE', '%'.$search.'%')
-                    ->orWhere('price', 'LIKE', '%'.$search.'%')
-                    ->orWhere('slug', 'LIKE', '%'.$search.'%');
+                $query->where('name', 'LIKE', '%' . $search . '%')
+                    ->orWhere('price', 'LIKE', '%' . $search . '%')
+                    ->orWhere('slug', 'LIKE', '%' . $search . '%');
             });
         }
 
@@ -95,16 +97,10 @@ class FrontController extends Controller
 
     public function show($slug)
     {
-        $product = Product::with(['category'])->where('slug', $slug)->first();
+        $product = Product::with(['category'])->where('slug', $slug)->orWhere('id', $slug)->first();
+        $products = Product::orderBy(fake()->randomElement(['name', 'price', 'slug', 'id', 'description']), fake()->randomElement(['asc', 'desc']))->limit(mt_rand(5, 15))->get();
 
-        return view('ecommerce.show', compact('product'));
-    }
-
-    public function show2($slug)
-    {
-        $product = Product::with(['category'])->where('slug', $slug)->first();
-
-        return view('ecommerce.show2', compact('product'));
+        return view('ecommerce.show2', compact('product', 'products'));
     }
 
     public function verifyCustomerRegistration($token)

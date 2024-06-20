@@ -1,11 +1,9 @@
 import 'preline';
 import '../css/app.css';
 import './bootstrap'
-import Alpine from 'alpinejs';
-
-window.Alpine = Alpine;
-
-Alpine.start();
+window.idr = function(number) {
+    return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(number);
+}
 
 window.addEventListener("keydown", function (evt) {
     if (evt.code === "Backslash") {

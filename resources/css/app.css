@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 * {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -12,9 +13,11 @@
 .filter-button {
     @apply inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-gray-100 border border-gray-100 text-gray-800 dark:border-neutral-200 dark:text-white;
 }
+
 .filter-button-active {
     @apply inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium border border-primary text-primary bg-blue-50 dark:border-neutral-200 dark:text-white;
 }
+
 /* Apexcharts */
 .apexcharts-tooltip.apexcharts-theme-light {
     background-color: transparent !important;
@@ -24,72 +27,99 @@
 
 /* Slider Produk Terlaris */
 .slide-tsh:first-child {
-  margin-left: 16px;
+    margin-left: 16px;
 }
 
 .slide-tsh:last-child {
-  margin-right: 16px;
+    margin-right: 16px;
 }
 
 .truncate-1-line {
-  display: -webkit-box;
-  -webkit-line-clamp: 1; /* Menentukan jumlah baris */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* Menentukan jumlah baris */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
+
 .truncate-20-chars {
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* Menentukan jumlah baris */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Menentukan jumlah baris */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
+
 /* End Slider Produk Terlaris */
 
 .swiper-pagination-bullet {
-  @apply bg-white bg-opacity-90 rounded-full cursor-pointer;
-  width: 8px;
-  height: 8px;
+    @apply bg-white bg-opacity-90 rounded-full cursor-pointer;
+    width: 8px;
+    height: 8px;
 }
+
 @media (min-width: 1024px) {
-  .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-  }
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+    }
 }
+
 .swiper-pagination-bullet-active {
-  @apply bg-white;
+    @apply bg-white;
 }
 
 #hs-radio-group-1 {
-  box-shadow: none !important;
-}
-#hs-radio-group-2 {
-  box-shadow: none !important;
-}
-#hs-radio-group-3 {
-  box-shadow: none !important;
+    box-shadow: none !important;
 }
 
-#hs-vertical-radio-in-form-u-1, #hs-vertical-radio-in-form-um-1,
-#hs-vertical-radio-in-form-u-2, #hs-vertical-radio-in-form-um-2,
-#hs-vertical-radio-in-form-u-3, #hs-vertical-radio-in-form-um-3,
-#hs-vertical-radio-in-form-u-4, #hs-vertical-radio-in-form-um-4,
-#hs-vertical-radio-in-form-u-5, #hs-vertical-radio-in-form-um-5,
-#hs-vertical-radio-in-form-u-6, #hs-vertical-radio-in-form-um-6,
-#hs-vertical-radio-in-form-s-1, #hs-vertical-radio-in-form-s-2,
-#hs-vertical-radio-in-form-s-3, #hs-vertical-radio-in-form-s-4,
-#hs-vertical-radio-in-form-sm-1, #hs-vertical-radio-in-form-sm-2,
-#hs-vertical-radio-in-form-sm-3, #hs-vertical-radio-in-form-sm-4,
-#hs-vertical-radio-in-form-k-1, #hs-vertical-radio-in-form-k-2,
-#hs-vertical-radio-in-form-k-3, #hs-vertical-radio-in-form-k-4,
-#hs-vertical-radio-in-form-sk-1, #hs-vertical-radio-in-form-sk-2,
-#hs-vertical-radio-in-form-sk-3, #hs-vertical-radio-in-form-sk-4,
-#hs-vertical-radio-in-form-u-1-toko, #hs-vertical-radio-in-form-um-1-toko,
-#hs-vertical-radio-in-form-u-2-toko, #hs-vertical-radio-in-form-um-2-toko,
-#hs-vertical-radio-in-form-u-3-toko, #hs-vertical-radio-in-form-um-3-toko,
-#hs-vertical-radio-in-form-u-4-toko, #hs-vertical-radio-in-form-um-4-toko,
-#hs-vertical-radio-in-form-u-5-toko, #hs-vertical-radio-in-form-um-5-toko,
-#hs-icon-email:focus, #hs-toggle-password:focus
-{
-  box-shadow: none !important;
+#hs-radio-group-2 {
+    box-shadow: none !important;
+}
+
+#hs-radio-group-3 {
+    box-shadow: none !important;
+}
+
+#hs-vertical-radio-in-form-u-1,
+#hs-vertical-radio-in-form-um-1,
+#hs-vertical-radio-in-form-u-2,
+#hs-vertical-radio-in-form-um-2,
+#hs-vertical-radio-in-form-u-3,
+#hs-vertical-radio-in-form-um-3,
+#hs-vertical-radio-in-form-u-4,
+#hs-vertical-radio-in-form-um-4,
+#hs-vertical-radio-in-form-u-5,
+#hs-vertical-radio-in-form-um-5,
+#hs-vertical-radio-in-form-u-6,
+#hs-vertical-radio-in-form-um-6,
+#hs-vertical-radio-in-form-s-1,
+#hs-vertical-radio-in-form-s-2,
+#hs-vertical-radio-in-form-s-3,
+#hs-vertical-radio-in-form-s-4,
+#hs-vertical-radio-in-form-sm-1,
+#hs-vertical-radio-in-form-sm-2,
+#hs-vertical-radio-in-form-sm-3,
+#hs-vertical-radio-in-form-sm-4,
+#hs-vertical-radio-in-form-k-1,
+#hs-vertical-radio-in-form-k-2,
+#hs-vertical-radio-in-form-k-3,
+#hs-vertical-radio-in-form-k-4,
+#hs-vertical-radio-in-form-sk-1,
+#hs-vertical-radio-in-form-sk-2,
+#hs-vertical-radio-in-form-sk-3,
+#hs-vertical-radio-in-form-sk-4,
+#hs-vertical-radio-in-form-u-1-toko,
+#hs-vertical-radio-in-form-um-1-toko,
+#hs-vertical-radio-in-form-u-2-toko,
+#hs-vertical-radio-in-form-um-2-toko,
+#hs-vertical-radio-in-form-u-3-toko,
+#hs-vertical-radio-in-form-um-3-toko,
+#hs-vertical-radio-in-form-u-4-toko,
+#hs-vertical-radio-in-form-um-4-toko,
+#hs-vertical-radio-in-form-u-5-toko,
+#hs-vertical-radio-in-form-um-5-toko,
+#hs-icon-email:focus,
+#hs-toggle-password:focus {
+    box-shadow: none !important;
 }

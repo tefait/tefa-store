@@ -24,16 +24,6 @@ class ProductSeeder extends Seeder
             ['/storage/products/mug_warna.jpg', 'Mug Warna', 'Warnai harimu dengan Mug Warna kami! ☕ Dengan berbagai pilihan warna cerah, Anda dapat memilih mug yang sesuai dengan suasana hati Anda. Minum kopi belum pernah semenyenangkan ini! ', 27000, 1],
             ['/storage/products/kaos_sm.jpg', 'Kaos Pendek Polyester', 'Tetap nyaman dan modis dengan Kaos Pendek Polyester kami.  Terbuat dari bahan polyester yang ringan dan tahan lama, kaos ini adalah pilihan yang sempurna untuk sehari-hari. Tersedia dalam berbagai ukuran dan warna! ', 50000, 1],
             ['/storage/products/pin.jpg', 'Pin', 'Tambahkan sedikit kilauan pada pakaian Anda dengan Pin kami!  Dengan berbagai desain yang unik, pin ini adalah aksesoris yang serbaguna dan bisa Anda kenakan dengan bangga di mana saja. Tampilkan gaya Anda! 📌', 5000, 1],
-            // ['products/bk_abu.png', 'Bouquet kelulusan', 'Produk ini adalah Bouquet kelulusan yang sangat spesial. Dengan warna abu-abu yang elegan, Bouquet ini dirancang untuk merayakan pencapaian lulusan dengan gaya. Setiap Bouquet dilengkapi dengan boneka yang imut sebagai pelengkap. Ideal untuk diberikan kepada lulusan SMA, SMK, atau perguruan tinggi. Biarkan mereka merayakan prestasi mereka dengan Bouquet ini!', 65000, 2],
-            // ['products/bk_pink.png', 'Bouquet bucin', 'Produk ini adalah Bouquet kelulusan yang cantik dengan sentuhan merah muda yang manis. Menjadi hadiah yang indah untuk merayakan kesuksesan lulusan. Setiap Bouquet dilengkapi dengan boneka merah muda yang lucu. Sempurna untuk lulusan dari berbagai tingkatan pendidikan. Berikan Bouquet ini untuk menyampaikan selamat dan kebanggaan Anda.', 65000, 2],
-            // ['products/bk_putih.png', 'Bouquet wisuda', 'Ini adalah varian Bouquet kelulusan yang juga sangat menawan, dengan warna merah muda yang manis. Setiap Bouquet datang dengan boneka merah muda yang lucu, menjadikannya hadiah yang sempurna untuk lulusan. Apakah mereka lulus dari sekolah menengah, sekolah kejuruan, atau perguruan tinggi, Bouquet ini adalah cara yang indah untuk merayakan prestasi mereka.', 80000, 2],
-            // ['products/bk_uang.png', 'Bouquet uang', 'Produk ini adalah Bouquet uang yang unik dengan sentuhan bunga yang indah. Ini adalah hadiah yang praktis dan kreatif untuk berbagai kesempatan. Anda dapat memberikannya kepada lulusan sebagai bantuan finansial atau kepada seseorang yang Anda cintai untuk merayakan momen istimewa. Kombinasi uang dan bunga membuatnya sangat istimewa.', 70000, 2],
-            // ['products/basrengdaunjeruk.jpg', 'Basreng Daun Jeruk', 'Basreng Daun Jeruk adalah hidangan gurih yang terbuat dari irisan tipis bakso goreng (basreng) yang digoreng hingga renyah. Hidangan ini ditambahkan dengan daun jeruk yang memberikan aroma segar dan citarasa yang unik. Daun jeruk yang digunakan  biasanya adalah daun jeruk purut, yang memiliki aroma khas. Basreng daun jeruk seringkali diolah dengan tambahan bumbu pedas seperti cabai dan bumbu penyedap lainnya.', 5000, 1],
-            // ['products/seblakcikruh.jpg', 'Seblak Cikruh', 'Kerupuk seblak cikruh dengan bumbu rempah seblak yang khas dengan rasa pedas nampol mulai dari level 1 sampai 3 enak asin gurih pedas wangi rempah kencur dan aroma daun jeruk emmhh susah nahan enaknya.', 3000, 1],
-            // ['products/abon1.jpg', 'Abon oncom', 'Olahan makanan tradisional dari Oncom Pasireungit terbaik yang terbuat dari kacang tanah terbaik, diolah dengan rempah-rempah segar dan tanpa MSG sehingga menghasilkan abon oncom yang bercitarasa tinggi', 20000, 1],
-            // ['products/kopi1.jpg', 'Kopi tandjoeng honey', 'Arabika Gunung Manglayang Timur Kopi Tandjoeng Arabica Coffe Speciality Fullash disangrai dari kopi berkualitas Speciality. Green Bean yang diperoleh dari Petani Kopi di Gunung Manglayang Timur Sumedang Jawa Barat, diseleksi ulang secara manual untuk mendapatkan kopi arabica yang benar-benar speciality', 40000, 1],
-            // ['products/jahe1.jpg', 'Jahe instan', 'Jahe instan merupakan produk makanan yang berbentuk serbuk, terbuat dari ekstrak jahe yang ditambah gula atau rempah-rempah lain', 45000, 1],
-            // ['products/opak.jpg', 'Opak oded', 'Kuliner tradisional yang sungguh luar biasa dan patut dicoba. Terbuat dari beras ketan yang direbus, kemudian dibungkus dengan daun pisang dan dipanggang hingga matang, opak memiliki cita rasa yang khas dan tekstur yang begitu memikat.', 25000, 1],
         ];
 
         foreach ($dnp_product as $product) {
@@ -42,12 +32,11 @@ class ProductSeeder extends Seeder
                 'slug' => Str::slug($product[1]),
                 'image' => $product[0],
                 'description' => $product[2],
+                'stock' => mt_rand(1, 100),
                 'price' => $product[3],
                 'weight' => rand(1, 50) * 10,
                 'category_id' => $product[4],
             ]);
         }
-        Product::factory(128)->create();
-
     }
 }

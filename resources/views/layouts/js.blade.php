@@ -1,5 +1,8 @@
+<!-- Lodash Chart -->
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"
 integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>
+
+<!-- Apex Chart -->
 <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.49.1/dist/apexcharts.min.js"
 integrity="sha256-74AuGLJETu9PiPQ69d/gxD3Wy3j10udgC7FQYPQjhyU=" crossorigin="anonymous"></script>
 

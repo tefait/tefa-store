@@ -368,230 +368,58 @@
 
             <!-- Grid -->
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:px-3">
-                <!-- Card -->
-                <div class="flex h-auto rounded-xl duration-300 cursor-pointer hover:-translate-y-1"
-                    style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
-                    onmouseover="this.style.boxShadow='0 0 16px rgba(167, 139, 255, 1)';"
-                    onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
-                    <div class="flex flex-col bg-white rounded-xl dark:bg-neutral-900">
-                        <div class="flex-auto p-4 md:p-6">
-                            <p class="text-base italic text-gray-800 md:text-lg dark:text-neutral-200">
-                                " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ab est ex, esse neque
-                                molestias nobis nisi, expedita dolorum beatae, dignissimos odit recusandae amet adipisci! "
-                            </p>
-                        </div>
+                @foreach ($testimoni as $t)
+                    <!-- Card -->
+                    <div class="flex h-auto rounded-xl duration-300 cursor-pointer hover:-translate-y-1"
+                        style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
+                        onmouseover="this.style.boxShadow='0 0 16px rgba(167, 139, 255, 1)';"
+                        onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
+                        <div class="flex flex-col bg-white rounded-xl dark:bg-neutral-900">
+                            <div class="flex-auto p-4 md:p-6">
+                                <p class="text-base italic text-gray-800 md:text-lg dark:text-neutral-200">
+                                    " {{ $t->kutipan }} "
+                                </p>
+                            </div>
 
-                        <div class="p-4 rounded-b-xl md:px-7">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0">
-                                    <img class="size-8 sm:h-[2.875rem] sm:w-[2.875rem] rounded-full"
-                                        src="/assets/team/pak-asep.jpg" alt="Image Testimonials">
-                                </div>
+                            <div class="p-4 rounded-b-xl md:px-7">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0">
+                                        <img class="size-8 sm:h-[2.875rem] sm:w-[2.875rem] rounded-full"
+                                            src="{{ $t->customer->image }}" alt="{{ $t->customer->name }}">
+                                    </div>
 
-                                <div class="flex gap-2 justify-between w-full">
-                                    <div class="grow ms-3">
-                                        <p class="text-sm font-semibold text-gray-800 sm:text-base dark:text-neutral-200">
-                                            Asep Wahyudin
-                                        </p>
-                                        <p class="text-xs text-gray-500 dark:text-neutral-400">
-                                            Ketua Program Keahlian PPLG
-                                        </p>
+                                    <div class="flex gap-2 justify-between w-full">
+                                        <div class="grow ms-3">
+                                            <p
+                                                class="text-sm font-semibold text-gray-800 sm:text-base dark:text-neutral-200">
+                                                {{ $t->customer->name }}
+                                            </p>
+                                            <p class="text-xs text-gray-500 dark:text-neutral-400">
+                                                {{ $t->instansi }}
+                                            </p>
+                                        </div>
+                                        <!-- Rating -->
+                                        <div class="flex gap-0.5 items-center">
+                                            @for ($i = 0; $i <= $t->penilaian; $i++)
+                                                <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
+                                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                    </path>
+                                                </svg>
+                                            @endfor
+
+                                        </div>
+                                        <!-- End Rating -->
                                     </div>
-                                    <!-- Rating -->
-                                    <div class="flex gap-0.5 items-center">
-                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
-                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                                            </path>
-                                        </svg>
-                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
-                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                                            </path>
-                                        </svg>
-                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
-                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                                            </path>
-                                        </svg>
-                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
-                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                                            </path>
-                                        </svg>
-                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
-                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                    <!-- End Rating -->
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- End Card -->
+                    <!-- End Card -->
+                @endforeach
 
-                <!-- Card -->
-                <div class="flex h-auto rounded-xl duration-300 cursor-pointer hover:-translate-y-1"
-                    style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
-                    onmouseover="this.style.boxShadow='0 0 16px rgba(167, 139, 255, 1)';"
-                    onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
-                    <div class="flex flex-col bg-white rounded-xl dark:bg-neutral-900">
-                        <div class="flex-auto p-4 md:p-6">
-                            <p class="text-base italic text-gray-800 md:text-lg dark:text-neutral-200">
-                                " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ab est ex, esse neque
-                                molestias nobis nisi, expedita dolorum beatae, dignissimos odit recusandae amet adipisci! "
-                            </p>
-                        </div>
-
-                        <div class="p-4 rounded-b-xl md:px-7">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0">
-                                    <img class="size-8 sm:h-[2.875rem] sm:w-[2.875rem] rounded-full"
-                                        src="/assets/team/hafiz.jpg" alt="Image Testimonials">
-                                </div>
-
-                                <div class="flex gap-2 justify-between w-full">
-                                    <div class="grow ms-3">
-                                        <p class="text-sm font-semibold text-gray-800 sm:text-base dark:text-neutral-200">
-                                            Hafiz Haekal
-                                        </p>
-                                        <p class="text-xs text-gray-500 dark:text-neutral-400">
-                                            Frontend Developer
-                                        </p>
-                                    </div>
-                                    <!-- Rating -->
-                                    <div class="flex gap-0.5 items-center">
-                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
-                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                                            </path>
-                                        </svg>
-                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
-                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                                            </path>
-                                        </svg>
-                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
-                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                                            </path>
-                                        </svg>
-                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
-                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                                            </path>
-                                        </svg>
-                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
-                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                    <!-- End Rating -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Card -->
-
-                <!-- Card -->
-                <div class="flex h-auto rounded-xl duration-300 cursor-pointer hover:-translate-y-1"
-                    style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
-                    onmouseover="this.style.boxShadow='0 0 16px rgba(167, 139, 255, 1)';"
-                    onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
-                    <div class="flex flex-col bg-white rounded-xl dark:bg-neutral-900">
-                        <div class="flex-auto p-4 md:p-6">
-                            <p class="text-base italic text-gray-800 md:text-lg dark:text-neutral-200">
-                                " Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ab est ex, esse neque
-                                molestias nobis nisi, expedita dolorum beatae, dignissimos odit recusandae amet adipisci! "
-                            </p>
-                        </div>
-
-                        <div class="p-4 rounded-b-xl md:px-7">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0">
-                                    <img class="size-8 sm:h-[2.875rem] sm:w-[2.875rem] rounded-full"
-                                        src="/assets/team/azfa.jpg" alt="Image Testimonials">
-                                </div>
-
-                                <div class="flex gap-2 justify-between w-full">
-                                    <div class="grow ms-3">
-                                        <p class="text-sm font-semibold text-gray-800 sm:text-base dark:text-neutral-200">
-                                            Muhammad Azfa
-                                        </p>
-                                        <p class="text-xs text-gray-500 dark:text-neutral-400">
-                                            Backend Developer
-                                        </p>
-                                    </div>
-                                    <!-- Rating -->
-                                    <div class="flex gap-0.5 items-center">
-                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
-                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                                            </path>
-                                        </svg>
-                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
-                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                                            </path>
-                                        </svg>
-                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
-                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                                            </path>
-                                        </svg>
-                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
-                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                                            </path>
-                                        </svg>
-                                        <svg class="flex-shrink-0 text-yellow-400 size-5 dark:text-yellow-600"
-                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                    <!-- End Rating -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Card -->
             </div>
             <!-- End Grid -->
 

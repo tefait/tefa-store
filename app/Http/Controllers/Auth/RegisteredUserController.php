@@ -21,7 +21,7 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        $provinces = \App\Models\Province::orderBy('created_at', 'DESC')->get();
+        $provinces = \App\Models\Province::get();
 
         return view('ecommerce.register', ['provinces' => $provinces]);
     }
