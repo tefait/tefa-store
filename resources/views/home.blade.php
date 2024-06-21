@@ -374,7 +374,7 @@
                         style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
                         onmouseover="this.style.boxShadow='0 0 16px rgba(167, 139, 255, 1)';"
                         onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
-                        <div class="flex flex-col bg-white rounded-xl dark:bg-neutral-900">
+                        <div class="flex flex-col w-full bg-white rounded-xl dark:bg-neutral-900">
                             <div class="flex-auto p-4 md:p-6">
                                 <p class="text-base italic text-gray-800 md:text-lg dark:text-neutral-200">
                                     " {{ $t->kutipan }} "
