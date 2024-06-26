@@ -150,7 +150,7 @@ class CartController extends Controller
 
     public function checkout()
     {
-        $provinces = Province::orderBy('created_at', 'DESC')->get();
+        $provinces = Province::get();
         $carts = $this->getCarts();
         $subtotal = collect($carts)->sum(function ($q) {
             return $q['qty'] * $q['product_price'];
@@ -171,7 +171,7 @@ class CartController extends Controller
 
     public function getDistrict()
     {
-        $districts = District::where('regency_id', request()->city_id)->get();
+        $districts = District::where('regency_id', request()->regency_id)->get();
 
         return response()->json(['status' => 'success', 'data' => $districts]);
     }
@@ -225,7 +225,7 @@ class CartController extends Controller
             'email' => 'required|email',
             'customer_address' => 'required|string',
             'province_id' => 'required|exists:provinces,id',
-            'city_id' => 'required|exists:cities,id',
+            'regency_id' => 'required|exists:cities,id',
             'district_id' => 'required|exists:districts,id',
             // 'courier' => 'required'
         ]);

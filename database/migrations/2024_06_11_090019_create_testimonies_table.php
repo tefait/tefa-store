@@ -19,8 +19,8 @@ return new class extends Migration
             $table->text('kutipan');
             $table->string('instansi');
             $table->boolean('terpilih')->default(false);
-            $table->foreignIdFor(Customer::class);
-            $table->foreignIdFor(Product::class);
+            $table->foreignIdFor(Customer::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Product::class)->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

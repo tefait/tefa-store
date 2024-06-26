@@ -87,11 +87,11 @@
                             <!-- ADAPUN DATA KOTA DAN KECAMATAN AKAN DI RENDER SETELAH PROVINSI DIPILIH -->
                             <div class="col-md-12 form-group p_star">
                                 <label for="">Kabupaten / Kota</label>
-                                <select class="form-control" name="city_id" id="city_id" required
+                                <select class="form-control" name="regency_id" id="regency_id" required
                                     value="{{ auth('customer')->check() ? auth('customer')->user()->district->city->id : '' }}">
                                     <option value="">Pilih Kabupaten/Kota</option>
                                 </select>
-                                <p class="text-danger">{{ $errors->first('city_id') }}</p>
+                                <p class="text-danger">{{ $errors->first('regency_id') }}</p>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <label for="">Kecamatan</label>
@@ -101,6 +101,15 @@
                                     <option value="">Pilih Kecamatan</option>
                                 </select>
                                 <p class="text-danger">{{ $errors->first('district_id') }}</p>
+                            </div>
+                            <div class="col-md-12 form-group p_star">
+                                <label>Kelurahan</label>
+                                <select class="form-control" name="village_id" id="village_id"
+                                    value="{{ auth('customer')->check() ? auth('customer')->user()->district->id : '' }}"
+                                    required>
+                                    <option value="">Pilih Kelurahan</option>
+                                </select>
+                                <p class="text-danger">{{ $errors->first('village_id') }}</p>
                             </div>
                             {{-- <div class="col-md-12 form-group p_star">
                                 <label for="">Kurir</label>
@@ -141,11 +150,11 @@
                                         <span>Rp {{ number_format($subtotal) }}</span>
                                     </a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a href="#">Pengiriman
                                         <span id="ongkir">Rp 0</span>
                                     </a>
-                                </li>
+                                </li> --}}
                                 <li>
                                     <a href="#">Total
                                         <span id="total">Rp {{ number_format($subtotal) }}</span>
@@ -167,7 +176,7 @@
     <script>
         $(document).ready(function() {
             loadCity($('#province_id').val(), 'bySelect').then(() => {
-                loadDistrict($('#city_id').val(), 'bySelect');
+                loadDistrict($('#regency_id').val(), 'bySelect');
             })
         })
 
@@ -175,8 +184,11 @@
             loadCity($(this).val(), '');
         })
 
-        $('#city_id').on('change', function() {
+        $('#regency_id').on('change', function() {
             loadDistrict($(this).val(), '')
+        })
+        $('#district_id').on('change', function() {
+            loadVillage($(this).val(), '')
         })
 
         function loadCity(province_id, type) {
@@ -188,18 +200,18 @@
                         province_id: province_id
                     },
                     success: function(html) {
-                        $('#city_id').empty()
-                        $('#city_id').append('<option value="">Pilih Kabupaten/Kota</option>')
+                        $('#regency_id').empty()
+                        $('#regency_id').append('<option value="">Pilih Kabupaten/Kota</option>')
                         $.each(html.data, function(key, item) {
 
-                            // KITA TAMPUNG VALUE CITY_ID SAAT INI
+                            // KITA TAMPUNG VALUE regency_id SAAT INI
                             let city_selected =
-                                {{ auth('customer')->check() ? auth('customer')->user()->district->city_id : 'null' }};
+                                {{ auth('customer')->check() ? auth('customer')->user()->district->regency_id : 'null' }};
                             //KEMUDIAN DICEK, JIKA CITY_SELECTED SAMA DENGAN ID CITY YANG DOLOOPING MAKA 'SELECTED' AKAN DIAPPEND KE TAG OPTION
                             let selected = type == 'bySelect' && city_selected == item.id ?
                                 'selected' : '';
                             //KEMUDIAN KITA MASUKKAN VALUE SELECTED DI ATAS KE DALAM TAG OPTION
-                            $('#city_id').append('<option value="' + item.id + '" ' + selected +
+                            $('#regency_id').append('<option value="' + item.id + '" ' + selected +
                                 '>' + item.name + '</option>')
                             resolve()
                         })
@@ -209,12 +221,12 @@
         }
 
         //CARA KERJANYA SAMA SAJA DENGAN FUNGSI DI ATAS
-        function loadDistrict(city_id, type) {
+        function loadDistrict(regency_id, type) {
             $.ajax({
                 url: "{{ url('/api/district') }}",
                 type: "GET",
                 data: {
-                    city_id: city_id
+                    regency_id: regency_id
                 },
                 success: function(html) {
                     $('#district_id').empty()
@@ -224,7 +236,27 @@
                             {{ auth('customer')->check() ? auth('customer')->user()->district->id : 'null' }};
                         let selected = type == 'bySelect' && district_selected == item.id ? 'selected' :
                             '';
-                        $('#district_id').append('<option value="' + item.id + '" ' + selected + '>' +
+                        $('#district_id').append('<option value="' + item.id + '" ' + selected + '>' +item.name + '</option>')
+                    })
+                }
+            });
+        }
+        function loadVillage(district_id, type) {
+            $.ajax({
+                url: "{{ url('/api/village') }}",
+                type: "GET",
+                data: {
+                    district_id: district_id
+                },
+                success: function(html) {
+                    $('#village_id').empty()
+                    $('#village_id').append('<option value="">Pilih Kecamatan</option>')
+                    $.each(html.data, function(key, item) {
+                        let village_selected =
+                            {{ auth('customer')->check() ? auth('customer')->user()->village->id : 'null' }};
+                        let selected = type == 'bySelect' && village_selected == item.id ? 'selected' :
+                            '';
+                        $('#village_id').append('<option value="' + item.id + '" ' + selected + '>' +
                             item.name + '</option>')
                     })
                 }
@@ -241,13 +273,13 @@
                     province_id: $(this).val()
                 },
                 success: function(html) {
-                    //SETELAH DATA DITERIMA, SELEBOX DENGAN ID CITY_ID DI KOSONGKAN
-                    $('#city_id').empty()
+                    //SETELAH DATA DITERIMA, SELEBOX DENGAN ID regency_id DI KOSONGKAN
+                    $('#regency_id').empty()
                     //KEMUDIAN APPEND DATA BARU YANG DIDAPATKAN DARI HASIL REQUEST VIA AJAX
                     //UNTUK MENAMPILKAN DATA KABUPATEN / KOTA
-                    $('#city_id').append('<option value="">Pilih Kabupaten/Kota</option>')
+                    $('#regency_id').append('<option value="">Pilih Kabupaten/Kota</option>')
                     $.each(html.data, function(key, item) {
-                        $('#city_id').append('<option value="' + item.id + '">' + item.type +
+                        $('#regency_id').append('<option value="' + item.id + '">' + item.type +
                             " " +
                             item
                             .name + '</option>');
@@ -258,12 +290,12 @@
         })
 
         //LOGICNYA SAMA DENGAN CODE DIATAS HANYA BERBEDA OBJEKNYA SAJA
-        $('#city_id').on('change', function() {
+        $('#regency_id').on('change', function() {
             $.ajax({
                 url: "{{ url('/api/district') }}",
                 type: "GET",
                 data: {
-                    city_id: $(this).val()
+                    regency_id: $(this).val()
                 },
                 success: function(html) {
                     $('#district_id').empty()

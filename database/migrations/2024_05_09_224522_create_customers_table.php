@@ -19,8 +19,11 @@ return new class extends Migration
             $table->string('phone_number');
             $table->string('address');
             $table->char('village_id', 10);
+            $table->foreign('village_id')
+                ->references('id')
+                ->on('villages')
+                ->onUpdate('cascade')->onDelete('restrict');
             $table->boolean('status')->default(false);
-            $table->foreign('village_id')->references('id')->on('villages')->onUpdate('cascade')->onDelete('restrict');
             $table->timestamps();
         });
     }

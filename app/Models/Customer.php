@@ -18,8 +18,8 @@ class Customer extends Authenticatable
         $this->attributes['password'] = Hash::make($value);
     }
 
-    public function district()
+    public function village()
     {
-        return $this->belongsTo(District::class);
+        return $this->belongsTo(Village::class);
     }
 }

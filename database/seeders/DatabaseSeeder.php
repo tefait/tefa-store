@@ -19,11 +19,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
+            SettingSeeder::class,
             IndoRegionSeeder::class,
             UserSeeder::class,
             CategorySeeder::class,
             ProductSeeder::class,
-            SettingSeeder::class,
         ]);
 
         Product::factory(32)->create();

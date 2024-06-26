@@ -22,7 +22,7 @@ class ProductFactory extends Factory
         return [
             'name' => $this->faker->sentence(),
             'slug' => $this->faker->unique()->slug(),
-            'image' => collect(File::allFiles(Storage::path('public/products')))->map(fn ($file) => Storage::url('products/' . $file->getFilename()))->random(),
+            'image' => collect(File::allFiles(Storage::path('public/products')))->map(fn ($file) => Storage::url('products/'.$file->getFilename()))->random(),
             'description' => $this->faker->paragraph(),
             'price' => $this->faker->randomNumber(5, true),
             'stock' => $this->faker->randomNumber(2, true),

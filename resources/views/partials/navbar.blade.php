@@ -15,8 +15,8 @@
                     "apiUrl": "{{ route('product.api') }}",
                     {{-- "apiUrl": "https://fakestoreapi.com/products", --}}
                     "apiGroupField": "category",
-                    "outputItemTemplate": "<div class=\"cursor-pointer p-2 space-y-0.5 w-full text-sm text-gray-800 hover:bg-gray-100 rounded-full focus:outline-none focus:bg-gray-100 dark:bg-black dark:hover:bg-neutral-700 dark:text-neutral-200 dark:focus:bg-neutral-700\" data-hs-combo-box-output-item onclick=\"alert(slug)\"><div class=\"flex justify-between items-center w-full\"><div data-hs-combo-box-output-item-field=\"name\" data-hs-combo-box-search-text data-hs-combo-box-value></div></div></div><span class=\"hidden hs-combo-box-selected:block\"><svg class=\"flex-shrink-0 size-3.5 text-blue-600 dark:text-blue-500\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\"></polyline></svg></span></img></div>",
-                    "groupingTitleTemplate": "<button type=\"button\" class=\"capitalize py-1 px-4 inline-flex items-center gap-x-2 text-sm text-nowrap rounded-full border border-gray-200 bg-white text-gray-600 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-100 hs-combo-box-tab-active:bg-blue-600 hs-combo-box-tab-active:border-blue-600 hs-combo-box-tab-active:focus:border-blue-600 hs-combo-box-tab-active:text-white disabled:opacity-50 disabled:pointer-events-none dark:hs-combo-box-tab-active:bg-blue-500 dark:hs-combo-box-tab-active:text-white dark:hs-combo-box-tab-active:border-blue-500 dark:hs-combo-box-tab-active:focus:border-blue-500 dark:bg-black dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700\"></button>",
+                    "outputItemTemplate": "<div class=\"cursor-pointer p-2 space-y-0.5 w-full text-sm text-gray-800 hover:bg-gray-100 rounded-full focus:outline-none focus:bg-gray-100 dark:bg-black dark:hover:bg-neutral-700 dark:text-neutral-200 dark:focus:bg-neutral-700\" data-hs-combo-box-output-item onclick=\"alert(slug)\"><div class=\"flex justify-between items-center w-full\"><div data-hs-combo-box-output-item-field=\"name\" data-hs-combo-box-search-text data-hs-combo-box-value></div></div></div><span class=\"hidden hs-combo-box-selected:block\"><svg class=\"flex-shrink-0 size-3.5 text-primary dark:text-blue-500\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"20 6 9 17 4 12\"></polyline></svg></span></img></div>",
+                    "groupingTitleTemplate": "<button type=\"button\" class=\"capitalize py-1 px-4 inline-flex items-center gap-x-2 text-sm text-nowrap rounded-full border border-gray-200 bg-white text-gray-600 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-100 hs-combo-box-tab-active:bg-primary hs-combo-box-tab-active:border-primary hs-combo-box-tab-active:focus:border-primary hs-combo-box-tab-active:text-white disabled:opacity-50 disabled:pointer-events-none dark:hs-combo-box-tab-active:bg-blue-500 dark:hs-combo-box-tab-active:text-white dark:hs-combo-box-tab-active:border-blue-500 dark:hs-combo-box-tab-active:focus:border-blue-500 dark:bg-black dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700\"></button>",
                     "tabsWrapperTemplate": "<div class=\"overflow-x-auto py-2 px-4 rounded-t-xl border-b border-gray-200 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 dark:bg-black dark:border-neutral-800\"></div>"
                 }'>
                 <div class="relative p-4 border-b border-gray-200 dark:border-neutral-800">
@@ -146,15 +146,9 @@
                     </button>
                     <!-- Cart -->
                     <button type="button" class="inline-flex relative items-center text-sm font-medium"
-                        data-hs-overlay="#hs-overlay-right">
+                        data-hs-overlay="#hs-overlay-right" id="ocbtn">
                         <i
                             class="px-2 py-1 text-2xl text-gray-800 rounded-full duration-300 bx bx-cart dark:text-white hover:text-black hover:bg-gray-100 dark:hover:bg-neutral-700"></i>
-                        <span class="flex absolute top-0 end-0 mt-0.5 me-[5px]">
-                            <span class="relative inline-flex bg-red-500 text-white rounded-full py-[1px] px-[5px]"
-                                style="font-size: 10px; line-height:14px;">
-                                5
-                            </span>
-                        </span>
                     </button>
                     <!-- Hamburger -->
                     <button type="button" class="inline-flex relative items-center text-sm font-medium lg:hidden"
@@ -168,14 +162,41 @@
                     <span class="h-8 border border-gray-100 dark:border-gray-800"></span>
                 </div>
 
+                {{-- Tombol Dekstop --}}
+                @auth('customer')
+                <div class="hs-dropdown [--placement:bottom-right] hidden relative lg:inline-flex ms-2">
+                    <button id="hs-dropdown-with-header" type="button" class="w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700">
+                        <img class="inline-block size-[38px] rounded-full ring-2 ring-white dark:ring-neutral-800" src="{{ auth('customer')->user()->image }}" alt="Profile Image">
+                        <span class="block absolute bottom-0 bg-green-500 rounded-full ring-2 ring-white end-0 size-3 dark:ring-neutral-900"></span>
+                    </button>
+
+                    <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden z-50 min-w-60 bg-white shadow-md rounded-lg p-2 dark:bg-neutral-900 dark:border dark:border-neutral-700" aria-labelledby="hs-dropdown-with-header">
+                        <div class="px-5 py-3 -m-2 bg-gray-100 rounded-t-lg dark:bg-neutral-800">
+                            <h3 class="text-base font-bold text-gray-800 dark:text-white">{{auth('customer')->user()->name}}</h3>
+                            <p class="text-sm text-gray-600 dark:text-neutral-400"></p>
+                        </div>
+                        <div class="py-2 mt-2 first:pt-0 last:pb-0">
+                            <a href="{{route('customer.setting')}}" class="flex  gap-x-2 items-center px-3 py-1.5 text-sm text-gray-800 rounded-lg duration-300 hover:bg-gray-100 dark:text-white dark:hover:bg-neutral-800">
+                                <i class="text-xl bx bx-user"></i>
+                                Akun Saya
+                            </a>
+                            <a href="{{route('customer.orders')}}" class="flex gap-x-2 items-center px-3 py-1.5 text-sm text-gray-800 rounded-lg duration-300 hover:bg-gray-100 dark:text-white dark:hover:bg-neutral-800">
+                                <i class="text-xl bx bx-shopping-bag"></i>
+                                Pembelian
+                            </a>
+                            <hr class="my-2">
+                            <a href="{{route('customer.logout')}}" class="flex gap-x-2 items-center px-3 py-1.5 text-sm text-red-600 rounded-lg duration-300 dark:font-bold hover:bg-gray-100 dark:text-red-500 dark:hover:bg-neutral-800">
+                                <i class="text-xl bx bx-log-out-circle"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                @else
                 <div class="">
                     <div id="navbar-collapse-with-animation"
                         class="hidden overflow-hidden w-full transition-all duration-300 lg:flex hs-collapse">
                         <div class="flex gap-2 justify-center">
-                            {{-- <a class="inline-flex gap-x-3 justify-center items-center px-4 py-3 h-9 text-sm font-medium text-center bg-transparent rounded-3xl border duration-300 hover:bg-neutral-10 border-secondary text-secondary"
-                                href="{{ route('customer.login') }}">
-                                Masuk
-                            </a> --}}
                             <button data-hs-overlay="#hs-vertically-centered-modal"
                                 class="inline-flex gap-x-3 justify-center items-center px-4 py-3 h-9 text-sm font-medium text-center bg-transparent rounded-3xl border duration-300 hover:bg-neutral-10 border-secondary text-secondary">
                                 Masuk
@@ -190,35 +211,8 @@
                         </div>
                     </div>
                 </div>
+                @endauth
 
-                {{-- <div class="hs-dropdown [--placement:bottom-right] hidden relative lg:inline-flex ms-2">
-                    <button id="hs-dropdown-with-header" type="button" class="w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700">
-                        <img class="inline-block size-[38px] rounded-full ring-2 ring-white dark:ring-neutral-800" src="{{ asset('assets/team/hafiz.jpg') }}" alt="Profile Image">
-                        <span class="block absolute bottom-0 bg-green-500 rounded-full ring-2 ring-white end-0 size-3 dark:ring-neutral-900"></span>
-                    </button>
-
-                    <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden z-50 min-w-60 bg-white shadow-md rounded-lg p-2 dark:bg-neutral-900 dark:border dark:border-neutral-700" aria-labelledby="hs-dropdown-with-header">
-                        <div class="px-5 py-3 -m-2 bg-gray-100 rounded-t-lg dark:bg-neutral-800">
-                            <h3 class="text-base font-bold text-gray-800 dark:text-white">Prof. H. Hafiz Haekal</h3>
-                            <p class="text-sm text-gray-600 dark:text-neutral-400">hafizhaekal03@gmail.com</p>
-                        </div>
-                        <div class="py-2 mt-2 first:pt-0 last:pb-0">
-                            <a href="#" class="flex gap-x-2 items-center px-3 py-1.5 text-sm text-gray-800 rounded-lg duration-300 hover:bg-gray-100 dark:text-white dark:hover:bg-neutral-800">
-                                <i class="text-xl bx bx-user"></i>
-                                Akun Saya
-                            </a>
-                            <a href="#" class="flex gap-x-2 items-center px-3 py-1.5 text-sm text-gray-800 rounded-lg duration-300 hover:bg-gray-100 dark:text-white dark:hover:bg-neutral-800">
-                                <i class="text-xl bx bx-shopping-bag"></i>
-                                Pembelian
-                            </a>
-                            <hr class="my-2">
-                            <a href="#" class="flex gap-x-2 items-center px-3 py-1.5 text-sm text-red-600 rounded-lg duration-300 dark:font-bold hover:bg-gray-100 dark:text-red-500 dark:hover:bg-neutral-800">
-                                <i class="text-xl bx bx-log-out-circle"></i>
-                                Logout
-                            </a>
-                        </div>
-                    </div>
-                </div> --}}
 
             </div>
         </div>
@@ -391,33 +385,37 @@
                 </button>
             </div>
             <div class="overflow-y-auto divide-y-8 divide-gray-100 dark:divide-neutral-900">
-
-                <div class="flex gap-2 justify-center px-4 pt-4">
-                    <a href="#"
-                        class="inline-flex gap-x-3 justify-center items-center px-4 py-3 w-full h-9 text-sm font-medium text-center bg-transparent rounded-3xl border duration-300 hover:bg-purple-100 border-secondary text-secondary">
-                        Masuk
-                    </a>
-                    <a href="#"
-                        class="inline-flex gap-x-3 justify-center items-center px-5 py-3 w-full h-9 text-sm font-medium text-center text-white bg-gradient-to-r rounded-3xl duration-300 from-secondary to-primary hover:from-primary hover:to-secondary">
-                        Daftar
-                    </a>
-                </div>
-
-                {{-- <div class="flex justify-between px-4 pt-4">
-                    <div class="flex items-center">
-                        <div class="inline-block relative min-w-14">
-                            <img class="inline-block w-full h-14 rounded-full" src="{{ asset('assets/team/hafiz.jpg') }}" alt="Profile Image">
-                            <span class="block absolute bottom-0 bg-green-500 rounded-full ring-2 ring-white end-0 size-3 dark:ring-neutral-900"></span>
+                @auth('customer')
+                    <div class="flex justify-between px-4 pt-4">
+                        <div class="flex items-center">
+                            <div class="inline-block relative min-w-14">
+                                <img class="inline-block w-full h-14 rounded-full"
+                                    src="{{ asset('assets/team/hafiz.jpg') }}" alt="Profile Image">
+                                <span
+                                    class="block absolute bottom-0 bg-green-500 rounded-full ring-2 ring-white end-0 size-3 dark:ring-neutral-900"></span>
+                            </div>
+                            <div class="ms-3">
+                                <h3 class="text-base font-bold text-gray-800 dark:text-white max-w-[15rem] truncate">{{auth('customer')->user()->name}}</h3>
+                                <p class="text-sm text-gray-600 dark:text-neutral-500 max-w-[15rem] truncate">
+                                    {{auth('customer')->user()->email}}</p>
+                            </div>
                         </div>
-                        <div class="ms-3">
-                            <h3 class="text-base font-bold text-gray-800 dark:text-white max-w-[15rem] truncate">Prof. H. Hafiz Haekal</h3>
-                            <p class="text-sm text-gray-600 dark:text-neutral-500 max-w-[15rem] truncate">hafizhaekal03@gmail.com</p>
+                        <div class="flex items-center">
+                            <i class="text-2xl text-gray-800 bx bx-pencil dark:text-white"></i>
                         </div>
                     </div>
-                    <div class="flex items-center">
-                        <i class="text-2xl text-gray-800 bx bx-pencil dark:text-white"></i>
+                @else
+                    <div class="flex gap-2 justify-center px-4 pt-4">
+                        <a href="#"
+                            class="inline-flex gap-x-3 justify-center items-center px-4 py-3 w-full h-9 text-sm font-medium text-center bg-transparent rounded-3xl border duration-300 hover:bg-purple-100 border-secondary text-secondary">
+                            Masuk
+                        </a>
+                        <a href="#"
+                            class="inline-flex gap-x-3 justify-center items-center px-5 py-3 w-full h-9 text-sm font-medium text-center text-white bg-gradient-to-r rounded-3xl duration-300 from-secondary to-primary hover:from-primary hover:to-secondary">
+                            Daftar
+                        </a>
                     </div>
-                </div> --}}
+                @endauth
 
                 <div class="mt-4 text-sm">
                     <a href="#"
@@ -479,6 +477,16 @@
                         </span>
                     </a>
                     <a href="#"
+                        class="flex justify-between items-center px-4 py-2 duration-300 hover:bg-gray-100 dark:hover:bg-neutral-900">
+                        <span class="flex gap-3 items-center text-gray-800 dark:text-white">
+                            <i class="text-2xl bx bx-bell"></i>
+                            <p class="text-sm">
+                                Notifikasi
+                            </p>
+                        </span>
+                        <i class="text-2xl text-gray-400 bx bx-chevron-right dark:text-white"></i>
+                    </a>
+                    <a href="#"
                         class="flex justify-between items-center px-4 py-2 mb-2 duration-300 hover:bg-gray-100 dark:hover:bg-neutral-900">
                         <span class="flex gap-3 items-center text-gray-800 dark:text-white">
                             <i class="text-2xl bx bx-cog"></i>
@@ -533,8 +541,18 @@
         .then(response => response.json())
         .then(data => {
             // Check if data.carts exists and is an object
+            let cartsCount = Object.keys(data.carts).length;
             if (data.success && typeof data.carts === 'object') {
-                Object.keys(data.carts).forEach(key => {
+                if (cartsCount > 0){
+
+                document.getElementById('ocbtn').insertAdjacentHTML('afterbegin', `
+                         <span class="flex absolute top-0 end-0 mt-0.5 me-[5px]">
+                            <span class="relative inline-flex bg-red-500 text-white rounded-full py-[1px] px-[5px]"
+                                style="font-size: 10px; line-height:14px;">
+                                ${Object.keys(data.carts).length}</span></span>`);
+                            }
+
+                                Object.keys(data.carts).forEach(key => {
                     const cartItem = data.carts[key];
                     // Create a new div element
                     let newDiv = document.createElement('div');
@@ -555,7 +573,7 @@
                                     <path d="M5 12h14"></path>
                                 </svg>
                             </button>
-                            <input class="p-0 w-8 text-sm text-center text-gray-800 bg-transparent border-0 focus:ring-0 dark:text-white" type="text" value="${cartItem.qty}" data-hs-input-number-input="">
+                            <input class="p-0 w-8 text-sm text-center text-gray-800 bg-transparent border-0 focus:ring-0 dark:text-white" type="text"  min="1" value="${cartItem.qty}" data-hs-input-number-input="">
                             <button type="button" class="inline-flex gap-x-2 justify-center items-center text-sm font-medium text-gray-800 rounded-md size-4 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-increment="">
                                 <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M5 12h14"></path>
@@ -581,11 +599,11 @@
             console.error('Error fetching data:', error);
         });
 
-        async function removeCart(){
+    async function removeCart() {
 
-        }
-        async function addToCart(){
+    }
+    async function addToCart() {
 
-        }
+    }
 </script>
 <!-- ========== END HEADER ========== -->

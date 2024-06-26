@@ -36,13 +36,14 @@ class RegisteredUserController extends Controller
         $this->validate($request, [
             'customer_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'password' => ['required', Rules\Password::defaults()],
             'customer_phone' => 'required',
             'email' => 'required|email',
             'customer_address' => 'required|string',
             'province_id' => 'required|exists:provinces,id',
-            'city_id' => 'required|exists:cities,id',
+            'regency_id' => 'required|exists:regencies,id',
             'district_id' => 'required|exists:districts,id',
+            'village_id' => 'required|exists:villages,id',
         ]);
 
         DB::beginTransaction();
@@ -54,9 +55,9 @@ class RegisteredUserController extends Controller
                 'password' => $password,
                 'phone_number' => $request->customer_phone,
                 'address' => $request->customer_address,
-                'district_id' => $request->district_id,
+                'village_id' => $request->village_id,
                 'activate_token' => Str::random(30),
-                'status' => false,
+                'status' => true,
             ]);
 
             DB::commit();

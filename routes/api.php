@@ -11,6 +11,7 @@ Route::get('/user', function (Request $request) {
 Route::post('cost', [CartController::class, 'getCourier']);
 Route::get('city', [CartController::class, 'getCity']);
 Route::get('district', [CartController::class, 'getDistrict']);
+Route::get('village', [CartController::class, 'getVillage']);
 Route::get('product', function () {
     $data = Product::with('category')->get();
 

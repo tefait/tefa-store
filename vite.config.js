@@ -10,8 +10,9 @@ export default defineConfig({
     ],
 
     server: {
-        host: 'localhost',
-        // host: '192.168.7.215',
+        // host: 'localhost',
+        host: '192.168.111.26',
         https: false,
+        
     },
 });

@@ -24,7 +24,7 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
         $middleware->web(append: [
             // MinifyHtml::class,
-            MinifyCss::class,
+            // MinifyCss::class,
             // MinifyJavascript::class,
         ], replace: [RedirectIfAuthenticated::class => CustomizedRedirectIfAuthenticated::class]
         );

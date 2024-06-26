@@ -41,6 +41,14 @@ Route::get('/fluttershy/discord/{command}', function ($command, Request $request
     }
 });
 
+Route::get('/pengguna/pengaturan', function () {
+    return view('pengguna.pengaturan_pengguna');
+});
+
+Route::get('/pesanan', function () {
+    return view('pesanan.index_pesanan');
+});
+
 Route::get('/favorit', function () {
     return view('favorit.index_favorit');
 });

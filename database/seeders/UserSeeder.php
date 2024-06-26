@@ -24,15 +24,15 @@ class UserSeeder extends Seeder
             'password' => Hash::make('rahasia'),
         ]);
 
-        Customer::create([
-            'name' => 'Muhammad Azfa',
-            'email' => 'azfasa15@gmail.com',
-            'phone_number' => '085156105763',
-            'address' => 'Sumedang',
-            'village_id' => 3211050011,
-            'status' => true,
-            'activate_token' => \Illuminate\Support\Str::random(32),
-            'password' => Hash::make('rahasia'),
-        ]);
+        // Customer::create([
+        //     'name' => 'Muhammad Azfa',
+        //     'email' => 'azfasa15@gmail.com',
+        //     'phone_number' => '085156105763',
+        //     'address' => 'Sumedang',
+        //     'village_id' => 3211050011,
+        //     'status' => true,
+        //     'activate_token' => \Illuminate\Support\Str::random(32),
+        //     'password' => Hash::make('rahasia'),
+        // ]);
     }
 }

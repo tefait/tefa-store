@@ -98,7 +98,7 @@ class FrontController extends Controller
     public function show($slug)
     {
         $product = Product::with(['category'])->where('slug', $slug)->orWhere('id', $slug)->first();
-        $products = Product::orderBy(fake()->randomElement(['name', 'price', 'slug', 'id', 'description']), fake()->randomElement(['asc', 'desc']))->limit(mt_rand(5, 15))->get();
+        $products = Product::orderBy(fake()->randomElement(['name', 'price', 'slug', 'id', 'description']), fake()->randomElement(['asc', 'desc']))->limit(6)->get();
 
         return view('ecommerce.show2', compact('product', 'products'));
     }
@@ -121,7 +121,7 @@ class FrontController extends Controller
     public function customerSettingForm()
     {
         /** @var \App\Models\Customer $customer */
-        $customer = auth()->guard('customer')->user()->load('district');
+        $customer = auth()->guard('customer')->user()->load('village');
         $provinces = Province::orderBy('name', 'ASC')->get();
 
         return view('ecommerce.setting', compact('customer', 'provinces'));

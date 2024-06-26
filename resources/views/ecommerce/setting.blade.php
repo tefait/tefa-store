@@ -76,7 +76,7 @@
                                                 <option value="">Pilih Propinsi</option>
                                                 @foreach ($provinces as $row)
                                                     <option value="{{ $row->id }}"
-                                                        {{ $customer->district->province_id == $row->id ? 'selected' : '' }}>
+                                                        {{ $customer->village->district->regency->province->id == $row->id ? 'selected' : '' }}>
                                                         {{ $row->name }}</option>
                                                 @endforeach
                                             </select>
@@ -84,10 +84,10 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="">Kabupaten / Kota</label>
-                                            <select class="form-control" name="city_id" id="city_id" required>
+                                            <select class="form-control" name="regency_id" id="regency_id" required>
                                                 <option value="">Pilih Kabupaten/Kota</option>
                                             </select>
-                                            <p class="text-danger">{{ $errors->first('city_id') }}</p>
+                                            <p class="text-danger">{{ $errors->first('regency_id') }}</p>
                                         </div>
                                         <div class="form-group">
                                             <label for="">Kecamatan</label>
@@ -116,7 +116,7 @@
             //MAKA KITA MEMANGGIL FUNGSI LOADCITY() DAN LOADDISTRICT()
             //AGAR SECARA OTOMATIS MENGISI SELECT BOX YANG TERSEDIA
             loadCity($('#province_id').val(), 'bySelect').then(() => {
-                loadDistrict($('#city_id').val(), 'bySelect');
+                loadDistrict($('#regency_id').val(), 'bySelect');
             })
         })
 
@@ -124,7 +124,7 @@
             loadCity($(this).val(), '');
         })
 
-        $('#city_id').on('change', function() {
+        $('#regency_id').on('change', function() {
             loadDistrict($(this).val(), '')
         })
 
@@ -137,17 +137,17 @@
                         province_id: province_id
                     },
                     success: function(html) {
-                        $('#city_id').empty()
-                        $('#city_id').append('<option value="">Pilih Kabupaten/Kota</option>')
+                        $('#regency_id').empty()
+                        $('#regency_id').append('<option value="">Pilih Kabupaten/Kota</option>')
                         $.each(html.data, function(key, item) {
 
-                            // KITA TAMPUNG VALUE CITY_ID SAAT INI
-                            let city_selected = {{ $customer->district->city_id }};
+                            // KITA TAMPUNG VALUE regency_id SAAT INI
+                            let city_selected = {{ $customer->village->district->regency_id }};
                             //KEMUDIAN DICEK, JIKA CITY_SELECTED SAMA DENGAN ID CITY YANG DOLOOPING MAKA 'SELECTED' AKAN DIAPPEND KE TAG OPTION
                             let selected = type == 'bySelect' && city_selected == item.id ?
                                 'selected' : '';
                             //KEMUDIAN KITA MASUKKAN VALUE SELECTED DI ATAS KE DALAM TAG OPTION
-                            $('#city_id').append('<option value="' + item.id + '" ' + selected +
+                            $('#regency_id').append('<option value="' + item.id + '" ' + selected +
                                 '>' + item.name + '</option>')
                             resolve()
                         })
@@ -157,18 +157,18 @@
         }
 
         //CARA KERJANYA SAMA SAJA DENGAN FUNGSI DI ATAS
-        function loadDistrict(city_id, type) {
+        function loadDistrict(regency_id, type) {
             $.ajax({
                 url: "{{ url('/api/district') }}",
                 type: "GET",
                 data: {
-                    city_id: city_id
+                    regency_id: regency_id
                 },
                 success: function(html) {
                     $('#district_id').empty()
                     $('#district_id').append('<option value="">Pilih Kecamatan</option>')
                     $.each(html.data, function(key, item) {
-                        let district_selected = {{ $customer->district->id }};
+                        let district_selected = {{ $customer->village->district->id }};
                         let selected = type == 'bySelect' && district_selected == item.id ? 'selected' :
                             '';
                         $('#district_id').append('<option value="' + item.id + '" ' + selected + '>' +
