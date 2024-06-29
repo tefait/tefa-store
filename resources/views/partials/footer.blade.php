@@ -49,7 +49,7 @@
                 <div class="mt-3 grid space-y-2 lg:space-y-3 text-sm">
                     <span class="space-y-0.5">
                         <p class="inline-flex gap-x-2 text-gray-600 dark:text-neutral-400">WhatsApp</p>
-                        <h4><a href="https://wa.me/62{{ ltrim(str_replace('-', '', cache('settings')['whatsapp']['value']), '0') }}"
+                        <h4><a href="https://wa.me/62{{ ltrim(str_replace('-', '', cache('settings')['whatsapp']['value']), '0') }}" target="blank"
                                 class="text-sm font-semibold text-gray-900 hover:text-primary dark:text-neutral-100 dark:hover:text-primary duration-300">{{ cache('settings')['whatsapp']['value'] }}</a>
                         </h4>
                     </span>

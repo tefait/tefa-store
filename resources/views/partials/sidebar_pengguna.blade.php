@@ -4,7 +4,7 @@
 
     <div class="flex items-center justify-center h-12 px-2 rounded-t-lg bg-neutral-100">
         <div class="flex-grow border-t border-gray-400"></div>
-        <p class="uppercase font-semibold mx-4 text-sm text-gray-800">Pengaturan</p>
+        <p class="uppercase font-semibold mx-4 text-sm text-gray-800">Menu Utama</p>
         <div class="flex-grow border-t border-gray-400"></div>
     </div>
     <nav class="hs-accordion-group p-4 w-full flex flex-col
@@ -40,19 +40,19 @@
                     <ul class="pt-2 ps-2">
                         <li>
                             <a class="flex items-center gap-x-3 py-2 px-2.5 text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-white duration-300"
-                                href="#">
+                                href="/pengguna/pengaturan">
                                 Profil
                             </a>
                         </li>
                         <li>
                             <a class="flex items-center gap-x-3 py-2 px-2.5 text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-white duration-300"
-                                href="#">
+                                href="/pengguna/alamat">
                                 Alamat
                             </a>
                         </li>
                         <li>
                             <a class="flex items-center gap-x-3 py-2 px-2.5 text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-white duration-300"
-                                href="#">
+                                href="/pengguna/keamanan">
                                 Keamanan
                             </a>
                         </li>
@@ -61,28 +61,14 @@
             </li>
             <li>
                 <a class="flex items-center gap-x-3 py-1 px-2.5 text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-white duration-300"
-                    href="#">
+                    href="/pengguna/pesanan">
                     <i class="bx bx-notepad text-xl"></i>
                     Pesanan Saya
                 </a>
             </li>
             <li>
                 <a class="flex items-center gap-x-3 py-1 px-2.5 text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-white duration-300"
-                    href="#">
-                    <i class="bx bx-history text-xl"></i>
-                    Riwayat Transaksi
-                </a>
-            </li>
-            <li>
-                <a class="flex items-center gap-x-3 py-1 px-2.5 text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-white duration-300"
-                    href="#">
-                    <i class="bx bx-star text-xl"></i>
-                    Penilaian
-                </a>
-            </li>
-            <li>
-                <a class="flex items-center gap-x-3 py-1 px-2.5 text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-white duration-300"
-                    href="#">
+                    href="/favorit">
                     <i class="bx bx-heart text-xl"></i>
                     Favorit
                 </a>
@@ -111,11 +97,10 @@
                     <p class="uppercase font-semibold mx-4 lg:mx-0 text-xs text-gray-400">Bantuan</p>
                     <div class="flex-grow border-t border-gray-400 lg:hidden"></div>
                 </div>
-                <a class="flex items-center gap-x-3 py-1 px-2.5 text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-white duration-300"
-                    href="#">
+                <button type="button" class="flex items-center gap-x-3 py-1 px-2.5 text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-white duration-300" data-hs-overlay="#hs-hubungi-kami">
                     <i class="bx bx-phone-call text-xl"></i>
                     Hubungi Kami
-                </a>
+                </button>
             </li>
             <li>
                 <a class="flex items-center gap-x-3 py-1 px-2.5 text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-white duration-300"

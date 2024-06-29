@@ -119,7 +119,18 @@
 #hs-vertical-radio-in-form-um-4-toko,
 #hs-vertical-radio-in-form-u-5-toko,
 #hs-vertical-radio-in-form-um-5-toko,
+#af-account-gender-checkbox-lakilaki,
+#af-account-gender-checkbox-perempuan,
+#hs-icon-name:focus,
 #hs-icon-email:focus,
-#hs-toggle-password:focus {
+#hs-icon-nomor:focus,
+#hs-icon-provinsi:focus,
+#hs-icon-kabkot:focus,
+#hs-icon-kecamatan:focus,
+#hs-icon-deskel:focus,
+#hs-icon-alamat:focus,
+#hs-toggle-password:focus,
+#hs-toggle-reset-password-baru,
+#hs-toggle-konfirmasi-password-baru {
     box-shadow: none !important;
 }

@@ -370,7 +370,7 @@
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:px-3">
                 @foreach ($testimoni as $t)
                     <!-- Card -->
-                    <div class="flex h-auto rounded-xl duration-300 cursor-pointer hover:-translate-y-1"
+                    <div class="flex h-auto min-h-40 rounded-xl duration-300 cursor-pointer hover:-translate-y-1"
                         style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
                         onmouseover="this.style.boxShadow='0 0 16px rgba(167, 139, 255, 1)';"
                         onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">

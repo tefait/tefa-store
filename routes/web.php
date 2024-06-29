@@ -45,7 +45,15 @@ Route::get('/pengguna/pengaturan', function () {
     return view('pengguna.pengaturan_pengguna');
 });
 
-Route::get('/pesanan', function () {
+Route::get('/pengguna/alamat', function () {
+    return view('pengguna.alamat_pengguna');
+});
+
+Route::get('/pengguna/keamanan', function () {
+    return view('pengguna.keamanan_pengguna');
+});
+
+Route::get('/pengguna/pesanan', function () {
     return view('pesanan.index_pesanan');
 });
 
