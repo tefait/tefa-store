@@ -131,7 +131,7 @@
             <div class="swiper-wrapper">
                 <!-- Card -->
                 @foreach ($top_sales as $product)
-                    <div class="swiper-slide slide-tsh flex justify-center h-[265px] w-40 lg:h-[300px] lg:w-[190px]">
+                    <a href="{{route('front.show_product', $product->slug)}}" class="swiper-slide slide-tsh flex justify-center h-[265px] w-40 lg:h-[300px] lg:w-[190px]">
                         <div
                             class="flex flex-col w-full h-full bg-white rounded-md shadow-sm group lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                             <div class="flex flex-col justify-center items-center h-[65%]">
@@ -167,7 +167,7 @@
                                 </span>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 @endforeach
 
                 <!-- End Card -->
@@ -228,7 +228,7 @@
                 <!-- Card -->
                 @foreach ($newest as $product)
                     <a class="group flex flex-col h-16 lg:h-[145px] z-10 w-[calc(50%-6px)] bg-white rounded-md lg:rounded-xl transition dark:bg-neutral-900"
-                        href="#" style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
+                    href="{{route('front.show_product', $product->slug)}}" style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
                         onmouseover="this.style.boxShadow='0 0 8px rgba(0, 163, 154, 1)';"
                         onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
                         <div class="flex h-full">
@@ -370,7 +370,7 @@
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:px-3">
                 @foreach ($testimoni as $t)
                     <!-- Card -->
-                    <div class="flex h-auto min-h-40 rounded-xl duration-300 cursor-pointer hover:-translate-y-1"
+                    <a href="{{route('front.show_product', $t->product->slug) . "#T" . $t->id}}" class="flex h-auto min-h-40 rounded-xl duration-300 cursor-pointer hover:-translate-y-1"
                         style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
                         onmouseover="this.style.boxShadow='0 0 16px rgba(167, 139, 255, 1)';"
                         onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
@@ -416,7 +416,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     <!-- End Card -->
                 @endforeach
 

@@ -180,6 +180,9 @@
 
             <!-- End Card -->
         </div>
+        <section class="my-5">
+            {{$products->links()}}
+        </section>
     </section>
 
     <!-- ========== FOOTER ========== -->

@@ -81,7 +81,7 @@ class FrontController extends Controller
         if (request()->page === 'all') {
             $products = $query->get();
         } else {
-            $products = $query->paginate(10);
+            $products = $query->paginate(15);
         }
 
         return view('toko.index_toko', compact('products'));

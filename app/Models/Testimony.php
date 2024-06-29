@@ -9,7 +9,7 @@ class Testimony extends Model
 {
     use HasFactory;
 
-    protected $with = ['customer'];
+    protected $with = ['customer', 'product'];
 
     public function product()
     {

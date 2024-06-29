@@ -228,7 +228,7 @@
                             <p>2rb+ terjual</p>
                         </div>
                         <div class="mt-1">
-                            <button type="button" class="w-full py-[3px] px-auto inline-flex items-center justify-center gap-x-2 text-xs font-bold rounded-lg border-[1.5px] border-primary text-primary hover:bg-primary hover:text-white disabled:opacity-50 disabled:pointer-events-none duration-300">
+                            <button type="button" class="w-full py-[3px] px-auto inline-flex items-center justify-center gap-x-2 text-xs font-bold rounded-full border-[1.5px] border-primary text-primary hover:bg-primary hover:text-white disabled:opacity-50 disabled:pointer-events-none duration-300">
                                 <i class="bx bx-cart text-base"></i>
                                 Keranjang
                             </button>
@@ -266,7 +266,7 @@
                             <p>2rb+ terjual</p>
                         </div>
                         <div class="mt-1">
-                            <button type="button" class="w-full py-[3px] px-auto inline-flex items-center justify-center gap-x-2 text-xs font-bold rounded-lg border-[1.5px] border-primary text-primary hover:bg-primary hover:text-white disabled:opacity-50 disabled:pointer-events-none duration-300">
+                            <button type="button" class="w-full py-[3px] px-auto inline-flex items-center justify-center gap-x-2 text-xs font-bold rounded-full border-[1.5px] border-primary text-primary hover:bg-primary hover:text-white disabled:opacity-50 disabled:pointer-events-none duration-300">
                                 <i class="bx bx-cart text-base"></i>
                                 Keranjang
                             </button>
@@ -304,7 +304,7 @@
                             <p>2rb+ terjual</p>
                         </div>
                         <div class="mt-1">
-                            <button type="button" class="w-full py-[3px] px-auto inline-flex items-center justify-center gap-x-2 text-xs font-bold rounded-lg border-[1.5px] border-primary text-primary hover:bg-primary hover:text-white disabled:opacity-50 disabled:pointer-events-none duration-300">
+                            <button type="button" class="w-full py-[3px] px-auto inline-flex items-center justify-center gap-x-2 text-xs font-bold rounded-full border-[1.5px] border-primary text-primary hover:bg-primary hover:text-white disabled:opacity-50 disabled:pointer-events-none duration-300">
                                 <i class="bx bx-cart text-base"></i>
                                 Keranjang
                             </button>
@@ -342,7 +342,7 @@
                             <p>2rb+ terjual</p>
                         </div>
                         <div class="mt-1">
-                            <button type="button" class="w-full py-[3px] px-auto inline-flex items-center justify-center gap-x-2 text-xs font-bold rounded-lg border-[1.5px] border-primary text-primary hover:bg-primary hover:text-white disabled:opacity-50 disabled:pointer-events-none duration-300">
+                            <button type="button" class="w-full py-[3px] px-auto inline-flex items-center justify-center gap-x-2 text-xs font-bold rounded-full border-[1.5px] border-primary text-primary hover:bg-primary hover:text-white disabled:opacity-50 disabled:pointer-events-none duration-300">
                                 <i class="bx bx-cart text-base"></i>
                                 Keranjang
                             </button>
@@ -362,13 +362,13 @@
         <p class="mt-3 text-xs sm:text-sm text-gray-600 dark:text-neutral-400">© 2024 Tefa PPLG SMKN 2 Sumedang.</p>
       </div>
       <!-- End Col -->
-  
+
       <!-- Grid -->
       <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-  
+
         <div>
           <h4 class="text-sm lg:text-base font-bold text-gray-900 uppercase dark:text-neutral-100">Tefa PPLG</h4>
-  
+
           <div class="mt-3 grid space-y-2 lg:space-y-3 text-sm">
             <p><a href="#" class="inline-flex gap-x-2 text-gray-600 hover:text-primary dark:text-neutral-400 dark:hover:text-primary duration-300">Tentang Kami</a></p>
             <p><a href="#" class="inline-flex gap-x-2 text-gray-600 hover:text-primary dark:text-neutral-400 dark:hover:text-primary duration-300">Desain & Printing</a></p>
@@ -381,7 +381,7 @@
           </div>
         </div>
         <!-- End Col -->
-  
+
         <div>
           <h4 class="text-sm lg:text-base font-bold text-gray-900 uppercase dark:text-neutral-100">Bantuan</h4>
           <div class="mt-3 grid space-y-2 lg:space-y-3 text-sm">
@@ -394,7 +394,7 @@
               <h4><a href="#" class="text-sm font-semibold text-gray-900 hover:text-primary dark:text-neutral-100 dark:hover:text-primary duration-300">tefaitrpl@gmail.com</h4>
             </span>
           </div>
-  
+
           <h4 class="text-sm lg:text-base font-bold text-gray-900 uppercase dark:text-neutral-100 mt-3">Panduan</h4>
           <div class="grid space-y-2 lg:space-y-3 text-sm">
             <p><a href="#" class="inline-flex gap-x-2 text-gray-600 hover:text-primary dark:text-neutral-400 dark:hover:text-primary duration-300">Cara Order</a></p>
@@ -403,24 +403,24 @@
           </div>
         </div>
         <!-- End Col -->
-  
+
         <div>
           <h4 class="text-sm lg:text-base font-bold text-gray-900 uppercase dark:text-neutral-100">Metode Pembayaran</h4>
-  
+
           <div class="mt-3 flex items-center space-x-3 text-sm">
             <img src="{{ asset('assets/img/BJB.png') }}" alt="BJB" class="h-7">
             <img src="{{ asset('assets/img/DANA.png') }}" alt="DANA" class="h-5">
             <img src="{{ asset('assets/img/OVO.svg') }}" alt="OVO" class="h-5">
           </div>
-  
+
           <h4 class="mt-7 text-sm lg:text-base font-bold text-gray-900 uppercase dark:text-neutral-100">Jasa Pengiriman</h4>
-  
+
           <div class="mt-3 grid space-y-3 text-sm">
             <img src="{{ asset('assets/img/JNE.png') }}" alt="JNE" class="h-5">
           </div>
-  
+
           <h4 class="mt-7 text-sm lg:text-base font-bold text-gray-900 uppercase dark:text-neutral-100">Ikuti Kami</h4>
-  
+
             <div class="flex mt-3 space-x-2 items-center font-medium text-3xl whitespace-nowrap">
               <a href="#" class="text-gray-600 text-opacity-80 hover:text-opacity-100 hover:text-primary dark:text-neutral-400 dark:hover:text-primary duration-300"><i class="bx bxl-facebook-circle"></i></a>
               <a href="#" class="text-gray-600 text-opacity-80 hover:text-opacity-100 hover:text-primary dark:text-neutral-400 dark:hover:text-primary duration-300"><i class="bx bxl-youtube"></i></a>
@@ -431,7 +431,7 @@
       </div>
       <!-- End Grid -->
     </div>
-  
+
     <div class="lg:hidden flex items-center justify-center sm:justify-start mt-3 border-t border-gray-200">
       <div class="flex flex-col py-2">
         <a class="flex justify-center sm:justify-start" href="#" aria-label="Logo"><img src="{{ asset('assets/img/logo2.png') }}" class="h-12" alt="Logo Tefa PPLG"></a>

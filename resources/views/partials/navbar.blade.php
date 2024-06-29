@@ -164,53 +164,61 @@
 
                 {{-- Tombol Dekstop --}}
                 @auth('customer')
-                <div class="hs-dropdown [--placement:bottom-right] hidden relative lg:inline-flex ms-2">
-                    <button id="hs-dropdown-with-header" type="button" class="w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700">
-                        <img class="inline-block size-[38px] rounded-full ring-2 ring-white dark:ring-neutral-800" src="{{ auth('customer')->user()->image }}" alt="Profile Image">
-                        <span class="block absolute bottom-0 bg-green-500 rounded-full ring-2 ring-white end-0 size-3 dark:ring-neutral-900"></span>
-                    </button>
+                    <div class="hs-dropdown [--placement:bottom-right] hidden relative lg:inline-flex ms-2">
+                        <button id="hs-dropdown-with-header" type="button"
+                            class="w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700">
+                            <img class="inline-block size-[38px] rounded-full ring-2 ring-white dark:ring-neutral-800"
+                                src="{{ auth('customer')->user()->image }}" alt="Profile Image">
+                            <span
+                                class="block absolute bottom-0 bg-green-500 rounded-full ring-2 ring-white end-0 size-3 dark:ring-neutral-900"></span>
+                        </button>
 
-                    <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden z-50 min-w-60 bg-white shadow-md rounded-lg p-2 dark:bg-neutral-900 dark:border dark:border-neutral-700" aria-labelledby="hs-dropdown-with-header">
-                        <div class="px-5 py-3 -m-2 bg-gray-100 rounded-t-lg dark:bg-neutral-800">
-                            <h3 class="text-base font-bold text-gray-800 dark:text-white">{{auth('customer')->user()->name}}</h3>
-                            <p class="text-sm text-gray-600 dark:text-neutral-400"></p>
-                        </div>
-                        <div class="py-2 mt-2 first:pt-0 last:pb-0">
-                            <a href="{{route('customer.setting')}}" class="flex  gap-x-2 items-center px-3 py-1.5 text-sm text-gray-800 rounded-lg duration-300 hover:bg-gray-100 dark:text-white dark:hover:bg-neutral-800">
-                                <i class="text-xl bx bx-user"></i>
-                                Akun Saya
-                            </a>
-                            <a href="{{route('customer.orders')}}" class="flex gap-x-2 items-center px-3 py-1.5 text-sm text-gray-800 rounded-lg duration-300 hover:bg-gray-100 dark:text-white dark:hover:bg-neutral-800">
-                                <i class="text-xl bx bx-shopping-bag"></i>
-                                Pembelian
-                            </a>
-                            <hr class="my-2">
-                            <a href="{{route('customer.logout')}}" class="flex gap-x-2 items-center px-3 py-1.5 text-sm text-red-600 rounded-lg duration-300 dark:font-bold hover:bg-gray-100 dark:text-red-500 dark:hover:bg-neutral-800">
-                                <i class="text-xl bx bx-log-out-circle"></i>
-                                Logout
-                            </a>
+                        <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden z-50 min-w-60 bg-white shadow-md rounded-lg p-2 dark:bg-neutral-900 dark:border dark:border-neutral-700"
+                            aria-labelledby="hs-dropdown-with-header">
+                            <div class="px-5 py-3 -m-2 bg-gray-100 rounded-t-lg dark:bg-neutral-800">
+                                <h3 class="text-base font-bold text-gray-800 dark:text-white">
+                                    {{ auth('customer')->user()->name }}</h3>
+                                <p class="text-sm text-gray-600 dark:text-neutral-400"></p>
+                            </div>
+                            <div class="py-2 mt-2 first:pt-0 last:pb-0">
+                                <a href="{{ route('customer.setting') }}"
+                                    class="flex  gap-x-2 items-center px-3 py-1.5 text-sm text-gray-800 rounded-lg duration-300 hover:bg-gray-100 dark:text-white dark:hover:bg-neutral-800">
+                                    <i class="text-xl bx bx-user"></i>
+                                    Akun Saya
+                                </a>
+                                <a href="{{ route('customer.orders') }}"
+                                    class="flex gap-x-2 items-center px-3 py-1.5 text-sm text-gray-800 rounded-lg duration-300 hover:bg-gray-100 dark:text-white dark:hover:bg-neutral-800">
+                                    <i class="text-xl bx bx-shopping-bag"></i>
+                                    Pembelian
+                                </a>
+                                <hr class="my-2">
+                                <a href="{{ route('customer.logout') }}"
+                                    class="flex gap-x-2 items-center px-3 py-1.5 text-sm text-red-600 rounded-lg duration-300 dark:font-bold hover:bg-gray-100 dark:text-red-500 dark:hover:bg-neutral-800">
+                                    <i class="text-xl bx bx-log-out-circle"></i>
+                                    Logout
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @else
-                <div class="">
-                    <div id="navbar-collapse-with-animation"
-                        class="hidden overflow-hidden w-full transition-all duration-300 lg:flex hs-collapse">
-                        <div class="flex gap-2 justify-center">
-                            <button data-hs-overlay="#hs-vertically-centered-modal"
-                                class="inline-flex gap-x-3 justify-center items-center px-4 py-3 h-9 text-sm font-medium text-center bg-transparent rounded-3xl border duration-300 hover:bg-neutral-10 border-secondary text-secondary">
-                                Masuk
-                            </button>
+                    <div class="">
+                        <div id="navbar-collapse-with-animation"
+                            class="hidden overflow-hidden w-full transition-all duration-300 lg:flex hs-collapse">
+                            <div class="flex gap-2 justify-center">
+                                <button data-hs-overlay="#hs-vertically-centered-modal"
+                                    class="inline-flex gap-x-3 justify-center items-center px-4 py-3 h-9 text-sm font-medium text-center bg-transparent rounded-3xl border duration-300 hover:bg-neutral-10 border-secondary text-secondary">
+                                    Masuk
+                                </button>
 
-                            @include('ecommerce.login_desktop')
+                                @include('ecommerce.login_desktop')
 
-                            <a class="inline-flex gap-x-3 justify-center items-center px-5 py-3 h-9 text-sm font-medium text-center text-white bg-gradient-to-r rounded-3xl duration-300 from-secondary to-primary hover:from-primary hover:to-secondary"
-                                href="{{ route('register') }}">
-                                Daftar
-                            </a>
+                                <a class="inline-flex gap-x-3 justify-center items-center px-5 py-3 h-9 text-sm font-medium text-center text-white bg-gradient-to-r rounded-3xl duration-300 from-secondary to-primary hover:from-primary hover:to-secondary"
+                                    href="{{ route('register') }}">
+                                    Daftar
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endauth
 
 
@@ -317,8 +325,7 @@
         </button>
     </div>
     <div class="flex justify-between items-center px-4 mb-4 max-w-full h-9 border-b dark:border-neutral-800">
-        <p class="inline-flex gap-x-2 items-center text-xs text-gray-600 dark:text-gray-300">
-            2 produk
+        <p class="inline-flex gap-x-2 items-center text-xs text-gray-600 dark:text-gray-300" id="jumlahProduk">
         </p>
         <button type="submit"
             class="inline-flex gap-x-2 items-center text-xs font-semibold text-red-600 duration-300 dark:text-red-500 hover:text-opacity-60 dark:hover:text-opacity-60">
@@ -395,9 +402,10 @@
                                     class="block absolute bottom-0 bg-green-500 rounded-full ring-2 ring-white end-0 size-3 dark:ring-neutral-900"></span>
                             </div>
                             <div class="ms-3">
-                                <h3 class="text-base font-bold text-gray-800 dark:text-white max-w-[15rem] truncate">{{auth('customer')->user()->name}}</h3>
+                                <h3 class="text-base font-bold text-gray-800 dark:text-white max-w-[15rem] truncate">
+                                    {{ auth('customer')->user()->name }}</h3>
                                 <p class="text-sm text-gray-600 dark:text-neutral-500 max-w-[15rem] truncate">
-                                    {{auth('customer')->user()->email}}</p>
+                                    {{ auth('customer')->user()->email }}</p>
                             </div>
                         </div>
                         <div class="flex items-center">
@@ -537,71 +545,100 @@
 <script>
     // Get Cart
     let box = document.querySelector("#CartWrapper");
-    fetch('{{ route('api.list_cart') }}') // Replace 'your_api_endpoint' with your actual API endpoint
-        .then(response => response.json())
-        .then(data => {
-            // Check if data.carts exists and is an object
-            let cartsCount = Object.keys(data.carts).length;
-            if (data.success && typeof data.carts === 'object') {
-                if (cartsCount > 0){
+    getCarts();
+    async function getCarts() {
+        fetch('{{ route('api.list_cart') }}') // Replace 'your_api_endpoint' with your actual API endpoint
+            .then(response => response.json())
+            .then(data => {
+                box.innerHTML = "";
+                // Check if data.carts exists and is an object
+                let cartsCount = Object.keys(data.carts).length;
+                if (data.success && typeof data.carts === 'object') {
+                    if (cartsCount > 0) {
+                        document.getElementById("jumlahProduk").innerText =
+                            `${cartsCount === 0 ? "Tidak ada" : cartsCount} Produk`;
+                        document.getElementById('ocbtn').insertAdjacentHTML('afterbegin', `
+                             <span class="flex absolute top-0 end-0 mt-0.5 me-[5px]">
+                                <span class="relative inline-flex bg-red-500 text-white rounded-full py-[1px] px-[5px]"
+                                    style="font-size: 10px; line-height:14px;">
+                                    ${Object.keys(data.carts).length}</span></span>`);
+                    }
 
-                document.getElementById('ocbtn').insertAdjacentHTML('afterbegin', `
-                         <span class="flex absolute top-0 end-0 mt-0.5 me-[5px]">
-                            <span class="relative inline-flex bg-red-500 text-white rounded-full py-[1px] px-[5px]"
-                                style="font-size: 10px; line-height:14px;">
-                                ${Object.keys(data.carts).length}</span></span>`);
-                            }
+                    Object.keys(data.carts).forEach(key => {
+                        const cartItem = data.carts[key];
+                        // Create a new div element
+                        let newDiv = document.createElement('div');
 
-                                Object.keys(data.carts).forEach(key => {
-                    const cartItem = data.carts[key];
-                    // Create a new div element
-                    let newDiv = document.createElement('div');
-                    newDiv.classList.add('flex', 'gap-y-6', 'p-4', 'transition-all', 'group', 'size-full',
-                        'dark:bg-black');
-                    newDiv.innerHTML = `
-            <img src="${cartItem.product_image}" alt="" class="mr-3 h-20 rounded-lg">
-            <div class="w-full">
-                <div>
-                    <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">${cartItem.product_name}</p>
-                    <p class="block text-sm font-bold text-gray-800 dark:text-white">${new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(cartItem.product_price)}</p>
-                </div>
-                <div class="flex justify-between">
-                    <div class="inline-block px-1 py-1 mt-2 bg-white rounded-3xl border border-gray-200 dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
-                        <div class="flex gap-x-1.5 items-center">
-                            <button type="button" class="inline-flex gap-x-2 justify-center items-center text-sm font-medium text-gray-800 rounded-md size-4 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-decrement="">
-                                <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M5 12h14"></path>
-                                </svg>
-                            </button>
-                            <input class="p-0 w-8 text-sm text-center text-gray-800 bg-transparent border-0 focus:ring-0 dark:text-white" type="text"  min="1" value="${cartItem.qty}" data-hs-input-number-input="">
-                            <button type="button" class="inline-flex gap-x-2 justify-center items-center text-sm font-medium text-gray-800 rounded-md size-4 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-increment="">
-                                <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M5 12h14"></path>
-                                    <path d="M12 5v14"></path>
-                                </svg>
-                            </button>
-                        </div>
+                        newDiv.classList.add('flex', 'gap-y-6', 'p-4', 'transition-all', 'group',
+                            'size-full',
+                            'dark:bg-black');
+                        newDiv.innerHTML = `
+                <img src="${cartItem.product_image}" alt="" class="mr-3 h-20 rounded-lg">
+                <div class="w-full">
+                    <div>
+                        <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">${cartItem.product_name}</p>
+                        <p class="block text-sm font-bold text-gray-800 dark:text-white">${new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(cartItem.product_price)}</p>
                     </div>
-                    <button class="flex items-center mt-2">
-                        <i class="text-xl text-red-600 duration-300 bx bx-trash dark:text-red-500 hover:text-opacity-60 dark:hover:text-opacity-60"></i>
-                    </button>
-                </div>
-            </div>`;
+                    <div class="flex justify-between">
+                        <div class="inline-block px-1 py-1 mt-2 bg-white rounded-3xl border border-gray-200 dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
+                            <div class="flex gap-x-1.5 items-center">
+                                <button type="button" class="inline-flex gap-x-2 justify-center items-center text-sm font-medium text-gray-800 rounded-md size-4 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-decrement="">
+                                    <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M5 12h14"></path>
+                                    </svg>
+                                </button>
+                                <input class="p-0 w-8 text-sm text-center text-gray-800 bg-transparent border-0 focus:ring-0 dark:text-white" type="text"  min="1" value="${cartItem.qty}" data-hs-input-number-input="">
+                                <button type="button" class="inline-flex gap-x-2 justify-center items-center text-sm font-medium text-gray-800 rounded-md size-4 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-increment="">
+                                    <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M5 12h14"></path>
+                                        <path d="M12 5v14"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="flex items-center mt-2" onclick="removeCart(${cartItem.product_id})">
+                            <i class="text-xl text-red-600 duration-300 bx bx-trash dark:text-red-500 hover:text-opacity-60 dark:hover:text-opacity-60"></i>
+                        </button>
+                    </div>
+                </div>`;
 
-                    // Append the new div element to #CartWrapper
-                    box.appendChild(newDiv);
-                });
-            } else {
-                console.error('Invalid data format: data.carts is not an object or success is false');
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
+                        // Append the new div element to #CartWrapper
+                        box.appendChild(newDiv);
+                    });
+                } else {
+                    console.error('Invalid data format: data.carts is not an object or success is false');
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
 
-    async function removeCart() {
 
     }
+    async function removeCart(id) {
+        try {
+            const response = await fetch("{{ route('api.destroy_cart') }}", {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}' // Ensure CSRF protection
+                },
+                body: JSON.stringify({
+                    id: id
+                })
+            });
+
+            if (response.ok) {
+                // Handle success response
+                getCarts();
+            } else {
+                console.error('Failed to remove cart item:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error removing cart item:', error);
+        }
+    }
+
     async function addToCart() {
 
     }

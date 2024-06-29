@@ -106,6 +106,23 @@ class CartController extends Controller
 
         return view('ecommerce.cart', compact('carts', 'subtotal'));
     }
+    public function destroyCart(Request $request)
+    {
+        // Retrieve the current carts from the cookie or other storage
+        $carts = $this->getCarts();
+
+        // Filter out the cart item with the given ID
+        $filteredCarts = array_filter($carts, function ($cart) use ($request) {
+            return $cart['product_id'] !== $request->id;
+        });
+
+        // Set the updated carts back into the cookie
+        Cookie::queue('carts', json_encode($filteredCarts), 60);
+
+        // Return a JSON response indicating success
+        return response()->json(['status' => 200, 'message' => 'success']);
+    }
+
 
     public function AJAXlistCart()
     {
@@ -212,7 +229,7 @@ class CartController extends Controller
         $specialChar = $specialChars[array_rand($specialChars)];
 
         // Menggabungkan kata, angka, dan karakter khusus
-        $password = $word1.$number.$word2.$specialChar;
+        $password = $word1 . $number . $word2 . $specialChar;
 
         return $password;
     }
@@ -236,7 +253,7 @@ class CartController extends Controller
             $explodeAffiliate = explode('-', $affiliate);
 
             $customer = Customer::where('email', $request->email)->first();
-            if (! auth()->guard('customer')->check() && $customer) {
+            if (!auth()->guard('customer')->check() && $customer) {
                 return redirect()->back()->with(['error' => 'Silahkan Login Terlebih Dahulu']);
             }
 
@@ -245,7 +262,7 @@ class CartController extends Controller
                 return $q['qty'] * $q['product_price'];
             });
 
-            if (! auth()->guard('customer')->check()) {
+            if (!auth()->guard('customer')->check()) {
                 $password = $this->generateRandomPassword();
                 $customer = Customer::create([
                     'name' => $request->customer_name,
@@ -261,7 +278,7 @@ class CartController extends Controller
 
             // $shipping = explode('-', $request->courier);
             $order = Order::create([
-                'invoice' => Str::random(4).'-'.time(),
+                'invoice' => Str::random(4) . '-' . time(),
                 'customer_id' => $customer->id,
                 'customer_name' => $customer->name,
                 'customer_phone' => $request->customer_phone,
@@ -290,7 +307,7 @@ class CartController extends Controller
             $cookie = cookie('carts', json_encode($carts), 2880);
             Cookie::queue(Cookie::forget('afiliasi'));
 
-            if (! auth()->guard('customer')->check()) {
+            if (!auth()->guard('customer')->check()) {
                 Mail::to($request->email)->send(new CustomerRegisterMail($customer, $password));
             }
 

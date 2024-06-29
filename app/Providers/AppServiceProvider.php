@@ -38,7 +38,7 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('order-view', function (Customer $customer, Order $order) {
             return $customer->id == $order->customer_id;
         });
-        View::composer('ecommerce.*', CategoryComposer::class);
+        View::composer('*', CategoryComposer::class);
         View::share('', CartController::getCarts());
 
         if (! empty(env('NGROK_URL'))) {

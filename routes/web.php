@@ -57,6 +57,10 @@ Route::get('/pengguna/pesanan', function () {
     return view('pesanan.index_pesanan');
 });
 
+Route::get('/pengguna/notifikasi', function () {
+    return view('notifikasi.index_notifikasi');
+});
+
 Route::get('/favorit', function () {
     return view('favorit.index_favorit');
 });
@@ -77,6 +81,7 @@ Route::get('/product/{slug}', [FrontController::class, 'show'])->name('front.sho
 Route::post('cart', [CartController::class, 'addToCart'])->name('front.cart');
 Route::get('/cart', [CartController::class, 'listCart'])->name('front.list_cart');
 Route::get('/api/cart', [CartController::class, 'AJAXlistCart'])->name('api.list_cart');
+Route::delete('/api/cart/delete', [CartController::class, 'destroyCart'])->name('api.destroy_cart');
 
 Route::post('/cart/update', [CartController::class, 'updateCart'])->name('front.update_cart');
 Route::get('/checkout', [CartController::class, 'checkout'])->name('front.checkout');

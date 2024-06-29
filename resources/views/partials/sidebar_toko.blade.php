@@ -17,7 +17,7 @@
         dark:[&::-webkit-scrollbar-track]:bg-neutral-700
         dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
         data-hs-accordion-always-open>
-        <ul class="space-y-1.5">            
+        <ul class="space-y-1.5">
             <li class="group">
                 <a class="flex items-center gap-x-3.5 py-2 px-2.5 bg-primary text-sm text-white rounded-full hover:bg-primary hover:text-white duration-100"
                     href="#">
@@ -25,7 +25,25 @@
                     Semua
                 </a>
             </li>
-            <li class="group">
+            @foreach ($categories as $c)
+                <li class="group">
+                    <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-neutral-800 rounded-full hover:bg-primary hover:text-white dark:text-white duration-100"
+                        href="{{ route('front.category', $c->slug) }}">
+                        <i
+                            class="bx bxs-palette text-2xl text-neutral-800 dark:text-white group-hover:text-white duration-100"></i>
+                        {{ $c->name }}
+                    </a>
+                </li>
+                @foreach ($c->child as $cat)
+                    <li class="group ml-2.5 pl-10">
+                        <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-neutral-800 rounded-full hover:bg-primary hover:text-white dark:text-white duration-100"
+                            href="{{ route('front.category', $cat->slug) }}">
+                            {{ $cat->name }}
+                        </a>
+                    </li>
+                @endforeach
+            @endforeach
+            {{-- <li class="group">
                 <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-neutral-800 rounded-full hover:bg-primary hover:text-white dark:text-white duration-100"
                     href="#">
                     <i class="bx bxs-palette text-2xl text-neutral-800 dark:text-white group-hover:text-white duration-100"></i>
@@ -45,7 +63,7 @@
                     <i class="bx bxs-joystick text-2xl text-neutral-800 dark:text-white group-hover:text-white duration-100"></i>
                     Game
                 </a>
-            </li>
+            </li> --}}
         </ul>
     </nav>
 </div>

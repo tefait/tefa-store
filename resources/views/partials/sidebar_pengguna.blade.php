@@ -75,7 +75,7 @@
             </li>
             <li>
                 <a class="flex items-center gap-x-3 py-1 px-2.5 text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-white duration-300"
-                    href="#">
+                    href="/pengguna/notifikasi">
                     <i class="bx bx-bell text-xl"></i>
                     Notifikasi
                 </a>
@@ -97,7 +97,7 @@
                     <p class="uppercase font-semibold mx-4 lg:mx-0 text-xs text-gray-400">Bantuan</p>
                     <div class="flex-grow border-t border-gray-400 lg:hidden"></div>
                 </div>
-                <button type="button" class="flex items-center gap-x-3 py-1 px-2.5 text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-white duration-300" data-hs-overlay="#hs-hubungi-kami">
+                <button type="button" class="flex items-center gap-x-3 py-1 px-2.5 w-full text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-white duration-300" data-hs-overlay="#hs-hubungi-kami">
                     <i class="bx bx-phone-call text-xl"></i>
                     Hubungi Kami
                 </button>
