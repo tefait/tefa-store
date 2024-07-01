@@ -61,6 +61,10 @@ Route::get('/pengguna/notifikasi', function () {
     return view('notifikasi.index_notifikasi');
 });
 
+Route::get('/testimoni', function () {
+    return view('testimoni.index_testimoni');
+});
+
 Route::get('/favorit', function () {
     return view('favorit.index_favorit');
 });
