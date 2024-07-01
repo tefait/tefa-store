@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Product;
+use App\Models\ProductImage;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -27,16 +28,17 @@ class ProductSeeder extends Seeder
         ];
 
         foreach ($dnp_product as $product) {
-            Product::insert([
+            $np = Product::create([
                 'name' => $product[1],
                 'slug' => Str::slug($product[1]),
-                'image' => $product[0],
                 'description' => $product[2],
                 'stock' => mt_rand(1, 100),
                 'price' => $product[3],
                 'weight' => rand(1, 50) * 10,
                 'category_id' => $product[4],
             ]);
+
+            ProductImage::create(['url' => $product[0], 'product_id' => $np->id]);
         }
     }
 }

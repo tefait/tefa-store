@@ -9,7 +9,8 @@ class CategoryComposer
 {
     public function compose(View $view)
     {
-        $categories = Category::with(['child'])->withCount(['child'])->getParent()->orderBy('name', 'ASC')->get();
+        // Ensure to load children categories efficiently
+        $categories = Category::get();
         $view->with('categories', $categories);
     }
 }

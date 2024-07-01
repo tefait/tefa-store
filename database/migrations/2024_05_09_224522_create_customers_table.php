@@ -17,12 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone_number');
-            $table->string('address');
-            $table->char('village_id', 10);
-            $table->foreign('village_id')
-                ->references('id')
-                ->on('villages')
-                ->onUpdate('cascade')->onDelete('restrict');
+            $table->boolean('membership')->default(false);
             $table->boolean('status')->default(false);
             $table->timestamps();
         });

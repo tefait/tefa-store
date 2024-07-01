@@ -130,6 +130,10 @@
 #hs-icon-deskel:focus,
 #hs-icon-alamat:focus,
 #hs-toggle-password:focus,
+#hs-icon-alamat-pengiriman:focus,
+#hs-icon-metode-pembayaran:focus,
+#hs-icon-voucher:focus,
+#hs-icon-catatan:focus,
 #hs-toggle-reset-password-baru,
 #hs-toggle-konfirmasi-password-baru {
     box-shadow: none !important;

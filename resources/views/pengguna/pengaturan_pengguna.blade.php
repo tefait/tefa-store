@@ -1,19 +1,19 @@
 @extends('layouts.app')
 
 @section('container')
-
     @include('partials.sidebar_pengguna')
 
-    <section class="grid grid-cols-12 sm:ms-[270px] lg:ms-72 my-4 mb-8">
+    <form class="grid grid-cols-12 sm:ms-[270px] lg:ms-72 my-4 mb-8">
+
         <div class="flex flex-col gap-4 col-span-4 p-4 h-[390px] w-[95%] bg-white shadow-lg rounded-xl">
             <div class="flex justify-center items-center">
                 <div class="h-52 w-52">
-                    <img src="{{ asset('assets/team/hafiz.jpg') }}" alt=""
+                    <img src="{{ $customer->image }}" alt=""
                         class="h-full w-full rounded-full object-cover">
                 </div>
             </div>
             <div class="max-w-sm">
-                <form>
+                <div>
                     <label class="flex cursor-pointer">
                         <span
                             class="flex items-center justify-center w-full py-1 px-auto font-medium text-sm text-primary border-[1.5px] border-primary bg-transparent hover:text-white hover:bg-primary rounded-full duration-300">
@@ -32,7 +32,7 @@
                         dark:hover:file:bg-blue-400
                         ">
                     </label>
-                </form>
+                </div>
             </div>
             <p class="text-xs text-gray-800">
                 Besar file: maksimum 2MB<br>
@@ -69,7 +69,7 @@
                             <div class="relative">
                                 <input type="text" id="hs-icon-name" name="name"
                                     class="py-2 px-4 ps-11 block w-full border border-gray-200 focus:border focus:border-primary shadow-sm rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 transition duration-300 ease-in-out"
-                                    placeholder="Masukkan nama">
+                                    placeholder="Masukkan nama" value="{{ $customer->name }}">
                                 <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-4">
                                     <i class="bx bx-user text-xl text-gray-400"></i>
                                 </div>
@@ -89,7 +89,7 @@
                             <div class="relative">
                                 <input type="text" id="hs-icon-email" name="email"
                                     class="py-2 px-4 ps-11 block w-full border border-gray-200 focus:border focus:border-primary shadow-sm rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 transition duration-300 ease-in-out"
-                                    placeholder="Masukkan email">
+                                    placeholder="Masukkan email" value="{{ $customer->email }}">
                                 <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-4">
                                     <i class="bx bx-envelope text-xl text-gray-400"></i>
                                 </div>
@@ -111,7 +111,7 @@
                             <div class="relative">
                                 <input type="text" id="hs-icon-nomor" name="number"
                                     class="py-2 px-4 ps-11 block w-full border border-gray-200 focus:border focus:border-primary shadow-sm rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 transition duration-300 ease-in-out"
-                                    placeholder="Masukkan nomor HP">
+                                    placeholder="Masukkan nomor HP" value="{{$customer->phone_number}}">
                                 <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-4">
                                     <i class="bx bx-phone text-xl text-gray-400"></i>
                                 </div>
@@ -152,10 +152,12 @@
                     <!-- End Grid -->
 
                     <div class="mt-5 flex justify-end gap-x-2">
-                        <button type="button" class="inline-flex gap-x-3 justify-center items-center py-3 h-9 w-24 text-sm font-medium text-center bg-transparent rounded-3xl border duration-300 hover:bg-neutral-10 border-secondary text-secondary">
+                        <button type="button"
+                            class="inline-flex gap-x-3 justify-center items-center py-3 h-9 w-24 text-sm font-medium text-center bg-transparent rounded-3xl border duration-300 hover:bg-neutral-10 border-secondary text-secondary">
                             Batal
                         </button>
-                        <button type="button" class="inline-flex gap-x-3 justify-center items-center py-3 h-9 w-24 text-sm font-medium text-center text-white bg-gradient-to-r rounded-3xl duration-300 from-secondary to-primary hover:from-primary hover:to-secondary">
+                        <button type="button"
+                            class="inline-flex gap-x-3 justify-center items-center py-3 h-9 w-24 text-sm font-medium text-center text-white bg-gradient-to-r rounded-3xl duration-300 from-secondary to-primary hover:from-primary hover:to-secondary">
                             Simpan
                         </button>
                     </div>
@@ -164,7 +166,7 @@
             <!-- End Card -->
         </div>
         <!-- End Card Section -->
-    </section>
+    </form>
 
     @include('partials.bottom_nav')
 @endsection

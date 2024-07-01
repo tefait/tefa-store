@@ -150,7 +150,7 @@
                 </div>
                 <div class="flex flex-col gap-2 mt-1">
                     <p class="text-sm text-gray-800 dark:text-neutral-300 mt-4">
-                        Stok tersedia: <span class="font-bold text-gray-600">102</span>
+                        Stok tersedia: <span class="font-bold text-gray-600">{{$product->stock}}</span>
                     </p>
                     <!-- Input Number -->
                     <div class="inline-flex justify-center py-1 w-24 bg-white rounded-3xl border border-gray-300 dark:bg-neutral-900 dark:border-neutral-700"
@@ -167,7 +167,7 @@
                             </button>
                             <input
                                 class="p-0 w-9 text-center text-gray-800 bg-transparent border-0 focus:ring-0 dark:text-white"
-                                type="text" value="1" data-hs-input-number-input="" name="qty">
+                                type="text" value="1"  max="{{$product->stock}}" data-hs-input-number-input="" name="qty">
                             <button type="button"
                                 class="inline-flex gap-x-2 justify-center items-center text-sm font-medium text-gray-800 rounded-md size-4 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
                                 data-hs-input-number-increment="">
@@ -184,18 +184,18 @@
                 </div>
                 <div class="flex justify-between items-center mt-6">
                     <p class="text-sm text-gray-600">Subtotal harga</p>
-                    <p class="font-bold text-lg text-gray-800">Rp50.000</p>
+                    <p class="font-bold text-lg text-gray-800"></p>
                 </div>
                 <div class="mt-4">
                     <button type="submit"
-                        class="w-full py-1.5 px-auto inline-flex items-center justify-center gap-x-2 text-sm font-bold rounded-lg text-white bg-gradient-to-r from-secondary to-primary hover:bg-gradient-to-r hover:from-primary hover:to-secondary disabled:opacity-50 disabled:pointer-events-none duration-300">
+                        class="w-full py-1.5 px-auto inline-flex items-center justify-center gap-x-2 text-sm font-bold rounded-full text-white bg-gradient-to-r from-secondary to-primary hover:bg-gradient-to-l disabled:opacity-50 disabled:pointer-events-none duration-300">
                         <i class="bx bx-cart text-lg"></i>
                         Keranjang
                     </button>
                 </div>
                 <div class="mt-2">
                     <button type="button"
-                        class="w-full py-1.5 px-auto inline-flex items-center justify-center gap-x-2 text-sm font-bold rounded-lg border-[1.5px] border-primary text-primary bg-transparent hover:text-white hover:bg-primary disabled:opacity-50 disabled:pointer-events-none duration-300">
+                        class="w-full py-1.5 px-auto inline-flex items-center justify-center gap-x-2 text-sm font-bold rounded-full border-[1.5px] border-primary text-primary bg-transparent hover:bg-blue-50 disabled:opacity-50 disabled:pointer-events-none duration-300">
                         <i class="bx bx-phone-call text-lg"></i>
                         Hubungi kami
                     </button>
@@ -362,7 +362,7 @@
                 <!-- Ulasan Produk -->
                 <div
                     class="pe-2 pt-4 sm:pt-0 sm:py-4 max-h-[320px] lg:max-h-[420px] overflow-x-hidden [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
-                    @foreach ($product->testimonies as $comment)
+                    @foreach ($product->comments as $comment)
                         <section id="T{{ $comment->id }}"></section>
                         <div class="border-b py-2 last:border-none">
                             <div class="flex items-center">

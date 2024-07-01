@@ -355,8 +355,9 @@
                     </h2>
                 </span>
                 <span class="hs-tooltip">
-                    <a href="#"><i
-                            class="bx bxs-right-top-arrow-circle text-[32px] sm:text-[40px] lg:text-[48px] text-primary hover:"></i></a>
+                    <a href="/testimoni">
+                        <i class="bx bxs-right-top-arrow-circle text-[32px] sm:text-[40px] lg:text-[48px] text-primary hover:"></i>
+                    </a>
                     <span
                         class="inline-block absolute invisible z-10 px-2 py-1.5 text-xs font-medium text-white rounded shadow-sm opacity-0 transition-opacity hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible bg-primary dark:text-black"
                         role="tooltip">

@@ -34,14 +34,6 @@
                         {{ $c->name }}
                     </a>
                 </li>
-                @foreach ($c->child as $cat)
-                    <li class="group ml-2.5 pl-10">
-                        <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-neutral-800 rounded-full hover:bg-primary hover:text-white dark:text-white duration-100"
-                            href="{{ route('front.category', $cat->slug) }}">
-                            {{ $cat->name }}
-                        </a>
-                    </li>
-                @endforeach
             @endforeach
             {{-- <li class="group">
                 <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-neutral-800 rounded-full hover:bg-primary hover:text-white dark:text-white duration-100"

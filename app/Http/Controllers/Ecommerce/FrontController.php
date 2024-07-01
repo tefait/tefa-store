@@ -4,19 +4,19 @@ namespace App\Http\Controllers\Ecommerce;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Customer;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Product;
 use App\Models\Province;
-use App\Models\Testimony;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
     public function referalProduct($user, $product)
     {
-        $code = $user . '-' . $product;
+        $code = $user.'-'.$product;
         $product = Product::find($product);
         $cookie = cookie('afiliasi', json_encode($code), 2880);
 
@@ -37,7 +37,7 @@ class FrontController extends Controller
         $newest = Product::orderBy('created_at', 'DESC')->limit(4)->get();
         $top_sales = Product::withCount('orders')->orderBy('orders_count', 'desc')->limit(6)->get();
         $order_count = OrderDetail::count();
-        $testimoni = Testimony::where('terpilih', true)->limit(3)->get();
+        $testimoni = Comment::where('terpilih', true)->limit(3)->get();
 
         return view('home', compact('testimoni', 'newest', 'top_sales', 'order_count'));
     }
@@ -48,9 +48,9 @@ class FrontController extends Controller
 
         if ($search = request()->q) {
             $query->where(function ($query) use ($search) {
-                $query->where('name', 'LIKE', '%' . $search . '%')
-                    ->orWhere('price', 'LIKE', '%' . $search . '%')
-                    ->orWhere('slug', 'LIKE', '%' . $search . '%');
+                $query->where('name', 'LIKE', '%'.$search.'%')
+                    ->orWhere('price', 'LIKE', '%'.$search.'%')
+                    ->orWhere('slug', 'LIKE', '%'.$search.'%');
             });
         }
 
@@ -92,7 +92,7 @@ class FrontController extends Controller
 
         $products = Category::where('slug', $slug)->first()->product()->orderBy('created_at', 'DESC')->paginate(12);
 
-        return view('ecommerce.product', compact('products'));
+        return view('toko.index_toko', compact('products'));
     }
 
     public function show($slug)
@@ -124,7 +124,7 @@ class FrontController extends Controller
         $customer = auth()->guard('customer')->user()->load('village');
         $provinces = Province::orderBy('name', 'ASC')->get();
 
-        return view('ecommerce.setting', compact('customer', 'provinces'));
+        return view('pengguna.pengaturan_pengguna', compact('customer', 'provinces'));
     }
 
     public function customerUpdateProfile(Request $request)

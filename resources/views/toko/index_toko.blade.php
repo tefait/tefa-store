@@ -249,7 +249,7 @@
                     </div>
 
                     <h4 class="mt-3 text-sm font-bold text-gray-900 uppercase lg:text-base dark:text-neutral-100">Panduan</h4>
-                    <div class="mt-3 grid space-y-2 text-sm lg:space-y-3">
+                    <div class="grid space-y-2 text-sm lg:space-y-3">
                         <p><a href="#"
                                 class="inline-flex gap-x-2 text-gray-600 duration-300 hover:text-primary dark:text-neutral-400 dark:hover:text-primary">Cara
                                 Order</a></p>

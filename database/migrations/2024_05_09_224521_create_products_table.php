@@ -7,9 +7,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
@@ -18,9 +15,9 @@ return new class extends Migration
             $table->string('slug');
             $table->foreignIdFor(Category::class);
             $table->text('description')->nullable();
-            $table->text('image');
             $table->unsignedInteger('stock')->default(1);
             $table->unsignedBigInteger('price');
+            $table->unsignedBigInteger('member_disc')->default(0);
             $table->unsignedInteger('weight');
             $table->timestamps();
         });

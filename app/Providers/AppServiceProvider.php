@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Http\Controllers\Ecommerce\CartController;
 use App\Http\View\CategoryComposer;
 use App\Models\Customer;
 use App\Models\Order;
@@ -38,8 +37,7 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('order-view', function (Customer $customer, Order $order) {
             return $customer->id == $order->customer_id;
         });
-        View::composer('*', CategoryComposer::class);
-        View::share('', CartController::getCarts());
+        View::composer(['partials.sidebar_toko'], CategoryComposer::class);
 
         if (! empty(env('NGROK_URL'))) {
             $this->app['url']->forceRootUrl(env('NGROK_URL'));

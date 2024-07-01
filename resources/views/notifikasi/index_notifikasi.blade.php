@@ -19,7 +19,7 @@
                             <i class="bx bxs-envelope py-1 px-2 text-xl text-primary border-4 border-blue-100 bg-blue-200 rounded-full"></i>
                             <!-- End Icon -->
                         </div>
-                        <div class="ms-3 max-w-[28rem]">
+                        <div class="ms-3">
                             <div class="flex justify-between items-center gap-2 text-gray-800 dark:text-white">
                                 <h3 class="font-semibold">
                                     Judul Notifikasi
@@ -50,7 +50,7 @@
                             <i class="bx bxs-envelope py-1 px-2 text-xl text-gray-400 border-4 border-gray-100 bg-gray-200 rounded-full"></i>
                             <!-- End Icon -->
                         </div>
-                        <div class="ms-3 max-w-[28rem]">
+                        <div class="ms-3">
                             <div class="flex justify-between items-center gap-2 text-gray-800 dark:text-white">
                                 <h3 class="font-semibold">
                                     Judul Notifikasi
@@ -81,7 +81,7 @@
                             <i class="bx bxs-envelope py-1 px-2 text-xl text-gray-400 border-4 border-gray-100 bg-gray-200 rounded-full"></i>
                             <!-- End Icon -->
                         </div>
-                        <div class="ms-3 max-w-[28rem]">
+                        <div class="ms-3">
                             <div class="flex justify-between items-center gap-2 text-gray-800 dark:text-white">
                                 <h3 class="font-semibold">
                                     Judul Notifikasi

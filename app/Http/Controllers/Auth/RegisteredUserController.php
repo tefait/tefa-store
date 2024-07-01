@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Mail\CustomerRegisterMail;
 use App\Models\Customer;
+use App\Models\CustomerAddress;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -38,7 +39,6 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', Rules\Password::defaults()],
             'customer_phone' => 'required',
-            'email' => 'required|email',
             'customer_address' => 'required|string',
             'province_id' => 'required|exists:provinces,id',
             'regency_id' => 'required|exists:regencies,id',
@@ -54,12 +54,14 @@ class RegisteredUserController extends Controller
                 'email' => $request->email,
                 'password' => $password,
                 'phone_number' => $request->customer_phone,
-                'address' => $request->customer_address,
-                'village_id' => $request->village_id,
                 'activate_token' => Str::random(30),
                 'status' => true,
             ]);
-
+            CustomerAddress::create([
+                'customer_id' => $customer->id,
+                'address' => $request->customer_address,
+                'village_id' => $request->village_id,
+            ]);
             DB::commit();
             Mail::to($request->email)->send(new CustomerRegisterMail($customer, $password));
 

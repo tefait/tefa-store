@@ -80,6 +80,13 @@
                     Notifikasi
                 </a>
             </li>
+            <li>
+                <a class="flex items-center gap-x-3 py-1 px-2.5 text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-white duration-300"
+                    href="/testimoni">
+                    <i class="bx bx-chat text-xl"></i>
+                    Testimoni
+                </a>
+            </li>
             <li class="my-4">
                 <div class="flex items-center justify-center lg:justify-start mt-4 mb-1 lg:ps-2">
                     <div class="flex-grow border-t border-gray-400 lg:hidden"></div>
