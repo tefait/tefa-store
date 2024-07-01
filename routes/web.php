@@ -17,7 +17,7 @@ Route::get('/fluttershy/discord/{command}', function ($command, Request $request
     try {
         $args = $request->input('args', []);
 
-        if (! is_array($args)) {
+        if (!is_array($args)) {
             return response()->json([
                 'status' => 'error',
                 'message' => 'Arguments must be provided as an array.',
@@ -29,13 +29,13 @@ Route::get('/fluttershy/discord/{command}', function ($command, Request $request
 
         return response()->json([
             'status' => 'success',
-            'cmd' => "php artisan $command ".json_encode($args),
+            'cmd' => "php artisan $command " . json_encode($args),
             'output' => $output,
         ]);
     } catch (\Throwable $th) {
         return response()->json([
             'status' => 'error',
-            'cmd' => "php artisan $command ".json_encode($args),
+            'cmd' => "php artisan $command " . json_encode($args),
             'error' => $th->getMessage(),
         ]);
     }
@@ -67,9 +67,6 @@ Route::get('/testimoni', function () {
 
 Route::get('/favorit', function () {
     return view('favorit.index_favorit');
-});
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
 });
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -143,4 +140,4 @@ Route::group(['prefix' => 'administrator', 'middleware' => 'auth'], function () 
 
 Route::get('/product/ref/{user}/{product}', [FrontController::class, 'referalProduct'])->name('front.afiliasi');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

@@ -357,14 +357,14 @@
             </span>
         </div>
         <div class="flex justify-between items-center px-4 py-2 bg-white dark:bg-black">
-            <h4 class="text-sm text-gray-800 dark:text-white">Total <span class="text-base font-bold">Rp100.000</span>
+            <h4 class="text-sm text-gray-800 dark:text-white">Total <span class="text-base font-bold"
+                    id="tH"<span id=""></span></span>
             </h4>
             <form action="#" method="">
                 @csrf
-                <button type="submit"
+                <a type="submit" id="btnP"
                     class="inline-flex gap-x-3 justify-center items-center px-7 py-5 h-9 text-sm font-semibold text-center text-white bg-gradient-to-r rounded-3xl duration-300 from-secondary to-primary hover:from-primary hover:to-secondary">
-                    Beli (2)
-                </button>
+                </a>
             </form>
         </div>
     </nav>
@@ -550,11 +550,21 @@
         fetch('{{ route('api.list_cart') }}') // Replace 'your_api_endpoint' with your actual API endpoint
             .then(response => response.json())
             .then(data => {
+
+                console.log(data);
                 box.innerHTML = "";
                 // Check if data.carts exists and is an object
                 let cartsCount = Object.keys(data.carts).length;
+                let buyBtn = document.getElementById("btnP");
+
                 if (data.success && typeof data.carts === 'object') {
                     if (cartsCount > 0) {
+                        document.getElementById("tH").innerText = new Intl.NumberFormat('id-ID', {
+                            style: 'currency',
+                            currency: 'IDR'
+                        }).format(data.subtotal);
+                        buyBtn.innerText = `Beli (${Object.keys(data.carts).length})`
+                        buyBtn.setAttribute("href", "{{ route('front.checkout') }}");
                         document.getElementById("jumlahProduk").innerText =
                             `${cartsCount === 0 ? "Tidak ada" : cartsCount} Produk`;
                         document.getElementById('ocbtn').insertAdjacentHTML('afterbegin', `
@@ -562,6 +572,10 @@
                                 <span class="relative inline-flex bg-red-500 text-white rounded-full py-[1px] px-[5px]"
                                     style="font-size: 10px; line-height:14px;">
                                     ${Object.keys(data.carts).length}</span></span>`);
+                        ``;
+                    } else {
+                        buyBtn.innerText = `Lanjut`;
+                        buyBtn.classList.add("hidden");
                     }
 
                     Object.keys(data.carts).forEach(key => {
@@ -638,9 +652,6 @@
             console.error('Error removing cart item:', error);
         }
     }
-
-    async function addToCart() {
-
-    }
+    async function addToCart() {}
 </script>
 <!-- ========== END HEADER ========== -->
