@@ -55,7 +55,7 @@
                                             <td>
                                                 <strong>{{ $row->customer_name }}</strong><br>
                                                 <label><strong>Telp:</strong> {{ $row->customer_phone }}</label><br>
-                                                <label><strong>Alamat:</strong> {{ $row->customer_address }} {{ $row->customer->district->name }} - {{  $row->customer->district->city->name}}, {{ $row->customer->district->city->province->name }}</label>
+                                                <label><strong>Alamat:</strong> {{ $row->customer_address }} {{ $row->customer->district->name }} - {{  $row->customer->district->regency->name}}, {{ $row->customer->district->regency->province->name }}</label>
                                             </td>
                                             <td>Rp {{ number_format($row->subtotal) }}</td>
                                             <td>{{ $row->created_at->format('d-m-Y') }}</td>

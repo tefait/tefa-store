@@ -16,7 +16,7 @@ class FrontController extends Controller
 {
     public function referalProduct($user, $product)
     {
-        $code = $user.'-'.$product;
+        $code = $user . '-' . $product;
         $product = Product::find($product);
         $cookie = cookie('afiliasi', json_encode($code), 2880);
 
@@ -36,10 +36,12 @@ class FrontController extends Controller
     {
         $newest = Product::orderBy('created_at', 'DESC')->limit(4)->get();
         $top_sales = Product::withCount('orders')->orderBy('orders_count', 'desc')->limit(6)->get();
-        $order_count = OrderDetail::count();
         $testimoni = Comment::where('terpilih', true)->limit(3)->get();
 
-        return view('home', compact('testimoni', 'newest', 'top_sales', 'order_count'));
+        $count['product'] = Product::count();
+        $count['order'] = Order::count();
+
+        return view('home', compact('testimoni', 'newest', 'top_sales', 'count'));
     }
 
     public function product()
@@ -48,9 +50,9 @@ class FrontController extends Controller
 
         if ($search = request()->q) {
             $query->where(function ($query) use ($search) {
-                $query->where('name', 'LIKE', '%'.$search.'%')
-                    ->orWhere('price', 'LIKE', '%'.$search.'%')
-                    ->orWhere('slug', 'LIKE', '%'.$search.'%');
+                $query->where('name', 'LIKE', '%' . $search . '%')
+                    ->orWhere('price', 'LIKE', '%' . $search . '%')
+                    ->orWhere('slug', 'LIKE', '%' . $search . '%');
             });
         }
 
@@ -121,7 +123,7 @@ class FrontController extends Controller
     public function customerSettingForm()
     {
         /** @var \App\Models\Customer $customer */
-        $customer = auth()->guard('customer')->user()->load('village');
+        $customer = auth()->guard('customer')->user()->load('rel_address');
         $provinces = Province::orderBy('name', 'ASC')->get();
 
         return view('pengguna.pengaturan_pengguna', compact('customer', 'provinces'));

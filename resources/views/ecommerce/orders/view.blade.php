@@ -48,8 +48,8 @@
                                             <td>Alamat</td>
                                             <td>:</td>
                                             <th>{{ $order->customer_address }}, {{ $order->district->name }}
-                                                {{ $order->district->city->name }},
-                                                {{ $order->district->city->province->name }}</th>
+                                                {{ $order->district->regency->name }},
+                                                {{ $order->district->regency->province->name }}</th>
                                         </tr>
                                     </table>
                                 </div>

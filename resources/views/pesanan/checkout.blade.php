@@ -2,21 +2,61 @@
 
 @section('container')
 
-    <div class="flex justify-center my-4">
-        <ol class="flex items-center whitespace-nowrap">
-            <li class="inline-flex items-center">
-              <a href="/" class="flex items-center text-lg text-gray-500 hover:text-primary focus:outline-none focus:text-primary dark:text-neutral-500 dark:hover:text-blue-500 dark:focus:text-blue-500">
-                Home
-              </a>
-              <svg class="flex-shrink-0 mx-2 overflow-visible size-4 text-gray-400 dark:text-neutral-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m9 18 6-6-6-6"></path>
-              </svg>
+    <div class="flex justify-center mt-4 mb-2 mx-10" data-hs-stepper="">
+        <ul class="relative flex flex-row justify-center gap-x-2 w-[50%]">
+            <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{
+                "index": 1
+            }'>
+                <span class="min-w-5 min-h-5 group inline-flex flex-col items-center text-xs align-middle">
+                <span class="size-5 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 hs-stepper-active:bg-primary hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600 dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
+                    <span class="hidden">1</span>
+                    <svg class="block flex-shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </span>
+                <span class="text-xs text-gray-600 dark:text-neutral-200">
+                    Keranjang
+                </span>
+                </span>
+                <div class="success w-full h-px flex-1 bg-gray-200 group-last:hidden hs-stepper-success:bg-primary hs-stepper-completed:bg-teal-600 dark:bg-neutral-700 dark:hs-stepper-success:bg-blue-600 dark:hs-stepper-completed:bg-teal-600"></div>
             </li>
-            <li class="inline-flex items-center text-lg font-semibold text-gray-800 truncate dark:text-neutral-200" aria-current="page">
-                Checkout
+
+            <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{
+                "index": 2
+            }'>
+                <span class="min-w-5 min-h-5 group inline-flex flex-col items-center text-xs align-middle">
+                <span class="active size-5 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 hs-stepper-active:bg-primary hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600 dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
+                    <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">2</span>
+                    <svg class="hidden flex-shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </span>
+                <span class="text-xs text-gray-600 dark:text-neutral-200">
+                    Checkout
+                </span>
+                </span>
+                <div class="w-full h-px flex-1 bg-gray-200 group-last:hidden hs-stepper-success:bg-primary hs-stepper-completed:bg-teal-600 dark:bg-neutral-700 dark:hs-stepper-success:bg-blue-600 dark:hs-stepper-completed:bg-teal-600"></div>
             </li>
-        </ol>
+
+            <li class="flex items-center gap-x-2 shrink basis-0 group" data-hs-stepper-nav-item='{
+                "index": 3
+                }'>
+                <span class="min-w-5 min-h-5 group inline-flex flex-col items-center text-xs align-middle">
+                <span class="size-5 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 hs-stepper-active:bg-primary hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600 dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
+                    <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">3</span>
+                    <svg class="hidden flex-shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </span>
+                <span class="text-xs text-gray-600 dark:text-neutral-200">
+                    Selesai
+                </span>
+                </span>
+            </li>
+        </ul>
     </div>
+    <!-- End Stepper -->
+
     <section class="grid grid-cols-12 mb-12 space-x-4">
         <div class="col-span-8 space-y-4 p-6 bg-white shadow-lg rounded-xl">
             <!-- Form Group -->
@@ -156,13 +196,13 @@
             </div>
             <div class="mt-4">
                 <button type="submit"
-                    class="w-full py-3 px-auto inline-flex items-center justify-center gap-x-2 text-sm font-bold rounded-full text-white bg-gradient-to-r from-secondary to-primary hover:bg-gradient-to-l disabled:opacity-50 disabled:pointer-events-none duration-300">
+                    class="relative w-full py-3 px-auto rounded-full font-semibold text-sm text-white bg-gradient-to-r from-primary to-secondary hover:bg-gradient-to-l">
                     Buat Pesanan
                 </button>
             </div>
             <div class="mt-2">
                 <button type="button"
-                    class="w-full py-3 px-auto inline-flex items-center justify-center gap-x-2 text-sm font-bold rounded-full border-[1.5px] border-primary text-primary bg-transparent hover:bg-blue-50 disabled:opacity-50 disabled:pointer-events-none duration-300">
+                    class="relative w-full py-3 px-auto rounded-full font-semibold text-sm text-primary bg-white isolation-auto z-10 border-[1.5px] border-primary before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full hover:text-white before:bg-gradient-to-r before:from-primary before:to-secondary before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden duration-700 before:hover:duration-700">
                     Hubungi kami
                 </button>
             </div>

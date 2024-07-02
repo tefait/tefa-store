@@ -63,7 +63,7 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <span>Kota</span> : {{ $order->district->city->name }}</a>
+                                    <span>Kota</span> : {{ $order->district->regency->name }}</a>
                             </li>
                             <li>
                                 <a href="#">

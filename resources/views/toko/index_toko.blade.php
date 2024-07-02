@@ -42,49 +42,70 @@
     <!-- End Mobile Version -->
 
     <!-- Offcanvas Tombol Urutkan -->
-    <div id="hs-overlay-bottom-u-toko" class="hs-overlay hs-overlay-open:translate-y-0 translate-y-full fixed bottom-0 inset-x-0 transition-all duration-300 transform h-auto size-full z-[300] rounded-t-2xl bg-white border-b dark:bg-neutral-800 dark:border-neutral-700 hidden" tabindex="-1">
+    <div id="hs-overlay-bottom-u-toko"
+        class="hs-overlay hs-overlay-open:translate-y-0 translate-y-full fixed bottom-0 inset-x-0 transition-all duration-300 transform h-auto size-full z-[300] rounded-t-2xl bg-white border-b dark:bg-neutral-800 dark:border-neutral-700 hidden"
+        tabindex="-1">
         <div class="flex justify-between items-center pt-4 pb-2 px-4">
-          <h3 class="font-bold text-base text-gray-800 dark:text-white">
-            Urutkan
-          </h3>
-          <button type="button" class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700" data-hs-overlay="#hs-overlay-bottom-u-toko">
-            <span class="sr-only">Close modal</span>
-            <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 6 6 18"></path>
-              <path d="m6 6 12 12"></path>
-            </svg>
-          </button>
+            <h3 class="font-bold text-base text-gray-800 dark:text-white">
+                Urutkan
+            </h3>
+            <button type="button"
+                class="flex justify-center items-center size-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700"
+                data-hs-overlay="#hs-overlay-bottom-u-toko">
+                <span class="sr-only">Close modal</span>
+                <svg class="flex-shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 12 12"></path>
+                </svg>
+            </button>
         </div>
         <div class="">
             <ul class="divide-y">
                 <li>
-                    <label for="hs-vertical-radio-in-form-um-1-toko" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
-                      <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Semua</span>
-                      <input type="radio" name="hs-vertical-radio-in-form-um-toko" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-um-1-toko" checked="">
+                    <label for="hs-vertical-radio-in-form-um-1-toko"
+                        class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                        <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Semua</span>
+                        <input type="radio" name="hs-vertical-radio-in-form-um-toko"
+                            class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500"
+                            id="hs-vertical-radio-in-form-um-1-toko" checked="">
                     </label>
                 </li>
                 <li>
-                    <label for="hs-vertical-radio-in-form-um-2-toko" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
-                      <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Terbaru</span>
-                      <input type="radio" name="hs-vertical-radio-in-form-um-toko" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-um-2-toko">
+                    <label for="hs-vertical-radio-in-form-um-2-toko"
+                        class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                        <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Terbaru</span>
+                        <input type="radio" name="hs-vertical-radio-in-form-um-toko"
+                            class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500"
+                            id="hs-vertical-radio-in-form-um-2-toko">
                     </label>
                 </li>
                 <li>
-                    <label for="hs-vertical-radio-in-form-um-3-toko" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
-                      <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Terlaris</span>
-                      <input type="radio" name="hs-vertical-radio-in-form-um-toko" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-um-3-toko">
+                    <label for="hs-vertical-radio-in-form-um-3-toko"
+                        class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                        <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Terlaris</span>
+                        <input type="radio" name="hs-vertical-radio-in-form-um-toko"
+                            class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500"
+                            id="hs-vertical-radio-in-form-um-3-toko">
                     </label>
                 </li>
                 <li>
-                    <label for="hs-vertical-radio-in-form-um-4-toko" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
-                      <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Harga tertinggi</span>
-                      <input type="radio" name="hs-vertical-radio-in-form-um-toko" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-um-4-toko">
+                    <label for="hs-vertical-radio-in-form-um-4-toko"
+                        class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                        <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Harga tertinggi</span>
+                        <input type="radio" name="hs-vertical-radio-in-form-um-toko"
+                            class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500"
+                            id="hs-vertical-radio-in-form-um-4-toko">
                     </label>
                 </li>
                 <li>
-                    <label for="hs-vertical-radio-in-form-um-5-toko" class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
-                      <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Harga terendah</span>
-                      <input type="radio" name="hs-vertical-radio-in-form-um-toko" class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500" id="hs-vertical-radio-in-form-um-5-toko">
+                    <label for="hs-vertical-radio-in-form-um-5-toko"
+                        class="flex justify-between items-center py-4 ps-4 pe-5 w-full bg-white hover:bg-gray-100 text-sm dark:bg-neutral-900 dark:text-neutral-400 duration-150">
+                        <span class="text-sm font-semibold text-gray-800 dark:text-neutral-400">Harga terendah</span>
+                        <input type="radio" name="hs-vertical-radio-in-form-um-toko"
+                            class="shrink-0 size-5 border-gray-200 rounded-full text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:checked:bg-blue-500 dark:checked:border-blue-500"
+                            id="hs-vertical-radio-in-form-um-5-toko">
                     </label>
                 </li>
             </ul>
@@ -94,19 +115,27 @@
 
     <section class="sm:ms-[270px] lg:ms-72 px-4 mb-8">
         <nav class="hidden gap-2 justify-end py-2 mb-4 bg-white sm:flex">
-            <button type="button" class="filter-button{{request()->sort == "" ? "-active" : ""  }}" data-filter="">
+            <button type="button" class="filter-button{{ request()->sort == '' ? '-active' : '' }}" data-filter="">
                 Semua
             </button>
-            <button type="button" class="filter-button{{request()->sort && request()->sort == "newest" ? "-active" : ""  }}" data-filter="newest">
+            <button type="button"
+                class="filter-button{{ request()->sort && request()->sort == 'newest' ? '-active' : '' }}"
+                data-filter="newest">
                 Terbaru
             </button>
-            <button type="button" class="filter-button{{request()->sort && request()->sort == "order-asc" ? "-active" : ""  }}" data-filter="order-asc">
+            <button type="button"
+                class="filter-button{{ request()->sort && request()->sort == 'order-asc' ? '-active' : '' }}"
+                data-filter="order-asc">
                 Terlaris
             </button>
-            <button type="button" class="filter-button{{request()->sort && request()->sort == "price-highest" ? "-active" : ""  }}" data-filter="price-highest">
+            <button type="button"
+                class="filter-button{{ request()->sort && request()->sort == 'price-highest' ? '-active' : '' }}"
+                data-filter="price-highest">
                 Harga Tertinggi
             </button>
-            <button type="button" class="filter-button{{request()->sort && request()->sort == "price-lowest" ? "-active" : ""  }}" data-filter="price-lowest">
+            <button type="button"
+                class="filter-button{{ request()->sort && request()->sort == 'price-lowest' ? '-active' : '' }}"
+                data-filter="price-lowest">
                 Harga Terendah
             </button>
             <script>
@@ -124,7 +153,8 @@
         <div class="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5 lg:gap-4">
             <!-- Card -->
             @foreach ($products as $product)
-                <a href="{{ route("front.show_product", $product->slug) }}" class="swiper-slide group flex justify-center h-[100%] w-[100%] mb-2">
+                <a href="{{ route('front.show_product', $product->slug) }}"
+                    class="swiper-slide group flex justify-center h-[100%] w-[100%] mb-2">
                     <div class="flex flex-col w-full h-full rounded-md shadow-sm group sm:shadow-md lg:rounded-lg">
                         <div class="flex flex-col justify-center items-center">
                             <img src="{{ $product->image }}" class="object-cover rounded-md lg:rounded-lg" />
@@ -139,7 +169,8 @@
                                 {{ $product->name }}
                             </p>
                             <p class="block mt-1 text-sm font-bold text-gray-800 dark:text-white">Rp
-                                {{ number_format($product->price, 0, ',', '.') }}</p>
+                                    {{ number_format($product->price, 0, ',', '.') }}
+                            </p>
                             <div class="flex gap-1 items-center">
                                 <span class="line-through text-[11px] text-gray-400">Rp
                                     {{ number_format($product->price, 0, ',', '.') }}</span>
@@ -181,7 +212,7 @@
             <!-- End Card -->
         </div>
         <section class="my-5">
-            {{$products->links()}}
+            {{ $products->links() }}
         </section>
     </section>
 
@@ -192,7 +223,8 @@
                 <a class="hidden flex-none text-xl font-semibold dark:text-white lg:block" href="#"
                     aria-label="Logo"><img src="{{ asset('assets/img/logo2.png') }}" class="lg:h-12"
                         alt="Logo Tefa PPLG"></a>
-                <p class="mt-3 text-xs text-gray-600 sm:text-sm dark:text-neutral-400">© 2024 Tefa PPLG SMKN 2 Sumedang.</p>
+                <p class="mt-3 text-xs text-gray-600 sm:text-sm dark:text-neutral-400">© 2024 Tefa PPLG SMKN 2 Sumedang.
+                </p>
             </div>
             <!-- End Col -->
 
@@ -248,7 +280,8 @@
                         </span>
                     </div>
 
-                    <h4 class="mt-3 text-sm font-bold text-gray-900 uppercase lg:text-base dark:text-neutral-100">Panduan</h4>
+                    <h4 class="mt-3 text-sm font-bold text-gray-900 uppercase lg:text-base dark:text-neutral-100">Panduan
+                    </h4>
                     <div class="grid space-y-2 text-sm lg:space-y-3">
                         <p><a href="#"
                                 class="inline-flex gap-x-2 text-gray-600 duration-300 hover:text-primary dark:text-neutral-400 dark:hover:text-primary">Cara

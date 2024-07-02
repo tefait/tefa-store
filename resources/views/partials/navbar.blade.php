@@ -167,7 +167,7 @@
                     <div class="hs-dropdown [--placement:bottom-right] hidden relative lg:inline-flex ms-2">
                         <button id="hs-dropdown-with-header" type="button"
                             class="w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700">
-                            <img class="inline-block size-[38px] rounded-full ring-2 ring-white dark:ring-neutral-800"
+                            <img class="inline-block size-full rounded-full ring-2 ring-white dark:ring-neutral-800"
                                 src="{{ auth('customer')->user()->image }}" alt="Profile Image">
                             <span
                                 class="block absolute bottom-0 bg-green-500 rounded-full ring-2 ring-white end-0 size-3 dark:ring-neutral-900"></span>
@@ -206,13 +206,13 @@
                             class="hidden overflow-hidden w-full transition-all duration-300 lg:flex hs-collapse">
                             <div class="flex gap-2 justify-center">
                                 <button data-hs-overlay="#hs-vertically-centered-modal"
-                                    class="inline-flex gap-x-3 justify-center items-center px-4 py-3 h-9 text-sm font-medium text-center bg-transparent rounded-3xl border duration-300 hover:bg-neutral-10 border-secondary text-secondary">
+                                    class="relative w-full px-[26px] py-2 rounded-full font-semibold text-sm text-primary bg-white isolation-auto z-10 border-[1.5px] border-primary before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full hover:text-white before:bg-gradient-to-r before:from-primary before:to-secondary before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden duration-700 before:hover:duration-700">
                                     Masuk
                                 </button>
 
                                 @include('ecommerce.login_desktop')
 
-                                <a class="inline-flex gap-x-3 justify-center items-center px-5 py-3 h-9 text-sm font-medium text-center text-white bg-gradient-to-r rounded-3xl duration-300 from-secondary to-primary hover:from-primary hover:to-secondary"
+                                <a class="inline-flex gap-x-3 justify-center items-center px-7 py-2 text-sm font-medium text-center text-white bg-gradient-to-r rounded-3xl duration-300 from-secondary to-primary hover:from-primary hover:to-secondary"
                                     href="{{ route('register') }}">
                                     Daftar
                                 </a>
@@ -283,10 +283,12 @@
                     <div class="w-full">
                         <p
                             class="block font-bold text-gray-800 dark:text-white text-sm max-w-[14rem] sm:max-w-[22rem] truncate">
-                            UTBK/SNBT</p>
+                            UTBK/SNBT
+                        </p>
                         <p
                             class="text-gray-600 dark:text-neutral-400 truncate-[6rem] text-[14px] max-w-[14rem] sm:max-w-[22rem] truncate">
-                            Selamat anda dinyatakan lulus!</p>
+                            Selamat anda dinyatakan lulus!
+                        </p>
                     </div>
                     <span class="w-20 text-xs text-gray-500 text-end dark:text-white">13 Jun</span>
                 </a>
@@ -357,8 +359,10 @@
             </span>
         </div>
         <div class="flex justify-between items-center px-4 py-2 bg-white dark:bg-black">
-            <h4 class="text-sm text-gray-800 dark:text-white">Total <span class="text-base font-bold"
-                    id="tH"<span id=""></span></span>
+            <h4 class="text-sm text-gray-800 dark:text-white">Total
+                <span class="text-base font-bold" id="tH">
+                    <span id=""></span>
+                </span>
             </h4>
             <form action="#" method="">
                 @csrf
@@ -415,11 +419,11 @@
                 @else
                     <div class="flex gap-2 justify-center px-4 pt-4">
                         <a href="#"
-                            class="inline-flex gap-x-3 justify-center items-center px-4 py-3 w-full h-9 text-sm font-medium text-center bg-transparent rounded-3xl border duration-300 hover:bg-purple-100 border-secondary text-secondary">
+                            class="relative w-full px-5 py-2 px-auto rounded-full font-semibold text-center text-sm text-primary bg-white isolation-auto z-10 border-[1.5px] border-primary before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full hover:text-white before:bg-gradient-to-r before:from-primary before:to-secondary before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden duration-700 before:hover:duration-700">
                             Masuk
                         </a>
                         <a href="#"
-                            class="inline-flex gap-x-3 justify-center items-center px-5 py-3 w-full h-9 text-sm font-medium text-center text-white bg-gradient-to-r rounded-3xl duration-300 from-secondary to-primary hover:from-primary hover:to-secondary">
+                            class="inline-flex gap-x-3 justify-center items-center px-5 py-2 w-full  text-sm font-medium text-center text-white bg-gradient-to-r rounded-3xl duration-300 from-secondary to-primary hover:from-primary hover:to-secondary">
                             Daftar
                         </a>
                     </div>
@@ -558,6 +562,7 @@
                 let buyBtn = document.getElementById("btnP");
 
                 if (data.success && typeof data.carts === 'object') {
+                    document.getElementById("tH").innerText = "";
                     if (cartsCount > 0) {
                         document.getElementById("tH").innerText = new Intl.NumberFormat('id-ID', {
                             style: 'currency',
@@ -587,34 +592,34 @@
                             'size-full',
                             'dark:bg-black');
                         newDiv.innerHTML = `
-                <img src="${cartItem.product_image}" alt="" class="mr-3 h-20 rounded-lg">
-                <div class="w-full">
-                    <div>
-                        <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">${cartItem.product_name}</p>
-                        <p class="block text-sm font-bold text-gray-800 dark:text-white">${new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(cartItem.product_price)}</p>
-                    </div>
-                    <div class="flex justify-between">
-                        <div class="inline-block px-1 py-1 mt-2 bg-white rounded-3xl border border-gray-200 dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
-                            <div class="flex gap-x-1.5 items-center">
-                                <button type="button" class="inline-flex gap-x-2 justify-center items-center text-sm font-medium text-gray-800 rounded-md size-4 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-decrement="">
-                                    <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M5 12h14"></path>
-                                    </svg>
-                                </button>
-                                <input class="p-0 w-8 text-sm text-center text-gray-800 bg-transparent border-0 focus:ring-0 dark:text-white" type="text"  min="1" value="${cartItem.qty}" data-hs-input-number-input="">
-                                <button type="button" class="inline-flex gap-x-2 justify-center items-center text-sm font-medium text-gray-800 rounded-md size-4 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-increment="">
-                                    <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M5 12h14"></path>
-                                        <path d="M12 5v14"></path>
-                                    </svg>
+                        <img src="${cartItem.product_image}" alt="" class="mr-3 h-20 rounded-lg">
+                        <div class="w-full">
+                            <div>
+                                <p class="text-gray-600 dark:text-neutral-300 max-w-[16rem] truncate text-[14px]">${cartItem.product_name}</p>
+                                <p class="block text-sm font-bold text-gray-800 dark:text-white">${new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(cartItem.product_price)}</p>
+                            </div>
+                            <div class="flex justify-between">
+                                <div class="inline-block px-1 py-1 mt-2 bg-white rounded-3xl border border-gray-200 dark:bg-neutral-900 dark:border-neutral-700" data-hs-input-number="">
+                                    <div class="flex gap-x-1.5 items-center">
+                                        <button type="button" class="inline-flex gap-x-2 justify-center items-center text-sm font-medium text-gray-800 rounded-md size-4 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-decrement="">
+                                            <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M5 12h14"></path>
+                                            </svg>
+                                        </button>
+                                        <input class="p-0 w-8 text-sm text-center text-gray-800 bg-transparent border-0 focus:ring-0 dark:text-white" type="text"  min="1" value="${cartItem.qty}" data-hs-input-number-input="">
+                                        <button type="button" class="inline-flex gap-x-2 justify-center items-center text-sm font-medium text-gray-800 rounded-md size-4 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" data-hs-input-number-increment="">
+                                            <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M5 12h14"></path>
+                                                <path d="M12 5v14"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button class="flex items-center mt-2" onclick="removeCart(${cartItem.product_id})">
+                                    <i class="text-xl text-red-600 duration-300 bx bx-trash dark:text-red-500 hover:text-opacity-60 dark:hover:text-opacity-60"></i>
                                 </button>
                             </div>
-                        </div>
-                        <button class="flex items-center mt-2" onclick="removeCart(${cartItem.product_id})">
-                            <i class="text-xl text-red-600 duration-300 bx bx-trash dark:text-red-500 hover:text-opacity-60 dark:hover:text-opacity-60"></i>
-                        </button>
-                    </div>
-                </div>`;
+                        </div>`;
 
                         // Append the new div element to #CartWrapper
                         box.appendChild(newDiv);

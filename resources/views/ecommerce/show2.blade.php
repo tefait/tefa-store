@@ -18,44 +18,24 @@
     <section class="flex flex-col sm:grid sm:grid-cols-12 lg:gap-x-8 lg:gap-y-4 lg:mt-6">
         <div class="col-span-6 lg:col-span-4 w-[100vw] sm:w-auto">
             <div style="--swiper-pagination-color: #fff"
-                class="swiper mySwiperDP2 h-96 w-full sm:h-[70%] sm:w-[88%] sm:rounded-xl">
+                class="swiper mySwiperDP2 h-96 w-full sm:h-[80%] sm:w-[88%] sm:rounded-xl">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide bg-cover bg-center">
-                        <img src="{{ asset('storage/products/kaos_sm.jpg') }}" class="block h-full w-full object-cover" />
-                    </div>
-                    <div class="swiper-slide bg-cover bg-center">
-                        <img src="{{ asset('ecommerce/img/product/feature-product/f-p-2.jpg') }}"
-                            class="block h-full w-full object-cover" />
-                    </div>
-                    <div class="swiper-slide bg-cover bg-center">
-                        <img src="{{ asset('ecommerce/img/product/feature-product/f-p-3.jpg') }}"
-                            class="block h-full w-full object-cover" />
-                    </div>
-                    <div class="swiper-slide bg-cover bg-center">
-                        <img src="{{ asset('ecommerce/img/product/feature-product/f-p-4.jpg') }}"
-                            class="block h-full w-full object-cover" />
-                    </div>
+                    @foreach ($product->images as $m)
+                        <div class="swiper-slide bg-cover bg-center">
+                            <img src="{{ asset($m->url) }}" class="block h-full w-full object-cover" />
+                        </div>
+                    @endforeach
                 </div>
             </div>
+
             <div thumbsSlider=""
-                class="swiper mySwiperDP hidden sm:block h-[18%] w-[88%] box-border pt-[10px] cursor-pointer">
+                class="swiper mySwiperDP hidden sm:block h-[20%] w-[88%] box-border pt-[10px] cursor-pointer">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide bg-cover bg-center w-[22%] h-full opacity-[0.5]">
-                        <img src="{{ asset('storage/products/kaos_sm.jpg') }}"
-                            class="block h-full w-full object-cover rounded-lg" />
-                    </div>
-                    <div class="swiper-slide bg-cover bg-center w-[22%] h-full opacity-[0.5]">
-                        <img src="{{ asset('ecommerce/img/product/feature-product/f-p-2.jpg') }}"
-                            class="block h-full w-full object-cover rounded-lg" />
-                    </div>
-                    <div class="swiper-slide bg-cover bg-center w-[22%] h-full opacity-[0.5]">
-                        <img src="{{ asset('ecommerce/img/product/feature-product/f-p-3.jpg') }}"
-                            class="block h-full w-full object-cover rounded-lg" />
-                    </div>
-                    <div class="swiper-slide bg-cover bg-center w-[22%] h-full opacity-[0.5]">
-                        <img src="{{ asset('ecommerce/img/product/feature-product/f-p-4.jpg') }}"
-                            class="block h-full w-full object-cover rounded-lg" />
-                    </div>
+                    @foreach ($product->images as $m)
+                        <div class="swiper-slide bg-cover bg-center w-[22%] h-full opacity-[0.5]">
+                            <img src="{{ asset($m->url) }}" class="block h-full w-full object-cover rounded-lg" />
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -139,7 +119,7 @@
 
         <div class="lg:col-span-3 hidden lg:block">
             <form action="{{ route('front.cart') }}" method="POST"
-                class="p-4 h-auto w-full bg-white border border-neutral-200 shadow-sm rounded-xl hover:shadow-md transition dark:bg-neutral-900 dark:border-neutral-800">
+                class="p-4 h-auto w-full bg-white border border-neutral-200 shadow-sm rounded-xl transition dark:bg-neutral-900 dark:border-neutral-800">
                 @csrf
                 <input type="hidden" name="product_id" value="{{ $product->id }}" class="form-control">
                 <div class="flex justify-center w-full">
@@ -150,7 +130,7 @@
                 </div>
                 <div class="flex flex-col gap-2 mt-1">
                     <p class="text-sm text-gray-800 dark:text-neutral-300 mt-4">
-                        Stok tersedia: <span class="font-bold text-gray-600">{{$product->stock}}</span>
+                        Stok tersedia: <span class="font-bold text-gray-600">{{ $product->stock }}</span>
                     </p>
                     <!-- Input Number -->
                     <div class="inline-flex justify-center py-1 w-24 bg-white rounded-3xl border border-gray-300 dark:bg-neutral-900 dark:border-neutral-700"
@@ -160,14 +140,15 @@
                                 class="inline-flex gap-x-2 justify-center items-center text-sm font-medium text-gray-800 rounded-md size-4 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
                                 data-hs-input-number-decrement="">
                                 <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
-                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M5 12h14"></path>
                                 </svg>
                             </button>
                             <input
                                 class="p-0 w-9 text-center text-gray-800 bg-transparent border-0 focus:ring-0 dark:text-white"
-                                type="text" value="1"  max="{{$product->stock}}" data-hs-input-number-input="" name="qty">
+                                type="text" value="1" max="{{ $product->stock }}" data-hs-input-number-input=""
+                                name="qty">
                             <button type="button"
                                 class="inline-flex gap-x-2 justify-center items-center text-sm font-medium text-gray-800 rounded-md size-4 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
                                 data-hs-input-number-increment="">
@@ -184,18 +165,18 @@
                 </div>
                 <div class="flex justify-between items-center mt-6">
                     <p class="text-sm text-gray-600">Subtotal harga</p>
-                    <p class="font-bold text-lg text-gray-800"></p>
+                    <p class="font-bold text-lg text-gray-800">Rp50.000</p>
                 </div>
                 <div class="mt-4">
                     <button type="submit"
-                        class="w-full py-1.5 px-auto inline-flex items-center justify-center gap-x-2 text-sm font-bold rounded-full text-white bg-gradient-to-r from-secondary to-primary hover:bg-gradient-to-l disabled:opacity-50 disabled:pointer-events-none duration-300">
+                        class="w-full py-1.5 px-auto inline-flex items-center justify-center gap-x-2 text-sm font-semibold rounded-full text-white bg-gradient-to-r from-secondary to-primary hover:bg-gradient-to-l disabled:opacity-50 disabled:pointer-events-none duration-300">
                         <i class="bx bx-cart text-lg"></i>
                         Keranjang
                     </button>
                 </div>
                 <div class="mt-2">
                     <button type="button"
-                        class="w-full py-1.5 px-auto inline-flex items-center justify-center gap-x-2 text-sm font-bold rounded-full border-[1.5px] border-primary text-primary bg-transparent hover:bg-blue-50 disabled:opacity-50 disabled:pointer-events-none duration-300">
+                        class="relative w-full py-1.5 px-auto inline-flex items-center justify-center gap-x-2 rounded-full font-semibold text-sm text-primary bg-white isolation-auto z-10 border-[1.5px] border-primary before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full hover:text-white before:bg-gradient-to-r before:from-primary before:to-secondary before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden duration-700 before:hover:duration-700Z">
                         <i class="bx bx-phone-call text-lg"></i>
                         Hubungi kami
                     </button>
@@ -205,7 +186,7 @@
     </section>
 
     <section
-        class="sm:grid sm:grid-cols-12 lg:gap-x-4 px-4 mt-4 sm:px-0 sm:mt-0 border-y sm:divide-x lg:border lg:rounded-xl">
+        class="sm:grid sm:grid-cols-12 lg:gap-x-4 px-4 mt-4 sm:px-0 sm:mt-6 border-y sm:divide-x lg:border lg:rounded-xl">
         <div class="sm:col-span-6 lg:col-span-8 lg:px-4 mb-2">
             <nav class="pb-1 flex">
                 <button type="button"
@@ -232,7 +213,7 @@
                 </button>
             </nav>
 
-            <div class="sm:ps-4">
+            <div class="sm:px-4">
                 <div class="flex justify-center items-center gap-2 mt-3">
                     <svg class="flex-shrink-0 size-7 sm:size-9 lg:size-10 text-yellow-400 dark:text-yellow-600"
                         xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

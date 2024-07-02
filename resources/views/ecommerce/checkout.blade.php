@@ -77,7 +77,7 @@
                                     <!-- LOOPING DATA PROVINCE UNTUK DIPILIH OLEH CUSTOMER -->
                                     @foreach ($provinces as $row)
                                         <option value="{{ $row->id }}"
-                                            {{ auth('customer')->check() && $row->id === auth('customer')->user()->district->city->province->id ? 'selected' : '' }}>
+                                            {{ auth('customer')->check() && $row->id === auth('customer')->user()->village->district->regency->province->id ? 'selected' : '' }}>
                                             {{ $row->name }}</option>
                                     @endforeach
                                 </select>
@@ -88,7 +88,7 @@
                             <div class="col-md-12 form-group p_star">
                                 <label for="">Kabupaten / Kota</label>
                                 <select class="form-control" name="regency_id" id="regency_id" required
-                                    value="{{ auth('customer')->check() ? auth('customer')->user()->district->city->id : '' }}">
+                                    value="{{ auth('customer')->check() ? auth('customer')->user()->village->district->regency->id : '' }}">
                                     <option value="">Pilih Kabupaten/Kota</option>
                                 </select>
                                 <p class="text-danger">{{ $errors->first('regency_id') }}</p>
@@ -96,7 +96,7 @@
                             <div class="col-md-12 form-group p_star">
                                 <label for="">Kecamatan</label>
                                 <select class="form-control" name="district_id" id="district_id"
-                                    value="{{ auth('customer')->check() ? auth('customer')->user()->district->id : '' }}"
+                                    value="{{ auth('customer')->check() ? auth('customer')->user()->village->id : '' }}"
                                     required>
                                     <option value="">Pilih Kecamatan</option>
                                 </select>
@@ -105,7 +105,7 @@
                             <div class="col-md-12 form-group p_star">
                                 <label>Kelurahan</label>
                                 <select class="form-control" name="village_id" id="village_id"
-                                    value="{{ auth('customer')->check() ? auth('customer')->user()->district->id : '' }}"
+                                    value="{{ auth('customer')->check() ? auth('customer')->user()->village->id : '' }}"
                                     required>
                                     <option value="">Pilih Kelurahan</option>
                                 </select>
@@ -206,7 +206,7 @@
 
                             // KITA TAMPUNG VALUE regency_id SAAT INI
                             let city_selected =
-                                {{ auth('customer')->check() ? auth('customer')->user()->district->regency_id : 'null' }};
+                                {{ auth('customer')->check() ? auth('customer')->user()->village->district->regency_id : 'null' }};
                             //KEMUDIAN DICEK, JIKA CITY_SELECTED SAMA DENGAN ID CITY YANG DOLOOPING MAKA 'SELECTED' AKAN DIAPPEND KE TAG OPTION
                             let selected = type == 'bySelect' && city_selected == item.id ?
                                 'selected' : '';
@@ -233,7 +233,7 @@
                     $('#district_id').append('<option value="">Pilih Kecamatan</option>')
                     $.each(html.data, function(key, item) {
                         let district_selected =
-                            {{ auth('customer')->check() ? auth('customer')->user()->district->id : 'null' }};
+                            {{ auth('customer')->check() ? auth('customer')->user()->village->id : 'null' }};
                         let selected = type == 'bySelect' && district_selected == item.id ? 'selected' :
                             '';
                         $('#district_id').append('<option value="' + item.id + '" ' + selected + '>' +item.name + '</option>')

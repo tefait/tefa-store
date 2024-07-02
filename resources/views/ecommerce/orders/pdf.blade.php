@@ -130,9 +130,9 @@
                                 {{ $order->customer_name }}<br>
                                 {{ $order->customer_phone }}<br>
                                 {{ $order->customer_address }}<br>
-                                {{ $order->district->name }}, {{ $order->district->city->name }}
+                                {{ $order->district->name }}, {{ $order->district->regency->name }}
                                 {{ $order->postal_code }}<br>
-                                {{ $order->district->city->province->name }}
+                                {{ $order->district->regency->province->name }}
                             </td>
 
                             <td>

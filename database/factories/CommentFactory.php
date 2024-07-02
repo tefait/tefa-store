@@ -23,7 +23,6 @@ class CommentFactory extends Factory
             'kutipan' => $this->faker->sentence(),
             'instansi' => $this->faker->company(),
             'terpilih' => $this->faker->boolean(),
-            'customer_id' => $this->faker->randomElement(Customer::pluck('id')),
             'product_id' => $this->faker->randomElement(Product::pluck('id')),
         ];
     }

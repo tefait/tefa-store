@@ -44,8 +44,8 @@
                                             <tr>
                                                 <th>Alamat</th>
                                                 <td>{{ $order->customer_address }} {{ $order->customer->district->name }} -
-                                                    {{ $order->customer->district->city->name }},
-                                                    {{ $order->customer->district->city->province->name }}</td>
+                                                    {{ $order->customer->district->regency->name }},
+                                                    {{ $order->customer->district->regency->province->name }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Order Status</th>

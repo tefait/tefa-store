@@ -131,7 +131,8 @@
             <div class="swiper-wrapper">
                 <!-- Card -->
                 @foreach ($top_sales as $product)
-                    <a href="{{route('front.show_product', $product->slug)}}" class="swiper-slide slide-tsh flex justify-center h-[265px] w-40 lg:h-[300px] lg:w-[190px]">
+                    <a href="{{ route('front.show_product', $product->slug) }}"
+                        class="swiper-slide slide-tsh flex justify-center h-[265px] w-40 lg:h-[300px] lg:w-[190px]">
                         <div
                             class="flex flex-col w-full h-full bg-white rounded-md shadow-sm group lg:rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
                             <div class="flex flex-col justify-center items-center h-[65%]">
@@ -228,7 +229,8 @@
                 <!-- Card -->
                 @foreach ($newest as $product)
                     <a class="group flex flex-col h-16 lg:h-[145px] z-10 w-[calc(50%-6px)] bg-white rounded-md lg:rounded-xl transition dark:bg-neutral-900"
-                    href="{{route('front.show_product', $product->slug)}}" style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
+                        href="{{ route('front.show_product', $product->slug) }}"
+                        style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
                         onmouseover="this.style.boxShadow='0 0 8px rgba(0, 163, 154, 1)';"
                         onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
                         <div class="flex h-full">
@@ -356,7 +358,8 @@
                 </span>
                 <span class="hs-tooltip">
                     <a href="/testimoni">
-                        <i class="bx bxs-right-top-arrow-circle text-[32px] sm:text-[40px] lg:text-[48px] text-primary hover:"></i>
+                        <i
+                            class="bx bxs-right-top-arrow-circle text-[32px] sm:text-[40px] lg:text-[48px] text-primary hover:"></i>
                     </a>
                     <span
                         class="inline-block absolute invisible z-10 px-2 py-1.5 text-xs font-medium text-white rounded shadow-sm opacity-0 transition-opacity hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible bg-primary dark:text-black"
@@ -371,7 +374,8 @@
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:px-3">
                 @foreach ($testimoni as $t)
                     <!-- Card -->
-                    <a href="{{route('front.show_product', $t->product->slug) . "#T" . $t->id}}" class="flex h-auto min-h-40 rounded-xl duration-300 cursor-pointer hover:-translate-y-1"
+                    <a href="{{ route('front.show_product', $t->product->slug) . '#T' . $t->id }}"
+                        class="flex h-auto min-h-40 rounded-xl duration-300 cursor-pointer hover:-translate-y-1"
                         style="box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);"
                         onmouseover="this.style.boxShadow='0 0 16px rgba(167, 139, 255, 1)';"
                         onmouseout="this.style.boxShadow='0 0 4px rgba(0, 0, 0, 0.1)';">
@@ -429,7 +433,7 @@
                 <!-- Stats -->
                 <div>
                     <h4 class="text-lg font-semibold text-gray-800 sm:text-xl">Produk</h4>
-                    <p class="mt-2 text-4xl font-bold sm:mt-3 sm:text-6xl text-primary">32</p>
+                    <p class="mt-2 text-4xl font-bold sm:mt-3 sm:text-6xl text-primary">{{ $count['product'] }}</p>
                     <p class="mt-1 text-gray-400">Dijamin berkualitas</p>
                 </div>
                 <!-- End Stats -->
@@ -437,7 +441,7 @@
                 <!-- Stats -->
                 <div>
                     <h4 class="text-lg font-semibold text-gray-800 sm:text-xl">Lebih dari</h4>
-                    <p class="mt-2 text-4xl font-bold sm:mt-3 sm:text-6xl text-primary">500k</p>
+                    <p class="mt-2 text-4xl font-bold sm:mt-3 sm:text-6xl text-primary">{{ $count['order'] - 1 }}+</p>
                     <p class="mt-1 text-gray-400">Melayani pesanan</p>
                 </div>
                 <!-- End Stats -->

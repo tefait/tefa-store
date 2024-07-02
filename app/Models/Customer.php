@@ -17,9 +17,22 @@ class Customer extends Authenticatable
     {
         $this->attributes['password'] = Hash::make($value);
     }
-
-    public function village()
+    public function getVillageAttribute()
     {
-        return $this->belongsTo(Village::class);
+        return $this->rel_address->first()->village;
+    }
+    public function getAddressAttribute()
+    {
+        return $this->rel_address->first()->address;
+    }
+
+    public function rel_address()
+    {
+        return $this->hasMany(CustomerAddress::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }

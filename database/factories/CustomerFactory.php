@@ -23,8 +23,7 @@ class CustomerFactory extends Factory
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'phone_number' => $this->faker->unique()->phoneNumber(),
-            'address' => $this->faker->streetAddress(),
-            'village_id' => $this->faker->randomElement(Village::limit(15)->pluck('id')),
+
             'status' => $this->faker->boolean(),
             'activate_token' => Str::random(32),
             'password' => Hash::make('rahasia'),
