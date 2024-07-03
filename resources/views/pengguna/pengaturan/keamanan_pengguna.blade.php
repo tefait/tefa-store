@@ -23,6 +23,25 @@
                   <div class="grid sm:grid-cols-12 gap-4">
 
                     <div class="sm:col-span-3">
+                      <label for="af-account-email"
+                          class="inline-block text-sm text-gray-800 mt-2.5 dark:text-neutral-200">
+                          Email
+                      </label>
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="sm:col-span-9">
+                      <div class="relative">
+                          <input type="text" id="hs-icon-email" name="email"
+                              class="py-2 px-4 ps-11 block w-full border border-gray-200 focus:border focus:border-primary shadow-sm rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 transition duration-300 ease-in-out"
+                              placeholder="Masukkan email" value="{{ auth('customer')->user()->email }}">
+                          <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-4">
+                              <i class="bx bx-envelope text-xl text-gray-400"></i>
+                          </div>
+                      </div>
+                  </div>
+
+                    <div class="sm:col-span-3">
                         <label for="password-lama"
                             class="inline-block text-sm text-gray-800 mt-2.5 dark:text-neutral-200">
                             Kata Sandi Lama

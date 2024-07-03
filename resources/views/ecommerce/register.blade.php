@@ -34,7 +34,7 @@
                         <div class="alert alert-danger">{{ session('error') }}</div>
                     @endif
 
-                    <form class="row contact_form" action="{{ route('register') }}" method="post" novalidate="novalidate">
+                    <form class="row contact_form" action="{{ route('customer.register') }}" method="post" novalidate="novalidate">
                         @csrf
                         <div class="col-md-12 form-group p_star">
                             <label for="customer_name">Nama Lengkap</label>

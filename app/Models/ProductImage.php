@@ -15,7 +15,6 @@ class ProductImage extends Model
         'url',
     ];
 
-    // protected $with = ['product'];
     /**
      * Get the product that owns the ProductImage
      */

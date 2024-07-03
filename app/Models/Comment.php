@@ -9,7 +9,6 @@ class Comment extends Model
 {
     use HasFactory;
 
-    protected $with = ['customer', 'product'];
 
     public function product()
     {

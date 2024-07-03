@@ -14,6 +14,16 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+// ==================== Static Routes ====================
+Route::get('/pengguna/alamat', fn () => view('pengguna.pengaturan.alamat_pengguna'));
+Route::get('/pengguna/keamanan', fn () => view('pengguna.pengaturan.keamanan_pengguna'));
+Route::get('/pengguna/pesanan', fn () => view('pengguna.pesanan.index_pesanan'));
+Route::get('/pengguna/notifikasi', fn () => view('master.notifikasi.index_notifikasi'));
+Route::get('/testimoni', fn () => view('master.testimoni.index_testimoni'));
+Route::get('/checkout2', fn () => view('pengguna.pesanan.checkout'));
+Route::get('/favorit', fn () => view('pengguna.favorit.index_favorit'));
+Route::get('/register2', fn () => view('ecommerce.register2'));
+
 // ==================== Breeze Routes ====================
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -21,14 +31,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// ==================== Static Routes ====================
-Route::get('/pengguna/alamat', fn () => view('pengguna.alamat_pengguna'));
-Route::get('/pengguna/keamanan', fn () => view('pengguna.keamanan_pengguna'));
-Route::get('/pengguna/pesanan', fn () => view('pesanan.index_pesanan'));
-Route::get('/pengguna/notifikasi', fn () => view('notifikasi.index_notifikasi'));
-Route::get('/testimoni', fn () => view('testimoni.index_testimoni'));
-Route::get('/checkout2', fn () => view('pesanan.checkout'));
-Route::get('/favorit', fn () => view('favorit.index_favorit'));
 
 // ==================== API Routes ====================
 Route::get('/api/cart', [CartController::class, 'AJAXlistCart'])->name('api.list_cart');
@@ -57,7 +59,7 @@ Route::get('/checkout/{invoice}', [CartController::class, 'checkoutFinish'])->na
 Route::middleware(['guest'])->group(function () {
     Route::get('login', [LoginController::class, 'loginForm'])->name('customer.login');
     Route::post('login', [LoginController::class, 'login'])->name('customer.post_login');
-    Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
+    Route::get('register', [RegisteredUserController::class, 'create'])->name('customer.register');
     Route::post('register', [RegisteredUserController::class, 'store']);
     Route::get('verify/{token}', [FrontController::class, 'verifyCustomerRegistration'])->name('customer.verify');
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])->name('password.request');
@@ -123,4 +125,4 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     });
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

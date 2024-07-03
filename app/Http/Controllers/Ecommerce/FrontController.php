@@ -11,6 +11,7 @@ use App\Models\OrderDetail;
 use App\Models\Product;
 use App\Models\Province;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FrontController extends Controller
 {
@@ -46,7 +47,7 @@ class FrontController extends Controller
 
     public function product()
     {
-        $query = Product::with(['category'])->withCount('orders')->orderBy('created_at', 'DESC');
+        $query = Product::with(['category', 'images', 'orders'])->orderBy('created_at', 'DESC');
 
         if ($search = request()->q) {
             $query->where(function ($query) use ($search) {
@@ -86,7 +87,7 @@ class FrontController extends Controller
             $products = $query->paginate(15);
         }
 
-        return view('toko.index_toko', compact('products'));
+        return view('master.toko.index_toko', compact('products'));
     }
 
     public function categoryProduct($slug)
@@ -94,16 +95,26 @@ class FrontController extends Controller
 
         $products = Category::where('slug', $slug)->first()->product()->orderBy('created_at', 'DESC')->paginate(12);
 
-        return view('toko.index_toko', compact('products'));
+        return view('master.toko.index_toko', compact('products'));
     }
 
     public function show($slug)
     {
-        $product = Product::with(['category'])->where('slug', $slug)->orWhere('id', $slug)->first();
-        $products = Product::orderBy(fake()->randomElement(['name', 'price', 'slug', 'id', 'description']), fake()->randomElement(['asc', 'desc']))->limit(6)->get();
+        $product = Product::with(['category', 'comments', 'images', 'orders'])
+            ->where('slug', $slug)
+            ->orWhere('id', $slug)
+            ->first();
 
-        return view('ecommerce.show2', compact('product', 'products'));
+        $products = Product::with(['category', 'images', 'orders'])
+            ->where('slug', '!=', $slug)
+            ->orderBy(fake()->randomElement(['name', 'price', 'slug', 'id', 'description']), fake()->randomElement(['asc', 'desc']))
+            ->limit(6)
+            ->get();
+
+        return view('master.toko.detail_produk', compact('product', 'products'));
     }
+
+
 
     public function verifyCustomerRegistration($token)
     {
@@ -123,10 +134,10 @@ class FrontController extends Controller
     public function customerSettingForm()
     {
         /** @var \App\Models\Customer $customer */
-        $customer = auth()->guard('customer')->user()->load('rel_address');
+        $customer = Auth::guard('customer')->user()->load('rel_address');
         $provinces = Province::orderBy('name', 'ASC')->get();
 
-        return view('pengguna.pengaturan_pengguna', compact('customer', 'provinces'));
+        return view('pengguna.pengaturan.profil_pengguna', compact('customer', 'provinces'));
     }
 
     public function customerUpdateProfile(Request $request)

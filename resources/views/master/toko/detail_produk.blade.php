@@ -64,7 +64,7 @@
                 </svg>
                 <p class="font-semibold text-gray-800">5.0 <span class="font-normal">(120)</span></p>
                 <span class="border border-gray-600 h-[0.1px] mx-1 rounded-full"></span>
-                <p>Terjual {{ $product->orders->count() }}</p>
+                <p>Terjual {{ $product->orders_count }}</p>
             </div>
             <span
                 class="mt-2 py-1.5 w-28 inline-flex justify-center items-center gap-x-1 text-xs font-bold bg-teal-100 text-green-600 rounded-full dark:bg-teal-500/10 dark:text-green-500">
@@ -440,7 +440,7 @@
                                 </svg>
                                 <p>5.0</p>
                                 <span class="border border-gray-500 h-[0.1px] rounded-full"></span>
-                                <p>{{ $p->orders->count() }} terjual</p>
+                                <p>{{ $p->orders_count }} terjual</p>
                             </div>
                         </div>
                     </div>

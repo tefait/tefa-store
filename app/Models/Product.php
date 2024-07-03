@@ -14,7 +14,6 @@ class Product extends Model
     protected $guarded = [];
 
     // Automatically eager load the 'images' relationship
-    protected $with = ['images', 'orders'];
 
     // Append the 'orders_count' attribute and the custom 'image' attribute
     protected $appends = ['orders_count', 'image'];
@@ -42,11 +41,7 @@ class Product extends Model
     }
 
     // Accessor for the first image's URL
-    public function getImageAttribute()
-    {
-        // Return the URL of the first image if it exists
-        return $this->images->first()->url;
-    }
+    
 
     public function getPriceAttribute()
     {
@@ -61,6 +56,11 @@ class Product extends Model
     public function images()
     {
         return $this->hasMany(ProductImage::class);
+    }
+    public function getImageAttribute()
+    {
+        // Return the URL of the first image if it exists
+        return $this->images->first()->url;
     }
 
     // Relationship to OrderDetail (has many)
