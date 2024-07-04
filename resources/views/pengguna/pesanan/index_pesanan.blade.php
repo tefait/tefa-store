@@ -16,12 +16,12 @@
             <button type="button" class="hs-tab-active:border-primary hs-tab-active:text-primary py-2 px-4 inline-flex justify-center items-center gap-x-2 border-b-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-primary focus:outline-none focus:text-primary disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:text-blue-500 transition duration-300" id="horizontal-scroll-tab-item-3" data-hs-tab="#horizontal-scroll-tab-3" aria-controls="horizontal-scroll-tab-3" role="tab">
               Riwayat Pesanan
             </button>
-        </nav>        
-          
+        </nav>
+
         <div class="mt-3">
-            @include('pesanan.pesanan')
-            @include('pesanan.penilaian')
-            @include('pesanan.riwayatpesanan')
+            @include('pengguna.pesanan.pesanan')
+            @include('pengguna.pesanan.penilaian')
+            @include('pengguna.pesanan.riwayatpesanan')
         </div>
 
         {{-- Modal Detail Pesanan --}}
@@ -76,7 +76,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <label for="" class="font-bold text-sm py-4 mt-4 border-t">Detail Pembelian</label>
                             <div class="space-y-3">
                                 <div class="grid grid-cols-12 gap-4">
@@ -173,14 +173,14 @@
                         Motivate teams to do their best work. Offer best practices to get users going in the right direction. Be bold and offer just enough help to get the work started, and then get out of the way. Give accurate information so users can make educated decisions. Know your user's struggles and desired outcomes and give just enough information to let them get where they need to go.
                       </p>
                     </div>
-          
+
                     <div>
                       <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Be optimistic</h3>
                       <p class="mt-1 text-gray-800 dark:text-neutral-400">
                         Focusing on the details gives people confidence in our products. Weave a consistent story across our fabric and be diligent about vocabulary across all messaging by being brand conscious across products to create a seamless flow across all the things. Let people know that they can jump in and start working expecting to find a dependable experience across all the things. Keep teams in the loop about what is happening by informing them of relevant features, products and opportunities for success. Be on the journey with them and highlight the key points that will help them the most - right now. Be in the moment by focusing attention on the important bits first.
                       </p>
                     </div>
-          
+
                     <div>
                       <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Be practical, with a wink</h3>
                       <p class="mt-1 text-gray-800 dark:text-neutral-400">
@@ -202,7 +202,7 @@
         </div>
 
     </section>
-    
+
     @include('partials.bottom_nav')
 
 @endsection

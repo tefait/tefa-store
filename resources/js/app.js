@@ -46,28 +46,28 @@ window.addEventListener("keydown", function (evt) {
 });
 
 // Initialize Carousel
-var swiper = new Swiper(".myCarousel", {
-    slidesPerView: 1,
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    autoplay: {
-        delay: 3000,
-    },
-    navigation: {
-        nextEl: "#nextBtnCar",
-        prevEl: "#prevBtnCar",
-    },
-    renderBullet: function (index, swiperPagination) {
-        return (
-            '<span class="' +
-            swiperPagination +
-            ' swiper-pagination-bullet"></span>'
-        );
-    },
-});
+// var swiper = new Swiper(".myCarousel", {
+//     slidesPerView: 1,
+//     loop: true,
+//     pagination: {
+//         el: ".swiper-pagination",
+//         clickable: true,
+//     },
+//     autoplay: {
+//         delay: 3000,
+//     },
+//     navigation: {
+//         nextEl: "#nextBtnCar",
+//         prevEl: "#prevBtnCar",
+//     },
+//     renderBullet: function (index, swiperPagination) {
+//         return (
+//             '<span class="' +
+//             swiperPagination +
+//             ' swiper-pagination-bullet"></span>'
+//         );
+//     },
+// });
 
 // Add event listeners for custom buttons
 document.querySelectorAll(".custom-button").forEach(function (button) {

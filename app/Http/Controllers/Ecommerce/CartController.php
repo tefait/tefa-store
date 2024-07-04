@@ -173,7 +173,7 @@ class CartController extends Controller
             return $q['qty'] * $q['weight'];
         });
 
-        return view('ecommerce.checkout', compact('provinces', 'carts', 'subtotal', 'weight'));
+        return view('pengguna.pesanan.checkout', compact('provinces', 'carts', 'subtotal', 'weight'));
     }
 
     public function getCity()

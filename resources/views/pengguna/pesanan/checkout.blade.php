@@ -65,7 +65,7 @@
                     Nama Penerima
                 </label>
                 <div class="relative">
-                    <input type="text" id="hs-icon-name" name="name"
+                    <input type="text" id="hs-icon-name" name="customer_name"
                         class="py-3 px-4 block w-full border border-gray-200 focus:border focus:border-primary shadow-sm rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 transition duration-300 ease-in-out"
                         placeholder="Masukkan nama penerima">
                 </div>
@@ -78,7 +78,7 @@
                         Nomor HP
                     </label>
                     <div class="relative">
-                        <input type="text" id="hs-icon-nomor" name="number"
+                        <input type="text" id="hs-icon-nomor" name="phone_number"
                             class="py-3 px-4 block w-full border border-gray-200 focus:border focus:border-primary shadow-sm rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 transition duration-300 ease-in-out"
                             placeholder="Masukkan nomor HP">
                     </div>
@@ -112,36 +112,21 @@
                 </div>
             </div>
             <!-- End Form Group -->
-            <div class="grid grid-cols-12 gap-2">
-                <!-- Form Group -->
-                <div class="col-span-6">
-                    <label for="hs-icon-metode-pembayaran" class="block text-sm font-medium mb-2 dark:text-white">
-                        Metode Pembayaran
-                    </label>
-                    <div class="relative">
-                        <select id="hs-icon-metode-pembayaran" name="metode-pembayaran" class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
-                            <option selected="">Pilih metode pembayaran</option>
-                            <option>Cash</option>
-                            <option>Bank BJB</option>
-                            <option>Dana</option>
-                        </select>
-                    </div>
-                </div>
-                <!-- End Form Group -->
-                <!-- Form Group -->
-                <div class="col-span-6">
-                    <label for="hs-icon-voucher" class="block text-sm font-medium mb-2 dark:text-white">
-                        Kode Voucher
-                    </label>
-                    <div class="relative">
-                        <input type="text" id="hs-icon-voucher" name="voucher"
-                            class="py-3 px-4 block w-full border border-gray-200 focus:border focus:border-primary shadow-sm rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 transition duration-300 ease-in-out"
-                            placeholder="Masukkan kode voucher member">
-                    </div>
-                </div>
-                <!-- End Form Group -->
-            </div>
             <!-- Form Group -->
+            <div class="col-span-6">
+                <label for="hs-icon-metode-pembayaran" class="block text-sm font-medium mb-2 dark:text-white">
+                    Metode Pembayaran
+                </label>
+                <div class="relative">
+                    <select id="hs-icon-metode-pembayaran" name="metode-pembayaran" class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
+                        <option selected="">Pilih metode pembayaran</option>
+                        <option>Cash</option>
+                        <option>Bank BJB</option>
+                        <option>Dana</option>
+                    </select>
+                </div>
+            </div>
+            <!-- End Form Group -->
             <div>
                 <label for="hs-icon-catatan" class="block mb-2 text-sm text-gray-800 font-medium dark:text-white">
                     Catatan

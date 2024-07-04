@@ -204,7 +204,7 @@
                                                     class="block text-sm font-medium mb-2 dark:text-white">Konfirmasi
                                                     Kata Sandi</label>
                                                 <div class="relative">
-                                                    <input name="konfirmasi-password" type="confirm_password"
+                                                    <input name="konfirmasi-password" type="password"
                                                         id="hs-toggle-konfirmasi-password"
                                                         class="py-3 px-4 ps-11 block w-full border border-gray-200 focus:border focus:border-primary shadow-sm rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 transition duration-300 ease-in-out"
                                                         placeholder="Konfirmasi kata sandi">
@@ -214,8 +214,8 @@
                                                     </div>
                                                     <button type="button"
                                                         data-hs-toggle-password='{
-                                        "target": "#hs-toggle-password"
-                                        }'
+                                                        "target": "#hs-toggle-konfirmasi-password"
+                                                        }'
                                                         class="absolute top-0 end-0 p-3.5 rounded-e-md">
                                                         <svg class="flex-shrink-0 size-4 text-gray-400 dark:text-neutral-600"
                                                             width="24" height="24" viewBox="0 0 24 24"
@@ -284,7 +284,7 @@
                                                 <div class="relative">
                                                     <select name="province_id" id="hs-icon-provinsi" name="provinsi"
                                                         class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
-                                                        <option selected="">Pilih provinsi</option>
+                                                        <option selected="">Pilih Provinsi</option>
                                                         @foreach ($provinces as $p)
                                                             <option value="{{ $p->id }}">{{ $p->name }}
                                                             </option>
@@ -297,12 +297,12 @@
                                             <div>
                                                 <label for="hs-icon-kabkot"
                                                     class="block text-sm font-medium mb-2 dark:text-white">
-                                                    Kabupaten / Kota
+                                                    Kota / Kabupaten
                                                 </label>
                                                 <div class="relative">
                                                     <select name="regency_id" id="hs-icon-kabkot" name="kabkot"
                                                         class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
-                                                        <option selected="">Pilih kabupaten / kota</option>
+                                                        <option selected="">Pilih Kota / Kabupaten</option>
                                                         <option>1</option>
                                                         <option>2</option>
                                                         <option>3</option>
@@ -320,7 +320,7 @@
                                                     <select name="district_id" id="hs-icon-kecamatan"
                                                         name="kecamatan"
                                                         class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
-                                                        <option selected="">Pilih kecamatan</option>
+                                                        <option selected="">Pilih Kecamatan</option>
                                                         <option>1</option>
                                                         <option>2</option>
                                                         <option>3</option>
@@ -337,7 +337,7 @@
                                                 <div class="relative">
                                                     <select name="village_id" id="hs-icon-deskel" name="deskel"
                                                         class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
-                                                        <option selected="">Pilih desa / kelurahan</option>
+                                                        <option selected="">Pilih Desa / Kelurahan</option>
                                                         <option>1</option>
                                                         <option>2</option>
                                                         <option>3</option>
