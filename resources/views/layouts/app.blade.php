@@ -17,6 +17,7 @@
 </head>
 
 <body class="dark:bg-black">
+    @include('layouts.error_handler')
 
     @if (Request::is('dashboard'))
         @include('partials.header')

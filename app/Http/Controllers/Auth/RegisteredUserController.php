@@ -1,16 +1,18 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Laravel\Socialite;
 use App\Http\Controllers\Controller;
 use App\Mail\CustomerRegisterMail;
 use App\Models\Customer;
 use App\Models\CustomerAddress;
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
@@ -24,7 +26,7 @@ class RegisteredUserController extends Controller
     {
         $provinces = \App\Models\Province::get();
 
-        return view('ecommerce.register', ['provinces' => $provinces]);
+        return view('ecommerce.register2', ['provinces' => $provinces]);
     }
 
     /**
@@ -32,12 +34,13 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request): JsonResponse
     {
-        $this->validate($request, [
+        $validator = Validator::make($request->all(), [
             'customer_name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', Rules\Password::defaults()],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:customers,email'],
+            'password' => ['required', Rules\Password::defaults(), 'same:konfirmasi-password'],
+            'konfirmasi-password' => ['required'],
             'customer_phone' => 'required',
             'customer_address' => 'required|string',
             'province_id' => 'required|exists:provinces,id',
@@ -45,6 +48,9 @@ class RegisteredUserController extends Controller
             'district_id' => 'required|exists:districts,id',
             'village_id' => 'required|exists:villages,id',
         ]);
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
 
         DB::beginTransaction();
         try {
@@ -65,11 +71,10 @@ class RegisteredUserController extends Controller
             DB::commit();
             Mail::to($request->email)->send(new CustomerRegisterMail($customer, $password));
 
-            return redirect(route('customer.post_login'));
+            return response()->json(['message' => 'Registration successful'], 200);
         } catch (\Exception $e) {
             DB::rollback();
-
-            return redirect()->back()->with(['error' => $e->getMessage()]);
+            return response()->json(['error' => $e->getMessage()], 500);
         }
     }
 }
