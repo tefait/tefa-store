@@ -441,7 +441,7 @@
                 <!-- Stats -->
                 <div>
                     <h4 class="text-lg font-semibold text-gray-800 sm:text-xl">Lebih dari</h4>
-                    <p class="mt-2 text-4xl font-bold sm:mt-3 sm:text-6xl text-primary">{{ $count['order'] - 1 }}+</p>
+                    <p class="mt-2 text-4xl font-bold sm:mt-3 sm:text-6xl text-primary">{{ $count['order'] > 1 ? $count['order'] - 1 : $count['order'] }}+</p>
                     <p class="mt-1 text-gray-400">Melayani pesanan</p>
                 </div>
                 <!-- End Stats -->

@@ -35,4 +35,10 @@ class Customer extends Authenticatable
     {
         return $this->hasMany(Comment::class);
     }
+    protected function casts(): array
+    {
+        return [
+            'password' => 'hashed',
+        ];
+    }
 }

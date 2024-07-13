@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Ecommerce;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -19,20 +21,28 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $this->validate($request, [
+        $request->validate([
             'email' => 'required|email|exists:customers,email',
             'password' => 'required|string',
         ]);
 
-        $auth = $request->only('email', 'password');
-        $auth['status'] = 1;
+        // Check if the customer with the given email and status exists
+        $customer = \App\Models\Customer::where('email', $request->email)
+            ->where('status', 1)
+            ->first();
 
-        if (auth()->guard('customer')->attempt($auth)) {
+        if (!$customer) {
+            return redirect()->back()->with(['kesalahan' => 'Akun Anda tidak aktif atau tidak ada di kredensial kami.']);
+        }
+
+        // Attempt to log in
+        if (Auth::guard('customer')->attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect()->intended(route('customer.dashboard'));
         }
 
-        return redirect()->back()->with(['error' => 'Email atau password tidak tersedia di kredensial kami.']);
+        return redirect()->back()->with(['kesalahan' => 'Email atau password tidak tersedia di kredensial kami.']);
     }
+
 
     public function dashboard()
     {

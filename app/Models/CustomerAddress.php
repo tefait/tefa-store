@@ -14,4 +14,16 @@ class CustomerAddress extends Model
     {
         return $this->belongsTo(Village::class);
     }
+    public function district()
+    {
+        return $this->village->district();
+    }
+    public function regency()
+    {
+        return $this->village->district->regency();
+    }
+    public function province()
+    {
+        return $this->village->district->regency->province();
+    }
 }

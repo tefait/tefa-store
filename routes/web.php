@@ -12,10 +12,12 @@ use App\Http\Controllers\Ecommerce\OrderController;
 use App\Http\Controllers\OrderController as AdminOrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserProfileController;
+use App\Models\Province;
 use Illuminate\Support\Facades\Route;
 
 // ==================== Static Routes ====================
-Route::get('/pengguna/alamat', fn () => view('pengguna.pengaturan.alamat_pengguna'));
+Route::get('/pengguna/alamat', fn () => view('pengguna.pengaturan.alamat_pengguna', ['provinces' => Province::all()]));
 Route::get('/pengguna/keamanan', fn () => view('pengguna.pengaturan.keamanan_pengguna'));
 Route::get('/pengguna/pesanan', fn () => view('pengguna.pesanan.index_pesanan'));
 Route::get('/pengguna/notifikasi', fn () => view('master.notifikasi.index_notifikasi'));
@@ -50,7 +52,7 @@ Route::post('cart', [CartController::class, 'addToCart'])->name('front.cart');
 Route::get('/cart', [CartController::class, 'listCart'])->name('front.list_cart');
 Route::post('/cart/update', [CartController::class, 'updateCart'])->name('front.update_cart');
 
-// ======================================= Customer Auth Routes
+// ======================================= Guest Auth Routes
 Route::middleware(['guest'])->group(function () {
     Route::get('login', [LoginController::class, 'loginForm'])->name('customer.login');
     Route::post('login', [LoginController::class, 'login'])->name('customer.post_login');
@@ -63,7 +65,7 @@ Route::middleware(['guest'])->group(function () {
     Route::post('reset-password', [NewPasswordController::class, 'store'])->name('password.store');
 });
 
-// ==================== User Routes ====================
+// ==================== Customer Routes ====================
 Route::group(['middleware' => 'customer'], function () {
 
     // ======================================= Checkout Routes
@@ -74,8 +76,8 @@ Route::group(['middleware' => 'customer'], function () {
     // ======================================= Manage Profile
     Route::get('dashboard', [LoginController::class, 'dashboard'])->name('customer.dashboard');
     Route::get('logout', [LoginController::class, 'logout'])->name('customer.logout');
-    Route::get('pengguna/pengaturan', [FrontController::class, 'customerSettingForm'])->name('customer.settingForm');
-    Route::post('setting', [FrontController::class, 'customerUpdateProfile'])->name('customer.setting');
+    Route::get('pengguna/pengaturan', [FrontController::class, 'customerSettingForm'])->name('customer.settings_form');
+    Route::post('setting', [UserProfileController::class, 'UpdateUser'])->name('customer.update_profil');
 
     // ======================================= Orders
     Route::get('orders', [OrderController::class, 'index'])->name('customer.orders');

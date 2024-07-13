@@ -49,7 +49,8 @@
         <div class="relative w-full sm:flex sm:items-center sm:justify-between sm:px-4 lg:px-0" aria-label="Global">
             <div class="flex justify-between items-center w-full">
                 <a href="/" class="hidden flex-none text-xl font-semibold dark:text-white sm:block"
-                    aria-label="Logo"><img src="{{ cache('settings')['site-logo']['value'] }}" class="sm:h-12" alt="Logo Tefa PPLG">
+                    aria-label="Logo"><img src="{{ cache('settings')['site-logo']['value'] }}" class="sm:h-12"
+                        alt="Logo Tefa PPLG">
                 </a>
 
                 <div class="hidden py-3 ml-5 lg:flex">
@@ -130,7 +131,7 @@
                                 <p class="text-sm text-gray-600 dark:text-neutral-400"></p>
                             </div>
                             <div class="py-2 mt-2 first:pt-0 last:pb-0">
-                                <a href="{{ route('customer.setting') }}"
+                                <a href="{{ route('customer.settings_form') }}"
                                     class="flex  gap-x-2 items-center px-3 py-1.5 text-sm text-gray-800 rounded-lg duration-300 hover:bg-gray-100 dark:text-white dark:hover:bg-neutral-800">
                                     <i class="text-xl bx bx-user"></i>
                                     Akun Saya
@@ -154,10 +155,12 @@
                         <div id="navbar-collapse-with-animation"
                             class="hidden overflow-hidden w-full transition-all duration-300 lg:flex hs-collapse">
                             <div class="flex gap-2 justify-center">
-                                <a href="{{ route('customer.login') }}" class="relative w-full px-[26px] py-2 rounded-full font-medium text-sm text-primary bg-white isolation-auto z-10 border-[1.5px] border-primary before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full hover:text-white before:bg-gradient-to-r before:from-primary before:to-secondary before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden duration-700 before:hover:duration-700">
+                                <a href="{{ route('customer.login') }}"
+                                    class="relative w-full px-[26px] py-2 rounded-full font-medium text-sm text-primary bg-white isolation-auto z-10 border-[1.5px] border-primary before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full hover:text-white before:bg-gradient-to-r before:from-primary before:to-secondary before:-z-10 before:aspect-square before:hover:scale-150 overflow-hidden duration-700 before:hover:duration-700">
                                     Masuk
                                 </a>
-                                <a href="{{ route('customer.register') }}" class="inline-flex justify-center items-center px-7 py-2 text-sm font-medium text-center text-white bg-gradient-to-r rounded-3xl duration-300 from-secondary to-primary hover:from-primary hover:to-secondary">
+                                <a href="{{ route('customer.register') }}"
+                                    class="inline-flex justify-center items-center px-7 py-2 text-sm font-medium text-center text-white bg-gradient-to-r rounded-3xl duration-300 from-secondary to-primary hover:from-primary hover:to-secondary">
                                     Daftar
                                 </a>
                             </div>

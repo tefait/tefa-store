@@ -140,23 +140,4 @@ class FrontController extends Controller
         return view('pengguna.pengaturan.profil_pengguna', compact('customer', 'provinces'));
     }
 
-    public function customerUpdateProfile(Request $request)
-    {
-        $this->validate($request, [
-            'name' => 'required|string|max:100',
-            'phone_number' => 'required|max:15',
-            'address' => 'required|string',
-            'district_id' => 'required|exists:districts,id',
-            'password' => 'nullable|string|min:6',
-        ]);
-
-        $user = auth()->guard('customer')->user();
-        $data = $request->only('name', 'phone_number', 'address', 'district_id');
-        if ($request->password != '') {
-            $data['password'] = $request->password;
-        }
-        $user->update($data);
-
-        return redirect()->back()->with(['success' => 'Profil berhasil diperbaharui']);
-    }
 }

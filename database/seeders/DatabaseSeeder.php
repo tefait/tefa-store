@@ -26,8 +26,8 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             ProductSeeder::class,
         ]);
-        Product::factory(32)->has(ProductImage::factory()->count(4), 'images')->create();
-        Customer::factory(15)->has(Comment::factory()->count(2), 'comments')->create();
-        Order::factory(10)->has(OrderDetail::factory()->count(2), 'details')->create();
+        // Product::factory(32)->has(ProductImage::factory()->count(4), 'images')->create();
+        // Customer::factory(15)->has(Comment::factory()->count(2), 'comments')->create();
+        // Order::factory(10)->has(OrderDetail::factory()->count(2), 'details')->create();
     }
 }

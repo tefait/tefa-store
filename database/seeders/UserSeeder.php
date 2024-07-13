@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Customer;
+use App\Models\CustomerAddress;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -24,15 +25,18 @@ class UserSeeder extends Seeder
             'password' => Hash::make('rahasia'),
         ]);
 
-        // Customer::create([
-        //     'name' => 'Muhammad Azfa',
-        //     'email' => 'azfasa15@gmail.com',
-        //     'phone_number' => '085156105763',
-        //     'address' => 'Sumedang',
-        //     'village_id' => 3211050011,
-        //     'status' => true,
-        //     'activate_token' => \Illuminate\Support\Str::random(32),
-        //     'password' => Hash::make('rahasia'),
-        // ]);
+        $customer = Customer::create([
+            'name' => 'Muhammad Azfa',
+            'email' => 'azfasa15@gmail.com',
+            'phone_number' => '085156105763',
+            'status' => true,
+            'activate_token' => \Illuminate\Support\Str::random(32),
+            'password' => "rahasia",
+        ]);
+        CustomerAddress::create([
+            'village_id' => 3211050011,
+            'customer_id' => $customer->id,
+            'address' => 'Sumedang',
+        ]);
     }
 }

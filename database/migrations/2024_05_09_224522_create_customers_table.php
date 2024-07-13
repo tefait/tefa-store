@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('image')->default('/assets/img/user.png');
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('password');
             $table->string('phone_number');
-            $table->boolean('membership')->default(false);
+            $table->boolean('gender')->default(1)->comment("1: Male, 0: Female");
             $table->boolean('status')->default(false);
             $table->timestamps();
         });

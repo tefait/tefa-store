@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import laravel from "laravel-vite-plugin";
 
+
 export default defineConfig({
     plugins: [
         laravel({
@@ -10,10 +11,7 @@ export default defineConfig({
     ],
 
     server: {
-        // host: 'localhost',
-        // host: '192.168.207.215',
-        // host: '10.111.4.112',
-        host: '192.168.111.20',
+        host: "localhost",
         https: false,
 
     },

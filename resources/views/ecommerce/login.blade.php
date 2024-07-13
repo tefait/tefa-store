@@ -57,7 +57,7 @@
                                             class="block text-sm font-medium mb-2 dark:text-white">Email</label>
                                         <div class="relative">
                                             <input type="text" id="hs-icon-email" name="email"
-                                                class="py-3 px-4 ps-11 block w-full border border-gray-200 focus:border focus:border-primary shadow-sm rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 transition duration-300 ease-in-out"
+                                                class=" py-3 px-4 ps-11 block w-full border border-gray-200 focus:border focus:border-primary shadow-sm rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 transition duration-300 ease-in-out @error('email') border-red-500 focus:border-red-500 @enderror"
                                                 placeholder="Masukkan email">
                                             <div
                                                 class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-4">
@@ -76,7 +76,7 @@
                                         </div>
                                         <div class="relative">
                                             <input name="password" type="password" id="hs-toggle-password"
-                                                class="py-3 px-4 ps-11 block w-full border border-gray-200 focus:border focus:border-primary shadow-sm rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 transition duration-300 ease-in-out"
+                                                class="py-3 px-4 ps-11 block w-full border border-gray-200 focus:border focus:border-primary shadow-sm rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 transition duration-300 ease-in-out @error('email') border-red-500 focus:border-red-500 @enderror"
                                                 placeholder="Masukkan kata sandi">
                                             <div
                                                 class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-4">
