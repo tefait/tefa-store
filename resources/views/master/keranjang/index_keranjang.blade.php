@@ -88,7 +88,12 @@
                             currency: 'IDR'
                         }).format(data.subtotal);
                         buyBtn.innerText = `Beli (${Object.keys(data.carts).length})`
+                        @auth('customer')
                         buyBtn.setAttribute("href", "{{ route('front.checkout') }}");
+                        @else
+                        buyBtn.setAttribute("href", "{{ route('customer.register') }}");
+                        @endauth
+                        
                         document.getElementById("jumlahProduk").innerText =
                             `${cartsCount === 0 ? "Tidak ada" : cartsCount} Produk`;
                         document.getElementById('ocbtn').insertAdjacentHTML('afterbegin', `

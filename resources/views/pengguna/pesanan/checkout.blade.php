@@ -67,7 +67,7 @@
                 <div class="relative">
                     <input type="text" id="hs-icon-name" name="customer_name"
                         class="py-3 px-4 block w-full border border-gray-200 focus:border focus:border-primary shadow-sm rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 transition duration-300 ease-in-out"
-                        placeholder="Masukkan nama penerima">
+                        placeholder="Masukkan nama penerima" value="{{ auth('customer')->check() ?  auth('customer')->user()->name : ''}}">
                 </div>
             </div>
             <!-- End Form Group -->

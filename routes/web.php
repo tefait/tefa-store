@@ -50,11 +50,6 @@ Route::post('cart', [CartController::class, 'addToCart'])->name('front.cart');
 Route::get('/cart', [CartController::class, 'listCart'])->name('front.list_cart');
 Route::post('/cart/update', [CartController::class, 'updateCart'])->name('front.update_cart');
 
-// ======================================= Checkout Routes
-Route::get('/checkout', [CartController::class, 'checkout'])->name('front.checkout');
-Route::post('/checkout', [CartController::class, 'processCheckout'])->name('front.store_checkout');
-Route::get('/checkout/{invoice}', [CartController::class, 'checkoutFinish'])->name('front.finish_checkout');
-
 // ======================================= Customer Auth Routes
 Route::middleware(['guest'])->group(function () {
     Route::get('login', [LoginController::class, 'loginForm'])->name('customer.login');
@@ -70,6 +65,12 @@ Route::middleware(['guest'])->group(function () {
 
 // ==================== User Routes ====================
 Route::group(['middleware' => 'customer'], function () {
+
+    // ======================================= Checkout Routes
+    Route::get('/checkout', [CartController::class, 'checkout'])->name('front.checkout');
+    Route::post('/checkout', [CartController::class, 'processCheckout'])->name('front.store_checkout');
+    Route::get('/checkout/{invoice}', [CartController::class, 'checkoutFinish'])->name('front.finish_checkout');
+
     // ======================================= Manage Profile
     Route::get('dashboard', [LoginController::class, 'dashboard'])->name('customer.dashboard');
     Route::get('logout', [LoginController::class, 'logout'])->name('customer.logout');

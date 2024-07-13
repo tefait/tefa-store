@@ -99,9 +99,9 @@
                                 Nama Penerima
                             </label>
                             <div class="relative">
-                                <input type="text" id="hs-icon-name" name="name"
+                                <input type="text" id="hs-icon-name" name="recipient"
                                     class="py-3 px-4 block w-full border border-gray-200 focus:border focus:border-primary shadow-sm rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 transition duration-300 ease-in-out"
-                                    placeholder="Masukkan nama penerima">
+                                    placeholder="Masukkan nama penerima" required value="{{  auth('customer')->user()->name}}">
                             </div>
                         </div>
                         <!-- End Form Group -->
@@ -111,9 +111,9 @@
                                 Nomor HP
                             </label>
                             <div class="relative">
-                                <input type="text" id="hs-icon-nomor" name="number"
+                                <input type="text" id="hs-icon-nomor" name="phone_number"
                                     class="py-3 px-4 block w-full border border-gray-200 focus:border focus:border-primary shadow-sm rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 transition duration-300 ease-in-out"
-                                    placeholder="Masukkan nomor HP">
+                                    placeholder="Masukkan nomor HP" required value="{{  auth('customer')->user()->phone_number}}">
                             </div>
                         </div>
                         <!-- End Form Group -->
@@ -125,10 +125,11 @@
                         </label>
                         <div class="relative">
                             <select id="hs-icon-provinsi" name="provinsi" class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
-                                <option selected="">Pilih provinsi</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
+                                <option>Pilih provinsi</option>
+                                @foreach ($provinces as $prov)
+                                <option selected="{{ auth()->user()->village->district->regency->province_id === $prov->id ? 'true' : 'false'  }}">Pilih provinsi</option>
+    
+@endforeach
                             </select>
                         </div>
                     </div>
