@@ -17,7 +17,6 @@ use App\Models\Province;
 use Illuminate\Support\Facades\Route;
 
 // ==================== Static Routes ====================
-Route::get('/pengguna/alamat', fn () => view('pengguna.pengaturan.alamat_pengguna', ['provinces' => Province::all()]));
 Route::get('/pengguna/keamanan', fn () => view('pengguna.pengaturan.keamanan_pengguna'));
 Route::get('/pengguna/pesanan', fn () => view('pengguna.pesanan.index_pesanan'));
 Route::get('/pengguna/notifikasi', fn () => view('master.notifikasi.index_notifikasi'));
@@ -79,6 +78,10 @@ Route::group(['middleware' => 'customer'], function () {
     Route::get('pengguna/pengaturan', [FrontController::class, 'customerSettingForm'])->name('customer.settings_form');
     Route::post('setting', [UserProfileController::class, 'UpdateUser'])->name('customer.update_profil');
 
+    Route::post('/address', [UserProfileController::class, 'createUserAddress'])->name('customer.addresses.create');
+    Route::get('/pengguna/alamat', [UserProfileController::class, 'getUserAddresses'])->name('customer.addresses.index');
+    Route::patch('/addresses/{id}', [UserProfileController::class, 'updateUserAddress'])->name('customer.addresses.update');
+    Route::delete('/addresses/{id}', [UserProfileController::class, 'deleteUserAddress'])->name('customer.addresses.delete');
     // ======================================= Orders
     Route::get('orders', [OrderController::class, 'index'])->name('customer.orders');
     Route::get('orders/{invoice}', [OrderController::class, 'view'])->name('customer.view_order');

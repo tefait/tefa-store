@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CustomerAddress;
+use App\Models\Province;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -27,17 +29,58 @@ class UserProfileController extends Controller
         Auth::guard('customer')->user()->update($data);
         return redirect()->back();
     }
-    public function CreateUserAddress(Request $request)
+    public function createUserAddress(Request $request)
     {
-        $data =  $request->validate([
+        $data = $request->validate([
             'recipient' => 'required|string',
-            'phone_number' => 'required|string|nullable',
+            'phone_number' => 'required|string',
             'address' => 'required|string',
             'province_id' => 'required|exists:provinces,id',
             'regency_id' => 'required|exists:regencies,id',
             'district_id' => 'required|exists:districts,id',
             'village_id' => 'required|exists:villages,id',
         ]);
-        dd($data);
+
+        $data['customer_id'] = Auth::guard('customer')->id();
+
+        CustomerAddress::create($data);
+
+        return redirect()->back()->with('success', 'Address created successfully');
+    }
+    public function getUserAddresses()
+    {
+        return view('pengguna.pengaturan.alamat_pengguna', ['provinces' => Province::all()]);
+    }
+
+    // Update
+    public function updateUserAddress(Request $request, $id)
+    {
+        $address = CustomerAddress::where('customer_id', Auth::guard('customer')->id())
+            ->findOrFail($id);
+
+        $data = $request->validate([
+            'recipient' => 'required|string',
+            'phone_number' => 'required|string',
+            'address' => 'required|string',
+            'province_id' => 'required|exists:provinces,id',
+            'regency_id' => 'required|exists:regencies,id',
+            'district_id' => 'required|exists:districts,id',
+            'village_id' => 'required|exists:villages,id',
+        ]);
+
+        $address->update($data);
+
+        return redirect()->back()->with('success', 'Address updated successfully');
+    }
+
+    // Delete
+    public function deleteUserAddress($id)
+    {
+        $address = CustomerAddress::where('customer_id', Auth::guard('customer')->id())
+            ->findOrFail($id);
+
+        $address->delete();
+
+        return redirect()->back()->with('success', 'Address deleted successfully');
     }
 }

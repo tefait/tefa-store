@@ -12,7 +12,7 @@
                     <h2>Pengaturan</h2>
                     <div class="page_link">
                         <a href="{{ url('/') }}">Home</a>
-                        <a href="{{ route('customer.settingForm') }}">Pengaturan</a>
+                        <a href="{{ route('customer.settings_form') }}">Pengaturan</a>
                     </div>
                 </div>
             </div>

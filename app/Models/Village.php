@@ -35,6 +35,8 @@ class Village extends Model
         'district_id',
     ];
 
+    protected $with = ['district'];
+
     /**
      * Village belongs to District.
      *

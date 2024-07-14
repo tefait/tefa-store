@@ -15,6 +15,8 @@ return new class extends Migration
         Schema::create('customer_addresses', function (Blueprint $table) {
             $table->id();
             $table->string('address');
+            $table->string('recipient')->nullable();
+            $table->string('phone_number')->nullable();
             $table->char('village_id', 10);
             $table->foreignIdFor(Customer::class)->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('village_id')->references('id')->on('villages')->onUpdate('cascade')->onDelete('restrict');

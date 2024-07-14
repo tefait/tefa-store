@@ -34,6 +34,8 @@ class UserSeeder extends Seeder
             'password' => "rahasia",
         ]);
         CustomerAddress::create([
+            'recipient' => "Irna tsamrotul",
+            'phone_number' => "+6285156105763",
             'village_id' => 3211050011,
             'customer_id' => $customer->id,
             'address' => 'Sumedang',

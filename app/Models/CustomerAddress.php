@@ -9,7 +9,7 @@ class CustomerAddress extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['customer_id', 'address', 'village_id'];
+    protected $fillable = ['customer_id', 'address', 'village_id', 'recipient', 'phone_number'];
     public function village()
     {
         return $this->belongsTo(Village::class);

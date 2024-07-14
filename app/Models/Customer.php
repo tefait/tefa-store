@@ -11,6 +11,7 @@ class Customer extends Authenticatable
     use HasFactory;
 
     protected $guarded = [];
+    protected $with = ['rel_address'];
 
     // Mutator
     public function setPasswordAttribute($value)
