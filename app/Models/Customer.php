@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Observers\CustomerObserver;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Hash;
 
+#[ObservedBy([CustomerObserver::class])]
 class Customer extends Authenticatable
 {
     use HasFactory;

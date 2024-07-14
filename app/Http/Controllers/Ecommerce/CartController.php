@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\CustomerRegisterMail;
 use App\Models\Cart;
 use App\Models\Customer;
+use App\Models\CustomerAddress;
 use App\Models\District;
 use App\Models\Order;
 use App\Models\OrderDetail;
@@ -15,6 +16,7 @@ use App\Models\Regency;
 use App\Models\Village;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -164,7 +166,6 @@ class CartController extends Controller
 
     public function checkout()
     {
-        $provinces = Province::get();
         $carts = $this->getCarts();
         $subtotal = collect($carts)->sum(function ($q) {
             return $q['qty'] * $q['product_price'];
@@ -173,8 +174,35 @@ class CartController extends Controller
             return $q['qty'] * $q['weight'];
         });
 
-        return view('pengguna.pesanan.checkout', compact('provinces', 'carts', 'subtotal', 'weight'));
+        $addresses = [];
+        $customerId = auth('customer')->user()->id;
+
+        $address = CustomerAddress::with(['village.district.regency.province'])
+            ->where('customer_id', $customerId)
+            ->get();
+
+        if ($address->isEmpty()) {
+            // Handle case when there are no addresses
+            // e.g., return a view with a message or redirect to an address creation page
+        } else {
+            foreach ($address as $a) {
+                $addresses[] = [
+                    'id' => $a->id,
+                    'recipient' => $a->recipient,
+                    'phone_number' => $a->phone_number,
+                    'address' => $a->address,
+                    'village' => $a->village->name,
+                    'district' => $a->village->district->name,
+                    'regency' => $a->village->district->regency->name,
+                    'province' => $a->village->district->regency->province->name,
+                ];
+            }
+        }
+
+        return view('pengguna.pesanan.checkout', compact('addresses', 'carts', 'subtotal', 'weight'));
     }
+
+
 
     public function getCity()
     {

@@ -1,63 +1,82 @@
 @extends('layouts.app')
 
-@section('container')
+@section('head')
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+@endsection
 
+@section('container')
     <div class="flex justify-center mt-4 mb-2 mx-10" data-hs-stepper="">
         <ul class="relative flex flex-row justify-center gap-x-2 w-[50%]">
-            <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{
+            <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group"
+                data-hs-stepper-nav-item='{
                 "index": 1
             }'>
                 <span class="min-w-5 min-h-5 group inline-flex flex-col items-center text-xs align-middle">
-                <span class="size-5 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 hs-stepper-active:bg-primary hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600 dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
-                    <span class="hidden">1</span>
-                    <svg class="block flex-shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
+                    <span
+                        class="size-5 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 hs-stepper-active:bg-primary hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600 dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
+                        <span class="hidden">1</span>
+                        <svg class="block flex-shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </span>
+                    <span class="text-xs text-gray-600 dark:text-neutral-200">
+                        Keranjang
+                    </span>
                 </span>
-                <span class="text-xs text-gray-600 dark:text-neutral-200">
-                    Keranjang
-                </span>
-                </span>
-                <div class="success w-full h-px flex-1 bg-gray-200 group-last:hidden hs-stepper-success:bg-primary hs-stepper-completed:bg-teal-600 dark:bg-neutral-700 dark:hs-stepper-success:bg-blue-600 dark:hs-stepper-completed:bg-teal-600"></div>
+                <div
+                    class="success w-full h-px flex-1 bg-gray-200 group-last:hidden hs-stepper-success:bg-primary hs-stepper-completed:bg-teal-600 dark:bg-neutral-700 dark:hs-stepper-success:bg-blue-600 dark:hs-stepper-completed:bg-teal-600">
+                </div>
             </li>
 
-            <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group" data-hs-stepper-nav-item='{
+            <li class="flex items-center gap-x-2 shrink basis-0 flex-1 group"
+                data-hs-stepper-nav-item='{
                 "index": 2
             }'>
                 <span class="min-w-5 min-h-5 group inline-flex flex-col items-center text-xs align-middle">
-                <span class="active size-5 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 hs-stepper-active:bg-primary hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600 dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
-                    <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">2</span>
-                    <svg class="hidden flex-shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
+                    <span
+                        class="active size-5 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 hs-stepper-active:bg-primary hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600 dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
+                        <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">2</span>
+                        <svg class="hidden flex-shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </span>
+                    <span class="text-xs text-gray-600 dark:text-neutral-200">
+                        Checkout
+                    </span>
                 </span>
-                <span class="text-xs text-gray-600 dark:text-neutral-200">
-                    Checkout
-                </span>
-                </span>
-                <div class="w-full h-px flex-1 bg-gray-200 group-last:hidden hs-stepper-success:bg-primary hs-stepper-completed:bg-teal-600 dark:bg-neutral-700 dark:hs-stepper-success:bg-blue-600 dark:hs-stepper-completed:bg-teal-600"></div>
+                <div
+                    class="w-full h-px flex-1 bg-gray-200 group-last:hidden hs-stepper-success:bg-primary hs-stepper-completed:bg-teal-600 dark:bg-neutral-700 dark:hs-stepper-success:bg-blue-600 dark:hs-stepper-completed:bg-teal-600">
+                </div>
             </li>
 
-            <li class="flex items-center gap-x-2 shrink basis-0 group" data-hs-stepper-nav-item='{
+            <li class="flex items-center gap-x-2 shrink basis-0 group"
+                data-hs-stepper-nav-item='{
                 "index": 3
                 }'>
                 <span class="min-w-5 min-h-5 group inline-flex flex-col items-center text-xs align-middle">
-                <span class="size-5 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 hs-stepper-active:bg-primary hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600 dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
-                    <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">3</span>
-                    <svg class="hidden flex-shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                </span>
-                <span class="text-xs text-gray-600 dark:text-neutral-200">
-                    Selesai
-                </span>
+                    <span
+                        class="size-5 flex justify-center items-center flex-shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 hs-stepper-active:bg-primary hs-stepper-active:text-white hs-stepper-success:bg-blue-600 hs-stepper-success:text-white hs-stepper-completed:bg-teal-500 hs-stepper-completed:group-focus:bg-teal-600 dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
+                        <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">3</span>
+                        <svg class="hidden flex-shrink-0 size-3 hs-stepper-success:block" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </span>
+                    <span class="text-xs text-gray-600 dark:text-neutral-200">
+                        Selesai
+                    </span>
                 </span>
             </li>
         </ul>
     </div>
     <!-- End Stepper -->
 
-    <section class="grid grid-cols-12 mb-12 space-x-4">
+    <section x-data="checkoutHandler()" class="grid grid-cols-12 mb-12 space-x-4">
         <div class="col-span-8 space-y-4 p-6 bg-white shadow-lg rounded-xl">
             <!-- Form Group -->
             <div>
@@ -67,7 +86,8 @@
                 <div class="relative">
                     <input type="text" id="hs-icon-name" name="customer_name"
                         class="py-3 px-4 block w-full border border-gray-200 focus:border focus:border-primary shadow-sm rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 transition duration-300 ease-in-out"
-                        placeholder="Masukkan nama penerima" value="{{ auth('customer')->check() ?  auth('customer')->user()->name : ''}}">
+                        placeholder="Masukkan nama penerima" x-model="address.recipient" readonly
+                        value="{{ auth('customer')->check() ? auth('customer')->user()->name : '' }}">
                 </div>
             </div>
             <!-- End Form Group -->
@@ -80,7 +100,7 @@
                     <div class="relative">
                         <input type="text" id="hs-icon-nomor" name="phone_number"
                             class="py-3 px-4 block w-full border border-gray-200 focus:border focus:border-primary shadow-sm rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 transition duration-300 ease-in-out"
-                            placeholder="Masukkan nomor HP">
+                            placeholder="Masukkan nomor HP" x-model="address.phone_number" readonly>
                     </div>
                 </div>
                 <!-- End Form Group -->
@@ -91,6 +111,7 @@
                     </label>
                     <div class="relative">
                         <input type="text" id="hs-icon-email" name="email"
+                            value="{{ auth('customer')->user()->email }}" readonly
                             class="py-3 px-4 block w-full border border-gray-200 focus:border focus:border-primary shadow-sm rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 transition duration-300 ease-in-out"
                             placeholder="Masukkan alamat email">
                     </div>
@@ -103,11 +124,13 @@
                     Alamat Pengiriman
                 </label>
                 <div class="relative">
-                    <select id="hs-icon-alamat-pengiriman" name="alamat-pengiriman" class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
-                        <option selected="">Pilih alamat pengiriman</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
+                    <select id="hs-icon-alamat-pengiriman" name="alamat-pengiriman" @change="handleChange"
+                        class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
+                        <option value="">Pilih alamat pengiriman</option>
+                        <template x-for="address in addresses" :key="address.id">
+                            <option :value="address.id"
+                                x-text="`${address.address}, ${address.regency}, ${address.province}`"></option>
+                        </template>
                     </select>
                 </div>
             </div>
@@ -118,7 +141,8 @@
                     Metode Pembayaran
                 </label>
                 <div class="relative">
-                    <select id="hs-icon-metode-pembayaran" name="metode-pembayaran" class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
+                    <select id="hs-icon-metode-pembayaran" name="metode-pembayaran"
+                        class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
                         <option selected="">Pilih metode pembayaran</option>
                         <option>Cash</option>
                         <option>Bank BJB</option>
@@ -142,28 +166,31 @@
         {{-- Rincian Pesanan --}}
         <div class="col-span-4 p-6 bg-white shadow-lg rounded-xl">
             <h3 class="text-lg font-bold text-gray-800 dark:text-neutral-200 pb-2 mb-4 border-b">Rincian Pesanan</h3>
-            <div class="flex justify-between pb-4 mb-4 border-b">
-                <span class="text-start space-y-0.5">
-                    <p class="block max-w-[36rem] truncate text-base text-gray-800 dark:text-neutral-300">Kaos pendek cotton combed 30s</p>
-                    <p class="block text-sm text-gray-500 dark:text-white">Putih, S</p>
-                </span>
-                <span class="text-end space-y-0.5">
-                    <p class="block text-sm text-gray-800 dark:text-white">x2</p>
-                    <p class="block text-sm text-gray-800 dark:text-neutral-300">Rp50.000</p>
-                </span>
-            </div>
+            @foreach ($carts as $item)
+                <div class="flex justify-between pb-4 mb-4 border-b">
+                    <span class="text-start space-y-0.5">
+                        <p class="block max-w-[36rem] truncate text-base text-gray-800 dark:text-neutral-300">
+                            {{ $item['product_name'] }}</p>
+                        {{-- <p class="block text-sm text-gray-500 dark:text-white">Putih, S</p> --}}
+                    </span>
+                    <span class="text-end space-y-0.5">
+                        <p class="block text-sm text-gray-800 dark:text-white">x{{ $item['qty'] }}</p>
+                        <p class="block text-sm text-gray-800 dark:text-neutral-300">Rp {{ $item['product_price'] }}</p>
+                    </span>
+                </div>
+            @endforeach
             <div class="flex justify-between pb-4 mb-4 border-b">
                 <span class="text-start space-y-0.5">
                     <p class="block text-sm text-gray-500 dark:text-white">Subtotal produk</p>
-                    <p class="block text-sm text-gray-500 dark:text-white">Biaya Pengiriman</p>
+                    {{-- <p class="block text-sm text-gray-500 dark:text-white">Biaya Pengiriman</p> --}}
                     <p class="block text-sm text-gray-500 dark:text-white">Diskon</p>
                     <p class="block font-semibold text-base text-gray-800 dark:text-white">Total Pembayaran</p>
                 </span>
                 <span class="text-end space-y-0.5">
-                    <p class="block text-sm text-gray-500 dark:text-neutral-300">Rp100.000</p>
-                    <p class="block text-sm text-gray-500 dark:text-neutral-300">Rp10.000</p>
+                    <p class="block text-sm text-gray-500 dark:text-neutral-300">Rp {{ $subtotal }}</p>
+                    {{-- <p class="block text-sm text-gray-500 dark:text-neutral-300">Rp10.000</p> --}}
                     <p class="block text-sm text-gray-500 dark:text-neutral-300">Rp5.000</p>
-                    <p class="block font-semibold text-base text-gray-800 dark:text-neutral-300">Rp105.000</p>
+                    <p class="block font-semibold text-base text-gray-800 dark:text-neutral-300">Rp {{ $subtotal }}</p>
                 </span>
             </div>
             <div class="flex justify-between pb-4 mb-4 border-b">
@@ -176,7 +203,9 @@
             </div>
             <div class="flex items-center">
                 <p class="block text-sm text-gray-500 dark:text-white">
-                    Dengan checkout, Anda setuju dengan <a href="#" class="text-primary">Syarat & Ketentuan</a> kami dan mengonfirmasi bahwa Anda telah membaca <a href="#" class="text-primary">Kebijakan Privasi</a> kami.
+                    Dengan checkout, Anda setuju dengan <a href="#" class="text-primary">Syarat & Ketentuan</a> kami
+                    dan mengonfirmasi bahwa Anda telah membaca <a href="#" class="text-primary">Kebijakan
+                        Privasi</a> kami.
                 </p>
             </div>
             <div class="mt-4">
@@ -196,5 +225,26 @@
     </section>
 
     @include('partials.footer')
-
+    <script>
+        function checkoutHandler() {
+            return {
+                addresses: {!! json_encode($addresses) !!},
+                address: {
+                    id: "",
+                    recipient: "",
+                    phone_number: "",
+                    address: "",
+                    regency: "",
+                    province: "",
+                },
+                handleChange: function(event) {
+                    const selectedAddressId = event.target.value;
+                    const selectedAddress = this.addresses.find(addr => addr.id == selectedAddressId);
+                    if (selectedAddress) {
+                        this.address = selectedAddress;
+                    }
+                }
+            }
+        }
+    </script>
 @endsection

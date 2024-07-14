@@ -34,6 +34,9 @@ class District extends Model
     protected $hidden = [
         'regency_id',
     ];
+    protected $with = [
+        'regency',
+    ];
 
     /**
      * District belongs to Regency.
